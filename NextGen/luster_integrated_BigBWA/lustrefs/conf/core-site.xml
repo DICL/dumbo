@@ -1,0 +1,22 @@
+<!-- Insert/modify values in your core-site.xml following this example -->
+<configuration>
+    <property>
+        <name>fs.defaultFS</name>
+        <value>lustrefs:///</value>
+    </property>
+
+    <property>
+        <name>fs.AbstractFileSystem.lustrefs.impl</name>
+        <value>org.apache.hadoop.fs.local.LustreFs</value>
+    </property>
+
+    <property>
+        <name>fs.lustrefs.impl</name>
+        <value>org.apache.hadoop.fs.lustrefs.LustreFileSystem</value>
+    </property>
+
+    <property>
+        <name>fs.lustrefs.mount</name>
+        <value>/</value>
+    </property>
+</configuration>

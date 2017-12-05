@@ -1,0 +1,7 @@
+<!-- Insert/modify values in your mapred-site.xml following this example -->
+<configuration>
+    <property>
+        <name>yarn.app.mapreduce.am.staging-dir</name>
+        <value>/yarn/staging</value>
+    </property>
+</configuration>
