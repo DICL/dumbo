@@ -79,6 +79,23 @@ abstract public class Task implements Writable, Configurable {
   private static final Log LOG =
     LogFactory.getLog(Task.class);
 
+  // Added
+  public boolean bUseGPU = false;
+  public boolean bMustGPU = false;
+  public int R = 0;
+  public void setUseGPU(boolean bUseGPU){
+	  this.bUseGPU = bUseGPU;
+  }
+  public boolean getUseGPU(){
+	  return bUseGPU;
+  }
+  public void setR(int r) {
+      this.R = r;
+  }
+  public int getR() {
+      return R;
+  }
+
   public static String MERGED_OUTPUT_PREFIX = ".merged";
   public static final long DEFAULT_COMBINE_RECORDS_BEFORE_PROGRESS = 10000;
   

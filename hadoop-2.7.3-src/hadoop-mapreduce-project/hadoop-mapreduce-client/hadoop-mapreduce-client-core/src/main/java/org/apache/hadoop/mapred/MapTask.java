@@ -745,6 +745,12 @@ public class MapTask extends Task {
     org.apache.hadoop.mapreduce.Mapper<INKEY,INVALUE,OUTKEY,OUTVALUE> mapper =
       (org.apache.hadoop.mapreduce.Mapper<INKEY,INVALUE,OUTKEY,OUTVALUE>)
         ReflectionUtils.newInstance(taskContext.getMapperClass(), job);
+    
+	// yildbs Added
+    mapper.setUseGPU(bUseGPU);
+    mapper.setMustGPU(bMustGPU);
+    mapper.setR(R);
+    
     // make the input format
     org.apache.hadoop.mapreduce.InputFormat<INKEY,INVALUE> inputFormat =
       (org.apache.hadoop.mapreduce.InputFormat<INKEY,INVALUE>)
