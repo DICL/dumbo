@@ -825,6 +825,9 @@ public class RMContainerAllocator extends RMContainerRequestor
   }
 
   private boolean canAssignMaps() {
+	// hyonzin: to set num of yarnchild dynamically
+	//          for future work
+	//maxRunningMaps = getConfig().getInt("hh.optimal.num.maps", maxRunningMaps);
     return (maxRunningMaps <= 0
         || assignedRequests.maps.size() < maxRunningMaps);
   }
