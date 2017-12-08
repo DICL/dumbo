@@ -1,0 +1,116 @@
+/**
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+allprojects {
+    apply plugin: 'idea'
+    apply plugin: 'eclipse'
+}
+
+buildscript {
+    repositories {
+        jcenter()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.bmuschko:gradle-docker-plugin:2.6.1'
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+idea {
+    project {
+        languageLevel = '1.7'
+		ipr {
+			withXml { provider ->
+			        provider.node.component
+			                .find { it.@name == 'VcsDirectoryMappings' }
+			                .mapping.@vcs = 'Git'
+			    }
+		}
+    }
+}
+
+subprojects {
+
+    apply plugin: 'java'
+    apply plugin: 'application'
+    apply from: "$rootDir/gradle/spock.gradle"
+    apply from: "$rootDir/gradle/quality.gradle"
+
+    sourceCompatibility = '1.7'
+    targetCompatibility = '1.7'
+
+    [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+
+    mainClassName = "org.apache.myriad.Main"
+
+    group = "org.apache.myriad"
+    version = "0.2.0"
+
+    ext {
+        mesosVer = "0.28.1"
+        //Allows passing -PhadoopVer=2.6.0 from command line
+        if(!project.hasProperty('hadoopVer')) {
+            hadoopVer = "2.7.0"
+        }
+        metricsVer = "3.1.0"
+    }
+
+    configurations.create('myriadExecutorConf')
+
+    //Keeping guava at the level of hadoop 2.6.0 so we don't get all the
+    //awesomeness in our IDE and fail at runtime.
+    configurations.all {
+        resolutionStrategy {
+            force 'com.google.guava:guava:11.0.2'
+        }
+    }
+    configurations {
+        provided
+        capsule
+        myriadExecutorConf
+        myriadExecutorConf.transitive = false
+    }
+
+    repositories {
+        mavenCentral()
+        mavenLocal()
+    }
+
+    dependencies {
+        capsule "co.paralleluniverse:capsule:0.7.1"
+    	myriadExecutorConf 'org.slf4j:slf4j-log4j12:1.7.10'
+
+        compile "org.apache.mesos:mesos:${mesosVer}"
+        compile 'com.google.code.gson:gson:2.3.1'        // marshalling between the scheduler and executor
+
+        testCompile 'org.apache.zookeeper:zookeeper:3.4.6' // to resolve temporary mavenlocal issue
+        runtime 'com.google.guava:guava:11.0.2'
+        testCompile 'junit:junit:4.12'
+        testCompile 'commons-collections:commons-collections:3.2.1'
+    }
+
+
+    run {
+        systemProperty "myriad.config", "build/resources/main/myriad-config-default.yml"
+    }
+}
