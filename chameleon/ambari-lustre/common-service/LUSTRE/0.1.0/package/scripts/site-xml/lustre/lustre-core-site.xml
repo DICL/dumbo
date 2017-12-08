@@ -1,0 +1,25 @@
+<property>
+<name>fs.lustrefs.impl</name>
+<value>org.apache.hadoop.fs.lustrefs.LustreFileSystem</value>
+<description>The FileSystem API to use.</description>
+</property>
+<property>
+<name>fs.AbstractFileSystem.lustrefs.impl</name>
+<value>org.apache.hadoop.fs.local.LustreFs</value>
+<description>The file implementation to use, in conjunction with the above. </description>
+</property>
+<property>
+<name>fs.defaultFS</name>
+<value>lustrefs:///</value>
+<description>The default name that hadoop uses to represent file as a URI.</description>
+<final>true</final>
+</property>
+<property>
+<name>fs.lustrefs.mount</name>
+<value>/mnt/lustre/hadoop </value>
+<description>This is the directory on Lustre that acts as the root level for Hadoop services</description>
+</property>
+<property>
+<name>hadoop.tmp.dir</name>
+<value>/tmp2/hadoop-${user.name}</value>
+</property>

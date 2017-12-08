@@ -1,0 +1,178 @@
+curl -u admin:admin -X GET  http://192.168.1.194:8080/api/v1/clusters/bigcluster?fields=Clusters/desired_configs
+
+// core-site 
+//get
+curl -u admin:admin -H "X-Requested-By: ambari" -X GET "http://192.168.1.194:8080/api/v1/clusters/bigcluster/configurations?type=core-site&tag=version1490850580133"
+
+//put
+curl -u admin:admin -H "X-Requested-By: ambari" -X PUT -d '[{"Clusters":{
+  "desired_config":[{
+    "type":"core-site",
+    "tag":"version201",
+    "properties":{
+        "fs.defaultFS" : "hdfs://tnode1:8020",
+        "fs.trash.interval" : "360",
+        "ha.failover-controller.active-standby-elector.zk.op.retries" : "120",
+        "hadoop.http.authentication.simple.anonymous.allowed" : "true",
+        "hadoop.proxyuser.hdfs.groups" : "*",
+        "hadoop.proxyuser.hdfs.hosts" : "*",
+        "hadoop.proxyuser.root.groups" : "*",
+        "hadoop.proxyuser.root.hosts" : "tnode1",
+        "hadoop.security.auth_to_local" : "DEFAULT",
+        "hadoop.security.authentication" : "simple",
+        "hadoop.security.authorization" : "false",
+        "io.compression.codecs" : "org.apache.hadoop.io.compress.GzipCodec,org.apache.hadoop.io.compress.DefaultCodec,org.apache.hadoop.io.compress.SnappyCodec",
+        "io.file.buffer.size" : "131072",
+        "io.serializations" : "org.apache.hadoop.io.serializer.WritableSerialization",
+        "ipc.client.connect.max.retries" : "50",
+        "ipc.client.connection.maxidletime" : "30000",
+        "ipc.client.idlethreshold" : "8000",
+        "ipc.server.tcpnodelay" : "true",
+        "mapreduce.jobtracker.webinterface.trusted" : "false",
+        "net.topology.script.file.name" : "/etc/hadoop/conf/topology_script.py"
+     },
+    "service_config_version_note":"change to hdfs !!"}]}}]'
+"http://192.168.1.194:8080/api/v1/clusters/bigcluster"
+
+
+
+
+
+// yarn-site
+
+//get
+curl -u admin:admin -H "X-Requested-By: ambari" -X GET "http://192.168.1.194:8080/api/v1/clusters/bigcluster/configurations?type=yarn-site&tag=version1"
+
+//put
+curl -u admin:admin -H "X-Requested-By: ambari" -X PUT -d '[{"Clusters":{
+  "desired_config":[{
+    "type":"yarn-site",
+    "tag":"version201",
+    "properties":{
+        "hadoop.registry.rm.enabled" : "false",
+        "hadoop.registry.zk.quorum" : "tnode2:2181,tnode1:2181",
+        "yarn.acl.enable" : "false",
+        "yarn.admin.acl" : "activity_analyzer,yarn",
+        "yarn.application.classpath" : "$HADOOP_CONF_DIR,/usr/hdp/current/hadoop-client/*,/usr/hdp/current/hadoop-client/lib/*,/usr/hdp/current/hadoop-hdfs-client/*,/usr/hdp/current/hadoop-hdfs-client/lib/*,/usr/hdp/current/hadoop-yarn-client/*,/usr/hdp/current/hadoop-yarn-client/lib/*",
+        "yarn.client.nodemanager-connect.max-wait-ms" : "60000",
+        "yarn.client.nodemanager-connect.retry-interval-ms" : "10000",
+        "yarn.http.policy" : "HTTP_ONLY",
+        "yarn.log-aggregation-enable" : "true",
+        "yarn.log-aggregation.retain-seconds" : "2592000",
+        "yarn.log.server.url" : "http://tnode2:19888/jobhistory/logs",
+        "yarn.node-labels.enabled" : "false",
+        "yarn.node-labels.fs-store.retry-policy-spec" : "2000, 500",
+        "yarn.node-labels.fs-store.root-dir" : "/system/yarn/node-labels",
+        "yarn.nodemanager.address" : "0.0.0.0:45454",
+        "yarn.nodemanager.admin-env" : "MALLOC_ARENA_MAX=$MALLOC_ARENA_MAX",
+        "yarn.nodemanager.aux-services" : "mapreduce_shuffle,spark_shuffle",
+        "yarn.nodemanager.aux-services.mapreduce_shuffle.class" : "org.apache.hadoop.mapred.ShuffleHandler",
+        "yarn.nodemanager.aux-services.spark_shuffle.class" : "org.apache.spark.network.yarn.YarnShuffleService",
+        "yarn.nodemanager.bind-host" : "0.0.0.0",
+        "yarn.nodemanager.container-executor.class" : "org.apache.hadoop.yarn.server.nodemanager.DefaultContainerExecutor",
+        "yarn.nodemanager.container-monitor.interval-ms" : "3000",
+        "yarn.nodemanager.delete.debug-delay-sec" : "0",
+        "yarn.nodemanager.disk-health-checker.max-disk-utilization-per-disk-percentage" : "90",
+        "yarn.nodemanager.disk-health-checker.min-free-space-per-disk-mb" : "1000",
+        "yarn.nodemanager.disk-health-checker.min-healthy-disks" : "0.25",
+        "yarn.nodemanager.health-checker.interval-ms" : "135000",
+        "yarn.nodemanager.health-checker.script.timeout-ms" : "60000",
+        "yarn.nodemanager.linux-container-executor.cgroups.hierarchy" : "hadoop-yarn",
+        "yarn.nodemanager.linux-container-executor.cgroups.mount" : "false",
+        "yarn.nodemanager.linux-container-executor.cgroups.strict-resource-usage" : "false",
+        "yarn.nodemanager.linux-container-executor.group" : "hadoop",
+        "yarn.nodemanager.linux-container-executor.resources-handler.class" : "org.apache.hadoop.yarn.server.nodemanager.util.DefaultLCEResourcesHandler",
+        "yarn.nodemanager.local-dirs" : "/hadoop/yarn/local",
+        "yarn.nodemanager.log-aggregation.compression-type" : "gz",
+        "yarn.nodemanager.log-aggregation.debug-enabled" : "false",
+        "yarn.nodemanager.log-aggregation.num-log-files-per-app" : "30",
+        "yarn.nodemanager.log-aggregation.roll-monitoring-interval-seconds" : "-1",
+        "yarn.nodemanager.log-dirs" : "/hadoop/yarn/log",
+        "yarn.nodemanager.log.retain-second" : "604800",
+        "yarn.nodemanager.recovery.dir" : "{{yarn_log_dir_prefix}}/nodemanager/recovery-state",
+        "yarn.nodemanager.recovery.enabled" : "true",
+        "yarn.nodemanager.remote-app-log-dir" : "/app-logs",
+        "yarn.nodemanager.remote-app-log-dir-suffix" : "logs",
+        "yarn.nodemanager.resource.cpu-vcores" : "1",
+        "yarn.nodemanager.resource.memory-mb" : "3072",
+        "yarn.nodemanager.resource.percentage-physical-cpu-limit" : "80",
+        "yarn.nodemanager.vmem-check-enabled" : "false",
+        "yarn.nodemanager.vmem-pmem-ratio" : "2.1",
+        "yarn.resourcemanager.address" : "tnode2:8050",
+        "yarn.resourcemanager.admin.address" : "tnode2:8141",
+        "yarn.resourcemanager.am.max-attempts" : "2",
+        "yarn.resourcemanager.bind-host" : "0.0.0.0",
+        "yarn.resourcemanager.connect.max-wait.ms" : "900000",
+        "yarn.resourcemanager.connect.retry-interval.ms" : "30000",
+        "yarn.resourcemanager.fs.state-store.retry-policy-spec" : "2000, 500",
+        "yarn.resourcemanager.fs.state-store.uri" : " ",
+        "yarn.resourcemanager.ha.enabled" : "false",
+        "yarn.resourcemanager.hostname" : "tnode2",
+        "yarn.resourcemanager.nodes.exclude-path" : "/etc/hadoop/conf/yarn.exclude",
+        "yarn.resourcemanager.recovery.enabled" : "true",
+        "yarn.resourcemanager.resource-tracker.address" : "tnode2:8025",
+        "yarn.resourcemanager.scheduler.address" : "tnode2:8030",
+        "yarn.resourcemanager.scheduler.class" : "org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.CapacityScheduler",
+        "yarn.resourcemanager.scheduler.monitor.enable" : "false",
+        "yarn.resourcemanager.state-store.max-completed-applications" : "${yarn.resourcemanager.max-completed-applications}",
+        "yarn.resourcemanager.store.class" : "org.apache.hadoop.yarn.server.resourcemanager.recovery.ZKRMStateStore",
+        "yarn.resourcemanager.system-metrics-publisher.dispatcher.pool-size" : "10",
+        "yarn.resourcemanager.system-metrics-publisher.enabled" : "true",
+        "yarn.resourcemanager.webapp.address" : "tnode2:8088",
+        "yarn.resourcemanager.webapp.delegation-token-auth-filter.enabled" : "false",
+        "yarn.resourcemanager.webapp.https.address" : "tnode2:8090",
+        "yarn.resourcemanager.work-preserving-recovery.enabled" : "true",
+        "yarn.resourcemanager.work-preserving-recovery.scheduling-wait-ms" : "10000",
+        "yarn.resourcemanager.zk-acl" : "world:anyone:rwcda",
+        "yarn.resourcemanager.zk-address" : "tnode2:2181,tnode1:2181",
+        "yarn.resourcemanager.zk-num-retries" : "1000",
+        "yarn.resourcemanager.zk-retry-interval-ms" : "1000",
+        "yarn.resourcemanager.zk-state-store.parent-path" : "/rmstore",
+        "yarn.resourcemanager.zk-timeout-ms" : "10000",
+        "yarn.scheduler.maximum-allocation-mb" : "3072",
+        "yarn.scheduler.maximum-allocation-vcores" : "1",
+        "yarn.scheduler.minimum-allocation-mb" : "1024",
+        "yarn.scheduler.minimum-allocation-vcores" : "1",
+        "yarn.timeline-service.address" : "tnode2:10200",
+        "yarn.timeline-service.bind-host" : "0.0.0.0",
+        "yarn.timeline-service.client.max-retries" : "30",
+        "yarn.timeline-service.client.retry-interval-ms" : "1000",
+        "yarn.timeline-service.enabled" : "true",
+        "yarn.timeline-service.entity-group-fs-store.active-dir" : "/ats/active/",
+        "yarn.timeline-service.entity-group-fs-store.cleaner-interval-seconds" : "3600",
+        "yarn.timeline-service.entity-group-fs-store.done-dir" : "/ats/done/",
+        "yarn.timeline-service.entity-group-fs-store.group-id-plugin-classes" : "",
+        "yarn.timeline-service.entity-group-fs-store.retain-seconds" : "604800",
+        "yarn.timeline-service.entity-group-fs-store.scan-interval-seconds" : "60",
+        "yarn.timeline-service.entity-group-fs-store.summary-store" : "org.apache.hadoop.yarn.server.timeline.RollingLevelDBTimelineStore",
+        "yarn.timeline-service.generic-application-history.store-class" : "org.apache.hadoop.yarn.server.applicationhistoryservice.NullApplicationHistoryStore",
+        "yarn.timeline-service.http-authentication.simple.anonymous.allowed" : "true",
+        "yarn.timeline-service.http-authentication.type" : "simple",
+        "yarn.timeline-service.leveldb-state-store.path" : "/hadoop/yarn/timeline",
+        "yarn.timeline-service.leveldb-timeline-store.path" : "/hadoop/yarn/timeline",
+        "yarn.timeline-service.leveldb-timeline-store.read-cache-size" : "104857600",
+        "yarn.timeline-service.leveldb-timeline-store.start-time-read-cache-size" : "10000",
+        "yarn.timeline-service.leveldb-timeline-store.start-time-write-cache-size" : "10000",
+        "yarn.timeline-service.leveldb-timeline-store.ttl-interval-ms" : "300000",
+        "yarn.timeline-service.recovery.enabled" : "true",
+        "yarn.timeline-service.state-store-class" : "org.apache.hadoop.yarn.server.timeline.recovery.LeveldbTimelineStateStore",
+        "yarn.timeline-service.store-class" : "org.apache.hadoop.yarn.server.timeline.EntityGroupFSTimelineStore",
+        "yarn.timeline-service.ttl-enable" : "true",
+        "yarn.timeline-service.ttl-ms" : "2678400000",
+        "yarn.timeline-service.version" : "1.5",
+        "yarn.timeline-service.webapp.address" : "tnode2:8188",
+        "yarn.timeline-service.webapp.https.address" : "tnode2:8190"
+     },
+    "service_config_version_note":"change to hdfs !!"}]}}]'
+"http://192.168.1.194:8080/api/v1/clusters/bigcluster"
+
+
+
+
+
+// mapred-site
+//get
+curl -u admin:admin -H "X-Requested-By: ambari" -X GET "http://192.168.1.194:8080/api/v1/clusters/bigcluster/configurations?type=mapred-site&tag=version1"
+//put
+
+
