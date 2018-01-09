@@ -28,6 +28,7 @@ bigbwa_java: libbwa.so
 	cd $(BUILD_DIR) && $(JAR) cfe BigBWA.jar BigBWA ./*.class && cd ..
 	cd $(BUILD_DIR) && $(JAR) cfe BigBWASeq.jar BwaSeq ./*.class && cd ..
 	$(MPICC) -o $(BUILD_DIR)/reduce $(SRC_DIR)/merge.c
+	$(MPICC) -o $(BUILD_DIR)/merge_bam $(SRC_DIR)/merge_bam.c
 	cp $(SRC_DIR)/run.sh $(BUILD_DIR)
 
 clean:

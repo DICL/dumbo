@@ -3,6 +3,10 @@ if [ $# -lt 5 ]
 then
         echo "USAGE : run.sh <# of partitions> <# of threads per mapper> <input_1> <input_2> <outputdir> [<reference genome>]"
         echo "   input output file location is relative path from HDFS user home directory"
+	echo "	 <example>"
+	echo "    1) ./run.sh 40 4 fastq/ERR000589_1.filt.fastq fastq/ERR000589_2.filt.fastq output"
+	echo "    2) ./run.sh 40 4 fastq/Tumor2_1.fastq fastq/Tumor2_2.fastq output"
+	echo "    3) ./run.sh 40 4 fastq/TNLAB-ASD-4999-BA9-wes-ILLUMINA_1.fastq fastq/TNLAB-ASD-4999-BA9-wes-ILLUMINA_2.fastq output"
         exit 1
 fi
 
