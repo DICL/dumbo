@@ -47,7 +47,6 @@ int main(int argc, char *argv[])
 	// open inputfile in parallel
 	sprintf(fileName,"%s%d.bam\0",prefix,rank);
 	inFd = open(fileName, O_RDONLY);
-//	inFd = open(prefix, O_RDONLY);	//to be deleted
 
 	if( inFd == -1 ) {
 		perror(fileName);
@@ -58,16 +57,13 @@ int main(int argc, char *argv[])
 	// get the length of input file
 	len = lseek(inFd,0L,SEEK_END);
 
-	// TODO:1)file size check more than 28
-	// 		2)check tail 
-	//      3)gzip header check, first 12 bytes magic number
-	//      4)read extra len from gzip header and read contents
-	//      5)find extra BAM header, and get header block length
+	// 1)file size check more than 28
 	if( len < 28 ) {
 		err = 2;
 		goto check;
 	}
 
+	// 2)check tail 
 	lseek(inFd, -28,SEEK_END);
 	if( forceRead(inFd, tail, 28) == -1 ) {
 		err = 3;
@@ -80,6 +76,7 @@ int main(int argc, char *argv[])
 		}
 	}
 
+	// gzip header check, first 12 bytes starting with magic number
 	lseek(inFd, 0, SEEK_SET);
 	if( forceRead(inFd, header, 12) == -1 ) {
 		err = 3;
@@ -90,15 +87,9 @@ int main(int argc, char *argv[])
 		goto check;
 	}
 
-	printf("[%d] header = ",rank);
-	for(i = 0 ; i < 12 ; i++) {
-		printf("%d ",(size_t)header[i]);
-	}
-	printf("\n");
-
+	// 4)read extra len from gzip header and read contents
 	xlen = header[11] * 256 + header[10];
-//	xlen = (size_t)header[10];
-	printf("[%d] xlen = %d\n",rank,xlen); 
+	// 5)find extra BAM header, and get header block length
 	if( xlen > 0 ) {
 		xbuf = malloc(xlen);
 
@@ -114,8 +105,8 @@ int main(int argc, char *argv[])
 			}
 			cur += 2 + (int)xbuf[cur+3] << 8 + (int)xbuf[cur+2];
 		}
+		free(xbuf);
 	}
-	printf("[%d] headerSize = %d\n",rank,headerSize); 
 	if( headerSize == -1 ) {
 		err = 7;
 		goto check;
@@ -147,15 +138,12 @@ check:
 
 	printf("[%d/%d] s_off = %ld , t_off = %ld, len = %d\n",rank,size,s_off,t_off,len);
 
-//	goto close;
-
 	// truncate the file size to the maximum.
 	if( rank == (size - 1) ) {
 		if( ftruncate(outFd, (off_t)end) != 0 ) {
 			perror("Error on truncate output file :");
 			goto close;
 		}
-//		printf("Merged file size : %ld\n", end); 
 	}
 	MPI_Barrier(MPI_COMM_WORLD);
 
