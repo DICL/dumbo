@@ -1,0 +1,197 @@
+<div class="right_wrap pull-left" index="1">
+  <div class="title_wrap">
+    <div class="text">Yarn</div>
+  </div>
+
+  <div id="yarn" class="contents_wrap " >
+
+    <!-- # cluster start #-->
+    <div class="cluster_wrap container " index="1">
+      <div class="title_wp">
+        <div class="text text-uppercase">CLUSTER STATUS</div>
+      </div>
+      <div class="content_wp row">
+        <div class=" col-md-4 ">
+          <div class="content">
+            <!-- <iframe src="http://192.168.1.194:3000/dashboard-solo/db/yarn-home2?panelId=3&fullscreen&theme=light" ></iframe> -->
+            <iframe ng-src="{{ graph_url.yarn_3 }}" scrolling="no"></iframe>
+          </div>
+          
+        </div>
+        <div class=" col-md-4 ">
+          <div class="content">
+            <!-- <iframe src="http://192.168.1.194:3000/dashboard-solo/db/yarn-home2?panelId=10&fullscreen&theme=light"></iframe> -->
+            <iframe ng-src="{{ graph_url.yarn_10 }}" scrolling="no"></iframe>
+          </div>
+        </div>
+        <div class=" col-md-4 ">
+          <div class="content">
+            <!-- <iframe src="http://192.168.1.194:3000/dashboard-solo/db/yarn-home2?panelId=6&fullscreen&theme=light"></iframe> -->
+            <iframe ng-src="{{ graph_url.yarn_6 }}" scrolling="no"></iframe>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+
+    <div class="cluster_wrap container " index="2">
+      <div class="title_wp">
+        <div class="text text-uppercase">application summary</div>
+      </div>
+      <div class="content_wp row" row="1">
+        <div class=" col-md-4 ">
+          <div class="content">
+            <!-- <iframe src="http://192.168.1.194:3000/dashboard-solo/db/yarn-home2?panelId=12&fullscreen&theme=light"></iframe> -->
+            <iframe ng-src="{{ graph_url.yarn_12 }}" scrolling="no"></iframe>
+          </div>
+          
+        </div>
+        <div class=" col-md-4 ">
+          <div class="content">
+            <!-- <iframe src="http://192.168.1.194:3000/dashboard-solo/db/yarn-home2?panelId=11&fullscreen&theme=light"></iframe> -->
+            <iframe ng-src="{{ graph_url.yarn_11 }}" scrolling="no"></iframe>
+          </div>
+        </div>
+        <div class=" col-md-4 ">
+          <div class="content">
+            <!-- <iframe src="http://192.168.1.194:3000/dashboard-solo/db/yarn-home2?panelId=14&fullscreen&theme=light"></iframe> -->
+            <iframe ng-src="{{ graph_url.yarn_14 }}" scrolling="no"></iframe>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+      <div class="content_wp row" row="2">
+        <div class=" col-md-4 ">
+          <div class="content">
+            <!-- <iframe src="http://192.168.1.194:3000/dashboard-solo/db/yarn-home2?panelId=13&fullscreen&theme=light"></iframe> -->
+            <iframe ng-src="{{ graph_url.yarn_13 }}" scrolling="no"></iframe>
+          </div>
+        </div>
+        <div class=" col-md-4 ">
+          <div class="content">
+            <!-- <iframe src="http://192.168.1.194:3000/dashboard-solo/db/yarn-home2?panelId=15&fullscreen&theme=light"></iframe> -->
+            <iframe ng-src="{{ graph_url.yarn_15 }}" scrolling="no"></iframe>
+          </div>
+        </div>
+        <div class=" col-md-4 ">
+          <div class="content">
+            <!-- <iframe src="http://192.168.1.194:3000/dashboard-solo/db/yarn-home2?panelId=16&fullscreen&theme=light"></iframe> -->
+            <iframe ng-src="{{ graph_url.yarn_16 }}" scrolling="no"></iframe>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+    <div class="cluster_wrap container " index="3">
+      <div class="title_wp">
+        <div class="text text-uppercase">RPC Avg Processing / Queue Time</div>
+      </div>
+      <div class="content_wp row">
+        <div class=" col-md-12 ">
+          <div class="content">
+            <!-- <iframe src="http://192.168.1.194:3000/dashboard-solo/db/yarn-home2?panelId=17&fullscreen&theme=light"></iframe> -->
+            <iframe ng-src="{{ graph_url.yarn_17 }}" scrolling="no"></iframe>
+            <!-- <div class="graph"></div> -->
+          </div>
+        </div>  
+      </div>
+    </div>
+  </div><!-- content_wrap end -->
+</div><!-- right_wrap end -->
+
+<div class="right_wrap pull-left" index="2">
+  <div class="title_wrap">
+    <div class="text">Application</div>
+  </div>
+
+  <div id="yarn" class="contents_wrap container" >
+    <!-- 테스트 -->
+    <!-- <section ng-app="myApp" ng-controller="YarnDataController"> -->
+    <section >
+        <div id="search_wrap">
+        검색 :
+        <input type="text" ng-model="searchKeyword" />
+        </div>
+        <!-- <table class="table table-bordered  table-striped table-condensed table-hover"> -->
+        <table class="table table-striped table-condensed table-hover">
+            <thead>
+              <tr>
+                <th class="id" custom-sort order="'id'" sort="sort"> ID </th>
+                <th class="user" custom-sort order="'user'" sort="sort"> User </th>
+                <th class="name" custom-sort order="'name'" sort="sort"> Application Type </th>
+                <th class="applicationType" custom-sort order="'applicationType'" sort="sort"> Queue </th>
+                <th class="startedTime" custom-sort order="'startedTime'" sort="sort"> StartTime </th>
+                <th class="finishedTime" custom-sort order="'finishedTime'" sort="sort"> FinishTime </th>
+                <th class="state" custom-sort order="'state'" sort="sort"> State </th>
+                <th class="finalStatus" custom-sort order="'finalStatus'" sort="sort"> FinalStatus </th>
+                <th class="runningContainers" custom-sort order="'runningContainers'" sort="sort"> Running Containers </th>
+                <th class="allocatedVCores" custom-sort order="'allocatedVCores'" sort="sort"> Allocated CPU VCore </th>
+                <th class="allocatedMB" custom-sort order="'allocatedMB'" sort="sort"> Allocated Memory MB </th>
+                <th class="queueUsagePercentage" custom-sort order="'queueUsagePercentage'" sort="sort"> % of Queue </th>
+                <th class="clusterUsagePercentage" custom-sort order="'clusterUsagePercentage'" sort="sort"> % of Cluster </th>
+                <th class="progress" custom-sort order="'progress'" sort="sort"> Progress </th>
+                <th class="trackingUI" custom-sort order="'trackingUI'" sort="sort"> Tracking UI </th>
+
+                <!-- <th class="id" custom-sort order="'id'" sort="sort"><a href="#" ng-click="orderByField='id'; reverseSort = !reverseSort"> ID </a></th>
+                <th><a href="#" ng-click="orderByField='user'; reverseSort = !reverseSort"> User </a></th>
+                <th><a href="#" ng-click="orderByField='name'; reverseSort = !reverseSort"> Application Type </a></th>
+                <th><a href="#" ng-click="orderByField='applicationType'; reverseSort = !reverseSort"> Queue </a></th>
+                <th><a href="#" ng-click="orderByField='startedTime'; reverseSort = !reverseSort"> StartTime </a></th>
+                <th><a href="#" ng-click="orderByField='finishedTime'; reverseSort = !reverseSort"> FinishTime </a></th>
+                <th><a href="#" ng-click="orderByField='state'; reverseSort = !reverseSort"> State </a></th>
+                <th><a href="#" ng-click="orderByField='finalStatus'; reverseSort = !reverseSort"> FinalStatus </a></th>
+                <th><a href="#" ng-click="orderByField='runningContainers'; reverseSort = !reverseSort"> Running Containers </a></th>
+                <th><a href="#" ng-click="orderByField='allocatedVCores'; reverseSort = !reverseSort"> Allocated CPU VCore </a></th>
+                <th><a href="#" ng-click="orderByField='allocatedMB'; reverseSort = !reverseSort"> Allocated Memory MB </a></th>
+                <th><a href="#" ng-click="orderByField='queueUsagePercentage'; reverseSort = !reverseSort"> % of Queue </a></th>
+                <th><a href="#" ng-click="orderByField='clusterUsagePercentage'; reverseSort = !reverseSort"> % of Cluster </a></th>
+                <th><a href="#" ng-click="orderByField='progress'; reverseSort = !reverseSort"> Progress </a></th>
+                <th><a href="#" ng-click="orderByField='trackingUI'; reverseSort = !reverseSort"> Tracking UI </a></th> -->
+              </tr>
+            </thead>
+            <tfoot>
+              <td colspan="15">
+                <div class=" pull-left">
+                  <ul class="pagination">
+                    <li ng-class="{disabled: currentPage==0}">
+                      <a href ng-click="prevPage()">« Prev</a>
+                    </li>
+                    <li ng-repeat="n in range(pagedItems.length, currentPage, currentPage+gap)" ng-class="{active:n==currentPage}" ng-click="setPage()">
+                      <a href ng-bind="n+1">1</a>
+                    </li>
+                    <li ng-class="{disabled: currentPage== pagedItems.length-1}">
+                      <a href ng-click="nextPage()">Next » </a>
+                    </li>
+                  </ul>
+                </div>
+              </td>
+            </tfoot>
+            <pre>pagedItems.length: {{pagedItems.length|json}}</pre>
+            <pre>currentPage: {{currentPage|json}}</pre>
+            <pre>currentPage: {{sort|json}}</pre>
+            <tbody>
+                <!-- <tr ng-repeat="item in items | filter:searchKeyword | orderBy:orderByField:reverseSort"> -->
+                <tr ng-repeat="item in pagedItems[currentPage] | orderBy:sort.sortingOrder:sort.reverse">
+                    <td  style="background-color:#f1f1f1">{{item.id}}</td>
+                    <td >{{item.user}}</td>
+                    <td >{{item.name}}</td>
+                    <td >{{item.applicationType}}</td>
+                    <td >{{item.startedTime | date}}</td>
+                    <td >{{item.finishedTime | date}}</td>
+                    <td >{{item.state}}</td>
+                    <td >{{item.finalStatus}}</td>
+                    <td >{{item.runningContainers}}</td>
+                    <td >{{item.allocatedVCores}}</td>
+                    <td >{{item.allocatedMB}}</td>
+                    <td >{{item.queueUsagePercentage}}</td>
+                    <td >{{item.clusterUsagePercentage}}</td>
+                    <td >{{item.progress}}</td>
+                    <!-- <td ng-controller="getHistoryJobId" ng-if="$even"><a herf="#" ng-click="click()"> {{item.trackingUI}} </a></td> -->
+                    <td ><a herf="#" ng-click="click(item.id)"> {{item.trackingUI}} </a></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <!-- 테스트 끝 -->
+  </div>
+</div>

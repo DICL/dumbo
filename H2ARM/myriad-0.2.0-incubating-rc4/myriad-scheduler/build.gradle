@@ -1,0 +1,111 @@
+/**
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+ plugins {
+     id "com.moowork.gulp" version "0.11"
+ }
+
+dependencies {
+    compile project(':myriad-commons')
+
+    compile "org.apache.hadoop:hadoop-common:${hadoopVer}"
+    compile "org.apache.hadoop:hadoop-yarn-common:${hadoopVer}"
+    compile "org.apache.hadoop:hadoop-yarn-server-resourcemanager:${hadoopVer}"
+    compile "com.lmax:disruptor:3.3.0"
+    compile "io.dropwizard.metrics:metrics-core:${metricsVer}"
+    compile "io.dropwizard.metrics:metrics-annotation:${metricsVer}"
+    compile "io.dropwizard.metrics:metrics-healthchecks:${metricsVer}"
+    compile "org.hibernate:hibernate-validator:5.1.2.Final"
+    compile "com.fasterxml.jackson.core:jackson-annotations:2.5.1"
+    compile "com.fasterxml.jackson.core:jackson-databind:2.5.1"
+    compile "com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.5.1"
+    compile "org.apache.curator:curator-framework:2.7.1"
+    compile "org.apache.commons:commons-lang3:3.4"
+    compile 'com.google.inject.extensions:guice-multibindings:3.0'
+    testCompile "org.apache.hadoop:hadoop-yarn-server-resourcemanager:${hadoopVer}:tests"
+}
+
+configurations {
+    myriadSchedulerConf.extendsFrom(runtime)
+    myriadSchedulerConf.exclude group: 'org.apache.hadoop', module: '*'
+}
+
+// copies dependencies to build/libs dir
+task copyRunTimeDeps(type: Sync) {
+    from configurations.myriadSchedulerConf
+    into "$buildDir/libs"
+}
+
+jar {
+    dependsOn copyRunTimeDeps
+}
+
+clean {
+    dependsOn gulp_clean
+}
+
+processResources {
+    exclude ('*/node_modules/**')
+    dependsOn gulp_build
+}
+
+sourceSets {
+    main {
+        resources {
+            include '*.*'
+            include 'webapp/public/**'
+            exclude 'webapp/node_modules/**'
+            exclude 'webapp/css'
+            exclude 'webapp/img'
+            exclude 'webapp/js'
+            exclude 'webapp/*.*'
+        }
+    }
+}
+
+node {
+    // Version of node to use.
+    version = '4.2.1'
+
+    // Base URL for fetching node distributions (change if you have a mirror).
+    distBaseUrl = 'https://nodejs.org/dist'
+
+    // If true, it will download node using above parameters.
+    // If false, it will try to use globally installed node.
+    download = true
+
+    // Set the work directory where node_modules should be located
+    nodeModulesDir = file("${project.projectDir}/src/main/resources/webapp")
+}
+
+gulp {
+    // Set the directory where gulpfile.js should be found
+    workDir = file("${project.projectDir}/src/main/resources/webapp")
+
+    // Whether colors should output on the terminal
+    colors = false
+
+    // Whether output from Gulp should be buffered - useful when running tasks in parallel
+    bufferOutput = false
+
+  // makes sure on each build that gulp is installed
+    gulp_build.dependsOn 'installGulp'
+
+  // processes your package.json before running gulp build
+    gulp_build.dependsOn 'npmInstall'
+}

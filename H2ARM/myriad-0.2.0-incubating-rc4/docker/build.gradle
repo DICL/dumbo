@@ -1,0 +1,82 @@
+/**
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.9'
+}
+
+buildscript {
+    repositories {
+        jcenter()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.bmuschko:gradle-docker-plugin:2.6.1'
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+apply plugin: 'com.bmuschko.docker-remote-api'
+
+import com.bmuschko.gradle.docker.tasks.image.Dockerfile
+import com.bmuschko.gradle.docker.tasks.image.DockerBuildImage
+
+task copySchedulerJars(type:Copy){
+    dependsOn(":myriad-scheduler:build")
+    def subdir = new File(project.buildDir, "libs")
+    if( !subdir.exists() ) { subdir.mkdirs() }
+    from '../myriad-scheduler/build/libs'
+    into 'libs'
+}
+
+task copyExecutorJars(type:Copy){
+    dependsOn(":myriad-executor:build")
+    def subdir = new File(project.buildDir, "libs")
+    if( !subdir.exists() ) { subdir.mkdirs() }
+    from '../myriad-executor/build/libs'
+    into 'libs'
+}
+
+
+task copyMyriadJars(dependsOn: ":myriad-scheduler:build") {
+    dependsOn(copySchedulerJars)
+    dependsOn(copyExecutorJars)
+}
+
+task buildRMDocker(type: DockerBuildImage) {
+    dependsOn(copyMyriadJars)
+    if (System.env.DOCKER_HOST) {
+        url = "$System.env.DOCKER_HOST".replace("tcp","https")
+        if (System.env.DOCKER_CERT_PATH) {
+            certPath = new File(System.env.DOCKER_CERT_PATH)
+        }
+    }
+    else {
+        url = 'unix:///var/run/docker.sock'
+    }  
+    inputDir = file('.')
+    if(!project.hasProperty('dockerTag')) {
+        tag = 'mesos/myriad'
+    } else {
+        tag = dockerTag
+    }
+}

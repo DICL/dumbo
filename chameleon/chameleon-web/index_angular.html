@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="ko" ng-app="superCom">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <title>Chameleon</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/lustre.css" rel="stylesheet">
+    <link href="css/yarn.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/c3.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+    <!-- <script src="js/bootstrap.min.js"></script> -->
+    <script src="js/bootstrap.js"></script>
+    <script src="js/d3.min.js"></script>
+    <script src="js/c3.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-route.js"></script>
+    <script src="js/augularModule.js"></script>
+    <script src="js/common.js"></script>
+
+    <style>
+    </style>
+  </head>
+  <!-- <body  ng-controller="MainCtrl"> -->
+  <body>
+    <div id="loading"></div>
+    <header id="header">
+      <div class="containers">
+        <div class="logo"> <a href="main.html"><img src="images/logo.png">Chameleon</a> </div>
+      </div>
+    </header>
+
+    <nav class="navbar navbar-default navbar-static-top" id="nav">
+      <div class="containers"  btn-containers>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav  pull-left">
+            <li class="" ng-class="{active:$route.current.activetab == 'main'}"><a href="#/main" menu="main" >Main</a></li>
+            <li class="" ng-class="{active:$route.current.activetab == 'lustre'}"><a href="#/lustre" menu="lustre">LustreFS</a></li>
+            <li class="" ng-class="{active:$route.current.activetab == 'yarn'}"><a href="#/yarn" menu="yarn" >Yarn</a></li>
+            <!-- <li class="" ng-class="{active:$route.current.activetab == 'ambari'}"><a href="#/ambari" menu="ambari" >Ambari</a></li> -->
+            <li class="" ng-class="{active:$route.current.activetab == 'ambari'}"><a href="#/ambari" menu="ambari" >Ambari</a></li>
+          </ul>
+           <ul class="nav navbar-nav pull-right">
+            <li class="nav_icon alerts"><img src="images/icon_alerts.png"></li>
+            <li class="nav_icon setting"><img src="images/icon_setting.png"></li>
+            <li class="nav_icon refresh"><img src="images/icon_refresh.png"></li>
+            <li class="nav_icon logout"><img src="images/icon_logout.png"></li>
+          </ul>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+
+      <div class="alerts_popover hide" id="popover">
+          <div class="pop_title">Alerts</div>
+          <div class="pop_desc"></div>
+      </div>
+
+
+    </nav>
+
+
+    <div class="containers content" >
+         <div class="left_wrap pull-left">
+            <div class="left_wrap_title">Summary</div>
+            <div class="graph_wrap">
+              <div class="bullet"><i class="fa fa-circle"></i></div> <div class="graph_title">Live Status</div> <div class="clearfix"></div>
+              <div id="liveStatusBar">
+                <div class="graph_label"><span class="value"></span><span class="total"></span></div>
+                <div class="bar_graph">
+                  <div class="value1" style="width:0%"></div><div class="value2" style="width:0%"></div>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="bar_legend_wrap">
+                    <span class="rect value1"></span><span class="text">Live</span>
+                    <span class="rect value2"></span><span class="text">Dead</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="graph_wrap">
+              <div class="bullet" style="color:#DEB324;"><i class="fa fa-circle"></i></div> <div class="graph_title">Storage Usage Status</div> <div class="clearfix"></div>
+              <div id="storageUsageBar">
+                <div class="graph_label"><span class="value"></span><span class="total"></span></div>
+                <div class="bar_graph">
+                  <div class="value1" style="width:0%"></div><div class="value2" style="width:0%"></div>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="bar_legend_wrap">
+                    <span class="rect value1"></span><span class="text">Used</span>
+                    <span class="rect value2"></span><span class="text">Remaining</span>
+                </div>              
+              </div>
+            </div>
+
+                     
+            <div class="graph_wrap">
+              <div class="bullet" style="color:#F76415;"><i class="fa fa-circle"></i></div> <div class="graph_title">Resource Manager Heap Status</div> <div class="clearfix"></div>
+              <div id="resourceHeapBar">
+                <div class="graph_label"><span class="value"></span><span class="total"></span></div>
+                <div class="bar_graph">
+                  <div class="value1" style="width:0%"></div><div class="value2" style="width:0%"></div>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="bar_legend_wrap">
+                    <span class="rect value1"></span><span class="text">Used</span>
+                    <span class="rect value2"></span><span class="text">Remaining</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="graph_wrap">
+              <div class="bullet" style="color:#F76415;"><i class="fa fa-circle"></i></div> <div class="graph_title">Yarn Memory Status</div> <div class="clearfix"></div>
+              <div id="yarnMemoryBar">
+                <div class="graph_label"><span class="value"></span><span class="total"></span></div>
+                <div class="bar_graph">
+                  <div class="value1" style="width:0%"></div><div class="value2" style="width:0%"></div>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="bar_legend_wrap">
+                    <span class="rect value1"></span><span class="text">Used</span>
+                    <span class="rect value2"></span><span class="text">Remaining</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="graph_wrap">
+              <div class="bullet" style="color:#DEB324;"><i class="fa fa-circle"></i></div> <div class="graph_title">NameNode Heap Status</div> <div class="clearfix"></div>
+              <div id="namenodeHeapBar">
+                <div class="graph_label"><span class="value"></span><span class="total"></span></div>
+                <div class="bar_graph">
+                  <div class="value1" style="width:0%"></div><div class="value2" style="width:0%"></div>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="bar_legend_wrap">
+                    <span class="rect value1"></span><span class="text">Used</span>
+                    <span class="rect value2"></span><span class="text">Remaining</span>
+                </div>
+              </div>
+            </div> 
+
+          </div>
+
+        <div class="left_wrap_btn pull-left"></div>
+
+        <!-- right area start -->
+        <div class="right_area" >
+          <ng-view></ng-view>
+        </div>
+        <!-- right area end -->
+        
+      </div>
+
+    </div> <!-- /container -->
+
+    <script type="text/javascript">
+    
+      $(function(){
+        $.ajaxSetup({
+          xhrFields: { withCredentials: true },
+          beforeSend: function(xhr) {  xhr.setRequestHeader("Authorization", "Basic " + btoa("admin:admin")); }
+        });        
+        
+        // k.park move to angularModule
+        // clusterInfo.getClusterName();
+        // $("#chameleonNode").removeClass("hide");
+        // $("#loading").addClass("hide");
+        // listener();
+
+        // k.park : already not use        
+        // clusterInfo.getLusterUsage();
+        // setInterval(function(){ 
+        //   console.log("#########################################################################################");
+        //   clusterInfo.getLusterUsage();
+        // }, 1000);
+          
+      });
+      
+      // k.park move to angularModule
+      // function leftGraphInit(){
+      //     $.when(leftGraph.getLiveStatus(), leftGraph.getStorageUsage(), leftGraph.getResourceHeap(), leftGraph.getYarnMemory(), leftGraph.getNamenodeHeap(), leftGraph.getAlert()).done(function (result1, result2, result3, result4, result5, result6) {
+
+      //         // left Graph
+      //         if(result1){
+      //           leftGraph.drawLiveStatus(result1);  
+      //         }
+      //         if(result2){
+      //           leftGraph.drawStorageUsage(result2);  
+      //         }
+      //         if(result3){
+      //           leftGraph.drawResourceHeap(result3);  
+      //         }
+      //         if(result4){
+      //           leftGraph.drawYarnMemory(result4);  
+      //         }
+      //         if(result5){
+      //           leftGraph.drawNamenodeHeap(result5);  
+      //         }
+      //         if(result6){
+      //           leftGraph.drawAlert(result6);  
+      //         }
+
+      //         // loading hide
+      //         $("#chameleonNode").removeClass("hide");
+      //         $("#loading").addClass("hide");
+
+      //     });
+      // }
+
+
+      // k.park move to angularModule
+      // var clusterInfo = {
+      //   nodeComponentObj : {},
+      //   getLusterUsage : function(){
+      //      var that = this;
+
+      //      var endTime = new Date().getTime();
+      //      var startTime = new Date(endTime - 3600000).getTime();
+      //      $.ajax({
+      //         url: location.origin + "/api/v1/clusters/bigcluster/services/LUSTRE6/components/LUSTRE6_CLIENT?fields=metrics/Oss1Read["+startTime+","+endTime+",15],metrics/Oss1Write["+startTime+","+endTime+",15],metrics/Oss2Read["+startTime+","+endTime+",15],metrics/Oss2Write["+startTime+","+endTime+",15]",
+      //         // url: location.origin + "/api/v1/clusters/bigcluster/services/LUSTRE/components/LUSTRE_MASTER?fields=metrics/Oss1Read["+startTime+","+endTime+",15],metrics/Oss1Write["+startTime+","+endTime+",15],metrics/Oss2Read["+startTime+","+endTime+",15],metrics/Oss2Write["+startTime+","+endTime+",15]",
+      //         success : function(data){
+      //             // console.log("::::::::::::::::getClusterName:::::::::::::::: \n", data);
+      //             var ajaxData = JSON.parse(data);
+      //             that.drawLusterUsage(ajaxData);
+      //         },
+      //         error : function(err){
+      //            console.log("error");
+      //            console.log(err);
+      //         }
+      //      });
+      //   },
+      //   drawLusterUsage : function(data){
+      //     var that = this;
+
+      //     var Oss1Read = that.procLusterUsage(data.metrics.Oss1Read);
+      //     var Oss1Write = that.procLusterUsage(data.metrics.Oss1Write);
+      //     var Oss2Read = that.procLusterUsage(data.metrics.Oss2Read);
+      //     var Oss2Write = that.procLusterUsage(data.metrics.Oss2Write);
+
+      //     that.drawLusterLine('#line1', Oss1Read[0], Oss1Read[1]);
+      //     that.drawLusterLine('#line2', Oss1Write[0], Oss1Write[1]);
+      //     that.drawLusterLine('#line3', Oss2Read[0], Oss2Read[1]);
+      //     that.drawLusterLine('#line4', Oss2Write[0], Oss2Write[1]);
+
+      //   },
+      //   procLusterUsage : function(arr){
+      //     var graphData = ['data'];
+      //     var xData = ['x'];
+      //     var temp = 0;
+      //     for(var i=0; i<arr.length; i++){
+      //         var used = arr[i][0];
+      //         var time = new Date(arr[i][1] * 1000).format("HH:mm:ss");
+
+      //         if(i>0){ temp = new Date(arr[i-1][1] * 1000).format("HH:mm:ss"); }
+      //         if(temp == time){ temp = time; continue; }
+
+      //         xData.push(time);
+      //         graphData.push(used);
+      //     }
+      //     return [xData, graphData];
+      //   },
+      //   drawLusterLine : function(target, graphData, xData){ 
+      //       var chart = target.replace("#","");
+      //       window[chart] = c3.generate({
+      //                           size: {width: 370},
+      //                           padding: { top: 20, bottom: 20, right: 20 },
+      //                           bindto: target,
+      //                           data: {
+      //                             type: 'spline',
+      //                             x: 'x',
+      //                              xFormat: '%H:%M:%S', // 'xFormat' can be used as custom format of 'x'
+      //                               columns: [
+      //                                   xData,
+      //                                   graphData
+      //                               ]
+      //                           },
+      //                           axis: {
+      //                               x: {
+      //                                   type: 'timeseries',
+      //                                   tick: {
+      //                                       format: '%H:%M:%S',
+      //                                       count: 10,
+      //                                   }
+      //                               },
+      //                               y: {
+      //                                 label: {
+      //                                     text: 'KB',
+      //                                     position: 'inner-top'
+      //                                 },
+      //                                 tick: {
+      //                                     format: function (d) { return d.comma(); }
+      //                                   }
+      //                               }
+      //                           },
+      //                           point: { show: false },
+      //                           legend: { show: false },
+      //                           // grid: { x: { show: true }, y: { show: true } },
+      //                           tooltip: {
+      //                             contents: function (d, defaultTitleFormat, defaultValueFormat, color) {
+      //                               $("#line_tooltip").html("");
+      //                                 var html = '';
+      //                                 html += ' <div id="line_tooltip">'
+      //                                 html += '   <div class="name">'+ d[0].x.format("HH:mm:ss"); +'</div>';
+      //                                 html += '   <div class="value">'+d[0].value.comma()+'KB</div>';
+      //                                 html += ' </div> ';
+      //                                 return html;
+      //                             }
+      //                           }
+      //                       });
+
+      //   },
+      //   getClusterName : function(){
+      //      var that = this;
+      //      $.ajax({
+      //         url: location.origin + "/api/v1/clusters",
+      //         success : function(data){
+      //             // console.log("::::::::::::::::getClusterName:::::::::::::::: \n", data);
+      //             var ajaxData = JSON.parse(data);
+      //             var cluster_name = ajaxData.items[0].Clusters.cluster_name;
+      //             $(".cluster_wrap[data-index=1] .cluster_info .cluster_name").html("# Name : " + cluster_name);
+
+      //             that.getClusterDetail(cluster_name);
+      //         },
+      //         error : function(err){
+      //            console.log("error");
+      //            console.log(err);
+      //         }
+      //      });
+      //   },
+
+      //  getClusterDetail: function(cluster_name){
+      //      var that = this;
+      //      $.ajax({
+      //         url: location.origin + "/api/v1/clusters/" + cluster_name + "/services/HDFS/components/NAMENODE" ,
+      //         success : function(data){
+      //             // console.log("::::::::::::::::getClusterDetail:::::::::::::::: \n", data);
+      //             var ajaxData = JSON.parse(data);
+
+      //             var CapacityUsed = ajaxData.ServiceComponentInfo.CapacityUsed;
+      //             if(!CapacityUsed){
+      //               CapacityUsed = 0;
+      //             }
+      //             var CapacityTotal = ajaxData.ServiceComponentInfo.CapacityTotal;
+      //             if(!CapacityTotal){
+      //               CapacityTotal = 0;
+      //             }
+      //             var dfsUsed =  (( CapacityUsed / CapacityTotal ) * 100).toFixed(2);
+      //             if(!dfsUsed){
+      //               dfsUsed = 0;
+      //             }
+      //             var NonDfsUsedSpace = ajaxData.ServiceComponentInfo.NonDfsUsedSpace;
+      //             if(!NonDfsUsedSpace){
+      //               NonDfsUsedSpace = 0;
+      //             }
+      //             var PercentUsed = ajaxData.ServiceComponentInfo.PercentUsed;
+      //             if(!PercentUsed){
+      //               PercentUsed = 0;
+      //             }
+      //             var CapacityRemaining = ajaxData.ServiceComponentInfo.CapacityRemaining;
+      //             if(!CapacityRemaining){
+      //               CapacityRemaining = 0;
+      //             }
+      //             var PercentRemaining = ajaxData.ServiceComponentInfo.PercentRemaining;
+      //             if(!PercentRemaining){
+      //               PercentRemaining = 0;
+      //             }
+                  
+      //             var html = "";
+      //                 html += " - DFS Used : "+ (CapacityUsed/ Math.pow(1024, 4)).toFixed(2) + " / " + (CapacityTotal/ Math.pow(1024, 4)).toFixed(2) +" TB ("+dfsUsed+" %) <br/>";
+      //                 html += " - Non DFS Used : "+ (NonDfsUsedSpace/ Math.pow(1024, 4)).toFixed(2) + " / " + (CapacityTotal/ Math.pow(1024, 4)).toFixed(2) +" TB ("+PercentUsed.toFixed(2)+" %) <br/>";
+      //                 html += " - DFS Remaining : "+ (CapacityRemaining/ Math.pow(1024, 4)).toFixed(2) + " / " + (CapacityTotal/ Math.pow(1024, 4)).toFixed(2) +" TB ("+PercentRemaining.toFixed(2)+" %) <br/>";
+
+      //             $(".cluster_wrap[data-index=1] .cluster_info .cluster_detail_desc").html(html);
+
+      //              that.getNodeList();
+
+      //         },
+      //         error : function(err){
+      //            console.log("error");
+      //            console.log(err);
+      //         }
+      //      });
+      //   },
+
+      //   getNodeList : function(){
+      //     var that = this;
+
+
+      //      $.ajax({
+      //         url: location.origin + "/api/v1/clusters/bigcluster/hosts",
+      //         success : function(data){
+      //             // console.log("::::::::::::::::getNodeList:::::::::::::::: \n", data);
+
+      //             var ajaxData = JSON.parse(data);
+                  
+      //             var hostArr = [];
+      //             for(var i=0; i<ajaxData.items.length; i++){
+      //                 hostArr.push(ajaxData.items[i].Hosts.host_name);
+      //             }
+      //            that.getNodeDetail(hostArr);
+      //         },
+      //         error : function(err){
+      //            console.log("error");
+      //            console.log(err);
+      //         }
+      //      });
+      //   },
+      //   getNodeDetail : function(hostArr){
+      //     var that = this;
+
+      //     var nodeDataArr = [];
+      //     var lusterArr = [];
+      //     var endTime = new Date().getTime();
+      //     var startTime = new Date(endTime - 3600000).getTime();
+
+      //     for(var i=0; i<hostArr.length; i++){ 
+      //         $.ajax({
+      //           async : false,
+      //           url: location.origin + "/api/v1/clusters/bigcluster/hosts/" + hostArr[i] + "?fields=metrics/cpu,metrics/disk,metrics/memory,metrics/network",
+      //           success : function(data){
+      //               // console.log("::::::::::::::::getNodeDetail:::::::::::::::: \n", data);
+      //               var ajaxData = JSON.parse(data);
+      //               nodeDataArr.push(ajaxData);
+      //           },
+      //           error : function(err){
+      //               console.log("error");
+      //               console.log(err);
+      //           }
+      //        });
+
+      //       // luster info
+      //       $.ajax({
+      //           async : false,
+      //           url: location.origin + "/api/v1/clusters/bigcluster/hosts/" + hostArr[i] + "/host_components",
+      //           success : function(data){
+      //               var ajaxData = JSON.parse(data);
+                    
+      //               ajaxData.items.forEach(function(d){ 
+      //                   if(d.HostRoles.component_name == "LUSTRE6_CLIENT"){
+      //                     lusterArr.push(d.HostRoles.host_name.split(".")[0]); 
+      //                   }
+      //               });
+      //           },
+      //           error : function(err){
+      //              console.log("error");
+      //              console.log(err);
+      //           }
+      //        });
+      //     }
+          
+      //     that.drawNode(nodeDataArr, lusterArr);
+
+      //   },
+
+      //   drawNode : function(nodeDataArr, lusterArr){
+      //     var that = this;
+      //     var html = '';
+
+      //     nodeDataArr.forEach(function(data, i){
+
+      //         var nodeName = data.Hosts.host_name.split(".")[0];
+      //         if(!nodeName){
+      //           nodeName = 0;
+      //         }
+      //         var cpu = data.metrics.cpu.cpu_user;
+      //         if(!cpu){
+      //           cpu = 0;
+      //         }
+      //         var ram = ((data.metrics.memory.mem_total - data.metrics.memory.mem_free) / data.metrics.memory.mem_total * 100).toFixed(1);
+      //         if(!ram){
+      //           ram = 0;
+      //         }
+      //         var disk = ((data.metrics.disk.disk_total - data.metrics.disk.disk_free) / data.metrics.disk.disk_total * 100).toFixed(1);
+      //         if(!disk){
+      //           disk = 0;
+      //         }
+      //         var networkIn = (data.metrics.network.bytes_in / Math.pow(1024, 1)).toFixed(1);
+      //         if(!networkIn){
+      //           networkIn = 0;
+      //         }
+      //         var networkOut = (data.metrics.network.bytes_out / Math.pow(1024, 1)).toFixed(1);
+      //         if(!networkOut){
+      //           networkOut = 0;
+      //         }
+      //         var lusterYn = lusterArr.indexOf(nodeName) > -1 ? "Y" : "N";
+
+      //         html+= '  <div class="cluster_node pull-left"> ';
+      //         html+= '      <div class="node_name" data-name="'+nodeName+'" ng-click="nodePopup()">'+nodeName+'</div> ';
+      //         html+= '      <div class="node_status" data-luster="'+lusterYn+'"> ';
+      //         html+= '          <div class="status" data-status="'+that.getNodeStatus(cpu)+'" data-type="cpu">cpu '+cpu+'%</div> ';
+      //         html+= '          <div class="status" data-status="'+that.getNodeStatus(ram)+'" data-type="ram">ram '+ram+'%</div> ';
+      //         html+= '          <div class="status" data-status="'+that.getNodeStatus(disk)+'" data-type="disk">disk '+disk+'%</div> ';
+      //         html+= '          <div class="status" data-status="default" data-type="ni">ni '+networkIn+'KB/s</div> ';
+      //         html+= '          <div class="status" data-status="default" data-type="no">no '+networkOut+'KB/s</div> ';
+      //         html+= '      </div> ';
+      //         html+= '  </div> ';
+      //         if(i==nodeDataArr.length-1){ html += ' <div class="clearfix"></div>'; }
+
+      //     });
+
+
+      //       $(".cluster_node_wrap").html(html);
+
+      //       var target = ".right_wrap .contents_wrap .cluster_wrap .cluster_node .node_status";
+      //       var cHeight = $(target).height();
+      //       var len = $(".cluster_btn_wrap .cluster_btn.active").length;
+      //       $(target + " .status").css("line-height", cHeight/len + "px");
+
+
+
+      //       $(".cluster_btn_wrap .cluster_btn").off("click").on("click",function(){
+      //         var checked = $(".cluster_btn_wrap .cluster_btn.active").length;
+      //         if(checked == 1){ $(this).addClass("active"); }
+      //         else { $(this).toggleClass("active");  }
+
+      //         var type = $(this).attr("menu");
+              
+      //         if($(this).hasClass("active")){
+      //           $(target + " .status[data-type="+type+"]").removeClass("hide");
+      //         } else {
+      //           $(target + " .status[data-type="+type+"]").addClass("hide");
+      //         }
+
+      //         var cHeight = $(target).height();
+      //         var len = $(".cluster_btn_wrap .cluster_btn.active").length;
+      //         $(target + " .status").css("line-height", cHeight/len + "px");
+      //       });
+
+
+
+      //       $(".cluster_btn_wrap .luster_btn").off("click").on("click",function(){
+
+      //           $(this).toggleClass("active");
+      //           var target = ".right_wrap .contents_wrap .cluster_wrap .cluster_node .node_status";
+
+      //           if($(this).hasClass("active")){
+      //             $(target+"[data-luster=Y]").css("box-shadow","2px 2px 4px rgba(0,0,0,0.6)");
+      //           } else {
+      //             $(target+"[data-luster=Y]").css("box-shadow","none");
+      //           }
+      //       });
+
+
+      //       leftGraphInit();
+      //       // clusterInfo.getLusterUsage();
+
+      //   },
+
+      //   getNodeStatus : function(d){
+      //       if(d>=0 && d<=20){ return 1; }
+      //       else if(d>=21 && d<=40){ return 2; }
+      //       else if(d>=41 && d<=60){ return 3; }
+      //       else if(d>=61 && d<=80){ return 4; }
+      //       else if(d>=81 && d<=100){ return 5; }
+      //       else { return "default"; }
+      //   }
+
+
+      // };
+      
+      // k.park move to angularModule
+      // var leftGraph = {
+      //     drawLiveStatus: function(ajaxData){
+      //         var started_count = ajaxData.ServiceComponentInfo.started_count;
+      //         var total_count = ajaxData.ServiceComponentInfo.total_count;
+
+      //         var graph_target = "#liveStatusBar";
+      //         $(graph_target + " .graph_label .value").html(started_count);
+      //         $(graph_target + " .graph_label .total").html(" / "+total_count+" Nodes");
+
+      //         var valuePercent = (( started_count / total_count ) * 100 ).toFixed(0);
+      //         $(graph_target + " .bar_graph .value1").css("width", valuePercent+"%");
+      //         $(graph_target + " .bar_graph .value2").css("width", 100-valuePercent+"%");
+
+
+      //     },
+
+      //     drawStorageUsage : function(ajaxData){
+      //         var CapacityUsed = (ajaxData.ServiceComponentInfo.CapacityUsed / Math.pow(1024, 4)).toFixed(0);
+      //         var CapacityRemaining = (ajaxData.ServiceComponentInfo.CapacityRemaining  / Math.pow(1024, 4)).toFixed(2);
+      //         var CapacityTotal = (ajaxData.ServiceComponentInfo.CapacityTotal / Math.pow(1024, 4)).toFixed(2);
+
+              
+      //         var graph_target = "#storageUsageBar";
+      //         $(graph_target + " .graph_label .value").html(CapacityUsed);
+      //         $(graph_target + " .graph_label .total").html(" / "+CapacityTotal+" TB");
+
+      //         var valuePercent1 = (( CapacityUsed / CapacityTotal ) * 100 ).toFixed(0);
+      //         var valuePercent2 = (( CapacityRemaining / CapacityTotal ) * 100 ).toFixed(0);
+      //         $(graph_target + " .bar_graph .value1").css("width", valuePercent1+"%");
+      //         $(graph_target + " .bar_graph .value2").css("width", valuePercent2+"%");
+
+      //     },
+
+      //     drawResourceHeap : function(ajaxData){
+      //         var HeapMemoryMax = (ajaxData.metrics.jvm.HeapMemoryMax / Math.pow(1024, 2)).toFixed(2);
+      //         var HeapMemoryUsed = (ajaxData.metrics.jvm.HeapMemoryUsed  / Math.pow(1024, 2)).toFixed(2);
+
+      //         var graph_target = "#resourceHeapBar";
+      //         $(graph_target + " .graph_label .value").html(HeapMemoryUsed);
+      //         $(graph_target + " .graph_label .total").html(" / "+HeapMemoryMax+" MB");
+
+      //         var valuePercent = (( HeapMemoryUsed / HeapMemoryMax ) * 100 ).toFixed(0);
+      //         $(graph_target + " .bar_graph .value1").css("width", valuePercent+"%");
+      //         $(graph_target + " .bar_graph .value2").css("width", 100-valuePercent+"%");
+
+      //     },
+
+      //     drawYarnMemory : function(ajaxData){
+      //         var AvailableMB = (ajaxData.metrics.yarn.Queue.root.AvailableMB / Math.pow(1024, 1)).toFixed(2) * 1;
+      //         var AllocatedMB = (ajaxData.metrics.yarn.Queue.root.AllocatedMB  / Math.pow(1024, 1)).toFixed(2) * 1;
+      //         var Total = AvailableMB + AllocatedMB;
+
+      //         var graph_target = "#yarnMemoryBar";
+      //         $(graph_target + " .graph_label .value").html(AllocatedMB);
+      //         $(graph_target + " .graph_label .total").html(" / "+Total+" GB");
+
+      //         var valuePercent = (( AllocatedMB / Total ) * 100 ).toFixed(0);
+      //         $(graph_target + " .bar_graph .value1").css("width", valuePercent+"%");
+      //         $(graph_target + " .bar_graph .value2").css("width", 100-valuePercent+"%");
+      //     },
+
+      //     drawNamenodeHeap : function(ajaxData){
+      //         var HeapMemoryMax = (ajaxData.ServiceComponentInfo.HeapMemoryMax / Math.pow(1024, 2)).toFixed(2) * 1;
+      //         var HeapMemoryUsed = (ajaxData.ServiceComponentInfo.HeapMemoryUsed  / Math.pow(1024, 2)).toFixed(2) * 1;
+              
+      //         var graph_target = "#namenodeHeapBar";
+      //         $(graph_target + " .graph_label .value").html(HeapMemoryUsed);
+      //         $(graph_target + " .graph_label .total").html(" / "+HeapMemoryMax+" MB");
+
+      //         var valuePercent = (( HeapMemoryUsed / HeapMemoryMax ) * 100 ).toFixed(0);
+      //         $(graph_target + " .bar_graph .value1").css("width", valuePercent+"%");
+      //         $(graph_target + " .bar_graph .value2").css("width", 100-valuePercent+"%");
+
+      //     },
+
+      //     drawAlert : function(ajaxData){
+      //       var that = this;
+      //         for(var i=0; i<3; i++){
+      //             var aId = ajaxData.items[i].Alert.id;
+      //             that.getAlertDetail(aId);
+      //         }
+      //     },
+      //     getLiveStatus : function(){
+      //       var deferred = $.Deferred();
+      //        $.ajax({
+      //           url: location.origin + "/api/v1/clusters/bigcluster/services/HDFS/components/DATANODE?fields=ServiceComponentInfo",
+      //           success : function(data){
+      //               // console.log("::::::::::::::::getLiveStatus:::::::::::::::: \n", data);
+
+      //               var ajaxData = JSON.parse(data);
+      //               deferred.resolve(ajaxData);
+      //           },
+      //           error : function(err){
+      //               console.log("error");
+      //              console.log(err);
+      //           }
+      //        });
+      //       return deferred;
+      //     },
+
+      //     getStorageUsage : function(){
+      //       var deferred = $.Deferred();
+      //        $.ajax({
+      //           url: location.origin + "/api/v1/clusters/bigcluster/services/HDFS/components/NAMENODE?fields=ServiceComponentInfo",
+      //           success : function(data){
+      //               // console.log("::::::::::::::::getStorageUsage:::::::::::::::: \n", data);
+      //               var ajaxData = JSON.parse(data);
+      //               deferred.resolve(ajaxData);
+      //           },
+      //           error : function(err){
+      //             console.log("error");
+      //              console.log(err);
+      //           }
+      //        });
+      //       return deferred;
+      //     },
+
+      //     getResourceHeap : function(){
+      //       var deferred = $.Deferred();
+      //        $.ajax({
+      //         url: location.origin + "/api/v1/clusters/bigcluster/services/YARN/components/RESOURCEMANAGER?fields=metrics/jvm",
+      //           success : function(data){
+      //               // console.log("::::::::::::::::getResourceHeap:::::::::::::::: \n", data);
+
+      //               var ajaxData = JSON.parse(data);
+      //                deferred.resolve(ajaxData);
+      //           },
+      //           error : function(err){
+      //             console.log("error");
+      //              console.log(err);
+      //           }
+      //        });
+      //        return deferred;
+      //     },
+
+      //     getYarnMemory : function(){
+      //       var deferred = $.Deferred();
+      //        $.ajax({
+      //           url: location.origin + "/api/v1/clusters/bigcluster/services/YARN/components/RESOURCEMANAGER?fields=metrics/yarn/Queue/root",
+      //           success : function(data){
+      //               // console.log("::::::::::::::::getYarnMemory:::::::::::::::: \n", data);
+
+      //               var ajaxData = JSON.parse(data);
+      //                deferred.resolve(ajaxData);
+      //           },
+      //           error : function(err){
+      //             console.log("error");
+      //              console.log(err);
+      //           }
+      //        });
+      //        return deferred;
+      //     },
+
+      //     getNamenodeHeap : function(){
+      //       var deferred = $.Deferred();
+      //        $.ajax({
+      //           url: location.origin + "/api/v1/clusters/bigcluster/services/HDFS/components/NAMENODE?fields=ServiceComponentInfo",
+      //           success : function(data){
+      //               // console.log("::::::::::::::::getNamenodeHeap:::::::::::::::: \n", data);
+
+      //               var ajaxData = JSON.parse(data);
+      //                deferred.resolve(ajaxData);
+      //           },
+      //           error : function(err){
+      //             console.log("error");
+      //              console.log(err);
+      //           }
+      //        });
+      //        return deferred;
+      //     },
+
+      //     getAlert : function(){
+      //        var that = this;
+      //        var deferred = $.Deferred();
+      //        $.ajax({
+      //           url: location.origin + "/api/v1/clusters/bigcluster/alerts",
+      //           success : function(data){
+      //               // console.log("::::::::::::::::getAlert:::::::::::::::: \n", data);
+
+      //               var ajaxData = JSON.parse(data);
+      //               deferred.resolve(ajaxData);
+      //           },
+      //           error : function(err){
+      //             console.log("error");
+      //              console.log(err);
+      //           }
+      //        });
+      //         return deferred;
+      //     },
+
+      //     getAlertDetail : function(aId){
+      //        var that = this;
+      //        $.ajax({
+      //           url: location.origin + "/api/v1/clusters/bigcluster/alerts/"+aId,
+      //           success : function(data){
+      //               // console.log("::::::::::::::::getAlertDetail:::::::::::::::: \n", data);
+
+      //               var ajaxData = JSON.parse(data);
+      //               that.drawAlertDetail(ajaxData.Alert);
+      //           },
+      //           error : function(err){
+      //             console.log("error");
+      //              console.log(err);
+      //           }
+      //        });
+      //     },
+
+      //     drawAlertDetail : function(data){
+      //       var time = new Date(data.latest_timestamp).format('MM-dd hh:mm'); 
+      //       var alert_name = data.definition_name.replace(/_/gi, " ");;
+
+      //       var target = ".alerts_popover .pop_desc";
+      //       var html = '';
+      //       // html += alert_name + " : " + data.text + " : " + time;
+      //       html += ' <div class="con"> ';
+      //       html += '    <div class="con_title"><i class="fa fa-circle"></i>'+alert_name+'</div> <div class="clearfix"></div> ';
+      //       html += '    <div class="con_desc">'+data.text+'</div> <div class="clearfix"></div> ';
+      //       html += '    <div class="con_val">'+time+'</div> ';
+      //       html += ' </div> ';
+
+      //       $(target).append(html);
+      //     }
+
+      // };
+
+
+      // k.park : not use
+      function setViewHeight(){
+        $(".left_wrap").css("height",$(".right_wrap").height() + 100 + "px")
+      }
+
+      // k.park move to angularModule
+      // function listener(){
+      //   $(".left_wrap_btn").off("click").on("click",function(){
+      //       var that = this;
+      //       var target = $(that).siblings(".left_wrap");
+
+      //       if($(target).hasClass("nav_close")){
+      //         $(target).animate({ width: "21%" }, 500).removeClass("nav_close");
+      //         $(".right_wrap").animate({ width: "75%" }, 500);
+      //         line1.resize({ width: 370 });
+      //         line2.resize({ width: 370 });
+      //         line3.resize({ width: 370 });
+      //         line4.resize({ width: 370 });
+      //         line4.resize({ width: 370 });
+      //       } else {
+      //         $(target).animate({ width: "20px" }, 500).addClass("nav_close");
+      //         $(".right_wrap").animate({ width: "95%" }, 500);
+      //         line1.resize({ width: 480 });
+      //         line2.resize({ width: 480 });
+      //         line3.resize({ width: 480 });
+      //         line4.resize({ width: 480 });
+      //       }
+      //   });
+
+      //   $("#nav .nav_icon.alerts img").on("mouseover",function(e){
+      //       $("#nav .alerts_popover").removeClass("hide").css({"left": (e.pageX-350) + "px", "top": (e.pageY-40)+"px"});; 
+      //   }).on("mouseout",function(){ 
+      //     $("#nav .alerts_popover").addClass("hide"); 
+      //   });
+
+      // }
+
+    </script>
+  </body>
+</html>

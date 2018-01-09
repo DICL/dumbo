@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<!-- Put site-specific property overrides in this file. -->
+
+<configuration>
+  <property>
+    <name>mapred.job.tracker</name>
+    <value>TRUSTY100:9001</value>
+  </property>
+  <property>
+    <name>mapred.jobtracker.taskScheduler</name>
+    <value>org.apache.hadoop.mapred.MesosScheduler</value>
+  </property>
+  <property>
+    <name>mapred.mesos.taskScheduler</name>
+    <value>org.apache.hadoop.mapred.JobQueueTaskScheduler</value>
+  </property>
+  <property>
+    <name>mapred.mesos.master</name>
+    <value>TRUSTY100:5050</value>
+  </property>
+  <property>
+    <name>mapred.mesos.executor.directory</name>
+    <value>/home/jojaeeon/bigdata/hadoop/hadoop-mapreduce1-project/build/hadoop-2.6.0-mr1-cdh5.11.1</value>
+  </property>
+</configuration>
