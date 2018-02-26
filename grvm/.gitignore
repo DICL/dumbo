@@ -1,1 +1,9 @@
 bin/grvm.jar
+bin/libgrvm.so
+classes
+examples/DMMCUDA
+examples/DMMSBSVM
+examples/DMMSBSVMKernel.ptx
+examples/DMMSBSVMKernel.ptx.c
+examples/DMMSBSVMKernel.ptx.h
+examples/*.class

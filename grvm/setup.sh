@@ -1,27 +1,18 @@
-THISFILE=$(readlink -f $BASH_SOURCE)
-PDIR=${THISFILE%/*}
 
-CPS=$(echo $CLASSPATH|tr ':' '\n')
-for CP in $PDIR/bin \
-    $PDIR/lib/jikesrvm3.1.4.jar \
-    ;do 
-    for P in $CPS;do
-        if [[ $P = $CP ]];then
-            continue 2
-        fi
-    done
-    CLASSPATH=$CP:$CLASSPATH
-done
+# Oracle Java SDK 8
+#JAVA_HOME = /usr/lib/jvm/java-8-openjdk-amd64
 
-LPS=$(echo $LD_LIBRARY_PATH|tr ':' '\n')
-for LP in $PDIR/lib \
-          $PDIR/bin \
-          ;do
-    for P in $LPS;do
-        if [[ $LP = $P ]];then
-            continue 2
-        fi
-    done
-    LD_LIBRARY_PATH=$LP:$LD_LIBRARY_PATH
-done
+# NVIDIA CUDA 8
+#CUDA_HOME =
 
+# HADOOP 2.7.2
+#HADOOP_HOME = 
+
+# ant 1.7 or higher
+#ANT_HOME = 
+
+# bison
+#BISON =
+
+PATH=$PWD/bin:$PATH
+CLASSPATH=$PWD/classes:$CLASSPATH

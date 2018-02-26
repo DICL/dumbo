@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="src" path="ptxcmp/src"/>
-	<classpathentry kind="lib" path="lib/jikesrvm3.1.4.jar"/>
+	<classpathentry kind="src" path="examples"/>
+	<classpathentry kind="src" path="src/java"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="/home/bclee/w/rvmbl/eclipse/extra.jar" sourcepath="/home/bclee/w/my/src"/>
+	<classpathentry kind="lib" path="lib/jksvm.jar"/>
+	<classpathentry kind="lib" path="lib/rvmrt.jar"/>
 	<classpathentry kind="output" path="classes"/>
 </classpath>
