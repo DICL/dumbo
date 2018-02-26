@@ -1,0 +1,319 @@
+Index: build.xml
+===================================================================
+--- build.xml	(revision 133772)
++++ build.xml	(working copy)
+@@ -108,9 +108,9 @@
+   <property name="bootimage.threads" value="1"/>
+ 
+   <!-- Source versions -->
+-  <property name="mmtk.java.version" value="1.6"/>
+-  <property name="harness.java.version" value="1.6"/>
+-  <property name="rvm.java.version" value="1.6"/>
++  <property name="mmtk.java.version" value="1.8"/>
++  <property name="harness.java.version" value="1.8"/>
++  <property name="rvm.java.version" value="1.8"/>
+ 	
+   <!-- Default heap layout -->
+   <property name="target.heap-layout" value="32BIT"/>
+Index: rvm/src/org/jikesrvm/classloader/ClassFileReader.java
+===================================================================
+--- rvm/src/org/jikesrvm/classloader/ClassFileReader.java	(revision 133772)
++++ rvm/src/org/jikesrvm/classloader/ClassFileReader.java	(working copy)
+@@ -62,6 +62,11 @@
+         break;
+       case 50: // we only support up to 50.0 (ie Java 1.6.0)
+         if (minor == 0) break;
++//GRVM:begin
++      case 51: // Java SE 7
++      case 52: // Java SE 8
++        break;
++//GRVM:end
+       default:
+         throw new UnsupportedClassVersionError("unsupported class file version " + major + "." + minor);
+     }
+Index: rvm/src/org/jikesrvm/classloader/InterfaceInvocation.java
+===================================================================
+--- rvm/src/org/jikesrvm/classloader/InterfaceInvocation.java	(revision 133772)
++++ rvm/src/org/jikesrvm/classloader/InterfaceInvocation.java	(working copy)
+@@ -191,11 +191,27 @@
+    */
+   private static IMTDict buildIMTDict(RVMClass klass, RVMClass[] interfaces) {
+     IMTDict d = new IMTDict(klass);
++//GRVM:begin
++    for(RVMClass i: interfaces) {
++    	for(RVMMethod dm: i.getVirtualMethods()) {
++    		if (dm.isAbstract())
++    			continue;
++    		InterfaceMethodSignature sig = InterfaceMethodSignature.findOrCreate(dm.getMemberRef());
++    		d.addElement(sig, dm);
++    	}
++    }
++//GRVM:end
+     for (RVMClass i : interfaces) {
+       RVMMethod[] interfaceMethods = i.getDeclaredMethods();
+       for (RVMMethod im : interfaceMethods) {
+         if (im.isClassInitializer()) continue;
+-        if (VM.VerifyAssertions) VM._assert(im.isPublic() && im.isAbstract());
++//GRVM:begin
++//        if (VM.VerifyAssertions) VM._assert(im.isPublic() && im.isAbstract());
++        if (VM.VerifyAssertions) {
++        	// See Ch 4.6 of JVMSPEC SE 8
++        	 VM._assert(im.isPublic() ^ im.isPrivate(), "access flag failure in " + im.getName().toString());
++        }
++//GRVM:end
+         InterfaceMethodSignature sig = InterfaceMethodSignature.findOrCreate(im.getMemberRef());
+         RVMMethod vm = klass.findVirtualMethod(im.getName(), im.getDescriptor());
+         // NOTE: if there is some error condition, then we are playing a dirty trick and
+@@ -383,7 +399,15 @@
+       } else {
+         Link q = p;
+         while (p != null && p.signature.getId() <= sig.getId()) {
+-          if (p.signature.getId() == sig.getId()) return; // already there so nothing to do.
++//GRVM:begin
++//          if (p.signature.getId() == sig.getId()) return; // already there so nothing to do.
++        	if (p.signature.getId() == sig.getId()) {
++        		if (!m.isStatic()) { // an error handler cannot override the current method.
++        			p.method = m;
++        		}
++        		return;
++        	}
++//GRVM:end
+           q = p;
+           p = p.next;
+         }
+@@ -403,6 +427,11 @@
+           if (target.isStatic()) {
+             target.compile();
+             set(tib, imt, slot, target.getCurrentEntryCodeArray());
++//GRVM:begin
++          } else if (target.getDeclaringClass().isInterface()) {
++          	target.compile();
++          	set(tib, imt, slot, target.getCurrentEntryCodeArray());
++//GRVM:end
+           } else {
+             set(tib, imt, slot, tib.getVirtualMethod(target.getOffset()));
+             if (klass.noIMTConflictMap == null) {
+@@ -438,7 +467,10 @@
+ 
+     private static final class Link {
+       final InterfaceMethodSignature signature;
+-      final RVMMethod method;
++//GRVM:begin
++//      final RVMMethod method;
++      RVMMethod method;
++//GRVM:end
+       Link next;
+ 
+       Link(InterfaceMethodSignature sig, RVMMethod m, Link n) {
+Index: rvm/src/org/jikesrvm/classloader/RVMClass.java
+===================================================================
+--- rvm/src/org/jikesrvm/classloader/RVMClass.java	(revision 133772)
++++ rvm/src/org/jikesrvm/classloader/RVMClass.java	(working copy)
+@@ -1315,7 +1315,17 @@
+         method.setOffset(TIB.getVirtualMethodOffset(i));
+       }
+     }
+-
++//GRVM:begin
++    else {
++    	// allocate space for the default method pointers.
++    	for(RVMMethod method: declaredMethods) {
++    		if (!method.isAbstract() && 
++    				!method.isStatic()) {
++    			method.setOffset(Statics.allocateReferenceSlot(true));
++    		}
++    	}
++    }
++//GRVM:end
+     // RCGC: Determine if class is inherently acyclic
+     acyclic = false;    // must initially be false for recursive types
+     boolean foundCyclic = false;
+@@ -1459,46 +1469,94 @@
+     if (superClass != null) {
+       superClass.instantiate();
+     }
+-    if (VM.runningVM) {
+-      // can't instantiate if building bootimage, since this can cause
+-      // class initializer to be lost (when interface is not included in bootimage).
+-      // since we don't need to instantiate/initialize for the purposes of
+-      // dynamic type checking and interface invocation, defer it until runtime
+-      // and the class actually refers to a static field of the interface.
+-      for (RVMClass declaredInterface : declaredInterfaces) {
+-        declaredInterface.instantiate();
+-      }
++//GRVM:begin
++//    if (VM.runningVM) {
++//      // can't instantiate if building bootimage, since this can cause
++//      // class initializer to be lost (when interface is not included in bootimage).
++//      // since we don't need to instantiate/initialize for the purposes of
++//      // dynamic type checking and interface invocation, defer it until runtime
++//      // and the class actually refers to a static field of the interface.
++//      for (RVMClass declaredInterface : declaredInterfaces) {
++//        declaredInterface.instantiate();
++//      }
++//    }
++    for (RVMClass declaredInterface : declaredInterfaces) {
++    	declaredInterface.instantiate();
+     }
+-
++//GRVM:end
++//GRVM:begin
++//    if (!isInterface()) {
++//      // Create the internal lazy method invoker trampoline
++//      typeInformationBlock.initializeInternalLazyCompilationTrampoline();
++//
++//      // Initialize slots in the TIB for virtual methods
++//      for (int i = 0; i < virtualMethods.length; i++) {
++//        RVMMethod method = virtualMethods[i];
++//        if (method.isPrivate() && method.getDeclaringClass() != this) {
++//          typeInformationBlock.setVirtualMethod(i, null); // an inherited private method....will never be invoked via this TIB
++//        } else {
++//          typeInformationBlock.setVirtualMethod(i, method.getCurrentEntryCodeArray());
++//        }
++//      }
++//
++//      // compile <init> methods and put their addresses into jtoc
++//      for (RVMMethod method : constructorMethods) {
++//        Statics.setSlotContents(method.getOffset(), method.getCurrentEntryCodeArray());
++//      }
++//
++//      // compile static methods and put their addresses into jtoc
++//      for (RVMMethod method : staticMethods) {
++//        // don't bother compiling <clinit> here;
++//        // compile it right before we invoke it in initialize.
++//        // This also avoids putting <clinit>s in the bootimage.
++//        if (!method.isClassInitializer()) {
++//          Statics.setSlotContents(method.getOffset(), method.getCurrentEntryCodeArray());
++//        }
++//      }
++//    }
++    // Create the internal lazy method invoker trampoline
+     if (!isInterface()) {
+-      // Create the internal lazy method invoker trampoline
+-      typeInformationBlock.initializeInternalLazyCompilationTrampoline();
++	    typeInformationBlock.initializeInternalLazyCompilationTrampoline();
+ 
+-      // Initialize slots in the TIB for virtual methods
+-      for (int i = 0; i < virtualMethods.length; i++) {
+-        RVMMethod method = virtualMethods[i];
+-        if (method.isPrivate() && method.getDeclaringClass() != this) {
+-          typeInformationBlock.setVirtualMethod(i, null); // an inherited private method....will never be invoked via this TIB
+-        } else {
+-          typeInformationBlock.setVirtualMethod(i, method.getCurrentEntryCodeArray());
+-        }
+-      }
++	    // Initialize slots in the TIB for virtual methods
++	    for (int i = 0; i < virtualMethods.length; i++) {
++	      RVMMethod method = virtualMethods[i];
++	      if (method.isPrivate() && method.getDeclaringClass() != this) {
++	        typeInformationBlock.setVirtualMethod(i, null); // an inherited private method....will never be invoked via this TIB
++	      } else {
++	        typeInformationBlock.setVirtualMethod(i, method.getCurrentEntryCodeArray());
++	      }
++	    }
+ 
+-      // compile <init> methods and put their addresses into jtoc
+-      for (RVMMethod method : constructorMethods) {
++    // compile <init> methods and put their addresses into jtoc
++	    for (RVMMethod method : constructorMethods) {
++	      Statics.setSlotContents(method.getOffset(), method.getCurrentEntryCodeArray());
++	    }
++	  } else {
++    	for (RVMMethod method: declaredMethods) {
++    		if (!method.isAbstract() && 
++    				!method.isStatic()) {
++    			Statics.setSlotContents(method.getOffset(), method.getCurrentEntryCodeArray());		
++    		}
++    	}	  	
++	  }
++
++    // Java 8 introduces static methods in interfaces.
++    // "All interface methods must have their ACC_ABSTRACT and ACC_PUBLIC flags set" [Ch 4.6, JVMSPEC SE 7]
++    // The above constraint disappear in Ch 4.6, JVMSPEC SE 8
++    // "An interface can declare static methods, which are invoked without reference to a particular object" 
++    // [Ch 9.4, JLS SE 7]
++    
++    // compile static methods and put their addresses into jtoc
++    for (RVMMethod method : staticMethods) {
++      // don't bother compiling <clinit> here;
++      // compile it right before we invoke it in initialize.
++      // This also avoids putting <clinit>s in the bootimage.
++      if (!method.isClassInitializer()) {
+         Statics.setSlotContents(method.getOffset(), method.getCurrentEntryCodeArray());
+       }
+-
+-      // compile static methods and put their addresses into jtoc
+-      for (RVMMethod method : staticMethods) {
+-        // don't bother compiling <clinit> here;
+-        // compile it right before we invoke it in initialize.
+-        // This also avoids putting <clinit>s in the bootimage.
+-        if (!method.isClassInitializer()) {
+-          Statics.setSlotContents(method.getOffset(), method.getCurrentEntryCodeArray());
+-        }
+-      }
+     }
++//GRVM:end
+ 
+     InterfaceInvocation.initializeDispatchStructures(this);
+     SpecializedMethodManager.notifyTypeInstantiated(this);
+@@ -1716,6 +1774,10 @@
+ 
+     if (m.isStatic() || m.isObjectInitializer()) {
+       updateJTOCEntry(m);
++//GRVM:begin
++    } else if (isInterface() && !m.isAbstract()) {
++    	updateJTOCEntry(m);
++//GRVM:end
+     } else {
+       updateVirtualMethod(m);
+       // If this is a java.lang.Object method, also update all the TIBs
+Index: rvm/src/org/jikesrvm/classloader/RVMMethod.java
+===================================================================
+--- rvm/src/org/jikesrvm/classloader/RVMMethod.java	(revision 133772)
++++ rvm/src/org/jikesrvm/classloader/RVMMethod.java	(working copy)
+@@ -600,7 +600,10 @@
+     if (isCompiled()) {
+       return currentCompiledMethod.getEntryCodeArray();
+     } else if (!VM.writingBootImage || isNative()) {
+-      if (!isStatic() && !isObjectInitializer() && !isPrivate()) {
++//GRVM:begin
++//      if (!isStatic() && !isObjectInitializer() && !isPrivate()) {
++      if (!isStatic() && !isObjectInitializer() && !isPrivate() && !getDeclaringClass().isInterface()) {
++//GRVM:end
+         // A non-private virtual method.
+         if (declaringClass.isJavaLangObjectType() ||
+             declaringClass.getSuperClass().findVirtualMethod(getName(), getDescriptor()) == null) {
+Index: rvm/src/org/jikesrvm/ia32/InterfaceMethodConflictResolver.java
+===================================================================
+--- rvm/src/org/jikesrvm/ia32/InterfaceMethodConflictResolver.java	(revision 133772)
++++ rvm/src/org/jikesrvm/ia32/InterfaceMethodConflictResolver.java	(working copy)
+@@ -101,6 +101,14 @@
+       RVMMethod target = targets[middle];
+       if (target.isStatic()) { // an error case...
+         asm.generateJTOCjmp(target.getOffset());
++//GRVM:begin
++      } else if (target.getDeclaringClass().isInterface()) {
++      	if (!target.isCompiled()) {
++      		target.compile();
++      		target.getDeclaringClass().updateMethod(target);
++      	}
++        asm.generateJTOCjmp(target.getOffset());
++//GRVM:end
+       } else {
+         asm.emitJMP_RegDisp(ECX, target.getOffset());
+       }
+@@ -117,6 +125,14 @@
+       RVMMethod target = targets[middle];
+       if (target.isStatic()) { // an error case...
+         asm.generateJTOCjmp(target.getOffset());
++//GRVM:begin
++      } else if (target.getDeclaringClass().isInterface()) {
++      	if (!target.isCompiled()) {
++      		target.compile();
++      		target.getDeclaringClass().updateMethod(target);
++      	}
++        asm.generateJTOCjmp(target.getOffset());
++//GRVM:end        
+       } else {
+         asm.emitJMP_RegDisp(ECX, target.getOffset());
+       }
