@@ -1,0 +1,445 @@
+{
+    "name": "default",
+    "description": "Default theme for Lustre service",
+    "configuration": {
+        "layouts": [
+            {
+                "name": "default",
+                "tabs": [
+                    {
+                        "name": "mds-server",
+                        "display-name": "MDS Server Setting",
+                        "layout": {
+                            "tab-columns": "1",
+                            "tab-rows": "1",
+                            "sections": [
+                                {
+                                    "name": "section-mds1-server",
+                                    "display-name": "MDS1 Setting",
+                                    "row-index": "0",
+                                    "column-index": "0",
+                                    "row-span": "1",
+                                    "column-span": "1",
+                                    "section-columns": "1",
+                                    "section-rows": "1",
+                                    "subsections": [
+                                        {
+                                            "name": "subsection-mds-col1-master.hadoop.com",
+                                            "row-index": "0",
+                                            "column-index": "0",
+                                            "row-span": "1",
+                                            "column-span": "1"
+                                        },
+                                        {
+                                            "name": "subsection-mds-col2-master.hadoop.com",
+                                            "row-index": "0",
+                                            "column-index": "1",
+                                            "row-span": "1",
+                                            "column-span": "1"
+                                        },
+                                        {
+                                            "name": "subsection-mds-col3-master.hadoop.com",
+                                            "row-index": "0",
+                                            "column-index": "2",
+                                            "row-span": "1",
+                                            "column-span": "1"
+                                        }
+                                    ]
+                                }
+                           	]
+                        }
+                    },
+                    {
+                        "name": "oss-server",
+                        "display-name": "OSS Server Setting",
+                        "layout": {
+                            "tab-columns": "1",
+                            "tab-rows": "3",
+                            "sections": [
+                                {
+                                    "name": "section-oss1-server",
+                                    "display-name": "OSS1 Setting",
+                                    "row-index": "0",
+                                    "column-index": "0",
+                                    "row-span": "1",
+                                    "column-span": "1",
+                                    "section-columns": "1",
+                                    "section-rows": "1",
+                                    "subsections": [
+                                        {
+                                            "name": "subsection-oss-col1-slave1.hadoop.com",
+                                            "row-index": "0",
+                                            "column-index": "0",
+                                            "row-span": "1",
+                                            "column-span": "1"
+                                        },
+                                        {
+                                            "name": "subsection-oss-col2-slave1.hadoop.com",
+                                            "row-index": "0",
+                                            "column-index": "1",
+                                            "row-span": "1",
+                                            "column-span": "1"
+                                        },
+                                        {
+                                            "name": "subsection-oss-col3-slave1.hadoop.com",
+                                            "row-index": "0",
+                                            "column-index": "2",
+                                            "row-span": "1",
+                                            "column-span": "1"
+                                        }
+                                    ]
+                                }
+                                ,
+                                {
+                                    "name": "section-oss2-server",
+                                    "display-name": "OSS2 Setting",
+                                    "row-index": "1",
+                                    "column-index": "0",
+                                    "row-span": "1",
+                                    "column-span": "1",
+                                    "section-columns": "1",
+                                    "section-rows": "1",
+                                    "subsections": [
+                                        {
+                                            "name": "subsection-oss-col1-slave2.hadoop.com",
+                                            "row-index": "0",
+                                            "column-index": "0",
+                                            "row-span": "1",
+                                            "column-span": "1"
+                                        },
+                                        {
+                                            "name": "subsection-oss-col2-slave2.hadoop.com",
+                                            "row-index": "0",
+                                            "column-index": "1",
+                                            "row-span": "1",
+                                            "column-span": "1"
+                                        },
+                                        {
+                                            "name": "subsection-oss-col3-slave2.hadoop.com",
+                                            "row-index": "0",
+                                            "column-index": "2",
+                                            "row-span": "1",
+                                            "column-span": "1"
+                                        }
+                                    ]
+                                }
+                                ,
+                                {
+                                    "name": "section-oss3-server",
+                                    "display-name": "OSS3 Setting",
+                                    "row-index": "2",
+                                    "column-index": "0",
+                                    "row-span": "1",
+                                    "column-span": "1",
+                                    "section-columns": "1",
+                                    "section-rows": "1",
+                                    "subsections": [
+                                        {
+                                            "name": "subsection-oss-col1-slave3.hadoop.com",
+                                            "row-index": "0",
+                                            "column-index": "0",
+                                            "row-span": "1",
+                                            "column-span": "1"
+                                        },
+                                        {
+                                            "name": "subsection-oss-col2-slave3.hadoop.com",
+                                            "row-index": "0",
+                                            "column-index": "1",
+                                            "row-span": "1",
+                                            "column-span": "1"
+                                        },
+                                        {
+                                            "name": "subsection-oss-col3-slave3.hadoop.com",
+                                            "row-index": "0",
+                                            "column-index": "2",
+                                            "row-span": "1",
+                                            "column-span": "1"
+                                        }
+                                    ]
+                                }
+                           	]
+                        }
+                    },
+                    {
+                        "name": "client-server",
+                        "display-name": "Client Server Setting",
+                        "layout": {
+                            "tab-columns": "1",
+                            "tab-rows": "1",
+                            "sections": [
+                                {
+                                    "name": "section-client-server",
+                                    "display-name": "Client Setting",
+                                    "row-index": "0",
+                                    "column-index": "0",
+                                    "row-span": "1",
+                                    "column-span": "1",
+                                    "section-columns": "1",
+                                    "section-rows": "1",
+                                    "subsections": [
+                                        {
+                                            "name": "subsection-client-col1",
+                                            "row-index": "0",
+                                            "column-index": "0",
+                                            "row-span": "1",
+                                            "column-span": "1"
+                                        },
+                                        {
+                                            "name": "subsection-client-col2",
+                                            "row-index": "0",
+                                            "column-index": "1",
+                                            "row-span": "1",
+                                            "column-span": "1"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        ],
+        "placement": {
+            "configuration-layout": "default",
+            "configs": [
+            {
+                    "config": "lustre-default-config/device_mds-master.hadoop.com",
+                    "subsection-name": "subsection-mds-col1-master.hadoop.com"
+            },
+            {
+                    "config": "lustre-default-config/device_mds_size-master.hadoop.com",
+                    "subsection-name": "subsection-mds-col2-master.hadoop.com"
+            },
+            {
+                    "config": "lustre-default-config/network_mds-master.hadoop.com",
+                    "subsection-name": "subsection-mds-col3-master.hadoop.com"
+            }
+            ,{
+                    "config": "lustre-default-config/network_oss-slave1.hadoop.com",
+                    "subsection-name": "subsection-oss-col3-slave1.hadoop.com"
+            }
+            ,{
+                    "config": "lustre-default-config/device_oss1-slave1.hadoop.com",
+                    "subsection-name": "subsection-oss-col1-slave1.hadoop.com"
+            },
+            {
+                    "config": "lustre-default-config/device_oss_size1-slave1.hadoop.com",
+                    "subsection-name": "subsection-oss-col2-slave1.hadoop.com"
+            }
+            ,{
+                    "config": "lustre-default-config/device_oss2-slave1.hadoop.com",
+                    "subsection-name": "subsection-oss-col1-slave1.hadoop.com"
+            },
+            {
+                    "config": "lustre-default-config/device_oss_size2-slave1.hadoop.com",
+                    "subsection-name": "subsection-oss-col2-slave1.hadoop.com"
+            }
+            ,{
+                    "config": "lustre-default-config/device_oss3-slave1.hadoop.com",
+                    "subsection-name": "subsection-oss-col1-slave1.hadoop.com"
+            },
+            {
+                    "config": "lustre-default-config/device_oss_size3-slave1.hadoop.com",
+                    "subsection-name": "subsection-oss-col2-slave1.hadoop.com"
+            }
+            ,{
+                    "config": "lustre-default-config/network_oss-slave2.hadoop.com",
+                    "subsection-name": "subsection-oss-col3-slave2.hadoop.com"
+            }
+            ,{
+                    "config": "lustre-default-config/device_oss1-slave2.hadoop.com",
+                    "subsection-name": "subsection-oss-col1-slave2.hadoop.com"
+            },
+            {
+                    "config": "lustre-default-config/device_oss_size1-slave2.hadoop.com",
+                    "subsection-name": "subsection-oss-col2-slave2.hadoop.com"
+            }
+            ,{
+                    "config": "lustre-default-config/device_oss2-slave2.hadoop.com",
+                    "subsection-name": "subsection-oss-col1-slave2.hadoop.com"
+            },
+            {
+                    "config": "lustre-default-config/device_oss_size2-slave2.hadoop.com",
+                    "subsection-name": "subsection-oss-col2-slave2.hadoop.com"
+            }
+            ,{
+                    "config": "lustre-default-config/network_oss-slave3.hadoop.com",
+                    "subsection-name": "subsection-oss-col3-slave3.hadoop.com"
+            }
+            ,{
+                    "config": "lustre-default-config/device_oss1-slave3.hadoop.com",
+                    "subsection-name": "subsection-oss-col1-slave3.hadoop.com"
+            },
+            {
+                    "config": "lustre-default-config/device_oss_size1-slave3.hadoop.com",
+                    "subsection-name": "subsection-oss-col2-slave3.hadoop.com"
+            }
+            ,{
+                    "config": "lustre-default-config/network_client",
+                    "subsection-name": "subsection-client-col1"
+            }
+            ,{
+                    "config": "lustre-default-config/mount_client",
+                    "subsection-name": "subsection-client-col2"
+            }
+				]
+        },
+        "widgets": [
+            {
+                    "config": "lustre-default-config/device_mds-master.hadoop.com",
+                	  "widget": {
+                	      "type": "combo"
+                	  }
+            },
+            {
+                    "config": "lustre-default-config/device_mds_size-master.hadoop.com",
+                	  "widget": {
+                	      "type": "slider",
+               		   "units": [
+               		      {
+               		        "unit-name":"MB"
+               		      }
+               		   ]
+                	  }
+            },
+            {
+                    "config": "lustre-default-config/network_mds-master.hadoop.com",
+                	  "widget": {
+                	      "type": "combo"
+                	  }
+            }
+            ,{
+                    "config": "lustre-default-config/network_oss-slave1.hadoop.com",
+                	  "widget": {
+                	      "type": "combo"
+                	  }
+            }
+            ,{
+                    "config": "lustre-default-config/device_oss1-slave1.hadoop.com",
+                	  "widget": {
+                	      "type": "combo"
+                	  }
+            },
+            {
+                    "config": "lustre-default-config/device_oss_size1-slave1.hadoop.com",
+                	  "widget": {
+                	      "type": "slider",
+               		   "units": [
+               		      {
+               		        "unit-name":"MB"
+               		      }
+               		   ]
+                	  }
+            }
+            ,{
+                    "config": "lustre-default-config/device_oss2-slave1.hadoop.com",
+                	  "widget": {
+                	      "type": "combo"
+                	  }
+            },
+            {
+                    "config": "lustre-default-config/device_oss_size2-slave1.hadoop.com",
+                	  "widget": {
+                	      "type": "slider",
+               		   "units": [
+               		      {
+               		        "unit-name":"MB"
+               		      }
+               		   ]
+                	  }
+            }
+            ,{
+                    "config": "lustre-default-config/device_oss3-slave1.hadoop.com",
+                	  "widget": {
+                	      "type": "combo"
+                	  }
+            },
+            {
+                    "config": "lustre-default-config/device_oss_size3-slave1.hadoop.com",
+                	  "widget": {
+                	      "type": "slider",
+               		   "units": [
+               		      {
+               		        "unit-name":"MB"
+               		      }
+               		   ]
+                	  }
+            }
+            ,{
+                    "config": "lustre-default-config/network_oss-slave2.hadoop.com",
+                	  "widget": {
+                	      "type": "combo"
+                	  }
+            }
+            ,{
+                    "config": "lustre-default-config/device_oss1-slave2.hadoop.com",
+                	  "widget": {
+                	      "type": "combo"
+                	  }
+            },
+            {
+                    "config": "lustre-default-config/device_oss_size1-slave2.hadoop.com",
+                	  "widget": {
+                	      "type": "slider",
+               		   "units": [
+               		      {
+               		        "unit-name":"MB"
+               		      }
+               		   ]
+                	  }
+            }
+            ,{
+                    "config": "lustre-default-config/device_oss2-slave2.hadoop.com",
+                	  "widget": {
+                	      "type": "combo"
+                	  }
+            },
+            {
+                    "config": "lustre-default-config/device_oss_size2-slave2.hadoop.com",
+                	  "widget": {
+                	      "type": "slider",
+               		   "units": [
+               		      {
+               		        "unit-name":"MB"
+               		      }
+               		   ]
+                	  }
+            }
+            ,{
+                    "config": "lustre-default-config/network_oss-slave3.hadoop.com",
+                	  "widget": {
+                	      "type": "combo"
+                	  }
+            }
+            ,{
+                    "config": "lustre-default-config/device_oss1-slave3.hadoop.com",
+                	  "widget": {
+                	      "type": "combo"
+                	  }
+            },
+            {
+                    "config": "lustre-default-config/device_oss_size1-slave3.hadoop.com",
+                	  "widget": {
+                	      "type": "slider",
+               		   "units": [
+               		      {
+               		        "unit-name":"MB"
+               		      }
+               		   ]
+                	  }
+            }
+            ,{
+                    "config": "lustre-default-config/network_client",
+                	  "widget": {
+                	      "type":"text-field"
+                	  }
+            }
+            ,{
+                    "config": "lustre-default-config/mount_client",
+                	  "widget": {
+                	      "type":"text-field"
+                	  }
+            }
+        ]
+    }
+}

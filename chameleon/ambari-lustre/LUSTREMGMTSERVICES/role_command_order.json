@@ -1,0 +1,12 @@
+{
+    "_comment": "LUSTREMGMTSERVICES OPTIONS",
+    "general_deps": {
+        "_comment": "LUSTREMGMTSERVICES INSTALL UNINSTALL CONFIGUE",
+        "LustreMDSMgmtService-INSTALL": [],
+        "LustreOSSMgmtService-INSTALL": ["LustreMDSMgmtService-INSTALL"],
+        "LustreClient-INSTALL": ["LustreMDSMgmtService-INSTALL","LustreOSSMgmtService-INSTALL"],
+        "HadoopLustreAdapterMgmtService-INSTALL": ["LustreMDSMgmtService-INSTALL","LustreOSSMgmtService-INSTALL","LustreClient-INSTALL"],
+        "LustreOSSMgmtService-START": ["LustreMDSMgmtService-START"],
+        "HadoopLustreAdapterMgmtService-START": ["LustreMDSMgmtService-START","LustreOSSMgmtService-START"]
+    }
+}

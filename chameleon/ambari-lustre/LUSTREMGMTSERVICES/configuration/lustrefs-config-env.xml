@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<configuration supports_final="false">
+    <property>
+        <name>mds_host</name>
+        <display-name>MDS Server Host List</display-name>
+        <value>master.hadoop.com</value>        <description>Client Network</description>
+    </property>
+    <property>
+        <name>mdt_fsname</name>
+        <value>mylustre</value>
+    </property>
+    <property>
+        <name>mdt_index</name>
+        <value>0</value>
+    </property>
+    <property>
+        <name>mdt_mount</name>
+        <value>/mnt/mds</value>
+    </property>
+    <property>
+        <name>oss_host</name>
+        <value>slave1.hadoop.com|3
+slave2.hadoop.com|2
+slave3.hadoop.com|1
+        </value>
+    </property>
+</configuration>

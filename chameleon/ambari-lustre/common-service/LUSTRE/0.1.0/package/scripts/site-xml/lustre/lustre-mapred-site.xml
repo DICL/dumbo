@@ -1,4 +1,0 @@
-<property>
-<name>yarn.app.mapreduce.am.staging-dir</name>
-<value>/tmp2/hadoop-${user.name}/staging</value>
-</property>

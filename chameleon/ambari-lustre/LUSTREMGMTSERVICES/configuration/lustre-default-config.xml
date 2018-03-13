@@ -1,0 +1,265 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<configuration supports_final="false">
+    <property>
+        <name>device_mds-master.hadoop.com</name>
+        <display-name>master.hadoop.com MDT Server Device</display-name>
+        <value/>
+        <description>master.hadoop.com MDT Device Select</description>
+        <value-attributes>
+            <type>value-list</type>
+            <entries>
+            <entry><value>/dev/mapper/cl-root</value></entry>
+            <entry><value>/dev/sda1</value></entry>
+            </entries>
+            <selection-cardinality>2+</selection-cardinality>
+        </value-attributes>
+    </property>
+    <property>
+        <name>device_mds_size-master.hadoop.com</name>
+        <display-name>master.hadoop.com MDT Device Size</display-name>
+        <value>1</value>
+        <description>Size</description>
+        <value-attributes>
+            <type>int</type>
+            <minimum>1</minimum>
+            <maximum>10240</maximum>
+            <unit>MB</unit>
+            <increment-step>1</increment-step>
+        </value-attributes>
+    </property>
+    <property>
+        <name>network_mds-master.hadoop.com</name>
+        <display-name>master.hadoop.com Server Network</display-name>
+        <value/>
+        <description>master.hadoop.com Network Select</description>
+        <value-attributes>
+            <type>value-list</type>
+            <entries>
+            <entry><value>tcp(lo)</value><label>lo</label></entry>
+            <entry><value>tcp(enp0s3)</value><label>enp0s3</label></entry>
+            <entry><value>tcp(enp0s8)</value><label>enp0s8</label></entry>
+            </entries>
+            <selection-cardinality>2+</selection-cardinality>
+        </value-attributes>
+    </property>
+    <property>
+        <name>device_oss1-slave1.hadoop.com</name>
+        <display-name>slave1.hadoop.com OST1 Server Device </display-name>
+        <value/>
+        <description>slave1.hadoop.com Device Select</description>
+        <value-attributes>
+            <type>value-list</type>
+            <entries>
+            <entry><value>/dev/mapper/cl-root</value></entry>
+            <entry><value>/dev/sda1</value></entry>
+            </entries>
+            <selection-cardinality>2+</selection-cardinality>
+        </value-attributes>
+    </property>
+    <property>
+        <name>device_oss_size1-slave1.hadoop.com</name>
+        <display-name>slave1.hadoop.com OST1 Device Size</display-name>
+        <value>1</value>
+        <description>Size</description>
+        <value-attributes>
+            <type>int</type>
+            <minimum>1</minimum>
+            <maximum>10240</maximum>
+            <unit>MB</unit>
+            <increment-step>1</increment-step>
+        </value-attributes>
+    </property>
+    <property>
+        <name>device_oss2-slave1.hadoop.com</name>
+        <display-name>slave1.hadoop.com OST2 Server Device </display-name>
+        <value/>
+        <description>slave1.hadoop.com Device Select</description>
+        <value-attributes>
+            <type>value-list</type>
+            <entries>
+            <entry><value>/dev/mapper/cl-root</value></entry>
+            <entry><value>/dev/sda1</value></entry>
+            </entries>
+            <selection-cardinality>2+</selection-cardinality>
+        </value-attributes>
+    </property>
+    <property>
+        <name>device_oss_size2-slave1.hadoop.com</name>
+        <display-name>slave1.hadoop.com OST2 Device Size</display-name>
+        <value>1</value>
+        <description>Size</description>
+        <value-attributes>
+            <type>int</type>
+            <minimum>1</minimum>
+            <maximum>10240</maximum>
+            <unit>MB</unit>
+            <increment-step>1</increment-step>
+        </value-attributes>
+    </property>
+    <property>
+        <name>device_oss3-slave1.hadoop.com</name>
+        <display-name>slave1.hadoop.com OST3 Server Device </display-name>
+        <value/>
+        <description>slave1.hadoop.com Device Select</description>
+        <value-attributes>
+            <type>value-list</type>
+            <entries>
+            <entry><value>/dev/mapper/cl-root</value></entry>
+            <entry><value>/dev/sda1</value></entry>
+            </entries>
+            <selection-cardinality>2+</selection-cardinality>
+        </value-attributes>
+    </property>
+    <property>
+        <name>device_oss_size3-slave1.hadoop.com</name>
+        <display-name>slave1.hadoop.com OST3 Device Size</display-name>
+        <value>1</value>
+        <description>Size</description>
+        <value-attributes>
+            <type>int</type>
+            <minimum>1</minimum>
+            <maximum>10240</maximum>
+            <unit>MB</unit>
+            <increment-step>1</increment-step>
+        </value-attributes>
+    </property>
+    <property>
+        <name>network_oss-slave1.hadoop.com</name>
+        <display-name>slave1.hadoop.com Server Network</display-name>
+        <value/>
+        <description>slave1.hadoop.com Network Select</description>
+        <value-attributes>
+            <type>value-list</type>
+            <entries>
+            <entry><value>tcp(lo)</value><label>lo</label></entry>
+            <entry><value>tcp(enp0s3)</value><label>enp0s3</label></entry>
+            <entry><value>tcp(enp0s8)</value><label>enp0s8</label></entry>
+            </entries>
+            <selection-cardinality>2+</selection-cardinality>
+        </value-attributes>
+    </property>
+    <property>
+        <name>device_oss1-slave2.hadoop.com</name>
+        <display-name>slave2.hadoop.com OST4 Server Device </display-name>
+        <value/>
+        <description>slave2.hadoop.com Device Select</description>
+        <value-attributes>
+            <type>value-list</type>
+            <entries>
+            <entry><value>/dev/mapper/cl-root</value></entry>
+            <entry><value>/dev/sda1</value></entry>
+            </entries>
+            <selection-cardinality>2+</selection-cardinality>
+        </value-attributes>
+    </property>
+    <property>
+        <name>device_oss_size1-slave2.hadoop.com</name>
+        <display-name>slave2.hadoop.com OST4 Device Size</display-name>
+        <value>1</value>
+        <description>Size</description>
+        <value-attributes>
+            <type>int</type>
+            <minimum>1</minimum>
+            <maximum>10240</maximum>
+            <unit>MB</unit>
+            <increment-step>1</increment-step>
+        </value-attributes>
+    </property>
+    <property>
+        <name>device_oss2-slave2.hadoop.com</name>
+        <display-name>slave2.hadoop.com OST5 Server Device </display-name>
+        <value/>
+        <description>slave2.hadoop.com Device Select</description>
+        <value-attributes>
+            <type>value-list</type>
+            <entries>
+            <entry><value>/dev/mapper/cl-root</value></entry>
+            <entry><value>/dev/sda1</value></entry>
+            </entries>
+            <selection-cardinality>2+</selection-cardinality>
+        </value-attributes>
+    </property>
+    <property>
+        <name>device_oss_size2-slave2.hadoop.com</name>
+        <display-name>slave2.hadoop.com OST5 Device Size</display-name>
+        <value>1</value>
+        <description>Size</description>
+        <value-attributes>
+            <type>int</type>
+            <minimum>1</minimum>
+            <maximum>10240</maximum>
+            <unit>MB</unit>
+            <increment-step>1</increment-step>
+        </value-attributes>
+    </property>
+    <property>
+        <name>network_oss-slave2.hadoop.com</name>
+        <display-name>slave2.hadoop.com Server Network</display-name>
+        <value/>
+        <description>slave2.hadoop.com Network Select</description>
+        <value-attributes>
+            <type>value-list</type>
+            <entries>
+            <entry><value>tcp(lo)</value><label>lo</label></entry>
+            <entry><value>tcp(enp0s3)</value><label>enp0s3</label></entry>
+            <entry><value>tcp(enp0s8)</value><label>enp0s8</label></entry>
+            </entries>
+            <selection-cardinality>2+</selection-cardinality>
+        </value-attributes>
+    </property>
+    <property>
+        <name>device_oss1-slave3.hadoop.com</name>
+        <display-name>slave3.hadoop.com OST6 Server Device </display-name>
+        <value/>
+        <description>slave3.hadoop.com Device Select</description>
+        <value-attributes>
+            <type>value-list</type>
+            <entries>
+            <entry><value>/dev/mapper/cl-root</value></entry>
+            <entry><value>/dev/sda1</value></entry>
+            </entries>
+            <selection-cardinality>2+</selection-cardinality>
+        </value-attributes>
+    </property>
+    <property>
+        <name>device_oss_size1-slave3.hadoop.com</name>
+        <display-name>slave3.hadoop.com OST6 Device Size</display-name>
+        <value>1</value>
+        <description>Size</description>
+        <value-attributes>
+            <type>int</type>
+            <minimum>1</minimum>
+            <maximum>10240</maximum>
+            <unit>MB</unit>
+            <increment-step>1</increment-step>
+        </value-attributes>
+    </property>
+    <property>
+        <name>network_oss-slave3.hadoop.com</name>
+        <display-name>slave3.hadoop.com Server Network</display-name>
+        <value/>
+        <description>slave3.hadoop.com Network Select</description>
+        <value-attributes>
+            <type>value-list</type>
+            <entries>
+            <entry><value>tcp(lo)</value><label>lo</label></entry>
+            <entry><value>tcp(enp0s3)</value><label>enp0s3</label></entry>
+            <entry><value>tcp(enp0s8)</value><label>enp0s8</label></entry>
+            </entries>
+            <selection-cardinality>2+</selection-cardinality>
+        </value-attributes>
+    </property>
+    <property>
+        <name>network_client</name>
+        <display-name>Client Server Network</display-name>
+        <value>tcp(enp0s8)</value>
+        <description>Client Network</description>
+    </property>
+    <property>
+        <name>mount_client</name>
+        <display-name>Client Server Mount</display-name>
+        <value>/lustre</value>
+        <description>Client Mount</description>
+    </property>
+</configuration>
