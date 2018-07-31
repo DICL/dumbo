@@ -42,4 +42,6 @@ NP=`ls -l ${PREFIX}* | wc -l`
 
 time mpirun -np $NP -hostfile ${HADOOP_HOME}/etc/hadoop/slaves --map-by node  ./reduce ${PREFIX} ${OUTPUT}
 
+mv ${PREFIX}* ${MOUNT_LOC}
+
 hdfs dfs -rm -r -f $5/out

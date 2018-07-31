@@ -50,6 +50,7 @@ int main(int argc, char *argv[])
 	// skip '@' started header lines excluding the first file. reduce the total writl size
 	while( fgets(line, LINE_MAX - 1, inFile) != NULL ) {
 		if( rank == 0 || line[0] != '@') {
+	//	if( line[0] != '@') {
 			break;
 		}
 		writeSize -= strlen(line);
