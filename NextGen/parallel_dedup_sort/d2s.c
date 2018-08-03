@@ -31,7 +31,7 @@ int main(int argc, char **argv)
 	int i;
 
 	if( argc < 4 ) {
-		printf("Usage : ./a.out <rank> <comsize> <directory of tempfile>\n");
+		printf("Usage : ./a.out id_of_current_process_starting_from_1 size_of_total_processes directory_of_output_files\n");
 		return -1;
 	}
 
@@ -52,7 +52,7 @@ int main(int argc, char **argv)
 	FILE *inf = stdin;
 
 	if( prefix[strlen(prefix)-1] == '/' ) prefix[strlen(prefix)-1] = '\0';
-	sprintf(fnbuf,"%s/fsplit_tmp.header.%05d",prefix,rank);
+	sprintf(fnbuf,"%s/fsplit_tmp.header.%d",prefix,rank);
 	FILE *outhf = fopen(fnbuf, "w");
 
 	//reading header from input file
@@ -78,7 +78,7 @@ int main(int argc, char **argv)
 	for(i = 0 ; i < comsize ; i++) {
 	//	sprintf(fnbuf,"%s/fsplit_tmp_%05d",prefix, i);
 	//	mkdir(fnbuf ,0755);
-		sprintf(fnbuf,"%s/fsplit_tmp_data.%05d.%05d",prefix, i, rank);
+		sprintf(fnbuf,"%s/fsplit_tmp_data.%d.%d",prefix, i + 1, rank);
 		outfs[i] = fopen(fnbuf,"w");
 	}
 

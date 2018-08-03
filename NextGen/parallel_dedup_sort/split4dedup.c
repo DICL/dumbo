@@ -18,7 +18,7 @@
 #include<mpi.h>
 #endif
 
-#define BUF_PAGES	1000000	//524288 
+#define BUF_PAGES	524288 
 
 #define MAX_NUM_CHR		128	
 #define	RNAME_LEN		32
@@ -81,8 +81,12 @@ int main(int argc, char **argv)
 	int i;
 
 	if( argc < 3 ) {
-		printf("Usage : ./a.out <input sam file | prefix | -> [hostfile]\n \"-\" means to read from standard input \n");
-		return -1;
+#ifdef MPI_CODED
+		printf("Usage : ./%s prefix hostfile\n",argv[0]);
+#else
+		printf("Usage : ./%s < input_sam_file | - > hostfile\n \"-\" means to read from standard input \n",argv[0]);
+#endif
+	return -1;
 	}
 
 #ifdef MPI_CODED
@@ -148,7 +152,7 @@ int main(int argc, char **argv)
 
 	// open connection to sinks and send header to them
 	int num_sinks = 0;				// the number of total worker processes
-	int outfds[128];				// array of out sink socket fds
+	int outfds[128];				// array of out sink socket fds. maximum value 128 is temporarily selected. need refinement
 	FILE *hf = fopen( argv[2], "r");
 	char linebuf[32], sinkaddrbuf[16];	//buffer for reading host list file 
 	struct sockaddr_in addr;
@@ -196,7 +200,7 @@ int main(int argc, char **argv)
 
 	size_t rg_len = 0;
 	int fd;
-	int sclip, raLen, eclip, cigar_len, first;	//for handle CIGAR string
+	int sclip, raLen, eclip, cigar_len, first;	//to handle CIGAR string
 	char cigar_code;
 #ifdef SINGLE_SHUFFLE
 	struct toent *tolist = NULL, *cur_te, *tmp_te;
@@ -267,9 +271,9 @@ int main(int argc, char **argv)
 			qname = swptmp;
 
 		#ifdef SINGLE_SHUFFLE
-			tolist = NULL;		//for single shuffle
+			tolist = NULL;
 		#else
-			mingpos = offset;	//for double shuffle
+			mingpos = offset;
 		#endif
 		}
 		// increase read-group length
@@ -287,7 +291,6 @@ int main(int argc, char **argv)
 
 	#else
 		// update minimul global position of primary alignment
-		//for double shuffle
 		if( IS_PRIMARY(flag) && !IS_UNMAPPED(flag) ) {
 			HASH_FIND(hh, chrmap, rname, RNAME_LEN, newent);
 			gpos = newent->offset + pos;

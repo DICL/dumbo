@@ -21,12 +21,10 @@ struct infd {
 	struct infd *next;
 };
 
-char magic[5] = "S2PD";
-
 ssize_t forceRead(int fd, void *buf, size_t len);
 
 int main(int argc, char **argv) {
-	unsigned short port = 1814;
+	unsigned short port = 1814;	//default port number
 	int qcount, i, j;
 
 	char buf[BUF_LEN];
@@ -34,14 +32,14 @@ int main(int argc, char **argv) {
 	size_t remain, toread;
 
 	if( argc < 2 ) {
-		fprintf(stderr, "USAGE:./sink <number of sources> <port offset>\n");
+		fprintf(stderr, "USAGE:./sink number_of_sources port_offset\n");
 		return -1;
 	}
 
 	qcount = atoi(argv[1]);
 
 	if( argc > 2 ) {
-		port = 1814 + atoi(argv[2]);
+		port += atoi(argv[2]);
 	}
 
 

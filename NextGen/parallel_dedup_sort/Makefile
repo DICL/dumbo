@@ -5,7 +5,7 @@ CFLAGS += -Wall
 INCLUDES = 
 LIBS = 
 
-PROGS = s4d s4dmpi samstat sink d2s
+PROGS = s4d s4dmpi samstat sink d2s merge_bam
 
 .c.o:
 	$(CC) -c $(CLFAGS) $(INCLUDES) $< -o $@
@@ -27,5 +27,7 @@ sink: sink.o
 d2s: d2s.o
 	$(CC) $(INCLUDES) $(LIBS) -o $@ $^
 
+merge_bam: merge_bam.c
+	$(MPICC) -o $@ $^
 clean:
 	rm -f $(PROGS) *.o
