@@ -137,6 +137,11 @@ public class Mapper<KEYIN, VALUEIN, KEYOUT, VALUEOUT> {
 	public void setR(int r){
 		this.R = r;
 	}
+
+	public int numThread = 1;
+	public void setNumThread(int n){
+		this.numThread = n;
+	}
 	
 	/**
 	 * The <code>Context</code> passed on to the {@link Mapper} implementations.

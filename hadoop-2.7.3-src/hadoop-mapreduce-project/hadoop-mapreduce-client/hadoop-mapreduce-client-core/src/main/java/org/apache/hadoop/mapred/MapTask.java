@@ -750,6 +750,8 @@ public class MapTask extends Task {
     mapper.setUseGPU(bUseGPU);
     mapper.setMustGPU(bMustGPU);
     mapper.setR(R);
+
+	mapper.setNumThread(numThread);
     
     // make the input format
     org.apache.hadoop.mapreduce.InputFormat<INKEY,INVALUE> inputFormat =

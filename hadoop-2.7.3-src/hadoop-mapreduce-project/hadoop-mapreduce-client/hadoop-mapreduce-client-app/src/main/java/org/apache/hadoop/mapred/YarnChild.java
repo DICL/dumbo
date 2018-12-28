@@ -84,6 +84,8 @@ class YarnChild {
 	static boolean bMustGPU = false;
 	static int R = 0;
 
+	static int numThread = 1;
+
 	public static void main(String[] args) throws Throwable {
 		Thread.setDefaultUncaughtExceptionHandler(new YarnUncaughtExceptionHandler());
 		LOG.debug("Child starting");
@@ -116,8 +118,15 @@ class YarnChild {
 		
 		String strR = System.getProperty("R", "10240");
 		R = Integer.parseInt(strR);
-		
-		
+	
+		String strUseMultithread = System.getProperty("useMultithread", "false");
+		boolean bUseMultithread = Boolean.parseBoolean(strUseMultithread);
+		numThread = 1;
+		if (bUseMultithread) {
+			String strNumThread = System.getProperty("numMultithread", "1");
+			numThread = Integer.parseInt(strNumThread);
+		}
+
 		// initialize metrics
 		DefaultMetricsSystem.initialize(StringUtils.camelize(firstTaskid
 				.getTaskType().name()) + "Task");
@@ -173,6 +182,7 @@ class YarnChild {
 			task.bUseGPU = bUseGPU;
 			task.bMustGPU = bMustGPU;
 			task.R = R;
+			task.numThread = numThread;
 			
 			YarnChild.taskid = task.getTaskID();
 

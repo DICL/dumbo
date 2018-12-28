@@ -83,6 +83,8 @@ abstract public class Task implements Writable, Configurable {
   public boolean bUseGPU = false;
   public boolean bMustGPU = false;
   public int R = 0;
+  public int numThread = 1;
+
   public void setUseGPU(boolean bUseGPU){
 	  this.bUseGPU = bUseGPU;
   }
@@ -94,6 +96,12 @@ abstract public class Task implements Writable, Configurable {
   }
   public int getR() {
       return R;
+  }
+  public void setNumThread(int n) {
+	  this.numThread = n;
+  }
+  public int getNumThread() {
+	  return this.numThread;
   }
 
   public static String MERGED_OUTPUT_PREFIX = ".merged";

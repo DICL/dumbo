@@ -149,9 +149,15 @@ public class ContainersLauncher extends AbstractService implements EventHandler<
 	private int max_num_yarnchild;
 	private int min_num_yarnchild;
 	private int running_num_yarnchild;
-	private int threshold_num_for_getting_P = 1;
+	final static int threshold_num_for_getting_P = 1;
+	final static int latest_n = 10;
+	int cur_n;
 	private HashMap<Integer, Long> running_time_of_a_task; 
 	long whole_running_time;
+	long[] n_running_time;
+
+	private boolean use_multithread;
+	private int num_multithread;
 
 	ChildMaster() {
 	    count = 0;
@@ -161,8 +167,16 @@ public class ContainersLauncher extends AbstractService implements EventHandler<
 	    running_num_yarnchild = 0;
 	    whole_running_time = 0;
 
+	    cur_n = 0;
+	    n_running_time = new long[latest_n];
+	    for (int i=0; i<latest_n; i++) {
+		n_running_time[i] = -1;
+	    }
+
 	    running_time_of_a_task = new HashMap<Integer, Long>();
-	    threshold_num_for_getting_P = 1;
+
+	    use_multithread = false;
+	    num_multithread = 1;
 	}
 	public void clear() {
 	    count = 0;
@@ -171,6 +185,9 @@ public class ContainersLauncher extends AbstractService implements EventHandler<
 	    whole_running_time = 0;
 
 	    running_time_of_a_task = new HashMap<Integer, Long>();
+	   
+	    use_multithread = false;
+	    num_multithread = 1;
 	}
 
 	public void willLaunch(ContainerId containerId) {
@@ -190,6 +207,9 @@ public class ContainersLauncher extends AbstractService implements EventHandler<
 	    int cid = containerId.getId();
 	    long duration = System.currentTimeMillis() - running_time_of_a_task.getOrDefault(cid, 0L);
 	    whole_running_time += duration;
+
+	    n_running_time[cur_n++] = duration;
+	    if (cur_n >= latest_n) cur_n = 0;
 	}
 
 	public void setMaxChild(int n) {
@@ -202,6 +222,14 @@ public class ContainersLauncher extends AbstractService implements EventHandler<
 
 	public void setMinChild(int n) {
 	    this.min_num_yarnchild = n;
+	}
+
+	public void setUseMultithread(boolean b) {
+	    this.use_multithread = b;
+	}
+
+	public void setNumMultithread(int n) {
+	    this.num_multithread = n;
 	}
 
 	public int getMinChild() {
@@ -227,6 +255,14 @@ public class ContainersLauncher extends AbstractService implements EventHandler<
 	public int getCount() {
 	    return count;
 	}
+
+	public boolean getUseMultithread() {
+	    return use_multithread;
+	}
+
+	public int getNumMultithread() {
+	    return num_multithread;
+	}
     }
 
     /********************************************************************
@@ -249,7 +285,7 @@ public class ContainersLauncher extends AbstractService implements EventHandler<
     int R = 10240;
 
     // hyeonjin added
-    boolean bUse_mps = false;
+    boolean bUseMps = false;
     public float cpugpu_proportion = 1;
     public int num_of_nodes = 1;
     public boolean bUse_dynamic_scheduler = false;
@@ -339,7 +375,7 @@ public class ContainersLauncher extends AbstractService implements EventHandler<
 	    throw new YarnRuntimeException("Failed to start ContainersLauncher", e);
 	}
 
-	AM = new AppMaster();
+	AM  = new AppMaster();
 	CPU = new ChildMaster();
 	GPU = new ChildMaster();
 
@@ -356,15 +392,36 @@ public class ContainersLauncher extends AbstractService implements EventHandler<
 	this.expr_title = conf.get("myconf.experiment.name", "");
 
 	this.R = conf.getInt("myconf.gpu.r", 10240);
+	
+	//int matmul_probing_time_sec = conf.getInt("myconf.gpumonitor.matmul.prbing-time-sec", 1);
+	long time_to_wait = 1000 * conf.getLong("myconf.gpumonitor.time-to-wait-sec", 15);
+	long time_to_monitor = 1000 * conf.getLong("myconf.gpumonitor.time-to-monitor-sec", 120);
+	float matmul_time_threshold = conf.getFloat("myconf.gpumonitor.matmul.time-threshold", 2.0f);
+	float matmul_count_threshold_percentage = conf.getFloat("myconf.gpumonitor.matmul.count-threshold", 0.6f);
+
+	int matmul_length = (int) (15 * time_to_monitor / 1000);
+	int matmul_count_threshold = (int) (matmul_length * matmul_count_threshold_percentage);
+		
 	this.bUse_dynamic_scheduler = conf.getBoolean("myconf.use.dynamic.scheduler", false);
 	sem = new Semaphore(1, true);
 	sem2 = new Semaphore(1, true);
-	gpumonitor = new GPUMonitor(debug_listener_address, debug_listener_port, bUse_debug_listener, upper_threshold, sem, sem2);
-	gpumonitorthread = new Thread(gpumonitor);
-	gpumonitorthread.start();
+	gpumonitor = new GPUMonitor(debug_listener_address, debug_listener_port, bUse_debug_listener, upper_threshold, matmul_length, matmul_time_threshold, matmul_count_threshold, sem, sem2);
 
 	boolean max_start_mode = conf.getBoolean("myconf.use.maxstart.scheduler", true);
+	boolean bUseNvml = conf.getBoolean("myconf.gpumonitor.use.nvml", true);
+	boolean bUseMatmul = conf.getBoolean("myconf.gpumonitor.use.matmul", true);
+	boolean bUseOriginalScheduler = conf.getBoolean("myconf.gpumonitor.use.original.scheduler", false);
 
+	gpumonitor.setTimeToWait(time_to_wait);
+	gpumonitor.setTimeToMonitor(time_to_monitor);
+	gpumonitor.useNvml(bUseNvml);
+	gpumonitor.useMatmul(bUseMatmul);
+	gpumonitor.useOriginalScheduler(bUseOriginalScheduler);
+	gpumonitor.useDynamicScheduler(bUse_dynamic_scheduler);
+	
+	gpumonitorthread = new Thread(gpumonitor);
+	gpumonitorthread.start();
+	
 	String slbp = conf.get("myconf.load.balancing.policy", "threshold");
 	if (slbp.startsWith("threshold")) {
 	    this.lbp = LOAD_BALANCING_POLICY.threshold;
@@ -380,11 +437,14 @@ public class ContainersLauncher extends AbstractService implements EventHandler<
 	//gpumonitor.setProfiledGpuUtil( Float.parseFloat(System.getProperty("myconf.profile.gpu")) );
 	
 	// hyeonjin added 2017-03-20
-	// limit NG to 16 because the number of GPU process on MPS is restricted
-	// to 16.
-	this.bUse_mps = conf.getBoolean("myconf.use.mps", false);
-	if (bUse_mps)
-	    GPU.setMaxChild(Math.min(GPU.getMaxChild(), 16));
+	// limit NG to 15 because the number of GPU process on MPS is restricted
+	// to 16 and NodeManager uses one for matmul.
+	this.bUseMps = conf.getBoolean("myconf.use.mps", false);
+	if (bUseMps)
+	    GPU.setMaxChild(Math.min(GPU.getMaxChild(),  15));
+
+	gpumonitor.setMinGpu(GPU.getMinChild());
+	gpumonitor.setMaxGpu(GPU.getMaxChild());
 
 	if (this.bUse_dynamic_scheduler) 
 	    gpumonitor.SetMaxStartMode(max_start_mode);
@@ -400,11 +460,19 @@ public class ContainersLauncher extends AbstractService implements EventHandler<
 
 	CPU.setMaxChild(AM.getMaxSlot() - GPU.getMaxChild());
 
+	// hyeonjin added 2017-12-24
+	CPU.setUseMultithread(conf.getBoolean("myconf.use.multithread", false));
+	if (CPU.getUseMultithread()) {
+	    CPU.setNumMultithread(conf.getInt("myconf.num.multithread", 1));
+	}
+
 	// int cur_gpu = running_num_of_gpu_yarnchild;
 	String stat = "NodeManager launched\n";
 	stat += "max_gpu : " + GPU.getMaxChild() + "\n";
 	stat += "min_gpu : " + GPU.getMinChild() + "\n";
 	stat += "max_cpu : " + CPU.getMaxChild() + "\n";
+	stat += "use_multithread : " + CPU.getUseMultithread() + "\n";
+	stat += "num_multithread : " + CPU.getNumMultithread() + "\n";
 	stat += "max_container  : " + AM.getMaxSlot() + "\n";
 	stat += "cpugpu_proportion : + " + cpugpu_proportion + "\n";
 	stat += "debug_listener_address : " + debug_listener_address + "\n";
@@ -420,6 +488,10 @@ public class ContainersLauncher extends AbstractService implements EventHandler<
 	stat += "upper_threshold : " + upper_threshold + "\n";
 	stat += "gpu_threshold : " + gpu_threshold + "\n";
 	stat += "load balancing policy : " + lbp + "\n";
+	stat += "matmul_time_threshold : " + matmul_time_threshold + "\n";
+	stat += "matmul_count_threshold : " + matmul_count_threshold + "\n";
+	stat += "matmul_length : " + matmul_length + "\n";
+	stat += "time to monitor : " + lbp + "\n";
 
 	if (expr_title.length() > 0) {
 	    stat += "experiment title : " + expr_title + "\n";
@@ -443,14 +515,34 @@ public class ContainersLauncher extends AbstractService implements EventHandler<
      ********************************************************************/
     private float calculateP(ChildMaster CPU, ChildMaster GPU) {
 	float p = cpugpu_proportion;
+	float c = cpugpu_proportion, g = 1;
 
-	if (CPU.getFinished() >= CPU.getThreshold() && GPU.getFinished() >= GPU.getThreshold()) {
-	    try {
-		p = (((float) CPU.getRunningTime() / CPU.getFinished())
-		    / ((float) GPU.getRunningTime() / GPU.getFinished()));
-	    } catch (Exception e) {
-		e.printStackTrace();
+	if (CPU.getFinished() < CPU.getThreshold()) {
+		p = cpugpu_proportion;
+	} else if (CPU.getFinished() < CPU.latest_n) {
+		c = (float) CPU.getRunningTime() / CPU.getFinished();
+	} else {
+		c = 0;
+		for (int i=0; i<CPU.latest_n; i++) c += CPU.n_running_time[i];
+		c /= CPU.latest_n;
+	}
+
+	if (GPU.getFinished() < GPU.getThreshold()) {
+		p = cpugpu_proportion;
+	} else if (GPU.getFinished() < GPU.latest_n) {
+		g = (float) GPU.getRunningTime() / GPU.getFinished();
+	} else {
+		g = 0;
+		for (int i=0; i<GPU.latest_n; i++) g += GPU.n_running_time[i];
+		g /= GPU.latest_n;
+	}
+
+	try {
+	    if (CPU.getFinished() >= CPU.getThreshold() && GPU.getFinished() >= GPU.getThreshold()) {
+		p = c / g;
 	    }
+	} catch (Exception e) {
+	    e.printStackTrace();
 	}
 	return p;
     }
@@ -533,30 +625,30 @@ public class ContainersLauncher extends AbstractService implements EventHandler<
 
 			if( bOnlyCPU ) 
 			{
-			    mycmd = insert(mycmd, pos_insert, " -DuseGPU=false -DR=" + R);
+			    mycmd = insert(mycmd, pos_insert, " -DuseGPU=false -DuseMultithread=" + CPU.getUseMultithread() + " -DnumMultithread=" + CPU.getNumMultithread() + " -DR=" + R);
 			    CPU.willLaunch(containerId);
 			}
 			else if (lbp == LOAD_BALANCING_POLICY.auto)
 			{ 
-			    if ( isGpuAvailable(GPU.getRunning(), GPU.getMaxChild(), true) ) 
+			    if ( isGpuAvailable(GPU.getRunning(), GPU.getMaxChild(),  true) ) 
 			    {
 				mycmd = insert(mycmd, pos_insert, " -DuseGPU=true -DR=" + R);
 				GPU.willLaunch(containerId);
-				isGpuAvailable(GPU.getRunning(), GPU.getMaxChild(),false);
+				isGpuAvailable(GPU.getRunning(), GPU.getMaxChild(), false);
 			    }
 			    else if( bMustGPU )
 			    {
 				//Modified for informing information about mustGPU flag to YarnChild
 				mycmd = insert(mycmd, pos_insert, " -DuseGPU=true -DmustGPU=true -DR=" + R);
 				GPU.willLaunch(containerId);
-				isGpuAvailable(GPU.getRunning(), GPU.getMaxChild(),false);
+				isGpuAvailable(GPU.getRunning(), GPU.getMaxChild(), false);
 			    }
 			    else
 			    {
 				float ng, nc;
 
 				if (this.bUse_dynamic_scheduler) 
-				    ng = gpumonitor.X;
+				    ng = gpumonitor.getDesiredNG();  // ng = gpumonitor.X;
 				else
 				    ng = GPU.getMaxChild();
 
@@ -564,8 +656,8 @@ public class ContainersLauncher extends AbstractService implements EventHandler<
 				int a = CPU.getCount();
 				float P = calculateP(CPU, GPU);
 
-				float f_n_gpu_iteration = (N-a)/P/ng;
-				float f_n_cpu_iteration = (a+1) / nc;
+				float f_n_gpu_iteration = (N-a-1)/P/ng;
+				float f_n_cpu_iteration = (nc>0)? ((a+1) / nc) : 0f;
 
 				// eq.4 in the paper
 				int n_gpu_iteration = (int) Math.ceil( f_n_gpu_iteration );
@@ -590,17 +682,17 @@ public class ContainersLauncher extends AbstractService implements EventHandler<
 
 				if( n_gpu_iteration <= n_cpu_iteration )
 				{
-				    // FIXME: In former code, why ommitted containerId and time profiling?
 				    mycmd = insert(mycmd, pos_insert, " -DuseGPU=true -DR=" + R);
 				    GPU.willLaunch(containerId);
-				    isGpuAvailable(GPU.getRunning(), GPU.getMaxChild(),false);
+				    isGpuAvailable(GPU.getRunning(), GPU.getMaxChild(), false);
 
 				    bMustGPU = true;
+				    gpumonitor.setTail(true);
 				    temp1 += "### must be gpu \n";
 				}
 				else
 				{
-				    mycmd = insert(mycmd, pos_insert, " -DuseGPU=false -DR=" + R);
+				    mycmd = insert(mycmd, pos_insert, " -DuseGPU=false -DuseMultithread=" + CPU.getUseMultithread() + " -DnumMultithread=" + CPU.getNumMultithread() + " -DR=" + R);
 				    CPU.willLaunch(containerId);
 				}
 				temp1 += "@@@@@@@@ ceilingend \n";
@@ -613,19 +705,19 @@ public class ContainersLauncher extends AbstractService implements EventHandler<
 				temp1 += "@@@@@@@@ not auto ceiling \n";
 				mycmd = insert(mycmd, pos_insert, " -DuseGPU=true -DR=" + R);
 				GPU.willLaunch(containerId);
-				isGpuAvailable(GPU.getRunning(), GPU.getMaxChild(),false);
+				isGpuAvailable(GPU.getRunning(), GPU.getMaxChild(), false);
 				temp1 += "##### must be gpu2 \n";
 				temp1 += "@@@@@@@@ not auto ceiling end \n";
 			    }
-			    else if (isGpuAvailable(GPU.getRunning(), GPU.getMaxChild(), true) ) 
+			    else if (isGpuAvailable(GPU.getRunning(), GPU.getMaxChild(),  true) ) 
 			    {
 				mycmd = insert(mycmd, pos_insert, " -DuseGPU=true -DR=" + R);
 				GPU.willLaunch(containerId);
-				isGpuAvailable(GPU.getRunning(), GPU.getMaxChild(),false);
+				isGpuAvailable(GPU.getRunning(), GPU.getMaxChild(), false);
 			    }
 			    else 
 			    {
-				mycmd = insert(mycmd, pos_insert, " -DuseGPU=false -DR=" + R);
+				mycmd = insert(mycmd, pos_insert, " -DuseGPU=false -DuseMultithread=" + CPU.getUseMultithread() + " -DnumMultithread=" + CPU.getNumMultithread() + " -DR=" + R);
 				CPU.willLaunch(containerId);
 			    }
 			}
@@ -670,7 +762,7 @@ public class ContainersLauncher extends AbstractService implements EventHandler<
 
 		    if (commands.toString().contains("useGPU=true")) {
 			GPU.willCleanup(containerId);
-			isGpuAvailable(GPU.getRunning(), GPU.getMaxChild(),false);
+			isGpuAvailable(GPU.getRunning(), GPU.getMaxChild(), false);
 		    }else{
 			CPU.willCleanup(containerId);
 			if( bUse_debug_listener )
@@ -689,7 +781,7 @@ public class ContainersLauncher extends AbstractService implements EventHandler<
 			CPU.clear();
 
 			gpumonitor.GpuMapPhaseIsOver();
-			isGpuAvailable(GPU.getRunning(), GPU.getMaxChild(),false);
+			isGpuAvailable(GPU.getRunning(), GPU.getMaxChild(), false);
 		    }
 		}else if( isMRAppMaster ){ // is MP AppMaster
 		    AM.delMaster();
@@ -731,7 +823,7 @@ public class ContainersLauncher extends AbstractService implements EventHandler<
 	    stat += "cur_gpu : " + GPU.getRunning() + "\n";
 	    stat += "max_gpu : " + GPU.getMaxChild() + "\n";
 	    stat += "bMustGPU : " + bMustGPU + "\n";
-	    stat += "bUseMPS : " + this.bUse_mps + "\n";
+	    stat += "bUseMPS : " + this.bUseMps + "\n";
 	    stat += "max_container  : " + AM.getMaxSlot() + "\n";
 	    stat += "progress : ( " 
 		+ (CPU.getFinished() + GPU.getFinished()) + " ("
