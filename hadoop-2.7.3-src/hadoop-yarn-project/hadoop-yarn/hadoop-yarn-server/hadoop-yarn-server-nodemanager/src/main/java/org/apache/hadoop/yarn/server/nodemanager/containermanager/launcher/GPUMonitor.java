@@ -28,12 +28,6 @@ public class GPUMonitor implements Runnable {
     
     float matmul_threshold; // hyonzin: if matmul's duration is more than this value,
                             // GPU is considered to be fully utilizing. (millisecond)
-    //int matmul_full_count_threshold = 14; // hyonzin: if matmul_full_count equals this value,
-                                          // GPU is considered to be fully utilizing.
-    //int matmul_full_count_threshold = 14;
-    //int matmul_full_count_threshold = 0;
-    //int matmul_length = 1000;
-    //int matmul_full_count_threshold = (int)(matmul_length * 0.6);
     int matmul_length;
     int matmul_full_count_threshold;
     
