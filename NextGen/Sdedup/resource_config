@@ -1,0 +1,35 @@
+# BigBWA Resource Config
+bHdfsOutPath=Exit
+
+# Sdedup Resource Config
+sDriverMem=16g
+sExecutorCores=2
+sExecutorMem=6g
+sNumExecutors=10
+sDstreamSize=90
+sPartitionNumb=1024
+
+# Merge Resource Config
+mDriverMem=16g
+mExecutorCores=1
+mExecutorMem=2g
+mNumExecutors=80
+mSamtoolsPath=/home/dblab/tools/install/bin/samtools
+
+# Freebayes Resource Config
+fDriverMem=16g
+fExecutorCores=1
+fExecutorMem=2g
+fNumExecutors=80
+fPartNum=80
+fFreebayesPath=/home/dblab/sparkfrbs/freebayes
+fSamtoolsPath=$mSamtoolsPath
+fRegionSize=1000000
+
+# Bcf tools
+fBcftoolsPath=/home/dblab/tools/install/bin/bcftools
+
+# ZMQ CONFIG
+ZIN=tcp://10.0.0.109:4466
+ZOUT=tcp://10.0.0.109:4477
+

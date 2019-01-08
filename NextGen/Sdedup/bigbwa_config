@@ -1,0 +1,1 @@
+-F tcp://10.0.0.109:4466 -M -R @RG\tID:foo\tLB:bar\tPL:illumina\tPU:illumina\tSM:ERR000954 -t 2
