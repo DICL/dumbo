@@ -31,11 +31,15 @@ public class GPUMonitor implements Runnable {
 	int matmul_length;
 	int matmul_full_count_threshold;
 
+	// Maximum number of GPU tasks(yarnchild)
 	int max_num_of_gpu_yarnchild = 8;
+	// True if the number of GPU yarnchild is over the max value
 	boolean bNumOverMaxGpu = false;
+	// Socket for debugging
 	String debug_listener_address; 
 	int debug_listener_port;
 	boolean bUse_debug_listener;
+
 	int min_gpu,  max_gpu;
 	int dynamic_policy = 0;
 	int num_min_gpu_maptask = 0;
