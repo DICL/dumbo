@@ -323,17 +323,7 @@ public class ContainersLauncher extends AbstractService implements EventHandler<
 		this.dirsHandler = dirsHandler;
 		this.containerManager = containerManager;
 
-		// gpumonitor.sendMsg(mes);
-
-		// /////////////////
-		// max_num_of_gpu_yarnchild = getConfig().getInt(
-		// "myconf.num.yarnchild.gpu", 2);
-		// LOG.info("<yildbsJAVA> max_num_of_gpu_yarnchild : "
-		// + max_num_of_gpu_yarnchild);
-		// System.out.println("<yildbsJAVA> max_num_of_gpu_yarnchild : "
-		// + max_num_of_gpu_yarnchild);
-		// ////////////////
-	}
+		}
 
 	protected boolean isGpuAvailable(int cur_gpu, int max_gpu) {
 		return isGpuAvailable(cur_gpu, max_gpu, false);
@@ -433,8 +423,6 @@ public class ContainersLauncher extends AbstractService implements EventHandler<
 			AM.setMaxSlot(conf.getInt("yarn.nodemanager.resource.memory-mb", -1));
 			AM.setAllocationMB(conf.getInt("yarn.scheduler.minimum-allocation-mb", 1024));
 			GPU.setMaxChild(Math.min(conf.getInt("myconf.num.gpu.yarnchild", 4), AM.getMaxSlot()));
-			//hyonzin: we had profiled GPU utilization while starting yarn.
-			//gpumonitor.setProfiledGpuUtil( Float.parseFloat(System.getProperty("myconf.profile.gpu")) );
 
 			// hyeonjin added 2017-03-20
 			// limit NG to 15 because the number of GPU process on MPS is restricted
