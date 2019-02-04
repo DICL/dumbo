@@ -27,15 +27,11 @@ public class HeTriTest {
 
         for (URL path : paths) {
             String input = path.getPath();
-            String part = input + ".part";
-            Path partPath = new Path(part);
 
+            System.out.println(input);
             Configuration conf = new Configuration();
             conf.setInt("numColors", numColors);
             conf.set("graphFormat", "csrv");
-
-            GraphPartitioner gp = new GraphPartitioner();
-            ToolRunner.run(conf, gp, new String[]{input, part});
 
             HeTri hetri = new HeTri();
 

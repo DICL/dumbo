@@ -9,6 +9,7 @@ import akka.actor.{ActorSystem, Props}
 import com.typesafe.config.{Config, ConfigFactory}
 import hetri.actor._
 import hetri.allocator.{GreedyAllocator, MultiLevelColoring, RandomAllocator, TaskAllocator}
+import hetri.gp.GraphPartitioner
 import hetri.graph.{CSR, CSRV, Graph}
 import org.apache.hadoop.conf.{Configuration, Configured}
 import org.apache.hadoop.fs.{FileSystem, Path}
@@ -34,8 +35,15 @@ class HeTri extends Configured with Tool {
     val part = input + ".part"
     val seed = input + ".seed"
 
+
+    conf.set("graphFormat", "csrv")
     conf.setLong("mapred.task.timeout", 0L)
     conf.set("part", part)
+
+    val gp = new GraphPartitioner
+    ToolRunner.run(conf, gp, Array[String](input, part))
+
+    
 
     val numColors = conf.getInt("numColors", 0)
     val alloc = conf.get("allocator", "mlc") match {
