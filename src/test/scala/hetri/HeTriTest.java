@@ -37,11 +37,11 @@ public class HeTriTest {
             GraphPartitioner gp = new GraphPartitioner();
             ToolRunner.run(conf, gp, new String[]{input, part});
 
-            HeTri gte = new HeTri();
+            HeTri hetri = new HeTri();
 
-            ToolRunner.run(conf, gte, new String[]{input});
+            ToolRunner.run(conf, hetri, new String[]{input});
 
-            assertEquals(1612010, gte.numTriangles());
+            assertEquals(1612010, hetri.numTriangles());
         }
 
     }
