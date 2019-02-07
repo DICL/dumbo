@@ -1,7 +1,19 @@
 # HeTri: Multi-level Node Coloring for Efficient Triangle Enumeration on Heterogeneous Clusters
 
-This repository contains codes and the list of datasets used in the following paper:
-* Multi-level Node Coloring for Efficient Triangle Enumeration on Heterogeneous Clusters, submitted to KDD 2019.
+* HeTri (Heterogeneous Triangle Enumeration) is a tool for enumerating all triangles in a large graph.
+* Given an undirected simple graph, HeTri enumerates all triangles (three-node-cycles).
+* Authors
+    * Ha-Myung Park (hamyung.park@snu.ac.kr), Seoul National University
+    * U Kang (ukang@snu.ac.kr), Seoul National University
+* If your work uses or refers to HeTri, please cite the paper using the following bibtex entry:
+```bibtex
+@inproceedings{ParkHeTri19,
+  author = {Ha-Myung Park and U Kang},
+  title = {Multi-level Node Coloring for Efficient Triangle Enumeration on Heterogeneous Clusters},
+  booktitle = {KDD},
+  year = {submitted},
+}
+```
 
 ## Abstract
 
