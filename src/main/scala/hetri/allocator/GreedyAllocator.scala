@@ -4,7 +4,7 @@
  *
  * -------------------------------------------------------------------------
  * File: GreedyAllocator.java
- * - A task allocator based on multi-level node coloring.
+ * - A greedy task allocator.
  */
 
 package hetri.allocator
