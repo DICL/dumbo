@@ -1,3 +1,13 @@
+/*
+ * HeTri: Multi-level Node Coloring for Efficient Triangle Enumeration on Heterogeneous Clusters
+ * Authors: Ha-Myung Park and U Kang
+ *
+ * -------------------------------------------------------------------------
+ * File: Graph.java
+ * - Interface for Graph formats.
+ */
+
+
 package hetri.graph;
 
 import com.esotericsoftware.kryo.io.Input;
