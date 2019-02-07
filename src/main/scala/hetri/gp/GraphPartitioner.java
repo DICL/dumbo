@@ -1,3 +1,12 @@
+/*
+ * HeTri: Multi-level Node Coloring for Efficient Triangle Enumeration on Heterogeneous Clusters
+ * Authors: Ha-Myung Park and U Kang
+ *
+ * -------------------------------------------------------------------------
+ * File: GraphPartitioner.java
+ * - The graph partitioning step of HeTri.
+ */
+
 package hetri.gp;
 
 import com.esotericsoftware.kryo.io.Output;
@@ -29,10 +38,29 @@ import java.util.StringTokenizer;
 
 public class GraphPartitioner extends Configured implements Tool {
 
+    /**
+     * the main entry point
+     * @param args
+     * [0]: input file path, [1]: output file path
+     * Tool runner parameters:
+     * -D numColors the number of node colors
+     * -D inputFormat seq: sequence file format, tsv: tab seperated edge list file format
+     * @throws Exception by Hadoop
+     */
     public static void main(String[] args) throws Exception {
         ToolRunner.run(new GraphPartitioner(), args);
     }
 
+    /**
+     * Submit the hadoop job
+     * @param args
+     * [0]: input file path, [1]: output file path
+     * Tool runner parameters:
+     * -D numColors the number of node colors
+     * -D inputFormat seq: sequence file format, tsv: tab seperated edge list file format
+     * @return 0
+     * @throws Exception by Hadoop
+     */
     @Override
     public int run(String[] args) throws Exception {
 
@@ -77,6 +105,10 @@ public class GraphPartitioner extends Configured implements Tool {
         // the number of node colors
         int c;
 
+        /**
+         * Setup before execution
+         * @param context of Hadoop
+         */
         @Override
         protected void setup(Context context) {
             this.c = context.getConfiguration().getInt("numColors", 0);
@@ -85,6 +117,14 @@ public class GraphPartitioner extends Configured implements Tool {
         BytePairWritable ok = new BytePairWritable();
         IntPairWritable ov = new IntPairWritable();
 
+        /**
+         * Parse an edge and emit the edge by its color.
+         * @param key not used
+         * @param value an edge in a tab separated text format
+         * @param context of Hadoop
+         * @throws IOException of Hadoop
+         * @throws InterruptedException of Hadoop
+         */
         @Override
         protected void map(Object key, Text value, Context context) throws IOException, InterruptedException {
 
@@ -110,6 +150,10 @@ public class GraphPartitioner extends Configured implements Tool {
         // the number of node colors
         int c;
 
+        /**
+         * Setup before execution
+         * @param context
+         */
         @Override
         protected void setup(Context context) {
             this.c = context.getConfiguration().getInt("numColors", 0);
@@ -118,6 +162,14 @@ public class GraphPartitioner extends Configured implements Tool {
         BytePairWritable ok = new BytePairWritable();
         IntPairWritable ov = new IntPairWritable();
 
+        /**
+         * Parse an edge and emit the edge by its color.
+         * @param key the first node of an edge
+         * @param value the second node of an edge
+         * @param context of Hadoop
+         * @throws IOException of hadoop
+         * @throws InterruptedException of Hadoop
+         */
         @Override
         protected void map(LongWritable key, LongWritable value, Context context) throws IOException, InterruptedException {
 
@@ -141,11 +193,22 @@ public class GraphPartitioner extends Configured implements Tool {
 
         int[][] precomputed_part_num;
 
+        /**
+         * get the partition of an entry
+         * @param key of an entry
+         * @param value of an entry
+         * @param i the number of partitions
+         * @return
+         */
         @Override
         public int getPartition(BytePairWritable key, IntPairWritable value, int i) {
             return precomputed_part_num[key.get_u()][key.get_v()];
         }
 
+        /**
+         * compute partitions of all possible keys in advance
+         * @param conf of Hadoop
+         */
         @Override
         public void setConf(Configuration conf) {
 
@@ -164,6 +227,10 @@ public class GraphPartitioner extends Configured implements Tool {
 
         }
 
+        /**
+         * not used
+         * @return null
+         */
         @Override
         public Configuration getConf() {
             return null;
@@ -176,6 +243,10 @@ public class GraphPartitioner extends Configured implements Tool {
         Path outputPath;
         Class<? extends Graph> gClass = null;
 
+        /**
+         * set the graph format
+         * @param context of Hadoop
+         */
         @Override
         protected void setup(Context context) {
 
@@ -192,6 +263,13 @@ public class GraphPartitioner extends Configured implements Tool {
             }
         }
 
+        /**
+         * write the graph
+         * @param key the color of the graph
+         * @param values edge list in the graph
+         * @param context of Hadoop
+         * @throws IOException by Hadoop
+         */
         @Override
         protected void reduce(BytePairWritable key, Iterable<IntPairWritable> values, Context context) throws IOException {
 

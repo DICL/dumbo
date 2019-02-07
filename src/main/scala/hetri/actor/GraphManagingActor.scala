@@ -1,3 +1,12 @@
+/*
+ * HeTri: Multi-level Node Coloring for Efficient Triangle Enumeration on Heterogeneous Clusters
+ * Authors: Ha-Myung Park and U Kang
+ *
+ * -------------------------------------------------------------------------
+ * File: GraphManagingActor.java
+ * - Graph Manager.
+ */
+
 package hetri.actor
 
 import akka.actor.{Actor, ActorRef, Props}
@@ -33,6 +42,11 @@ class GraphManagingActor(part: Path, fs: FileSystem, gClass: Class[_ <: Graph]) 
 
   var onloading_conter = 0
 
+  /**
+    * make the priority of a graph to be the highest
+    * @param eid graph id
+    * @return false if the graph is not in memory, true otherwise.
+    */
   def tick(eid: Int): Boolean ={
     val i = priority.indexOf(eid)
 
@@ -44,7 +58,13 @@ class GraphManagingActor(part: Path, fs: FileSystem, gClass: Class[_ <: Graph]) 
     }
   }
 
+  /**
+    * It receives a message and take an action
+    * @return none
+    */
   override def receive: Receive = {
+
+    // a graph is requested.
     case msg: GraphRequestMessage =>
       logger.info("msg: " + msg)
 
@@ -119,13 +139,13 @@ class GraphManagingActor(part: Path, fs: FileSystem, gClass: Class[_ <: Graph]) 
         }
       }
 
+    // a graph is released by a task solver
     case msg: GraphReturnMessage =>
       logger.info("msg: " + msg)
       val gw = graphs(msg.eid)
       gw.decreaseCounter()
-//      println(graphs.values.map(_.getCounter).mkString(" "))
-//      println(priority.map{eid => graphs(eid).getCounter}.mkString(" ") + "!")
 
+    // a graph is prepared by a graph loader
     case msg: GraphPreparedMessage =>
       logger.info("msg: " + msg)
       // A graph is prepared.

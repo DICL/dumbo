@@ -1,3 +1,12 @@
+/*
+ * HeTri: Multi-level Node Coloring for Efficient Triangle Enumeration on Heterogeneous Clusters
+ * Authors: Ha-Myung Park and U Kang
+ *
+ * -------------------------------------------------------------------------
+ * File: LocalManagerActor.java
+ * - Task manager.
+ */
+
 package hetri.actor
 
 import akka.actor.{Actor, ActorRef, ActorSelection, Props}
@@ -19,20 +28,28 @@ class LocalManagerActor(id: Int, numColors: Int, concurrencyLevel: Int, graphMan
     hostManager ! ProblemRequestMessage(id)
   }
 
+  /**
+    * It receives a message and take an action
+    * @return none
+    */
   override def receive: Receive = {
-    // from host manager
+
+    // no task remains to assign (from the job manager).
     case NoMoreProblemMessage =>
       nomoreproblem = true
       if(pids_solving.isEmpty){
         context.stop(self)
         context.system.terminate()
       }
+
+
+    // a task is assigned (from the job manager).
     case msg: ProblemResponseMessage =>
 
       context.system.actorOf(Props(classOf[TriCntActor], msg.pid, numColors, self, graphManager), "tri-" + msg.pid)
       pids_solving.add(msg.pid)
 
-    // from triangle solver
+    // a task is solved (from a task solver).
     case msg: FinishMessage =>
       hadoopMapperContext.getCounter("GTE", "triangles").increment(msg.numTriangles)
       pids_solving.remove(msg.pid)

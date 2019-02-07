@@ -1,3 +1,12 @@
+/*
+ * HeTri: Multi-level Node Coloring for Efficient Triangle Enumeration on Heterogeneous Clusters
+ * Authors: Ha-Myung Park and U Kang
+ *
+ * -------------------------------------------------------------------------
+ * File: GraphLoadingActor.java
+ * - graph loader.
+ */
+
 package hetri.actor
 
 import akka.actor.{Actor, ActorRef}
@@ -23,11 +32,20 @@ class GraphLoadingActor(var graph: Graph, eid: Int, part: Path, fs: FileSystem, 
     context.stop(self)
   }
 
+  /**
+    * get the path of the graph eid
+    * @param eid graph id
+    * @return the path to the graph
+    */
   private def hdfsBasePath(eid: Int) = {
     val ceString = ((eid >> 8) & 0xFF) + "-" + (eid & 0xFF)
     part.suffix("/graph-" + ceString)
   }
 
+  /**
+    * It receives a message and take an action
+    * @return none
+    */
   override def receive: Receive = {
     case msg: Any => /* This actor receives no message*/
   }

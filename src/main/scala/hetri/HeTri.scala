@@ -1,3 +1,13 @@
+/*
+ * HeTri: Multi-level Node Coloring for Efficient Triangle Enumeration on Heterogeneous Clusters
+ * Authors: Ha-Myung Park and U Kang
+ *
+ * -------------------------------------------------------------------------
+ * File: HeTri.java
+ * - HeTri: Heterigeneous triangle enumeration.
+ * - HeTri runs on Hadoop.
+ */
+
 package hetri
 
 import java.io.OutputStreamWriter
@@ -28,6 +38,16 @@ class HeTri extends Configured with Tool {
 
   var numTriangles: Long = 0
 
+  /**
+    * Submit the hadoop job
+    * @param args
+    * [0]: input file path
+    * Tool runner parameters:
+    * -DgraphFormat csrv, csr
+    * -DnumColors the number of node colors
+    * -Dallocator parallel scheduling algorithm of HeTri (options: mlc (default), rand, greedy)
+    * @return 0
+    */
   override def run(args: Array[String]): Int = {
     val conf = getConf
 
@@ -43,7 +63,7 @@ class HeTri extends Configured with Tool {
     val gp = new GraphPartitioner
     ToolRunner.run(conf, gp, Array[String](input, part))
 
-    
+
 
     val numColors = conf.getInt("numColors", 0)
     val alloc = conf.get("allocator", "mlc") match {
@@ -81,6 +101,13 @@ class HeTri extends Configured with Tool {
     0
   }
 
+  /**
+    * start actor system.
+    * @param numColors the number of node colors.
+    * @param alloc parallel scheduling algorithm of HeTri
+    * @param conf of Hadoop
+    * @return actor system
+    */
   private def netStart(numColors: Int, alloc: TaskAllocator, conf: Configuration): ActorSystem = {
 
     val systemName = "GTEActorSystem"
@@ -101,6 +128,12 @@ class HeTri extends Configured with Tool {
     system
   }
 
+  /**
+    * create a seed file for the hadoop job
+    * @param conf of Hadoop
+    * @param seed path of seed file
+    * @param workers the list of workers
+    */
   private def createSeed(conf: Configuration, seed: String, workers: Array[String]): Unit = {
     val seedOut = new OutputStreamWriter(FileSystem.get(conf).create(new Path(seed)))
 
@@ -111,6 +144,11 @@ class HeTri extends Configured with Tool {
     seedOut.close()
   }
 
+  /**
+    * get workers from yarn configuration
+    * @param conf of Hadoop
+    * @return the list of workers
+    */
   private def getWorkers(conf: Configuration) = {
     val host = conf.get("yarn.resourcemanager.hostname", "0.0.0.0")
 
@@ -149,11 +187,29 @@ class HeTri extends Configured with Tool {
 }
 
 object HeTri{
+
+  /**
+    * The main entry point
+    * @param args
+    * [0]: input file path
+    * Tool runner parameters:
+    * -DgraphFormat csrv, csr
+    * -DnumColors the number of node colors
+    * -Dallocator parallel scheduling algorithm of HeTri (options: mlc (default), rand, greedy)
+    * @return 0
+    */
   def main(args: Array[String]): Unit = {
     ToolRunner.run(new HeTri, args)
   }
 
   class GTEMapper extends Mapper[Object, Text, Object, Object]{
+
+    /**
+      * initialize a worker
+      * @param key not used
+      * @param value information about a worker
+      * @param context of Hadoop.Mapper
+      */
     override def map(key: Object, value: Text, context: Mapper[Object, Text, Object, Object]#Context): Unit = {
 
       val conf = context.getConfiguration
@@ -190,6 +246,11 @@ object HeTri{
     }
   }
 
+  /**
+    * get akka config
+    * @param hostname of Yarn
+    * @return akka config
+    */
   private def getAkkaRemoteConfig(hostname: String): Config ={
     val base: Config = ConfigFactory.parseString("""
        akka {

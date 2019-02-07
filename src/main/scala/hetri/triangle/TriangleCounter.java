@@ -1,12 +1,27 @@
+/*
+ * HeTri: Multi-level Node Coloring for Efficient Triangle Enumeration on Heterogeneous Clusters
+ * Authors: Ha-Myung Park and U Kang
+ *
+ * -------------------------------------------------------------------------
+ * File: TriangleCounter.java
+ * - Local triangle counting implementation for the CSRV graph format.
+ */
+
 package hetri.triangle;
 
 import hetri.graph.CSRV;
 import hetri.graph.Graph;
 
-import java.util.Iterator;
-
 public class TriangleCounter {
 
+    /**
+     * count local triangles whose pivot edge is in `ij`, port edge is in `ik`, and starboard edge is in `jk`.
+     * @param ij a graph of pivot edges.
+     * @param ik a graph of port edges.
+     * @param jk a graph of starboard edges.
+     * @param parallel not used
+     * @return the number of triangles
+     */
     static public long countTriangles(Graph ij, Graph ik, Graph jk, boolean parallel) {
 
         CSRV ij_csrv = (CSRV) ij;
@@ -50,6 +65,16 @@ public class TriangleCounter {
 
     }
 
+    /**
+     * count the intersecting nodes of two neighbor sets
+     * @param ik the graph including the first neighbor set
+     * @param jk the graph including the second netobor set
+     * @param cur_u the start position index of the first neighbor set
+     * @param end_u the end position index of the first neighbor set (exclusive)
+     * @param cur_v the start position index of the second neighbor set
+     * @param end_v the end position index of the second neighbor set (exclusive)
+     * @return the number of the intersecting nodes
+     */
     private static long countIntersect(CSRV ik, CSRV jk, int cur_u, int end_u, int cur_v, int end_v) {
 
         long count = 0;
@@ -76,31 +101,5 @@ public class TriangleCounter {
 
     }
 
-    static public long countIntersect(Iterator<Integer> uN, Iterator<Integer> vN) {
-
-        long count = 0;
-
-
-        int u_head = uN.hasNext() ? uN.next() : -1;
-        int v_head = vN.hasNext() ? vN.next() : -1;
-
-        while(u_head >= 0 && v_head >= 0){
-            if(u_head < v_head){
-                u_head = uN.hasNext() ? uN.next() : -1;
-            }
-            else if(u_head > v_head){
-                v_head = vN.hasNext() ? vN.next() : -1;
-            }
-            else{
-                count++;
-                u_head = uN.hasNext() ? uN.next() : -1;
-                v_head = vN.hasNext() ? vN.next() : -1;
-            }
-        }
-
-        return count;
-
-
-    }
 
 }

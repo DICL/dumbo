@@ -1,3 +1,12 @@
+/*
+ * HeTri: Multi-level Node Coloring for Efficient Triangle Enumeration on Heterogeneous Clusters
+ * Authors: Ha-Myung Park and U Kang
+ *
+ * -------------------------------------------------------------------------
+ * File: IntPair.java
+ * - Class for an int pair.
+ */
+
 package hetri.type;
 
 import java.util.Objects;

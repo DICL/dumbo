@@ -1,3 +1,12 @@
+/*
+ * HeTri: Multi-level Node Coloring for Efficient Triangle Enumeration on Heterogeneous Clusters
+ * Authors: Ha-Myung Park and U Kang
+ *
+ * -------------------------------------------------------------------------
+ * File: TriCntActor.java
+ * - Task solver.
+ */
+
 package hetri.actor
 
 import java.lang.management.ManagementFactory
@@ -26,8 +35,13 @@ class TriCntActor(pid: Int, numcolors: Int, localManager: ActorRef, graphManager
 
   eids.distinct.foreach(eid => graphManager ! GraphRequestMessage(eid))
 
-
+  /**
+    * It receives a message and take an action
+    * @return none
+    */
   override def receive: Receive = {
+
+    // a graph is prepared
     case msg: GraphPreparedMessage =>
       graphs(msg.eid) = msg.g
 

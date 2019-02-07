@@ -1,3 +1,12 @@
+/*
+ * HeTri: Multi-level Node Coloring for Efficient Triangle Enumeration on Heterogeneous Clusters
+ * Authors: Ha-Myung Park and U Kang
+ *
+ * -------------------------------------------------------------------------
+ * File: MultiLevelColoring.java
+ * - A task allocator based on multi-level node coloring.
+ */
+
 package hetri.allocator
 
 import hetri.allocator.MultiLevelColoring.TaskGroup
@@ -29,10 +38,22 @@ class MultiLevelColoring(numColors: Int) extends TaskAllocator {
 
   }
 
+  /**
+    * get the pid of a task
+    * @param i the first color of the task
+    * @param j the second color of the task
+    * @param k the third color of the task
+    * @return the pid
+    */
   def pid(i: Int, j: Int, k: Int): Int ={
     ((k * numColors) + j) * numColors + i
   }
 
+  /**
+    * get the remaining tasks in task group tg
+    * @param tg the task group
+    * @return a stream of tasks
+    */
   def getRemainingTasksOf(tg: TaskGroup): Seq[Int] ={
 
     if(tg.level == L){
@@ -75,6 +96,14 @@ class MultiLevelColoring(numColors: Int) extends TaskAllocator {
 
   val lastTaskAssignedTo: mutable.HashMap[Int, Int] = new mutable.HashMap()
 
+  /**
+    * get task group of a task at a level
+    * @param level the level
+    * @param i the first color of a task
+    * @param j the second color of a task
+    * @param k the third color of a task
+    * @return a task group
+    */
   def getTaskGroup(level: Int, i: Int, j: Int, k: Int): TaskGroup ={
     val mask = (1 << level) - 1
     val x = Array(i & mask, j & mask, k & mask).distinct.sorted
@@ -87,6 +116,12 @@ class MultiLevelColoring(numColors: Int) extends TaskAllocator {
 
   }
 
+  /**
+    * find the nearest task from the given task
+    * @param pid task id
+    * @param wid worker id
+    * @return a task
+    */
   def getNearestTaskFrom(pid: Int, wid: Int): Option[Int] ={
     val (i, j, k) = task(pid, numColors)
     Array(i, j, k).distinct.sorted
@@ -105,7 +140,12 @@ class MultiLevelColoring(numColors: Int) extends TaskAllocator {
   }
 
 
-
+  /**
+    * find the leaf node having max priority
+    * @param tg task group
+    * @param wid worker id
+    * @return
+    */
   def getMaxLeafTaskGroupFrom(tg: TaskGroup, wid: Int): TaskGroup ={
     if(tg.level == L){
       return tg
@@ -116,7 +156,12 @@ class MultiLevelColoring(numColors: Int) extends TaskAllocator {
     }
   }
 
-
+  /**
+    * select the child that has max priority
+    * @param wid worker id
+    * @param children a list of task groups
+    * @return a task group
+    */
   private def byPreemptionAndColorset(wid: Int, children: Seq[TaskGroup]): TaskGroup = {
 
     val po = children.filterNot(preoccupied).filter{x => numTasksOf(x) > 0}
@@ -126,7 +171,12 @@ class MultiLevelColoring(numColors: Int) extends TaskAllocator {
 
   }
 
-
+  /**
+    * select the child that has max priority by edge color
+    * @param wid worker id
+    * @param children a list of task groups
+    * @return a task group
+    */
   private def byEdgecolorset(wid: Int, children: Seq[TaskGroup]): TaskGroup = {
     val max = numTasksOf(children.maxBy(numTasksOf))
 
@@ -195,6 +245,12 @@ class MultiLevelColoring(numColors: Int) extends TaskAllocator {
     getMaxLeafTaskGroupFrom(selected, wid)
   }
 
+
+  /**
+    * find a task to allocate to worker wid
+    * @param wid the worker id
+    * @return a task to allocate
+    */
   override def allocate(wid: Int): Option[Int] ={
 
     val pid_selected = lastTaskAssignedTo.get(wid) match {
@@ -266,6 +322,10 @@ class MultiLevelColoring(numColors: Int) extends TaskAllocator {
 object MultiLevelColoring{
   case class TaskGroup(level: Int, i: Int, j: Int = -1, k: Int = -1){
 
+    /**
+      * get parent
+      * @return parent task group
+      */
     def getParent: TaskGroup = {
 
       val pl = level - 1
@@ -291,6 +351,10 @@ object MultiLevelColoring{
       }
     }
 
+    /**
+      * get children
+      * @return children task groups
+      */
     def getChildren: Seq[TaskGroup] ={
 
       val childLevel = level + 1
@@ -321,6 +385,10 @@ object MultiLevelColoring{
       }
     }
 
+    /**
+      * task group to string
+      * @return a string
+      */
     override def toString: String = {
       if(j == -1) s"($level, $i)"
       else if(k == -1) s"($level, $i, $j)"

@@ -1,3 +1,12 @@
+/*
+ * HeTri: Multi-level Node Coloring for Efficient Triangle Enumeration on Heterogeneous Clusters
+ * Authors: Ha-Myung Park and U Kang
+ *
+ * -------------------------------------------------------------------------
+ * File: TaskAllocator.java
+ * - Trait for task allocation (parallel scheduling).
+ */
+
 package hetri.allocator
 
 trait TaskAllocator {

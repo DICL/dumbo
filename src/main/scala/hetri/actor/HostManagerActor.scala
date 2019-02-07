@@ -1,3 +1,13 @@
+/*
+ * HeTri: Multi-level Node Coloring for Efficient Triangle Enumeration on Heterogeneous Clusters
+ * Authors: Ha-Myung Park and U Kang
+ *
+ * -------------------------------------------------------------------------
+ * File: HostMangerActor.java
+ * - job manager.
+ */
+
+
 package hetri.actor
 
 import akka.actor.Actor
@@ -20,7 +30,13 @@ class HostManagerActor(numColors: Int, alloc: TaskAllocator) extends Actor{
 
   val pb = new ProgressBar("Counting Triangles", numProblems)
 
+  /**
+    * It receives a message and take an action
+    * @return none
+    */
   override def receive: Receive = {
+
+    // a worker has requested a task
     case msg: ProblemRequestMessage =>
 
       val wid = msg.id
@@ -33,19 +49,12 @@ class HostManagerActor(numColors: Int, alloc: TaskAllocator) extends Actor{
         case None => sender ! NoMoreProblemMessage
       }
 
+    // a task is solved (from a task manager)
     case msg: FinishMessage =>
       pb.step()
       if(pb.getMax == pb.getCurrent) pb.close()
   }
 
-//  override def postStop(): Unit = {
-//
-//    assigned.foreach { case (wid, tasks) =>
-//      println(wid + ":")
-//      tasks.foreach(println)
-//    }
-//
-//  }
 }
 
 object HostManagerActor{

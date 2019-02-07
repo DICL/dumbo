@@ -1,3 +1,12 @@
+/*
+ * HeTri: Multi-level Node Coloring for Efficient Triangle Enumeration on Heterogeneous Clusters
+ * Authors: Ha-Myung Park and U Kang
+ *
+ * -------------------------------------------------------------------------
+ * File: Problem.java
+ * - Sub-problem (Task) of HeTri.
+ */
+
 package hetri.allocator
 
 class Problem(val id: Int, val numColors: Int) {

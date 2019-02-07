@@ -1,3 +1,12 @@
+/*
+ * HeTri: Multi-level Node Coloring for Efficient Triangle Enumeration on Heterogeneous Clusters
+ * Authors: Ha-Myung Park and U Kang
+ *
+ * -------------------------------------------------------------------------
+ * File: GreedyAllocator.java
+ * - A task allocator based on multi-level node coloring.
+ */
+
 package hetri.allocator
 
 import scala.collection.mutable
@@ -12,6 +21,11 @@ class GreedyAllocator(numColors: Int) extends TaskAllocator {
   // edge color set of workers
   val workers: mutable.HashMap[Int, mutable.HashSet[(Int, Int)]] = new mutable.HashMap[Int, mutable.HashSet[(Int, Int)]]()
 
+  /**
+    * find a task to allocate to worker wid
+    * @param wid the worker id
+    * @return a task to allocate
+    */
   override def allocate(wid: Int): Option[Int] = {
 
     val assigned = workers.getOrElseUpdate(wid, new mutable.HashSet[(Int, Int)])

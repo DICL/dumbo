@@ -1,3 +1,12 @@
+/*
+ * HeTri: Multi-level Node Coloring for Efficient Triangle Enumeration on Heterogeneous Clusters
+ * Authors: Ha-Myung Park and U Kang
+ *
+ * -------------------------------------------------------------------------
+ * File: CSRV.java
+ * - Graph in the CSRV format.
+ */
+
 package hetri.graph;
 
 import com.esotericsoftware.kryo.io.Input;
@@ -32,15 +41,19 @@ public class CSRV implements Graph {
         read(iedge, inode);
     }
 
-    public Iterator<Integer> nodeIterator(){
-        return Arrays.stream(nodes_id).iterator();
-    }
-
+    /**
+     * get the index of node n
+     * @param n a node
+     * @return the index of node n
+     */
     public int getIdxOf(int n) {
         return Arrays.binarySearch(nodes_id, 0, numNodes, n);
     }
 
-
+    /**
+     * write edges
+     * @param out an output stream
+     */
     public void writeEdges(Output out) {
         out.writeInt(numEdges);
 
@@ -48,6 +61,10 @@ public class CSRV implements Graph {
             out.writeInt(edges[i]);
     }
 
+    /**
+     * write nodes
+     * @param out an output stream
+     */
     public void writeNodes(Output out) {
         out.writeInt(numNodes);
 
@@ -59,17 +76,32 @@ public class CSRV implements Graph {
         out.writeInt(nodes_val[numNodes]);
     }
 
+    /**
+     * write nodes and edges
+     * @param out_edge an output stream for edges
+     * @param out_node an output strema for nodes
+     */
     @Override
     public void write(Output out_edge, Output out_node) {
         writeEdges(out_edge);
         writeNodes(out_node);
     }
 
+    /**
+     * read nodes and edges
+     * @param iedge the input stream of edges
+     * @param inode the input stream of nodes
+     */
     private void _read(Input iedge, Input inode) {
         readEdges(iedge);
         readNodes(inode);
     }
 
+    /**
+     * read nodes and edges. Close the input streams at the end.
+     * @param iedge the input stream of edges
+     * @param inode the input stream of nodes
+     */
     @Override
     public void read(Input iedge, Input inode) {
         _read(iedge, inode);
@@ -77,6 +109,13 @@ public class CSRV implements Graph {
         inode.close();
     }
 
+    /**
+     * read nodes and edges from files.
+     * @param pedge the path of an edge file
+     * @param pnode the path of a node file
+     * @param fs the file system
+     * @throws IOException
+     */
     @Override
     public void read(Path pedge, Path pnode, FileSystem fs) throws IOException {
         Input iedge = new Input(fs.open(pedge));
@@ -88,7 +127,10 @@ public class CSRV implements Graph {
         inode.close();
     }
 
-
+    /**
+     * read edges
+     * @param in an input stream
+     */
     private void readEdges(Input in) {
         if(in == null) return;
 
@@ -108,6 +150,10 @@ public class CSRV implements Graph {
         numEdges = numEdges_new;
     }
 
+    /**
+     * read nodes
+     * @param in an input stream
+     */
     private void readNodes(Input in) {
         if(in == null) return;
 
@@ -131,6 +177,12 @@ public class CSRV implements Graph {
         numNodes = numNodes_new;
     }
 
+    /**
+     * write nodes and edges from a list of edges
+     * @param edges a list of edges
+     * @param oedge an output stream for edges
+     * @param onode an output stream for nodes
+     */
     @Override
     public void writeFrom(Iterable<? extends IntPair> edges, Output oedge, Output onode) {
         LongArrayList arr = new LongArrayList();

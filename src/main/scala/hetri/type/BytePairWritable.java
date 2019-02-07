@@ -1,3 +1,13 @@
+/*
+ * HeTri: Multi-level Node Coloring for Efficient Triangle Enumeration on Heterogeneous Clusters
+ * Authors: Ha-Myung Park and U Kang
+ *
+ * -------------------------------------------------------------------------
+ * File: BytePairWritable.java
+ * - Writable for a byte pair.
+ */
+
+
 package hetri.type;
 
 import org.apache.hadoop.io.ShortWritable;
