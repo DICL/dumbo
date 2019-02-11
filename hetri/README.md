@@ -5,16 +5,7 @@
 * Authors
     * Ha-Myung Park (hamyung.park@snu.ac.kr), Seoul National University
     * U Kang (ukang@snu.ac.kr), Seoul National University
-* If your work uses or refers to HeTri, please cite the paper using the following bibtex entry:
 
-```bibtex
-@inproceedings{ParkHeTri19,
-  author = {Ha-Myung Park and U Kang},
-  title = {Multi-level Node Coloring for Efficient Triangle Enumeration on Heterogeneous Clusters},
-  booktitle = {KDD},
-  year = {submitted},
-}
-```
 
 ## Abstract
 
