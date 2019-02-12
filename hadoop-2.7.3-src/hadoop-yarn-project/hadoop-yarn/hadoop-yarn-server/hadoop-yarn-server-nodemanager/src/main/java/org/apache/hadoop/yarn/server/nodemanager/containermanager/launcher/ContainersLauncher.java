@@ -275,17 +275,23 @@ public class ContainersLauncher extends AbstractService implements EventHandler<
 	AppMaster AM;
 	ChildMaster CPU, GPU;
 
-	// yildbs added
+	// for socket to debug
 	String debug_listener_address = "";
 	String expr_title = "";
 	int debug_listener_port;
 	boolean bUse_debug_listener = false;
+
+	// CPU or GPU mode
 	boolean bOnlyCPU = false;
 	boolean bMustGPU = false;
+
+	// Records per kernel launch (Default: 10k)
 	int R = 10240;
 
-	// hyeonjin added
+	// Using MPS?
 	boolean bUseMps = false;
+
+	// Some configurations for hybrid execution
 	public float cpugpu_proportion = 1;
 	public int num_of_nodes = 1;
 	public boolean bUse_dynamic_scheduler = false;
