@@ -6,6 +6,13 @@ import java.io.PrintWriter;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
+/**
+ * GPU Monitor Class
+ *
+ * It's a class for monitoring the GPU utilization.
+ * 1) using NVML, it monitors GPU's temporal usage.
+ * 2) profiling with small dummy kernel(small matrix multiplication), it monitors GPU's spatial usage.
+ */
 public class GPUMonitor implements Runnable {
   boolean bIsGpuAvailable = true;
   boolean bRunning = true;
