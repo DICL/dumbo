@@ -16,7 +16,10 @@ import java.net.UnknownHostException;
 public class GPUMonitor implements Runnable {
   boolean bIsGpuAvailable = true;
   boolean bRunning = true;
+
+	// desired NG
   int desired = 0;
+
   int delta = 0;
   long pre_wait_time = 0;
   long time_to_wait = 15000; // ms
