@@ -1,0 +1,336 @@
+diff -urN v7-master/storage/source/allocator/stream_allocator.cpp iosbb_beegfs/storage/source/allocator/stream_allocator.cpp
+--- v7-master/storage/source/allocator/stream_allocator.cpp	1970-01-01 09:00:00.000000000 +0900
++++ iosbb_beegfs/storage/source/allocator/stream_allocator.cpp	2019-01-10 15:05:52.000000000 +0900
+@@ -0,0 +1,153 @@
++#include <iostream>
++#include <common/app/log/LogContext.h>
++#include <map>
++#include <string>
++#include <time.h>
++#include <unistd.h>
++#include <atomic>
++#include <thread>
++#include <functional>
++#include <unistd.h>
++#include "stream_allocator.h"
++
++using namespace std;
++std::atomic_flag lock_stream = ATOMIC_FLAG_INIT;
++
++void stream_allocator::init(){
++  for(int i=0; i<8; i++){
++    streams[i] = 0;
++  }
++  threshold = 0;
++}
++
++int stream_allocator::getStreamID(int userID){
++  const char* logContext ="dhkoo";
++
++  int allocated_sid = 0;
++  map<int,int>::iterator itr = table.find(userID);
++
++  threshold++;
++/*
++  // for atomicity
++  if(itr == table.end()){
++    if(lock_stream.test_and_set()){
++      while(allocated_sid == 0 || lock_stream.test_and_set());
++      lock_stream.clear();
++      //std::string asid = std::to_string(static_cast<long long>(allocated_sid));
++      //LogContext(logContext).logErr("waiting thread's sid : " + asid);
++      return allocated_sid;
++    }
++    else{
++      allocated_sid = allocateStreamID(userID);
++      insertNewUserIDandStreamID(userID, allocated_sid);
++      update_access_time(userID);
++      lock_stream.clear();
++      //std::string asid = std::to_string(static_cast<long long>(allocated_sid));
++      //LogContext(logContext).logErr("first thread's sid : " + asid);
++      return allocated_sid;
++    }
++  }
++  else{
++    update_access_time(userID);
++    return itr->second;
++  }
++*/
++  if(itr == table.end()){
++    allocated_sid = allocateStreamID(userID);
++    insertNewUserIDandStreamID(userID, allocated_sid);
++    update_access_time(userID);
++    //std::string asid = std::to_string(static_cast<long long>(allocated_sid));
++    //LogContext(logContext).logErr("first thread's sid : " + asid);
++    return allocated_sid;
++  }
++  else{
++    update_access_time(userID);
++    return itr->second;
++  }
++}
++
++//Need to automic execution
++int stream_allocator::allocateStreamID(int userID){
++    const char* logContext ="dhkoo";
++
++    int min = 1000;
++    int min_index;
++
++    for(int i=0; i<sizeof(streams)/sizeof(int); i++){
++        if(streams[i] < min){
++            min = streams[i];
++            min_index = i;
++        }
++    }
++    std::string minvalue = std::to_string(static_cast<long long>(streams[min_index]));
++    streams[min_index]++;
++    std::string minvalueafter = std::to_string(static_cast<long long>(streams[min_index]));
++    return min_index+1;
++}
++
++void stream_allocator::insertNewUserIDandStreamID(int userID, int streamID){
++
++    table.insert(pair<int,int>(userID,streamID));
++}
++
++void stream_allocator::print_streams(){
++    const char* logContext ="dhkoo";
++
++    for(int i=0; i<sizeof(streams)/sizeof(int); i++){
++        std::string asid = std::to_string(static_cast<long long>(streams[i]));
++        LogContext(logContext).logErr("stream array value : " + asid);
++    }
++}
++
++void stream_allocator::print_map(){
++    const char* logContext ="dhkoo";
++    for(map<int,int>::iterator itr = table.begin(); itr != table.end(); itr++){
++        std::string uid = std::to_string(static_cast<long long>(itr->first));
++        std::string sid = std::to_string(static_cast<long long>(itr->second));
++        LogContext(logContext).logErr("userID: " + uid + " / SID: " + sid);
++    }
++    for(map<int,time_t>::iterator itr = access_time_table.begin(); itr != access_time_table.end(); itr++){
++        std::string uid = std::to_string(static_cast<long long>(itr->first));
++        std::string access = std::to_string(static_cast<long long>(itr->second));
++        LogContext(logContext).logErr("userID: " + uid + " / access time: " + access);
++    }
++}
++
++void stream_allocator::update_access_time(int userID){
++
++    time_t now = time(NULL);
++    access_time_table.insert(pair<int,time_t>(userID,now));
++}
++
++int stream_allocator::getThreshold(){
++    return threshold;
++}
++
++void stream_allocator::release_check(){
++    const char* logContext ="dhkoo";
++    time_t now = time(NULL);
++    int count = 0;
++
++    for(map<int,time_t>::iterator itr = access_time_table.begin(); itr != access_time_table.end(); itr++){
++        //std::string value = std::to_string(static_cast<long long>(difftime(now,itr->second)));
++        //std::string id = std::to_string(static_cast<long long>(itr->first));
++        if(difftime(now,itr->second) > 600){
++            //LogContext(logContext).logErr("[release " + id + "uid]");
++            tmp[count] = itr->first;
++            map<int,int>::iterator itr1 = table.find(itr->first);
++            streams[(itr1->second - 1)]--;
++            table.erase(itr1->first);
++            count++;
++        }
++    }
++    for(int i=0; i<count; i++){
++        access_time_table.erase(tmp[i]);
++    }
++    for(int i=0; i<10; i++){
++        tmp[i] = 0;
++    }
++}
++
++void stream_allocator::reset_value(){
++    threshold = 0;
++}
+diff -urN v7-master/storage/source/allocator/stream_allocator.h iosbb_beegfs/storage/source/allocator/stream_allocator.h
+--- v7-master/storage/source/allocator/stream_allocator.h	1970-01-01 09:00:00.000000000 +0900
++++ iosbb_beegfs/storage/source/allocator/stream_allocator.h	2019-01-10 15:05:52.000000000 +0900
+@@ -0,0 +1,29 @@
++#include <map>
++#include "callbacktimer.h"
++
++
++class stream_allocator {
++
++  private:
++    int streams[8];
++    int threshold;
++    int tmp[10];
++    std::map<int,int> table;
++    std::map<int,time_t> access_time_table;
++
++    void insertNewUserIDandStreamID(int userID, int streamID);
++    int allocateStreamID(int userID);
++    void update_access_time(int userID);
++
++  public:
++    stream_allocator() {};
++    void init();
++    int getStreamID(int userID);
++    void print_streams();
++    void print_map();
++    int getThreshold();
++    void release_check();
++    void reset_value();
++
++};
++
+diff -urN v7-master/storage/source/app/App.cpp iosbb_beegfs/storage/source/app/App.cpp
+--- v7-master/storage/source/app/App.cpp	2018-12-12 18:12:12.000000000 +0900
++++ iosbb_beegfs/storage/source/app/App.cpp	2018-11-07 16:46:46.000000000 +0900
+@@ -1157,7 +1157,6 @@
+       {
+          targets[newTargetNumID] = boost::make_unique<StorageTarget>(path, newTargetNumID,
+                *timerQueue, *mgmtNodes, *mirrorBuddyGroupMapper);
+-         targets[newTargetNumID]->setCleanShutdown(StorageTk::checkSessionFileExists(path.str()));
+       }
+       catch (const std::system_error& e)
+       {
+@@ -1358,6 +1357,7 @@
+       auto& target = *mapping.second;
+ 
+       const auto path = target.getPath().str() + "/" + STORAGETK_SESSIONS_BACKUP_FILE_NAME;
++      this->log->logErr("[dhkoo] restore sesstion path : " + path );
+ 
+       bool pathRes = StorageTk::pathExists(path);
+       if(!pathRes)
+diff -urN v7-master/storage/source/net/message/storage/attribs/SetLocalAttrMsgEx.cpp iosbb_beegfs/storage/source/net/message/storage/attribs/SetLocalAttrMsgEx.cpp
+--- v7-master/storage/source/net/message/storage/attribs/SetLocalAttrMsgEx.cpp	2018-12-12 18:12:12.000000000 +0900
++++ iosbb_beegfs/storage/source/net/message/storage/attribs/SetLocalAttrMsgEx.cpp	2018-11-06 14:04:56.000000000 +0900
+@@ -114,6 +114,8 @@
+       std::string pathStr;
+ 
+       pathStr = StorageTk::getFileChunkPath(getPathInfo(), getEntryID() );
++      LogContext(logContext).logErr("pathStr : " + pathStr);
++            //StringTk::uintToStr(getTargetID() ) );
+ 
+       // update timestamps...
+ 
+diff -urN v7-master/storage/source/program/Program.cpp iosbb_beegfs/storage/source/program/Program.cpp
+--- v7-master/storage/source/program/Program.cpp	2018-12-12 18:12:12.000000000 +0900
++++ iosbb_beegfs/storage/source/program/Program.cpp	2018-11-09 01:54:17.000000000 +0900
+@@ -1,7 +1,9 @@
+ #include <common/toolkit/BuildTypeTk.h>
+ #include "Program.h"
++#include <thread>
+ 
+ App* Program::app = NULL;
++stream_allocator* Program::stream_alloc = NULL;
+ 
+ int Program::main(int argc, char** argv)
+ {
+@@ -10,12 +12,16 @@
+    AbstractApp::runTimeInitsAndChecks(); // must be called before creating a new App
+ 
+    app = new App(argc, argv);
++   stream_alloc = new stream_allocator();
++   stream_alloc->init();
+    
+    app->startInCurrentThread();
+    
+    int appRes = app->getAppResult();
+-   
++
+    delete app;
++
++   delete stream_alloc;
+    
+    return appRes;
+ }
+diff -urN v7-master/storage/source/program/Program.h iosbb_beegfs/storage/source/program/Program.h
+--- v7-master/storage/source/program/Program.h	2018-12-12 18:12:12.000000000 +0900
++++ iosbb_beegfs/storage/source/program/Program.h	2018-11-08 01:44:44.000000000 +0900
+@@ -2,6 +2,7 @@
+ #define PROGRAM_H_
+ 
+ #include <app/App.h>
++#include <allocator/stream_allocator.h>
+ 
+ class Program
+ {
+@@ -12,6 +13,7 @@
+       Program() {}
+       
+       static App* app;
++      static stream_allocator* stream_alloc;
+       
+    public:
+       // getters & setters
+@@ -19,7 +21,11 @@
+       {
+          return app;
+       }
+-      
++
++      static stream_allocator* getStream_alloc()
++      {
++         return stream_alloc;
++      }
+ };
+ 
+ #endif /*PROGRAM_H_*/
+diff -urN v7-master/storage/source/session/SessionLocalFile.cpp iosbb_beegfs/storage/source/session/SessionLocalFile.cpp
+--- v7-master/storage/source/session/SessionLocalFile.cpp	2018-12-12 18:12:12.000000000 +0900
++++ iosbb_beegfs/storage/source/session/SessionLocalFile.cpp	2018-11-07 18:57:59.000000000 +0900
+@@ -78,6 +78,10 @@
+       std::string chunkFilePathStr;
+       bool hasOrigFeature = pathInfo->hasOrigFeature();
+ 
++      //dhkoo entryID is id associated with file
++      //LogContext(logContext).logErr("entryID : " + entryID);
++      //LogContext(logContext).logErr("original Parent entryID : " + pathInfo->getOrigParentEntryID());
++
+       StorageTk::getChunkDirChunkFilePath(pathInfo, entryID, hasOrigFeature, chunkDirPath,
+          chunkFilePathStr);
+ 
+diff -urN v7-master/storage/source/storage/ChunkStore.cpp iosbb_beegfs/storage/source/storage/ChunkStore.cpp
+--- v7-master/storage/source/storage/ChunkStore.cpp	2018-12-12 18:12:12.000000000 +0900
++++ iosbb_beegfs/storage/source/storage/ChunkStore.cpp	2019-01-10 15:06:20.000000000 +0900
+@@ -573,6 +573,23 @@
+    // calling create with O_EXCL first, then without O_CREAT if that failed).
+ 
+    const int fd = openat(targetFD, path.c_str(), openFlags, STORAGETK_DEFAULTCHUNKFILEMODE);
++   //dhkoo
++
++
++   const char* logContext = "dhkoo";
++   std::string quota_uid = std::to_string(static_cast<long long>(quota.uid));
++
++   stream_allocator* stream_alloc = Program::getStream_alloc();
++   int streamid;
++   streamid = stream_alloc->getStreamID(quota.uid);
++
++   if(stream_alloc->getThreshold() >= 10000){
++      stream_alloc->release_check(); 
++      stream_alloc->reset_value();
++   }
++
++   posix_fadvise(fd, streamid, 0, POSIX_FADV_STREAMID);
++
+    if (fd < 0)
+    {
+       if (errno == EACCES)
+diff -urN v7-master/storage/source/storage/ChunkStore.h iosbb_beegfs/storage/source/storage/ChunkStore.h
+--- v7-master/storage/source/storage/ChunkStore.h	2018-12-12 18:12:12.000000000 +0900
++++ iosbb_beegfs/storage/source/storage/ChunkStore.h	2018-11-07 21:54:55.000000000 +0900
+@@ -15,6 +15,7 @@
+ 
+ #define PATH_DEPTH_IDENTIFIER 'l' // we use 'l' (level) instead of 'd', as d is part of hex numbers
+ 
++#define POSIX_FADV_STREAMID 8
+ 
+ class ChunkDir;
+ 

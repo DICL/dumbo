@@ -1,0 +1,713 @@
+Binary files slurm/src/slurmctld/.libs/slurmctld and slurm_iosbb/src/slurmctld/.libs/slurmctld differ
+diff -urN slurm/src/slurmctld/Makefile slurm_iosbb/src/slurmctld/Makefile
+--- slurm/src/slurmctld/Makefile	2019-01-10 15:33:55.854925923 +0900
++++ slurm_iosbb/src/slurmctld/Makefile	2018-12-16 18:31:41.305668319 +0900
+@@ -162,7 +162,7 @@
+ 	read_config.$(OBJEXT) reservation.$(OBJEXT) \
+ 	sched_plugin.$(OBJEXT) slurmctld_plugstack.$(OBJEXT) \
+ 	srun_comm.$(OBJEXT) state_save.$(OBJEXT) statistics.$(OBJEXT) \
+-	step_mgr.$(OBJEXT) trigger_mgr.$(OBJEXT)
++	step_mgr.$(OBJEXT) trigger_mgr.$(OBJEXT) iosbb.$(OBJEXT) pool_mgr.$(OBJEXT)
+ slurmctld_OBJECTS = $(am_slurmctld_OBJECTS)
+ am__DEPENDENCIES_1 =
+ AM_V_lt = $(am__v_lt_$(V))
+@@ -557,7 +557,11 @@
+ 	statistics.c	\
+ 	step_mgr.c	\
+ 	trigger_mgr.c	\
+-	trigger_mgr.h
++	trigger_mgr.h \
++	iosbb.c \
++	iosbb.h \
++	pool_mgr.c \
++	pool_mgr.h
+ 
+ depend_libs = $(top_builddir)/src/common/libdaemonize.la
+ slurmctld_LDADD = $(depend_libs) $(LIB_SLURM) $(DL_LIBS)
+@@ -667,6 +671,8 @@
+ include ./$(DEPDIR)/groups.Po
+ include ./$(DEPDIR)/heartbeat.Po
+ include ./$(DEPDIR)/job_mgr.Po
++include ./$(DEPDIR)/iosbb.Po
++include ./$(DEPDIR)/pool_mgr.Po
+ include ./$(DEPDIR)/job_scheduler.Po
+ include ./$(DEPDIR)/job_submit.Po
+ include ./$(DEPDIR)/licenses.Po
+diff -urN slurm/src/slurmctld/Makefile.am slurm_iosbb/src/slurmctld/Makefile.am
+--- slurm/src/slurmctld/Makefile.am	2019-01-10 15:33:55.845925826 +0900
++++ slurm_iosbb/src/slurmctld/Makefile.am	2018-12-16 18:30:51.219013232 +0900
+@@ -69,7 +69,11 @@
+ 	statistics.c	\
+ 	step_mgr.c	\
+ 	trigger_mgr.c	\
+-	trigger_mgr.h
++	trigger_mgr.h \
++	iosbb.c \
++	iosbb.h \
++	pool_mgr.c \
++	pool_mgr.h
+ 
+ 
+ sbin_PROGRAMS = slurmctld
+diff -urN slurm/src/slurmctld/Makefile.in slurm_iosbb/src/slurmctld/Makefile.in
+--- slurm/src/slurmctld/Makefile.in	2019-01-10 15:33:55.854925923 +0900
++++ slurm_iosbb/src/slurmctld/Makefile.in	2018-12-16 18:31:36.879610695 +0900
+@@ -162,7 +162,7 @@
+ 	read_config.$(OBJEXT) reservation.$(OBJEXT) \
+ 	sched_plugin.$(OBJEXT) slurmctld_plugstack.$(OBJEXT) \
+ 	srun_comm.$(OBJEXT) state_save.$(OBJEXT) statistics.$(OBJEXT) \
+-	step_mgr.$(OBJEXT) trigger_mgr.$(OBJEXT)
++	step_mgr.$(OBJEXT) trigger_mgr.$(OBJEXT) iosbb.$(OBJEXT) pool_mgr.$(OBJEXT)
+ slurmctld_OBJECTS = $(am_slurmctld_OBJECTS)
+ am__DEPENDENCIES_1 =
+ AM_V_lt = $(am__v_lt_@AM_V@)
+@@ -557,7 +557,11 @@
+ 	statistics.c	\
+ 	step_mgr.c	\
+ 	trigger_mgr.c	\
+-	trigger_mgr.h
++	trigger_mgr.h \
++	iosbb.c \
++	iosbb.h \
++	pool_mgr.c \
++	pool_mgr.h
+ 
+ depend_libs = $(top_builddir)/src/common/libdaemonize.la
+ slurmctld_LDADD = $(depend_libs) $(LIB_SLURM) $(DL_LIBS)
+@@ -667,6 +671,8 @@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/groups.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/heartbeat.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/job_mgr.Po@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/iosbb.Po@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pool_mgr.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/job_scheduler.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/job_submit.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/licenses.Po@am__quote@
+diff -urN slurm/src/slurmctld/controller.c slurm_iosbb/src/slurmctld/controller.c
+--- slurm/src/slurmctld/controller.c	2019-01-10 15:33:55.845925826 +0900
++++ slurm_iosbb/src/slurmctld/controller.c	2018-12-17 01:46:42.499024419 +0900
+@@ -117,6 +117,7 @@
+ #include "src/slurmctld/srun_comm.h"
+ #include "src/slurmctld/state_save.h"
+ #include "src/slurmctld/trigger_mgr.h"
++#include "src/slurmctld/pool_mgr.h"
+ 
+ 
+ #define DEFAULT_DAEMONIZE 1	/* Run as daemon by default if set */
+@@ -163,6 +164,7 @@
+ /* Scheduler Log options */
+ log_options_t sched_log_opts = SCHEDLOG_OPTS_INITIALIZER;
+ 
++
+ /* Global variables */
+ int	accounting_enforce = 0;
+ int	association_based_accounting = 0;
+@@ -187,6 +189,8 @@
+ uint16_t running_cache = 0;
+ pthread_mutex_t assoc_cache_mutex = PTHREAD_MUTEX_INITIALIZER;
+ pthread_cond_t assoc_cache_cond = PTHREAD_COND_INITIALIZER;
++int storage_pools[4] = {0,};
++Box *pool;
+ 
+ /* Local variables */
+ static pthread_t assoc_cache_thread = (pthread_t) 0;
+@@ -1912,6 +1916,9 @@
+ 	slurmctld_lock_t job_node_read_lock = {
+ 		NO_LOCK, READ_LOCK, READ_LOCK, NO_LOCK, NO_LOCK };
+ 
++  //dhkoo
++  pool = box_new();
++
+ 	/* Let the dust settle before doing work */
+ 	now = time(NULL);
+ 	last_sched_time = last_full_sched_time = now;
+@@ -2224,6 +2231,14 @@
+ 		END_TIMER2("_slurmctld_background");
+ 	}
+ 
++  //dhkoo - free storage pool structure
++  if (pool->head == NULL){
++    free(pool);
++  }
++  else{
++    box_free(pool);
++  }
++
+ 	debug3("_slurmctld_background shutting down");
+ 
+ 	return NULL;
+@@ -3458,3 +3473,4 @@
+ 	wait_arg->prog_type = xstrdup(prog_type);
+ 	slurm_thread_create_detached(NULL, _wait_primary_prog, wait_arg);
+ }
++
+diff -urN slurm/src/slurmctld/controller.h slurm_iosbb/src/slurmctld/controller.h
+--- slurm/src/slurmctld/controller.h	1970-01-01 09:00:00.000000000 +0900
++++ slurm_iosbb/src/slurmctld/controller.h	2018-12-16 14:58:54.331700503 +0900
+@@ -0,0 +1 @@
++int storage_pools[4] = {0,};
+diff -urN slurm/src/slurmctld/iosbb.c slurm_iosbb/src/slurmctld/iosbb.c
+--- slurm/src/slurmctld/iosbb.c	1970-01-01 09:00:00.000000000 +0900
++++ slurm_iosbb/src/slurmctld/iosbb.c	2018-12-17 18:07:02.021277515 +0900
+@@ -0,0 +1,122 @@
++#include<string.h>
++#include<stdio.h>
++#include<stdlib.h>
++#include<stdbool.h>
++#include <slurm/slurm.h>
++#include "src/slurmctld/iosbb.h"
++#include "src/common/xmalloc.h"
++#include "src/common/xstring.h"
++#include "src/common/log.h"
++//#include "/home/dhkoo/pm963/wlm/slurm/slurm/slurm.h"
++//#include "/home/dhkoo/pm963/wlm/slurm/src/slurmctld/iosbb.h"
++//#include "/home/dhkoo/pm963/wlm/slurm/src/common/xmalloc.h"
++//#include "/home/dhkoo/pm963/wlm/slurm/src/common/xstring.h"
++//#include "/home/dhkoo/pm963/wlm/slurm/src/common/log.h"
++
++
++void iosbb_set_stripe_count(char *capacity, iosbb_record *iosbb){
++    char *tmp = NULL, *unit;
++
++    iosbb->iosbb_size = (int) strtoull(capacity, &tmp, 10);
++    if ((iosbb->iosbb_size > 0) && tmp) {
++        unit = xstrdup(tmp);
++        strtok(unit, " ");
++        if (!xstrcasecmp(unit, "m") || !xstrcasecmp(unit, "mb")){
++           iosbb->iosbb_size_unit = "M";
++           iosbb->stripe_count = 1;
++        }
++        else if (!xstrcasecmp(unit, "g") || !xstrcasecmp(unit, "gb")){
++           iosbb->iosbb_size_unit = "G";
++           if (iosbb->iosbb_size <= 20){
++              iosbb->stripe_count = 1;
++           }
++           else if ((iosbb->iosbb_size > 20) && (iosbb->iosbb_size <= 80)){
++              iosbb->stripe_count = 2;
++           }
++           else{
++              iosbb->stripe_count = 4;
++           }
++        }
++        else if (!xstrcasecmp(unit, "t") || !xstrcasecmp(unit, "tb")){
++           iosbb->iosbb_size_unit = "T";
++           iosbb->stripe_count = 4;
++        }
++        else {
++            debug2("##[IOSBB_ERROR] : Wrong capacity unit");
++        }
++    }
++}
++/*
++void iosbb_set_storagePool_id(char *storagepool_id, iosbb_record *iosbb){
++    char *tmp = NULL;
++    iosbb->storage_pool_id = atoi(storagepool_id);
++}
++*/
++int iosbb_check(iosbb_record *iosbb, char *script){
++    char *save_ptr, *tok, *sub_tok, *tmp;
++    int bb_flag = 0, rc = 1;
++
++    tok = strtok_r(script, "\n", &save_ptr);
++    while (tok) {
++        if (tok[0] != '#') {
++            tok = strtok_r(NULL, "\n", &save_ptr);
++            continue;
++        }
++        if ((tok[1] == 'I') && (tok[2] == 'O') && (tok[3] == 'S') && (tok[4] == 'B') && (tok[5] == 'B')) {
++          bb_flag = IOS_BB_OP; // found #IOSBB directive
++        }
++
++        if (bb_flag == IOS_BB_OP) {
++            if ((sub_tok = strstr(tok, "dirname="))) {
++                tmp = strdup(sub_tok + 8);
++                iosbb->iosbb_name = strdup(strtok(tmp, " "));
++                free(tmp);
++            }
++            if ((sub_tok = strstr(tok, "capacity="))) {
++                tmp = strdup(sub_tok + 9);
++                iosbb_set_stripe_count(strtok(tmp, " "), iosbb);
++                free(tmp);
++            }
++            /*
++            if ((sub_tok = strstr(tok, "storagepool="))) {
++                tmp = strdup(sub_tok + 12);
++                iosbb_set_storagePool_id(strtok(tmp, " "), iosbb);
++                free(tmp);
++            }
++            */
++            bb_flag = 0; //reset bb_flag
++        }
++        tok = strtok_r(NULL, "\n", &save_ptr);
++    }
++    //if (xstrcmp(iosbb->iosbb_name, NULL) == 0 || xstrcmp(iosbb->iosbb_size_unit, NULL) == 0 || iosbb->iosbb_size == 0 || iosbb->storage_pool_id == 0 ) {
++    if (xstrcmp(iosbb->iosbb_name, NULL) == 0 || xstrcmp(iosbb->iosbb_size_unit, NULL) == 0 || iosbb->iosbb_size == 0) {
++        rc = 0; 
++        debug2("##[IOSBB_ERROR] : Insufficient arguments");
++    }
++
++    return rc;
++}
++
++/*
++void iosbb_set_storagePool_id(iosbb_record *iosbb){
++    int st_array[ST_SIZE] = {0,};
++    bool check_empty = false;
++    int empty_index;
++
++    for (int i=0; i<ST_SIZE; i++){
++        if (st_array[i] == 0){
++            check_empty = true;
++            empty_index = i;
++            break;
++        }
++    }
++    if (check_empty){
++        iosbb->storage_pool_id = empty_index + 2; // start stroage pool index is 2
++        st_arrary[empty_index]++;
++        //
++    }
++    else{
++        // 
++    }
++}
++*/
+diff -urN slurm/src/slurmctld/iosbb.h slurm_iosbb/src/slurmctld/iosbb.h
+--- slurm/src/slurmctld/iosbb.h	1970-01-01 09:00:00.000000000 +0900
++++ slurm_iosbb/src/slurmctld/iosbb.h	2018-12-17 02:46:52.698239603 +0900
+@@ -0,0 +1,17 @@
++#include <slurm/slurm.h>
++
++#define IOS_BB_OP   1
++#define ST_SIZE   4
++
++typedef struct _iosbb_record {
++    char *iosbb_user;
++    char *iosbb_name;
++    char *iosbb_size_unit;
++    int iosbb_size;
++    int storage_pool_id;
++    int stripe_count;
++} iosbb_record;
++
++void iosbb_set_stripe_count(char *ptr, iosbb_record *bb_ptr);
++//void iosbb_set_storagePool_id(char *ptr, iosbb_record *bb_ptr);
++int iosbb_check(iosbb_record *bb_ptr, char *script);
+diff -urN slurm/src/slurmctld/job_mgr.c slurm_iosbb/src/slurmctld/job_mgr.c
+--- slurm/src/slurmctld/job_mgr.c	2019-01-10 15:33:55.855925936 +0900
++++ slurm_iosbb/src/slurmctld/job_mgr.c	2018-12-17 22:51:03.009142797 +0900
+@@ -103,6 +103,7 @@
+ #include "src/slurmctld/srun_comm.h"
+ #include "src/slurmctld/state_save.h"
+ #include "src/slurmctld/trigger_mgr.h"
++#include "src/slurmctld/pool_mgr.h"
+ 
+ #define ARRAY_ID_BUF_SIZE 32
+ #define DETAILS_FLAG 0xdddd
+@@ -145,6 +146,10 @@
+ List   job_list = NULL;		/* job_record list */
+ time_t last_job_update;		/* time of last update to job records */
+ 
++//dhkoo
++extern int storage_pools[4];
++extern Box *pool;
++
+ List purge_files_list = NULL;	/* job files to delete */
+ 
+ /* Local variables */
+@@ -5671,6 +5676,7 @@
+ 	}
+ 
+ 	if (IS_JOB_COMPLETING(job_ptr))
++		error("[dhkoo] job_completed!!!!! \n");
+ 		return SLURM_SUCCESS;
+ 
+ 	if (prolog_return_code)
+@@ -5879,6 +5885,13 @@
+ 		deallocate_nodes(job_ptr, false, suspended, false);
+ 	}
+ 
++//dhkoo
++/*
++  if (bb_flag){
++    box_remove(pool, storage_pools, job_ptr->job_id);
++    bb_flag = false;
++  }
++*/
+ 	info("%s: %pJ done", __func__, job_ptr);
+ 
+ 	return SLURM_SUCCESS;
+diff -urN slurm/src/slurmctld/job_scheduler.c slurm_iosbb/src/slurmctld/job_scheduler.c
+--- slurm/src/slurmctld/job_scheduler.c	2019-01-10 15:33:55.845925826 +0900
++++ slurm_iosbb/src/slurmctld/job_scheduler.c	2018-12-16 14:39:15.215278750 +0900
+@@ -1493,7 +1493,6 @@
+ 		}
+ 		list_iterator_destroy(part_iterator);
+ 	}
+-
+ 	sched_debug("Running job scheduler");
+ 	/*
+ 	 * If we are doing FIFO scheduling, use the job records right off the
+diff -urN slurm/src/slurmctld/pool_mgr.c slurm_iosbb/src/slurmctld/pool_mgr.c
+--- slurm/src/slurmctld/pool_mgr.c	1970-01-01 09:00:00.000000000 +0900
++++ slurm_iosbb/src/slurmctld/pool_mgr.c	2018-12-17 22:56:20.074289438 +0900
+@@ -0,0 +1,193 @@
++#include <stdio.h>
++#include <assert.h>
++#include <stdlib.h>
++#include <string.h>
++#include "/home/dhkoo/pm963/wlm/slurm/src/slurmctld/pool_mgr.h"
++
++#define ST_ID_OFFSET  2
++
++Box* box_new() {
++    Box *box = (Box*)malloc(sizeof(Box));
++    assert(box != NULL);
++    box->head = NULL;
++    box->bb = NULL;
++    box->tail = NULL;
++    return box;
++}
++
++int alloc_pool_id(Box *pool, int *storage_pools, int jobid, int uid, iosbb_record *bb){
++
++    int sp_id, candidated_id;
++    int index = 0, min1 = 10000, min2 = 10000;
++    int index_cnt[4] ={0,};
++
++    // process of finding empty pool id and choose candidate id
++    for (index = 0; index < 4; index++){
++        if (storage_pools[index] == 0){
++            storage_pools[index]++;
++            job_add(pool, jobid, uid, index, bb);
++            sp_id = index + ST_ID_OFFSET;
++            return sp_id; //return pool_id
++        }
++        if (min1 > storage_pools[index]){
++            min1 = storage_pools[index];
++            candidated_id = index + ST_ID_OFFSET;
++        }
++    }
++
++    // process of finding pool_id which don't have job with same uid
++    if (check_pool_id(pool, uid, index_cnt)){
++        for (index = 0; index < 4; index++){
++            if (index_cnt[index] == 0){
++                if (min2 > storage_pools[index]){
++                    min2 = storage_pools[index];
++                    sp_id = index;
++                }
++            }
++        }
++        storage_pools[sp_id]++;
++        job_add(pool, jobid, uid, sp_id, bb);
++        sp_id += ST_ID_OFFSET;
++        return sp_id;
++    }
++    else{
++        storage_pools[candidated_id - 2]++;
++        job_add(pool, jobid, uid, candidated_id-2, bb);
++        return candidated_id;
++    }
++}
++
++void job_add(Box *pool, int jobid, int uid, int index, iosbb_record *bb) {
++
++    while (pool->head != NULL){
++        if (pool->tail != NULL){
++            pool = pool->tail;
++        }
++        else {
++            break;
++        }
++    }
++    if (pool->head != NULL){
++        while (pool->tail != NULL){
++            pool= pool->tail;
++        }
++        Box *next = box_new();
++        pool->tail = next;
++        pool= pool->tail;
++    }
++    pool->head = (uid_box*)malloc(sizeof(uid_box));
++    assert(pool->head != NULL);
++    pool->head->jobid = jobid;
++    pool->head->uid = uid;
++    pool->head->index = index;
++
++    pool->bb = (iosbb_record*)malloc(sizeof(iosbb_record));
++    pool->bb->iosbb_user = bb->iosbb_user;
++    pool->bb->iosbb_name = bb->iosbb_name;
++    pool->bb->iosbb_size_unit = bb->iosbb_size_unit;
++    pool->bb->iosbb_size = bb->iosbb_size;
++    pool->bb->stripe_count = bb->stripe_count;
++
++}
++
++int check_pool_id(Box *pool, int uid, int *index_cnt) {
++    int i = 0;
++    if (pool->head == NULL){
++        return 0;
++    }
++    while (pool != NULL) {
++        if (pool->head->uid == uid){
++            index_cnt[pool->head->index]++;
++        }
++        pool = pool->tail;
++    }
++    for (i = 0; i < 4; i++){
++        if (index_cnt[i] == 0){
++            return 1;
++        }
++    }
++    return 0;
++}
++
++void box_remove(Box *pool, int *storage_pools, int jobid){
++    Box *previous = NULL;
++    int index;
++    char cmd[100];
++
++    while (pool->head != NULL){
++        if (pool->head->jobid == jobid){
++            index = pool->head->index;
++            sprintf(cmd, "/home/dhkoo/static_bb/EXIT_IOSBB.sh %s %s", pool->bb->iosbb_user, pool->bb->iosbb_name);
++            printf("iosbb_user : %s, iosbb_name : %s \n", pool->bb->iosbb_user, pool->bb->iosbb_name);
++            system(cmd);
++            if (previous == NULL){ // first node
++                if (pool->tail != NULL){
++                    Box *toremove = pool->tail;
++                    pool->head->jobid = toremove->head->jobid;
++                    pool->head->uid = toremove->head->uid;
++                    pool->head->index = toremove->head->index;
++
++                    pool->bb->iosbb_user = toremove->bb->iosbb_user;
++                    pool->bb->iosbb_name = toremove->bb->iosbb_name;
++                    pool->bb->iosbb_size_unit = toremove->bb->iosbb_size_unit;
++                    pool->bb->iosbb_size = toremove->bb->iosbb_size;
++                    pool->bb->stripe_count = toremove->bb->stripe_count;
++
++                    pool->tail = toremove->tail;
++                    free(toremove->head);
++                    free(toremove->bb);
++                    free(toremove);
++                    storage_pools[index]--;
++                }
++                else{
++                    pool->head = NULL;
++                    storage_pools[index]--;
++                }
++            }
++            else {
++                if (pool->tail != NULL){
++                    previous->tail = pool->tail;
++                    free(pool->head);
++                    free(pool->bb);
++                    free(pool);
++                    storage_pools[index]--;
++                }
++                else{
++                    previous->tail = NULL;
++                    free(pool->head);
++                    free(pool->bb);
++                    free(pool);
++                    storage_pools[index]--;
++                }
++            }
++        }
++
++        if (pool->tail == NULL){
++            return;
++        }
++        previous = pool;
++        pool= pool->tail;
++    }
++}
++
++int is_bb_job(Box *pool, int jobid){
++    while (pool->head != NULL){
++        if (pool->head->jobid == jobid){
++            return 1;
++        }
++        pool = pool->tail;
++    }
++    return 0;
++}
++
++void box_free(Box *pool) {
++    if(pool== NULL){
++        return;
++    } 
++    free(pool->head);
++    free(pool->bb);
++
++    Box *tail = pool->tail;
++    free(pool);
++    box_free(tail);
++}
+diff -urN slurm/src/slurmctld/pool_mgr.h slurm_iosbb/src/slurmctld/pool_mgr.h
+--- slurm/src/slurmctld/pool_mgr.h	1970-01-01 09:00:00.000000000 +0900
++++ slurm_iosbb/src/slurmctld/pool_mgr.h	2018-12-17 22:56:18.980276118 +0900
+@@ -0,0 +1,23 @@
++#include "/home/dhkoo/pm963/wlm/slurm/src/slurmctld/iosbb.h"
++
++#define ST_ID_OFFSET  2
++
++typedef struct {
++    int jobid;
++    int uid;
++    int index;
++} uid_box;
++
++typedef struct Box_t {
++    uid_box *head;
++    iosbb_record *bb;
++    struct Box_t *tail;
++} Box;
++
++Box* box_new();
++int alloc_pool_id(Box *pool, int *storage_pools, int jobid, int uid, iosbb_record *bb);
++void job_add(Box *pool, int jobid, int uid, int index, iosbb_record *bb);
++int check_pool_id(Box *pool, int uid, int *index_cnt);
++void box_remove(Box *pool, int *storage_pools, int jobid);
++int is_bb_job(Box *pool, int jobid);
++void box_free(Box *pool);
+diff -urN slurm/src/slurmctld/proc_req.c slurm_iosbb/src/slurmctld/proc_req.c
+--- slurm/src/slurmctld/proc_req.c	2019-01-10 15:33:55.846925832 +0900
++++ slurm_iosbb/src/slurmctld/proc_req.c	2018-12-21 00:53:25.063882933 +0900
+@@ -46,6 +46,7 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
++#include <pwd.h>
+ 
+ #if HAVE_SYS_PRCTL_H
+ #  include <sys/prctl.h>
+@@ -103,6 +104,8 @@
+ #include "src/slurmctld/srun_comm.h"
+ #include "src/slurmctld/state_save.h"
+ #include "src/slurmctld/trigger_mgr.h"
++//#include "src/slurmctld/iosbb.h"
++#include "src/slurmctld/pool_mgr.h"
+ 
+ static pthread_mutex_t rpc_mutex = PTHREAD_MUTEX_INITIALIZER;
+ static int rpc_type_size = 0;	/* Size of rpc_type_* arrays */
+@@ -232,6 +235,11 @@
+ 
+ extern diag_stats_t slurmctld_diag_stats;
+ 
++//dhkoo
++iosbb_record *iosbb;
++extern int storage_pools[4];
++extern Box *pool;
++
+ #ifndef NDEBUG
+ /*
+  * Used alongside the testsuite to signal that the RPC should be processed
+@@ -2643,8 +2651,18 @@
+ 		(void) schedule_job_save();	/* Has own locking */
+ 	if (dump_node)
+ 		(void) schedule_node_save();	/* Has own locking */
++
++  //dhkoo
++  
++  if (is_bb_job(pool,job_ptr->job_id)) {
++      slurm_mutex_lock(&rpc_mutex);
++      box_remove(pool, storage_pools, job_ptr->job_id);
++      slurm_mutex_unlock(&rpc_mutex);
++      debug2("@@@[iosbb_info] BB safely exit");
++  }
+ }
+ 
++
+ static void  _slurm_rpc_dump_batch_script(slurm_msg_t *msg)
+ {
+ 	DEF_TIMERS;
+@@ -3995,8 +4013,39 @@
+ 		      uid);
+ 	}
+ 
++/* IOSBB Logic */
++//dhkoo
++  iosbb = xmalloc(sizeof(iosbb_record));
++  struct passwd *user_pw;
++  int rc = 0;
++  char cmd[100];
++  char *bb_home = "/mnt/burstbuffer";
++  char *union_home = "/mnt/union";
++  char *my_home;
++  char bb_target[50];
++  char *script_copy;
++
++  user_pw = getpwuid(uid);
++
++  script_copy = xstrdup(job_desc_msg->script);
++
++  rc = iosbb_check(iosbb, script_copy);
++
++  if (rc == IOS_BB_OP) { // start IOSBB setting
++      iosbb->iosbb_user = xstrdup(user_pw->pw_name);
++      //sprintf(bb_target, "%s/%s/%s", bb_home, iosbb->iosbb_user, iosbb->iosbb_name);
++      sprintf(bb_target, "%s/%s/%s", union_home, iosbb->iosbb_user, iosbb->iosbb_name);
++      my_home = xstrdup(job_desc_msg->work_dir);
++      job_desc_msg->work_dir = xstrdup(bb_target);
++  }
++  else {
++      debug2("##[Existing Flow]\n");
++  }
++		
++
+ 	dump_job_desc(job_desc_msg);
+ 
++
+ 	if (error_code == SLURM_SUCCESS) {
+ 		/* Locks are for job_submit plugin use */
+ 		lock_slurmctld(job_read_lock);
+@@ -4032,6 +4081,7 @@
+ 			reject_job = true;
+ 	} else {
+ 		/* Create new job allocation */
++
+ 		job_desc_msg->pack_job_offset = NO_VAL;
+ 		error_code = job_allocate(job_desc_msg,
+ 					  job_desc_msg->immediate,
+@@ -4044,6 +4094,17 @@
+ 		else {
+ 			job_id = job_ptr->job_id;
+ 			priority = job_ptr->priority;
++
++      //dhkoo
++      if (rc){
++          int alloc_id;
++          slurm_mutex_lock(&rpc_mutex);
++          alloc_id = alloc_pool_id(pool, storage_pools, job_id, uid, iosbb);
++          slurm_mutex_unlock(&rpc_mutex);
++          sprintf(cmd, "/home/dhkoo/static_bb/SET_IOSBB.sh %s %s %u %d%s %d %d %s", user_pw->pw_name, iosbb->iosbb_name, uid, iosbb->iosbb_size, iosbb->iosbb_size_unit, alloc_id, iosbb->stripe_count, my_home);
++          debug2("[dhkoo] alloc_id : %d", alloc_id);
++          debug2("[dhkoo] iosbb_name : %s", pool->bb->iosbb_name);
++      }
+ 		}
+ 
+ 		if (job_desc_msg->immediate &&
+@@ -4051,6 +4112,7 @@
+ 			error_code = ESLURM_CAN_NOT_START_IMMEDIATELY;
+ 			reject_job = true;
+ 		}
++
+ 	}
+ 	unlock_slurmctld(job_write_lock);
+ 	_throttle_fini(&active_rpc_cnt);
+@@ -4065,6 +4127,13 @@
+ 		else
+ 			slurm_send_rc_msg(msg, error_code);
+ 	} else {
++
++    //dhkoo
++    if (rc == IOS_BB_OP) { 
++        system(cmd);
++    }
++    xfree(script_copy);
++
+ 		info("%s: JobId=%u InitPrio=%u %s",
+ 		     __func__, job_id, priority, TIME_STR);
+ 		/* send job_ID */
