@@ -657,11 +657,6 @@ public class ContainersLauncher extends AbstractService implements EventHandler<
 									int n_gpu_iteration = (int) Math.ceil( f_n_gpu_iteration );
 									int n_cpu_iteration = (int) Math.ceil( f_n_cpu_iteration );
 
-									// hyonzin: to set num of yarnchild dynamically
-									//          for future work
-									// conf.setInt("hh.optimal.num.maps",
-									//         (max_num_of_cpu_yarnchild + gpumonitor.desired));
-
 									temp1 += "@@@@@@@@ ceiling \n";
 									temp1 += "NG : " + ng + "\n";
 									temp1 += "NC : " + nc + "\n";
