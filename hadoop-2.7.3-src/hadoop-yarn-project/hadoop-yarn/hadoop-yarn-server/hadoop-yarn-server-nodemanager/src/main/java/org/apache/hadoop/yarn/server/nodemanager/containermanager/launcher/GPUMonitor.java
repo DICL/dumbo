@@ -31,7 +31,10 @@ public class GPUMonitor implements Runnable {
   float util_avg;
   int matmul_full_count = 0;
 
-  boolean bUseOriginalScheduler = false;
+	// set it false for binary scheduler
+  boolean bUseOriginalScheduler = true;
+
+	// GPU Monitor uses NVML and Matmul for monitoring GPU usage
   boolean bUseNvml = true;
   boolean bUseMatmul = true;
   boolean bUseDynamicScheduler;
