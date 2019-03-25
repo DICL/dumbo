@@ -145,8 +145,6 @@ public class GPUMonitor implements Runnable {
         desired = num_min_gpu_maptask;
 
         if( cur_gpu >= 1 ){
-          //desired = max_gpu;
-          //bNumOverMaxGpu = true;
           state = STATE.WAIT;
           bIsGpuAvailable = true;
         }
@@ -178,7 +176,6 @@ public class GPUMonitor implements Runnable {
 
       case DELAY2INC:
         if( isGpuFull() ){
-          //if( cur_gpu >= desired ){
           state = STATE.FULL;
           bIsGpuAvailable = false;
         }else if ( cur_gpu <= desired - 2 ){
@@ -197,7 +194,6 @@ public class GPUMonitor implements Runnable {
         break;
       case DELAY2DEC:
         if( desired <= cur_gpu){
-          //state = STATE.TRANSITION3;
           state = STATE.DELAY2INC;
           bIsGpuAvailable = false;
         }else if( isGpuFull() ){
@@ -250,19 +246,16 @@ public class GPUMonitor implements Runnable {
 
           if( cur_gpu >= max_gpu ){
             desired = max_gpu;
-            //bNumOverMaxGpu = true;
             bIsGpuAvailable = false;
             state = STATE.DELAY2INC;
           }
           break;
         case DELAY2INC:
           if( isGpuFull() ){
-            //if( cur_gpu >= desired ){
             state = STATE.FULL;
             bIsGpuAvailable = false;
           }else if ( cur_gpu < desired - 1 ){
             state = STATE.UNDER;
-            //desired = max_gpu;
             bIsGpuAvailable = true;
           }
           break;
@@ -271,13 +264,11 @@ public class GPUMonitor implements Runnable {
             state = STATE.DELAY2DEC;
             bIsGpuAvailable = true;
             desired = Math.min(cur_gpu+1, max_gpu);
-            //X = cur_gpu;
             X = (desired+cur_gpu)/2;
           }
           break;
         case DELAY2DEC:
           if( desired <= cur_gpu){
-            //state = STATE.TRANSITION3;
             state = STATE.DELAY2INC;
             bIsGpuAvailable = false;
           }else if( isGpuFull() ){
@@ -285,7 +276,6 @@ public class GPUMonitor implements Runnable {
             bIsGpuAvailable = false;
           }else if ( cur_gpu < desired - 1 ){
             state = STATE.UNDER;
-            //desired = max_gpu;
             bIsGpuAvailable = true;
           }
           break;
