@@ -135,6 +135,7 @@ public class GPUMonitor implements Runnable {
     return FSM_conservative(cur_gpu, max_gpu, false);
   }
 
+	// Finite State Machine for Conservative Policy
   public boolean FSM_conservative(int cur_gpu,int max_gpu,boolean isNewMapTask) {
     processCount = cur_gpu;
     this.max_gpu = max_gpu;
@@ -236,6 +237,7 @@ public class GPUMonitor implements Runnable {
       return FSM_maxStart(cur_gpu, max_gpu, false);
     }
 
+		// Finite State Machine for Max-Start Policy
     public boolean FSM_maxStart(int cur_gpu,int max_gpu,boolean isNewMapTask) {
       processCount = cur_gpu;
       this.max_gpu = max_gpu;
