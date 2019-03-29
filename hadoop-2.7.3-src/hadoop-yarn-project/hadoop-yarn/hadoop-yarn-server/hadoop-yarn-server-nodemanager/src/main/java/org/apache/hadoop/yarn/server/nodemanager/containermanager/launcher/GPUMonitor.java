@@ -451,31 +451,11 @@ public class GPUMonitor implements Runnable {
               mes += " ---- scheduler mode : conservative \n";
             }
             mes += "measure count : " + measureCount + "\n"; measureCount = 0;
-            //mes += "util!!! : ";
-            //for (int util : utilizations) {
-            //    mes += "" + util + ",";
-            //}
-            //mes += "sum : " + utilization_sum + "\n";
             mes += "state : " + state + "\n";
-
-            //if (state == STATE.WAIT || state == STATE.MONITOR) {
-            //  mes += "<" + (System.currentTimeMillis() - pre_wait_time) + ">\n";
-            //}
-
             mes += "is_gpu_full : " + (isGpuFull()) + "\n";
-
-            //mes += "isAvail : " + bIsGpuAvailable + "\n";
             mes += "desired : " + desired + "\n";
             mes += "delta : " + delta + "\n";
-            //mes += "X : " + X + "\n";
-            //mes += "processCount : " + processCount + "\n";
-            //mes += "upper : " + upper_threshold + "\n";
-
-            //mes += "utilization : " + utilization + "\n";
             mes += "util_avg : " + util_avg + "\n";
-            //mes += "gpu memory : " + memory + "\n";
-            //mes += "gpu infoCount : " + infoCount + "\n";
-
             mes += "matmul : " + (int)((double)matmul_full_count / matmul_length * 100) + "\n";
 
             for (int iu = ((matmulIdxCount-16) > 0)? (matmulIdxCount-16) : 0; iu < matmulIdxCount ; iu++) {
@@ -485,9 +465,6 @@ public class GPUMonitor implements Runnable {
               mes += " " + (Math.round(matmuls[iu]));
             }
             mes += "\n";
-
-            //mes += "elapsed : " + (long) (t_elapsed / 1000) + " us \n";
-            //mes += "total elapsed : " + (long)(t_total_elapsed/1000) + " us\n";
 
             if( this.bMapPhase ){  
               print_state = false;
