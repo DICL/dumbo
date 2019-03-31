@@ -720,6 +720,64 @@ public class MOHA_Zookeeper {
 		}
 
 	}
+	
+	
+	public void setCurrentTime(long time) {
+
+		String rootDirs = dirs.getRoot();
+		String requestDirs = dirs.getPath(MOHA_Properties.ZOOKEEPER_DIR_TIMER);
+
+		if (zkserver != null) {
+			try {
+				Stat root = zkserver.exists(rootDirs, false);
+				if (root == null) {
+					LOG.info("Zookeeper Broker is not running yet. Root directory: " + rootDirs);
+					LOG.info("setStatus() fail");
+					return;
+				} else {
+					Stat s = zkserver.exists(requestDirs, false);
+					if (s == null) {
+						LOG.info("Creating a znode for status");
+						zkserver.create(requestDirs, new byte[0], Ids.OPEN_ACL_UNSAFE, CreateMode.PERSISTENT);
+
+					}
+					String time_ = String.valueOf(time);
+					zkserver.setData(requestDirs, time_.getBytes(), -1);
+				}
+
+			} catch (KeeperException e) {
+				System.out.println("Keeper exception when instantiating queue: " + e.toString());
+			} catch (InterruptedException e) {
+				System.out.println("Interrupted exception");
+			}
+		}
+
+	}
+	
+	
+	public long getCurrentTime() {
+
+		String rootDirs = dirs.getRoot();
+		String requestDirs = dirs.getPath(MOHA_Properties.ZOOKEEPER_DIR_TIMER);
+
+		if (zkserver != null) {
+			try {
+				if (zkserver.exists(rootDirs, false) != null) {
+					if (zkserver.exists(requestDirs, false) != null) {
+						String stInfo = new String(zkserver.getData(requestDirs, false, null));
+						if (stInfo.length() > 0) {
+							return Long.parseLong(stInfo);
+						}
+
+					}
+				}
+			} catch (KeeperException | InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return 0;
+	}
 
 	public long getTimeComplete() {
 

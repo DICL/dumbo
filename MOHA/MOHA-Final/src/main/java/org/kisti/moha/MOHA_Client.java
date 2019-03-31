@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.lang.reflect.Field;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -13,6 +14,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 import java.util.Vector;
 
 import org.apache.commons.cli.CommandLine;
@@ -46,6 +48,13 @@ import org.apache.hadoop.yarn.util.Records;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import weka.classifiers.bayes.NaiveBayes;
+import weka.core.DenseInstance;
+import weka.core.Instance;
+import weka.core.Instances;
+import weka.core.converters.ArffSaver;
+import weka.core.converters.ConverterUtils.DataSource;
+
 public class MOHA_Client {
 	private static final Logger LOG = LoggerFactory.getLogger(MOHA_Client.class);
 	private YarnConfiguration conf;
@@ -77,6 +86,7 @@ public class MOHA_Client {
 	String appType = "";
 	MOHA_Queue jobQueue;
 	boolean pushingFinish = false;
+	boolean rStop = false;
 
 	public static void main(String[] args) throws IOException {
 		// [UPDATE] Change the flow of the main function to enable exception
@@ -208,8 +218,8 @@ public class MOHA_Client {
 			// executed");
 		}
 
-		LOG.info("App name = {}, priority = {}, queue = {}, manager memory = {}, jarPath = {}, executor memory = {}, " + "num ececutors = {}, jdl path = {}, conf path = {}", appName, priority, queue, managerMemory,
-				jarPath, executorMemory, numExecutors, jdlPath, configPath);
+		LOG.info("App name = {}, priority = {}, queue = {}, manager memory = {}, jarPath = {}, executor memory = {}, " + "num ececutors = {}, jdl path = {}, conf path = {}", appName, priority, queue,
+				managerMemory, jarPath, executorMemory, numExecutors, jdlPath, configPath);
 
 		return true;
 	}// The end of init function
@@ -218,41 +228,287 @@ public class MOHA_Client {
 		new HelpFormatter().printHelp("MOHA_Client", opts);
 	}
 
-	private void dispatchDockingTasks(MOHA_Queue jobQueue, String rootDir) {
+	/*
+	 * private void dispatchDockingTasks(MOHA_Queue jobQueue, String rootDir) { File folder = new File("vina_input"); File[] listOfFiles = folder.listFiles(); Path tarsrc; String tarPathSuffix; Path
+	 * tarDest; Path[] uris = new Path[listOfFiles.length]; for (int i = 0; i < listOfFiles.length; i++) { if (listOfFiles[i].isFile()) { System.out.println("File " + listOfFiles[i].getName()); tarsrc
+	 * = new Path("vina_input/" + listOfFiles[i].getName()); tarPathSuffix = rootDir + "/" + "vina_input/" + listOfFiles[i].getName(); tarDest = new Path(fs.getHomeDirectory(), tarPathSuffix);
+	 * System.out.println("tarDest:" + tarDest); try { fs.copyFromLocalFile(false, true, tarsrc, tarDest); } catch (IOException e) { // TODO Auto-generated catch block e.printStackTrace(); }
+	 * jobQueue.push(Integer.toString(i), tarDest.toString()); uris[i] = tarDest; } else if (listOfFiles[i].isDirectory()) { System.out.println("Directory " + listOfFiles[i].getName()); } } }
+	 */
+	private void updateToDataset(String ins) throws Exception {
+		DataSource source = new DataSource("cpu.arff");
+		Instances inst = addToDataset(source.getDataSet(), ins);
 
-		File folder = new File("vina_input");
-		File[] listOfFiles = folder.listFiles();
-		Path tarsrc;
-		String tarPathSuffix;
-		Path tarDest;
-		Path[] uris = new Path[listOfFiles.length];
-
-		for (int i = 0; i < listOfFiles.length; i++) {
-			if (listOfFiles[i].isFile()) {
-				System.out.println("File " + listOfFiles[i].getName());
-				tarsrc = new Path("vina_input/" + listOfFiles[i].getName());
-				tarPathSuffix = rootDir + "/" + "vina_input/" + listOfFiles[i].getName();
-				tarDest = new Path(fs.getHomeDirectory(), tarPathSuffix);
-				System.out.println("tarDest:" + tarDest);
-				try {
-					fs.copyFromLocalFile(false, true, tarsrc, tarDest);
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-				jobQueue.push(Integer.toString(i), tarDest.toString());
-				uris[i] = tarDest;
-			} else if (listOfFiles[i].isDirectory()) {
-				System.out.println("Directory " + listOfFiles[i].getName());
-			}
-		}
+		ArffSaver saver = new ArffSaver();
+		saver.setInstances(inst);
+		saver.setFile(new File("cpu.arff"));
+		saver.writeBatch();
 
 	}
 
+	private String getResourceStatus() {
+		List<String> command = new ArrayList<String>();
+		String data = "";
+		command.add("cat");
+		command.add("/proc/cpuinfo");
+		// command.add(kbInfo.getKafkaBinDir() + "/config/" + MOHA_Properties.KAFKA_SERVER_PROPERTIES);
+
+		ProcessBuilder builder = new ProcessBuilder(command);
+		Process p;
+		String line;
+		LOG.debug("ProcessBuilder builder = " + command);
+		try {
+			p = builder.start();
+			System.out.println("p = builder.start();");
+			// try {
+			// p.waitFor();
+			// } catch (InterruptedException e) {
+			// // TODO Auto-generated catch block
+			// e.printStackTrace();
+			// }
+
+			// Thread.sleep(2000);
+			// LOG.debug("p.waitFor()");
+			BufferedReader br = new BufferedReader(new InputStreamReader(p.getInputStream()));
+			String cpuMhz = "", numCpu = "";
+			while ((line = br.readLine()) != null) {
+				// System.out.println(line);
+				if (line.contains("cpu MHz")) {
+					cpuMhz = line.substring(line.lastIndexOf(":") + 1);
+					// System.out.println(line.substring(line.lastIndexOf(":") + 1));
+				}
+				if (line.contains("processor")) {
+					numCpu = line.substring(line.lastIndexOf(":") + 1);
+					// System.out.println(line.substring(line.lastIndexOf(":") + 1));
+				}
+			}
+			System.out.println(numCpu + "  " + cpuMhz);
+
+			command = new ArrayList<String>();
+			command.add("cat");
+			command.add("/proc/meminfo");
+
+			builder = new ProcessBuilder(command);
+			LOG.debug("ProcessBuilder builder = " + command);
+
+			p = builder.start();
+			System.out.println("p = builder.start();");
+			// try {
+			// p.waitFor();
+			// } catch (InterruptedException e) {
+			// // TODO Auto-generated catch block
+			// e.printStackTrace();
+			// }
+
+			// Thread.sleep(2000);
+			// LOG.debug("p.waitFor()");
+			br = new BufferedReader(new InputStreamReader(p.getInputStream()));
+			String MemTotal = "", MemFree = "", Buffers = "", Cached = "", Active = "", Inactive = "";
+			while ((line = br.readLine()) != null) {
+				// System.out.println(line);
+				if (line.contains("MemTotal:")) {
+					MemTotal = line.substring(line.lastIndexOf(":") + 1).replace("kB", "").replace(" ","");
+					//System.out.println(MemTotal);
+				}
+				if (line.contains("MemFree:")) {
+					MemFree = line.substring(line.lastIndexOf(":") + 1).replace("kB", "").replace(" ","");
+					//System.out.println(MemFree);
+				}
+				if (line.contains("Buffers:")) {
+					Buffers = line.substring(line.lastIndexOf(":") + 1).replace("kB", "").replace(" ","");
+					//System.out.println(Buffers);
+				}
+				if (line.contains("Cached:")&&!line.contains("wap")) {
+					Cached = line.substring(line.lastIndexOf(":") + 1).replace("kB", "").replace(" ","");
+					//System.out.println(Cached);
+				}
+				if (line.contains("Active:")) {
+					Active = line.substring(line.lastIndexOf(":") + 1).replace("kB", "").replace(" ","");
+					//System.out.println(Active);
+				}
+				if (line.contains("Inactive:")) {
+					Inactive = line.substring(line.lastIndexOf(":") + 1).replace("kB", "").replace(" ","");
+					//System.out.println(Inactive);
+				}
+
+			}
+			
+			
+			command = new ArrayList<String>();
+			command.add("top");
+			command.add("-bn1");
+
+			builder = new ProcessBuilder(command);
+			//LOG.debug("ProcessBuilder builder = " + command);
+
+			p = builder.start();
+			System.out.println("p = builder.start();");
+			// try {
+			// p.waitFor();
+			// } catch (InterruptedException e) {
+			// // TODO Auto-generated catch block
+			// e.printStackTrace();
+			// }
+
+			// Thread.sleep(2000);
+			// LOG.debug("p.waitFor()");
+			br = new BufferedReader(new InputStreamReader(p.getInputStream()));
+			//String MemTotal = "", MemFree = "", Buffers = "", Cached = "", Active = "", Inactive = "";
+			boolean collect = false;
+			String [] arrOfStr;
+			double cpuUsage = 0, memUsage = 0;
+			String totalTasks = "0", runningTasks = "0";
+			while ((line = br.readLine()) != null) {	 
+				 line = line.trim();
+				 //System.out.println(line);	
+				 if((!collect)&&line.contains("Tasks:")){
+					 line = line.replace(",", "");
+					 line = line.replace(":", "");
+					 arrOfStr = line.split("\\s+");
+					 if(arrOfStr.length > 5){
+						 totalTasks = arrOfStr[1];
+						 runningTasks = arrOfStr[3];
+					 }
+				 }
+				 if(collect){
+					 arrOfStr = line.split("\\s+");
+					 if(arrOfStr.length > 10){
+						 //System.out.println(arrOfStr[8]);
+						 //System.out.println(arrOfStr[9]);
+						 cpuUsage += Double.valueOf(arrOfStr[8]);
+						 memUsage += Double.valueOf(arrOfStr[9]);
+					 }
+					 
+				 }			
+				 
+				 if(line.contains("PID"))collect = true;
+				 
+			}
+			//System.out.println("CPU usage: " + cpuUsage +  "  memory usage: " + memUsage);
+			//System.out.println("totalTasks: " + totalTasks +  "  runningTasks: " + runningTasks);
+			
+			data = numCpu + " " + cpuMhz + " " + MemTotal  + " "+ MemFree  + " "+ Buffers  + " "+ Active 
+					+ " "+ Inactive  + " "+ cpuUsage  + " "+ memUsage  + " "+ totalTasks  + " "+ runningTasks  + " ";
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println(data);
+		return data;
+	}
+
+	private void removeInstanceFromDataset() throws Exception {
+		DataSource source = new DataSource("cpu.arff");
+		Instances inst = source.getDataSet();
+		int min = 0;
+		int max = inst.numInstances() - 1;
+		Random r = new Random();
+
+		while (inst.numInstances() > 5) {
+
+			int index = r.nextInt((max - min) + 1) + min;
+			inst.delete(index);
+			max = inst.numInstances() - 1;
+		}
+
+		ArffSaver saver = new ArffSaver();
+		saver.setInstances(inst);
+		saver.setFile(new File("cpu.arff"));
+		saver.writeBatch();
+	}
+
+	private Instances addToDataset(Instances inst, String ins) {
+		// Instance data = inst.lastInstance();
+
+		String[] in = ins.split(" ");
+
+		double[] instanceValue = new double[inst.numAttributes()];
+		// DenseInstance denseInstance = new DenseInstance(1.0, in);
+		for (int i = 0; i < in.length; i++) {
+			instanceValue[i] = Double.parseDouble(in[i]);
+		}
+
+		DenseInstance denseInstance = new DenseInstance(1.0, instanceValue);
+
+		inst.add(denseInstance);
+		return inst;
+	}
+
+	private void wekaClassifier() throws Exception {
+		DataSource source = new DataSource("diabetes_training.arff");
+		// DataSource source = new DataSource("D:/eclipse/workspace/cpu.arff");
+		Instances trainDataset = source.getDataSet();
+		System.out.println("This is the training data \n");
+		System.out.println(trainDataset.toString());
+		trainDataset.setClassIndex(trainDataset.numAttributes() - 1);
+
+		int numClasses = trainDataset.numClasses();
+		for (int i = 0; i < numClasses; i++) {
+
+			String classValue = trainDataset.classAttribute().value(i);
+			System.out.println("Class Value" + i + " is" + classValue);
+		}
+
+		NaiveBayes nb = new NaiveBayes();
+
+		nb.buildClassifier(trainDataset);
+
+		// load new dataset
+		source = new DataSource("diabetes_test.arff");
+		Instances testDataset = source.getDataSet();
+		testDataset.setClassIndex(testDataset.numAttributes() - 1);
+
+		System.out.println("Actual Class, NB Predicted");
+
+		for (int i = 0; i < testDataset.numInstances(); i++) {
+
+			double actualClass = testDataset.instance(i).classValue();
+			String actual = testDataset.classAttribute().value((int) actualClass);
+
+			Instance newInst = testDataset.instance(i);
+
+			double predNB = nb.classifyInstance(newInst);
+
+			String preString = testDataset.classAttribute().value((int) predNB);
+
+			System.out.println(actual + ", " + preString);
+
+		}
+
+		System.out.println(nb.getCapabilities().toString());
+		if (true)
+			return;
+	}
+
 	public boolean run() throws YarnException, IOException {
+/*
+		try {
+			// wekaClassifier();
+			for (int i = 0; i < 100; i++) {
+
+				updateToDataset(String.valueOf(i) + " 1 2 3 4 5");
+			}
+
+		} catch (Exception e2) {
+			// TODO Auto-generated catch block
+			e2.printStackTrace();
+		}
+
+		try {
+			removeInstanceFromDataset();
+		} catch (Exception e2) {
+			// TODO Auto-generated catch block
+			e2.printStackTrace();
+		}
+
+		getResourceStatus();
+
+		if (true)
+			return true;
+*/
 		LOG.info("yarnClient = {}", yarnClient.toString());
 		// Get configuration information
-		//mohaConf = new MOHA_Configuration("conf/MOHA.conf");
+		// mohaConf = new MOHA_Configuration("conf/MOHA.conf");
 		mohaConf = new MOHA_Configuration(configPath);
 		LOG.info("Configuration file = {}", mohaConf.toString());
 
@@ -267,12 +523,12 @@ public class MOHA_Client {
 		if (mohaConf.getQueueType().equals("kafka")) {
 			zookeeperConnect = mohaConf.getZookeeperConnect() + "/" + MOHA_Properties.ZOOKEEPER_ROOT + "/" + mohaConf.getKafkaClusterId();
 			bootstrapServer = new MOHA_Zookeeper(MOHA_Properties.ZOOKEEPER_ROOT, mohaConf.getKafkaClusterId()).getBootstrapServers();
-		}		
+		}
 
 		/* Insert tasks to job queue */
-		TasksPushing tasksToQueue = new TasksPushing();
-		Thread startThread = new Thread(tasksToQueue);
-		startThread.start();
+		TaskSubmitter taskSubmitter = new TaskSubmitter();
+		Thread taskSubmitterThread = new Thread(taskSubmitter);
+		taskSubmitterThread.start();
 
 		zks = new MOHA_Zookeeper(MOHA_Client.class, MOHA_Properties.ZOOKEEPER_ROOT, appId.toString());
 
@@ -286,9 +542,15 @@ public class MOHA_Client {
 		zks.createDirs(MOHA_Properties.ZOOKEEPER_DIR_RESULTS_EXE_LOG);
 		zks.createDirs(MOHA_Properties.ZOOKEEPER_DIR_EXE_PERFORMANCE_LOG);
 		zks.createDirs(MOHA_Properties.ZOOKEEPER_DIR_TIME_START);
+		zks.createDirs(MOHA_Properties.ZOOKEEPER_DIR_TIMER);
 		zks.createDirs(MOHA_Properties.ZOOKEEPER_DIR_TIME_COMPLETE);
 		zks.createDirs(MOHA_Properties.ZOOKEEPER_DIR_NUM_PROCESSED_TASKS);
 		zks.createDirs(MOHA_Properties.ZOOKEEPER_DIR_REQUEST_STOP);
+
+		/* Update current time to zookeeper server */
+		Timer timer = new Timer();
+		Thread timerThread = new Thread(timer);
+		timerThread.start();
 
 		// dispatchDockingTasks(jobQueue,rootDir);
 
@@ -334,7 +596,6 @@ public class MOHA_Client {
 		env.put(MOHA_Properties.APP_JAR, jarDest.toUri().toString());
 		env.put(MOHA_Properties.APP_JAR_TIMESTAMP, Long.toString(jarDestStatus.getModificationTime()));
 		env.put(MOHA_Properties.APP_JAR_SIZE, Long.toString(jarDestStatus.getLen()));
-		
 
 		if (appType.equals("S")) {
 			Path mohaAppSrc = new Path(appDependencyFiles);
@@ -372,10 +633,10 @@ public class MOHA_Client {
 		env.put(MOHA_Properties.CONF_ZOOKEEPER_SERVER, mohaConf.getZookeeperServer());
 		env.put(MOHA_Properties.CONF_QUEUE_TYPE, mohaConf.getQueueType());
 		env.put(MOHA_Properties.CONF_ACTIVEMQ_SERVER, mohaConf.getActivemqServer());
-		
+
 		env.put(MOHA_Properties.HDFS_HOME_DIRECTORY, fs.getHomeDirectory().toString());
-		env.put(MOHA_Properties.APP_TYPE, appType);		
-		
+		env.put(MOHA_Properties.APP_TYPE, appType);
+
 		if (mohaConf.getQueueType().equals("kafka")) {
 			env.put(MOHA_Properties.KAFKA_ZOOKEEPER_CONNECT, zookeeperConnect);
 			env.put(MOHA_Properties.KAFKA_ZOOKEEPER_BOOTSTRAP_SERVER, bootstrapServer);
@@ -390,10 +651,10 @@ public class MOHA_Client {
 		appContext.setApplicationName(appName);
 
 		ContainerLaunchContext managerContainer = Records.newRecord(ContainerLaunchContext.class);
-		//LOG.info("Local resources = {}", localResources.toString());
+		// LOG.info("Local resources = {}", localResources.toString());
 		managerContainer.setLocalResources(localResources);
 		managerContainer.setEnvironment(env);
-		//LOG.info("Environment variables = {}", env.toString());
+		// LOG.info("Environment variables = {}", env.toString());
 		Vector<CharSequence> vargs = new Vector<>();
 		vargs.add(Environment.JAVA_HOME.$() + "/bin/java");
 		vargs.add(MOHA_Manager.class.getName());
@@ -411,7 +672,7 @@ public class MOHA_Client {
 		List<String> commands = new ArrayList<>();
 		commands.add(command.toString());
 
-		//LOG.info("Command to execute MOHA Manager = {}", command);
+		// LOG.info("Command to execute MOHA Manager = {}", command);
 
 		managerContainer.setCommands(commands);
 
@@ -425,8 +686,7 @@ public class MOHA_Client {
 		appContext.setPriority(pri);
 		appContext.setQueue(queue);
 
-		
-		while(!pushingFinish){
+		while (!pushingFinish) {
 			try {
 				Thread.sleep(1000);
 			} catch (InterruptedException e) {
@@ -434,14 +694,15 @@ public class MOHA_Client {
 				e.printStackTrace();
 			}
 		}
-		
+
 		/* Submits the application */
 
-		//LOG.info("MOHA Manager Container = {}", managerContainer.toString());
+		// LOG.info("MOHA Manager Container = {}", managerContainer.toString());
+		LOG.info("Submit the app [at]" + zks.getCurrentTime());
 		ApplicationId appId = yarnClient.submitApplication(appContext);
 		LOG.info("Submit Application - AppID = {}", appId.toString());
-		//LOG.info("zookeeperConnect = {} bootstrapServer = {}", zookeeperConnect, bootstrapServer);
-		
+		// LOG.info("zookeeperConnect = {} bootstrapServer = {}", zookeeperConnect, bootstrapServer);
+
 		zks.setLocalResource(hdfsLocalResoure);
 		zks.setManagerRunning(true);
 		zks.setStopRequest(false);
@@ -528,11 +789,11 @@ public class MOHA_Client {
 
 		logs = zks.getPerformanceExe();
 		if (logs.length() > 0) {
-			//System.out.println(logs);
+			// System.out.println(logs);
 		}
 
 		try {
-			Files.write(Paths.get("results/exe_" + appId + mohaConf.getQueueType() + "_appType_" +  appType + ".log"), logs.getBytes(), StandardOpenOption.CREATE_NEW);
+			Files.write(Paths.get("results/exe_" + appId + mohaConf.getQueueType() + "_appType_" + appType + ".log"), logs.getBytes(), StandardOpenOption.CREATE_NEW);
 		} catch (IOException e) {
 			// exception handling left as an exercise for the reader
 			System.out.println(e.toString());
@@ -542,7 +803,8 @@ public class MOHA_Client {
 		double executionTime = (double) ((Long.valueOf(zks.getTimeComplete()) - Long.valueOf(zks.getTimeStart())));
 		double performance = (double) numOfProcessedTasks * 1000 / executionTime;
 		logs = MOHA_Common.convertLongToDate(System.currentTimeMillis()) + " " + appId.toString() + " " + String.valueOf(numExecutors) + " " + String.valueOf(executorMemory) + " numOfProcessedTasks: "
-				+ String.valueOf(numOfProcessedTasks) + " Queue: " + mohaConf.getQueueType() + " appType: " + appType + " Time Start: " + zks.getTimeStart() + " Time Finish: " + zks.getTimeComplete() + " ExecutionTime: " + executionTime + " Performance: " + performance + "\n";
+				+ String.valueOf(numOfProcessedTasks) + " Queue: " + mohaConf.getQueueType() + " appType: " + appType + " Time Start: " + zks.getTimeStart() + " Time Finish: " + zks.getTimeComplete()
+				+ " ExecutionTime: " + executionTime + " Performance: " + performance + "\n";
 
 		try {
 			Files.write(Paths.get("results/app.log"), logs.getBytes(), StandardOpenOption.APPEND);
@@ -550,7 +812,8 @@ public class MOHA_Client {
 		} catch (IOException e) {
 			// exception handling left as an exercise for the reader
 		}
-
+		System.out.println("End loop");
+		rStop = true;
 		jobQueue.deleteQueue();
 		jobQueue.close();
 		zks.delete(zks.getRoot());
@@ -561,28 +824,12 @@ public class MOHA_Client {
 		LOG.info("Application successfully finish");
 		return true;
 	}// The end of run function
-
-	private boolean copyFolderToHDFS(String directory, String destRoot) {
-		File dir = new File(directory);
-		File[] fileList = dir.listFiles();
-		String hdfsDest;
-
-		for (int i = 0; i < fileList.length; i++) {
-			if (fileList[i].isFile()) {
-				System.out.println("File " + fileList[i].getName());
-				hdfsDest = destRoot + "/" + fileList[i].getName();
-				try {
-					fs.copyFromLocalFile(false, true, new Path(directory, fileList[i].getName()), new Path(fs.getHomeDirectory(), hdfsDest));
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			} else if (fileList[i].isDirectory()) {
-				System.out.println("Directory " + fileList[i].getName());
-			}
-		}
-		return true;
-	}
+	/*
+	 * private boolean copyFolderToHDFS(String directory, String destRoot) { File dir = new File(directory); File[] fileList = dir.listFiles(); String hdfsDest; for (int i = 0; i < fileList.length;
+	 * i++) { if (fileList[i].isFile()) { System.out.println("File " + fileList[i].getName()); hdfsDest = destRoot + "/" + fileList[i].getName(); try { fs.copyFromLocalFile(false, true, new
+	 * Path(directory, fileList[i].getName()), new Path(fs.getHomeDirectory(), hdfsDest)); } catch (IOException e) { // TODO Auto-generated catch block e.printStackTrace(); } } else if
+	 * (fileList[i].isDirectory()) { System.out.println("Directory " + fileList[i].getName()); } } return true; }
+	 */
 
 	public static void setEnv(Map<String, String> newenv) throws Exception {
 		Class[] classes = Collections.class.getDeclaredClasses();
@@ -599,9 +846,31 @@ public class MOHA_Client {
 		}
 	}
 
-	protected class TasksPushing implements Runnable {
+	protected class Timer implements Runnable {
+		public Timer() {
 
-		public TasksPushing() {
+		}
+
+		@Override
+		public void run() {
+			// TODO Auto-generated method stub
+			while (!rStop) {
+				zks.setCurrentTime(System.currentTimeMillis());
+				try {
+					Thread.sleep(100);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+
+		}
+
+	}
+
+	protected class TaskSubmitter implements Runnable {
+
+		public TaskSubmitter() {
 			// TODO Auto-generated constructor stub
 		}
 
@@ -618,18 +887,18 @@ public class MOHA_Client {
 			jobQueue.queueCreate(numExecutors, 1);
 
 			jobQueue.producerInit();
-			
+
 			/* Push task commands to the queue */
 			long starting_time = System.currentTimeMillis();
-			
 
 			try {
+				// The file that contains description of user application
 				fileReader = new FileReader(jdlPath);
 				LOG.info(fileReader.toString());
 				BufferedReader buff = new BufferedReader(fileReader);
 				appType = buff.readLine();
 
-				if (appType.equals("S")) {
+				if (appType.equals("S")) {// S denotes parameter sweeping application
 					System.out.println("S");
 					int num_inputs = Integer.parseInt(buff.readLine());
 					List<String> directories = new ArrayList<String>();
@@ -644,10 +913,10 @@ public class MOHA_Client {
 						System.out.println("str[1]: " + str[1]);
 						order.add(str[0]);
 						switch (str[0]) {
-						case "D":
+						case "D":// D denotes directory which contains many input files
 							directories.add(str[1]);
 							break;
-						case "P":
+						case "P":// P denotes file which contains input parameters
 							parameters.add(str[1]);
 							break;
 						default:
@@ -655,8 +924,8 @@ public class MOHA_Client {
 							break;
 						}
 					}
-					shell_command = buff.readLine();
-					appDependencyFiles = buff.readLine();
+					shell_command = buff.readLine(); // the executable shell script file name
+					appDependencyFiles = buff.readLine();// the compressed file that contains all related files, library etc
 					String command_description = null;
 					// Copy all input files in the folder to HDFS
 					LOG.info("Start copying local files to HDFS");
@@ -668,17 +937,15 @@ public class MOHA_Client {
 						LOG.info("Copying local files to HDFS " + directories.get(i));
 					}
 					pushingFinish = true;
-					
-					
+
 					double time = (double) (System.currentTimeMillis() - starting_time) / 1000;
 					System.out.println("Copying to HDFS time: " + time + " seconds");
-					
-					LOG.info("Start sending commands to Task Executors");			
-					
-					
+
+					LOG.info("Start sending commands to Task Executors");
+
 					/* Push task commands to the queue */
 					starting_time = System.currentTimeMillis();
-					
+
 					if (directories.size() == 2) {
 						List<String[]> file_array = new ArrayList<String[]>();
 
@@ -714,7 +981,7 @@ public class MOHA_Client {
 											}
 										}
 										command_description += shell_command;
-										//System.out.println("Command send to Task Executor: " + command_description);
+										// System.out.println("Command send to Task Executor: " + command_description);
 										jobQueue.push(Integer.toString(q_index), command_description);
 										q_index++;
 										numCommands++;
@@ -751,7 +1018,7 @@ public class MOHA_Client {
 						return;
 					}
 
-				} else {
+				} else {// this is for executing same task multiple times
 					// Command mode
 					System.out.println("App type: " + appType);
 					numCommands = numExecutors * Integer.parseInt(buff.readLine());
@@ -772,7 +1039,7 @@ public class MOHA_Client {
 			double pushing_performance = (double) numCommands * 1000 / (double) (System.currentTimeMillis() - starting_time);
 			double seconds = (double) (System.currentTimeMillis() - starting_time) / 1000;
 			System.out.println("Pushing performance: " + pushing_performance + " (tasks/second) on " + seconds + " seconds");
-			
+
 			return;
 		}
 

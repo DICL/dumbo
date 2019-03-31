@@ -57,6 +57,7 @@ public interface MOHA_Properties {
 	
 	public static final String QUEUE_LOGS = "logs";	//logs information
 	public static final String ZOOKEEPER_DIR_TIME_START = "time_start";
+	public static final String ZOOKEEPER_DIR_TIMER = "timer";
 	public static final String ZOOKEEPER_DIR_TIME_COMPLETE = "time_complete";
 	public static final String ZOOKEEPER_DIR_NUM_PROCESSED_TASKS = "num_processed_tasks";
 	public static final long SESSION_MAXTIME_TIMEOUT = 24*60*60*1000;

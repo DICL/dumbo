@@ -1,0 +1,8 @@
+S
+3
+D Drug/ligand
+D Drug/pockets_sample_10000
+P scPDB_coordinates.tsv
+autodock_vina.sh
+run.tgz
+
