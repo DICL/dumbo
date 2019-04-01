@@ -45,22 +45,22 @@ CONF System;
 vector<CONF> VC;
 int ***mapping;
 double factors[NA][NC][NF], srt[NA][NC];
+int VCrank[NA][NC], Trank[NA][4];
 int *Appidx;
 double cf = 0.8;
 string Appname[NA] = { "grepspark", "wcspark", "grephadoop", "teragen", "cg", "132", "lammps_5dhfr", "namd_5dhfr" };
 
 // Generate VM placement for whole applications
-bool InitialRandomSelect(vector<CONF> list, int* addr, int* x, int idx);
-bool CheckIfCombinationIsPossible(vector<CONF> list, int* addr, int t);
-bool CheckIfCombinationIsPossible2(vector<CONF> list, int* addr, int* host, int t, int idx);
-void PlaceVMBinPacking(vector<int*> allcase, int* host, int* conf, int* idx, int count, int t);
-
-void ChangeSetting(int* addr);
-bool AllocateVM(int* addr);
-void GenerateSample(int *addr);
+bool InitialRandomSelect(vector<CONF> list, int* addr, int* x, int idx, int prev);
+bool InitialSimpleSelect(vector<CONF> list, int* addr, int* x, int idx, int prev);
+bool InitialFullSelect(vector<CONF> list, int* addr, int* x, int idx, int prev);
+bool InitialQuasarSelect(vector<CONF> list, int* addr, int* x, int idx, int prev);
+void ChangeSetting_old(int* addr);
+bool AllocateVM(int* addr, int n);
+void GenerateSample(int *addr, int n);
 
 double GetResult();
-void GetInput();
+void GetInput(char* setup, char* app);
 void InitMapping();
 void KeepBestSample();
 
@@ -69,20 +69,19 @@ void PrintElem(CONF elem);
 void PrintMapping();
 
 int main(int argc, char **argv) {
-	int i;
-	double temperature, threshold;
+	int i, j, k;
+	double temperature, threshold, thres;
 	double metric, prev_m, delta, bc = 1.3806503e-23, rr;
 
-	if(argc < 3) {
-		cout << "Usage: " << argv[0] << " Initial_Temperature Threshold Cooling_factor\n";
+	if(argc < 5) {
+		cout << "Usage: " << argv[0] << " Initial_Temperature Threshold Cooling_factor Setupdata Appdata\n";
 		return -1;
 	}
 
-	temperature = atof(argv[1]);
-	threshold = atof(argv[2]);
+	thres = atof(argv[2]);
 	cf = atof(argv[3]);
 	srand(time(NULL));
-	GetInput();
+	GetInput(argv[4], argv[5]);
 //	PrintList(VC);
 
 	int *addr, *idlecore_t;
@@ -91,107 +90,109 @@ int main(int argc, char **argv) {
 	for(i=0; i<System.n_app; i++) addr[i] = -1;
 	for(i=0; i<System.n_type; i++) idlecore_t[i] = System.idlecore_t[i];
 
-	InitialRandomSelect(VC, addr, idlecore_t, 0);
+	for(j=1; j<=System.n_app; j++) {
+//		temperature = atof(argv[1]) * (j + System.n_app) / System.n_app;
+		temperature = atof(argv[1]) / (double)j;
+		threshold = thres / (double)j;
+/* For using SA */
+		InitialRandomSelect(VC, addr, idlecore_t, j - 1, -1);
+/* For using Simple or Static */
+//		InitialSimpleSelect(VC, addr, idlecore_t, j - 1, -1);
+//		InitialQuasarSelect(VC, addr, idlecore_t, j - 1, -1);
+//		temperature = threshold;
 
-/*
-	int test[][4] = {{0,0,2,2}, {0,0,3,3}, {1,1,2,2}, {1,1,3,3}, {0,4,4,2}, {1,4,4,2}, {1,5,5,2}, {1,5,5,3}, {4,4,4,4}, {5,5,5,5}};
 
-	for(i=0; i<10; i++)
-		if(AllocateVM(test[i])) { cout << "ALLOC " << i+1 << " PASSED\n"; PrintMapping(); }
-*/
-
-//	addr[0] = 0; addr[1] = 4; addr[2] = 2; addr[3] = 4;
-//	addr[0] = 2; addr[1] = 5; addr[2] = 1; addr[3] = 5;
-	AllocateVM(addr);
 //	PrintMapping();
-/*
-	for(i=0; i<System.n_app; i++) addr[i] = 0;
-	for(i=10; i<System.n_app; i++) addr[i] = 0;
-	for(i=20; i<System.n_app; i++) addr[i] = 3;
-	for(i=30; i<System.n_app; i++) addr[i] = 3;
-	AllocateVM(addr);
-*/
-        for(i=0; i<System.n_app; i++) {
-                PrintElem(VC[addr[i]]);
-                cout << " | ";
-        }
-//	if(AllocateVM(addr) == false) cout << "ALLOCATION FAILED!!\n";
-	GenerateSample(addr);
-	KeepBestSample();
-	prev_m = GetResult();
-	metric = prev_m;
-	cout << "Initial, Geomean : ";
-	cout << metric << endl;
+
+		GenerateSample(addr, j);
+		KeepBestSample();
+		prev_m = GetResult();
+		metric = prev_m;
+
+		for(i=0; i<j; i++) {
+		        PrintElem(VC[addr[i]]);
+		        cout << "| ";
+		}
+		cout << "Initial, Geomean : ";
+		cout << metric << endl;
 //	PrintMapping();
+
+		if(j == System.n_app) break;
 
 //return 1;
-	int *addr_new = new int[System.n_app];
+		int *addr_new = new int[System.n_app];
 
-	while(temperature > threshold) {
-		for(i=0; i<System.n_app; i++) addr_new[i] = addr[i];
-		ChangeSetting(addr_new);
-		GenerateSample(addr_new);
+//		for(k=0; k<VC.size(); k++) {
+		while(temperature > threshold) {
+			for(i=0; i<System.n_app; i++) addr_new[i] = addr[i];
+			InitialRandomSelect(VC, addr_new, idlecore_t, j - 1, addr_new[j-1]);
+//			if(InitialFullSelect(VC, addr_new, idlecore_t, j - 1, k) == false) continue;
+			GenerateSample(addr_new, j);
 
 //		if(AllocateVM(addr) == false) cout << "ALLOCATION FAILED!!\n";
-		metric = GetResult();
+			metric = GetResult();
 
-		delta = metric - prev_m;
-		rr = rand() / (double)RAND_MAX;
+			delta = metric - prev_m;
+			rr = rand() / (double)RAND_MAX;
 //cout << delta << " " << exp(delta / temperature) << " " << rr << endl;
-//		if(exp(delta / (temperature * bc)) > rr) {
-		if(exp(delta / temperature) > rr) {
-			prev_m = metric;
+//			if(exp(delta / (temperature * bc)) > rr) {
+			if(exp(delta / temperature) > rr) {
+				prev_m = metric;
 
-	        	for(i=0; i<System.n_app; i++) {
-				if(addr[i] != addr_new[i]) cout << "* ";
-				PrintElem(VC[addr_new[i]]);
-				if(addr[i] != addr_new[i]) cout << "* ";
-				cout << "| ";
-	        	}
-			cout << "T " << temperature << ", Geomean : ";
-			cout << metric << endl;
+		        	for(i=0; i<j; i++) {
+					if(addr[i] != addr_new[i]) cout << "* ";
+					PrintElem(VC[addr_new[i]]);
+					if(addr[i] != addr_new[i]) cout << "* ";
+					cout << "| ";
+		        	}
+				cout << "T " << temperature << ", Geomean : ";
+				cout << metric << endl;
 //			PrintMapping();
 
-			for(i=0; i<System.n_app; i++) addr[i] = addr_new[i];
-			KeepBestSample();
-		}
-		else {
-	        	for(i=0; i<System.n_app; i++) {
-				PrintElem(VC[addr[i]]);
-				cout << "| ";
-	        	}
-			cout << "T " << temperature << ", Geomean : ";
-			cout << prev_m << endl;
+				for(i=0; i<System.n_app; i++) addr[i] = addr_new[i];
+				KeepBestSample();
+			}
+			else {
+		        	for(i=0; i<j; i++) {
+					PrintElem(VC[addr[i]]);
+					cout << "| ";
+		        	}
+				cout << "T " << temperature << ", Geomean : ";
+				cout << prev_m << endl;
 //			AllocateVM(addr);
 //			PrintMapping();
-		}
+			}
 			
-		temperature *= cf;
-	}
+			temperature *= cf;
+		}
 
+		for(i=0; i<System.n_type; i++) idlecore_t[i] -= VC[addr[j-1]].idlecore_t[i];
+	}
 //	cout << "FINISHED\n";
 
 	return 0;
 }
 
-bool AllocateVM(int* addr) {
+bool AllocateVM(int* addr, int n) {
 	int i, j, k, l, m, s, f;
 	int *idx_t = new int[System.n_type], *keep_t = new int[System.n_type];
 	int nvc[6];
 
 	for(i=0; i<6; i++) nvc[i] = 0;
-	for(i=0; i<System.n_app; i++)
+	for(i=0; i<n; i++)
 		nvc[addr[i]]++;
 
-	if(nvc[5] % 2) return false;
-	if(nvc[4] % 2) return false;
 	if(nvc[5] && nvc[4]) return false;
+	if(n == System.n_app) {
+		if(nvc[5] % 2) return false;
+		if(nvc[4] % 2) return false;
+	}
 
 	for(i=0; i<System.n_type; i++) idx_t[i] = keep_t[i] = 0;
 	InitMapping();
 
 // I7 2222, NUMA 44
-	for(i=0; i<System.n_app; i++) {
+	for(i=0; i<n; i++) {
 		if(addr[i] == 1) {
 			if(idx_t[0] + 4 > System.node_t[0]) {
                 	        if(idx_t[0] == keep_t[0]) return false;
@@ -214,7 +215,7 @@ bool AllocateVM(int* addr) {
 	}
 
 // NUMA 2222
-	for(i=0; i<System.n_app; i++) {
+	for(i=0; i<n; i++) {
 		if(addr[i] != 2) continue;
 		if(idx_t[1] + 4 > System.node_t[1]) {
 			if(idx_t[1] == keep_t[1]) return false;
@@ -233,7 +234,7 @@ bool AllocateVM(int* addr) {
 	idx_t[1] = keep_t[1];
 
 // I7 22 NUMA 22
-	for(i=0; i<System.n_app; i++) {
+	for(i=0; i<n; i++) {
 		if(addr[i] != 5) continue;
 		if(idx_t[0] + 2 > System.node_t[0]) {
                         if(idx_t[0] == keep_t[0]) return false;
@@ -258,7 +259,7 @@ bool AllocateVM(int* addr) {
 	}
 
 // I7 11111111
-	for(i=0; i<System.n_app; i++) {
+	for(i=0; i<n; i++) {
 		if(addr[i] != 0) continue;
 		if(idx_t[0] + 8 > System.node_t[0]) {
 			if(idx_t[0] == keep_t[0]) return false;
@@ -277,7 +278,7 @@ bool AllocateVM(int* addr) {
 	for(i=0; i<System.n_type; i++) idx_t[i] = keep_t[i];
 
 // I7 1111 NUMA 1111
-	for(i=0; i<System.n_app; i++) {
+	for(i=0; i<n; i++) {
 		if(addr[i] != 4) continue;
 		if(idx_t[0] + 4 > System.node_t[0]) {
 			if(idx_t[0] == keep_t[0]) return false;
@@ -306,7 +307,7 @@ bool AllocateVM(int* addr) {
 		idx_t[0] = keep_t[0];
 	}
 
-	for(i=0; i<System.n_app; i++) {
+	for(i=0; i<n; i++) {
 		int crs[3], ncr = 0;
 		for(j=0; j<System.n_type; j++) {
 			for(k=0; k<System.node_t[j]; k++) {
@@ -316,7 +317,7 @@ bool AllocateVM(int* addr) {
 				if(here) continue;
 
 				for(l=0; l<System.core_t[j]; l++) 
-					if(mapping[j][k][l] != i) {
+					if(mapping[j][k][l] != i && mapping[j][k][l] != -1) {
 						for(m=0; m<ncr; m++) if(crs[m] == mapping[j][k][l]) break;
 						if(m == ncr) {
 							if(ncr == 3) return false;
@@ -330,251 +331,130 @@ bool AllocateVM(int* addr) {
 	return true;
 }
 
-void ChangeSetting(int* addr) {
-	int i, j, r1, r2, r3, save1, save2, temp;
-	int *vm_t = new int[System.n_type];
-	bool twozero = true;
-
-	vector<int> target;
-	for(i=0; i<System.n_app; i++) target.push_back(i);
-
-	while(target.size() > 0) {
-		r1 = rand() % target.size();
-		temp = target[r1];
-		target.erase(target.begin() + r1);
-		r1 = temp;
-
-		vector<int> conf_t;
-		for(i=0; i<VC.size(); i++) {
-			if(i == addr[r1]) continue;
-			conf_t.push_back(i);
-		}
-
-		while(conf_t.size() > 0) {
-			r2 = rand() % conf_t.size();
-			temp = conf_t[r2];
-			conf_t.erase(conf_t.begin() + r2);
-			r2 = temp;
-
-			twozero = true;
-			for(i=0; i<System.n_type; i++) {
-				vm_t[i] = VC[addr[r1]].idlecore_t[i] - VC[r2].idlecore_t[i];
-				if(vm_t[i] != 0) twozero = false;
-			}
-
-			save1 = addr[r1];
-			addr[r1] = r2;
-			if(twozero && AllocateVM(addr)) return;
-
-			vector<int> pos;
-			for(i=0; i<System.n_app; i++) {
-				if(i == r1) continue;
-				for(j=0; j<System.n_type; j++) {
-					int tmp = vm_t[j] + VC[addr[i]].idlecore_t[j];
-					if(tmp > 8 || tmp < 0) break;
-					if(twozero && tmp != VC[addr[r1]].idlecore_t[j]) break;
-				}
-				if(j == System.n_type) pos.push_back(i);
-			}
-
-			while(pos.size() > 0) {
-				r3 = rand() % pos.size();
-				temp = pos[r3];
-				pos.erase(pos.begin() + r3);
-				r3 = temp;
-
-				save2 = addr[r3];
-
-				vector<int> entry;
-				for(i=0; i<VC.size(); i++) entry.push_back(i);
-
-				for(i=0; i<VC.size(); i++) {
-					int idx = rand() % entry.size();
-					addr[r3] = entry[idx];
-
-					if(Appidx[r3] == Appidx[r1] && addr[r3] == save1 && addr[r1] == save2) {
-						entry.erase(entry.begin() + idx);
-						continue;
-					}
-//			for(j=0; j<System.n_type; j++)
-//				if(!CheckIfCombinationIsPossible(VC, addr, j)) break;
-//			if(j == System.n_type) break;
-					if(AllocateVM(addr)) return;
-
-					entry.erase(entry.begin() + idx);
-				}
-	
-				addr[r3] = save2;
-			}
-			addr[r1] = save1;
-		}
-	}
-}
-
-void PlaceVMBinPacking(vector<int*> *allcase, int* host, int* conf, int* idx, int count, int t) {
-	int i, j, history = -1;
-
-	if(count == System.node_t[t]) {
-		int* newconf;
-		int temp;
-		newconf = new int[System.node_t[t]];
-		for(i=0; i<System.node_t[t]; i++) newconf[i] = conf[idx[i]];
-		for(i=0; i<allcase->size(); i++) {
-			for(j=0; j<System.node_t[t]; j++) if(newconf[j] != allcase->at(i)[j]) break;
-			if(j == System.node_t[t]) break;
-		}
-		if(i < allcase->size()) {
-			delete newconf;
-			return;
-		}
-//for(i=0; i<System.node_t[t]; i++) cout << newconf[i]; cout << endl;
-		allcase->push_back(newconf);
-	}
-
-	for(i=0; i<System.node_t[t]; i++) {
-		for(j=0; j<count; j++) if(idx[j] == i) break;
-		if(j < count) continue;
-
-		if(conf[i] + host[count] > System.core_t[t]) continue;
-		if(history == conf[i]) continue;
-		idx[count] = i;
-		history = conf[i];
-		host[count] += conf[i];
-		PlaceVMBinPacking(allcase, host, conf, idx, count + 1, t);
-		host[count] -= conf[i];
-	}
-}
-
-bool CheckIfCombinationIsPossible2(vector<CONF> list, int* addr, int* host, int t, int idx) {
-	int i, j, k, *conf, *loc, tmp, *orihost;
+bool InitialQuasarSelect(vector<CONF> list, int* addr, int* idlecore_t, int idx, int prev) {
+	int i ,j;
 	bool res;
-	vector<int*> allcase;
+	vector<int> list2, list3;
 
-	if(idx == System.n_app) return true;
+	for(i=0; i<list.size(); i++) 
+		list2.push_back(VCrank[Appidx[idx]][i]);
 
-	orihost = new int[System.node_t[t]];
-	conf = new int[System.node_t[t]];
-	loc = new int[System.node_t[t]];
-
-	for(i=0; i<System.node_t[t]; i++) {
-		conf[i] = list[addr[idx]].host[t][i];
-		loc[i] = 0;
-	}
-/*
-for(i=0; i<System.n[t]; i++) cout << conf[i];
-cout << endl;
-for(i=0; i<System.n[t]; i++) cout << host[i];
-cout << endl;
-*/
-	PlaceVMBinPacking(&allcase, host, conf, loc, 0, t);
-//cout << allcase.size() << endl;
-	for(i=0; i<allcase.size(); i++) {
-//for(j=0; j<System.n[t]; j++) cout << allcase[i][j]; cout << endl;
-		for(j=0; j<System.node_t[t]; j++) orihost[j] = host[j];
-		for(j=0; j<System.node_t[t]; j++) host[j] += allcase[i][j];
-// Sorting Part
-		for(j=0; j<System.node_t[t]; j++) for(k=j+1; k<System.node_t[t]; k++)
-			if(host[j] < host[k]) {tmp = host[j]; host[j] = host[k]; host[k] = tmp;}
-		res = CheckIfCombinationIsPossible2(list, addr, host, t, idx + 1);
-		if(res) {
-			delete conf;
-			delete loc;
-			return true;
+	i = j = 0;
+	while(list2.empty() == false) {
+		if(list[list2[i]].idlecore_t[Trank[Appidx[idx]][j]] > 0) {
+			list3.push_back(list2[i]);
+			list2.erase(list2.begin() + i);
 		}
-		for(j=0; j<System.node_t[t]; j++) host[j] = orihost[j];
-//		for(j=0; j<System.node_t[t]; j++) host[j] -= allcase[i][j];
+		else i++;
+		if(i == list2.size()) {
+			j++;
+			i = 0;
+		}
 	}
 
-	for(i=allcase.size()-1 ; i>=0; i--) {
-		int* temp = allcase[i];
-		delete temp;
-		allcase.pop_back();
-	}
+//	for(i=0; i<list.size(); i++) cout << list3[i] << " ";
+//	cout << endl;
 
-	delete orihost;	
-	delete conf;
-	delete loc;
+	while(1) {
+		for(j=0; j<System.n_type; j++) {
+			if(idlecore_t[j] < list[list3[0]].idlecore_t[j]) break;
+		}
+		if(j < System.n_type) { list3.erase(list3.begin()); continue; }
+//cout << idx << " " << i << " " << idlecore_t[0] << " " << idlecore_t[1] << endl;
+//PrintMapping();
+		addr[idx] = list3[0];
+		if(list3[0] != prev) res = AllocateVM(addr, idx + 1);
+		if(res) return true;
+		addr[idx] = -1;
+		list3.erase(list3.begin());
+	}
 
 	return false;
 }
 
-bool CheckIfCombinationIsPossible(vector<CONF> list, int* addr, int t) {
-	int i, j, *host, *addr_val, *addr_new, temp;
+bool InitialSimpleSelect(vector<CONF> list, int* addr, int* idlecore_t, int idx, int prev) {
+	int i ,j;
 	bool res;
-	host = new int[System.node_t[t]];
-//Sorting Part
-	addr_val = new int[System.n_app];
-	addr_new = new int[System.n_app];
+	vector<int> list2;
 
-	for(i=0; i<System.n_app; i++) { addr_val[i] = 0; addr_new[i] = addr[i]; }
-
-	for(i=0; i<System.node_t[t]; i++) 
-		for(j=0; j<System.n_app; j++) 
-			addr_val[j] = addr_val[j] * System.core_t[t] + list[addr[j]].host[t][i];
-	for(i=0; i<System.n_app; i++) for(j=i+1; j<System.n_app; j++) 
-		if(addr_val[i] < addr_val[j]) {
-			temp = addr_val[i]; addr_val[i] = addr_val[j]; addr_val[j] = temp;
-			temp = addr_new[i]; addr_new[i] = addr_new[j]; addr_new[j] = temp;
-		}
-
-	for(i=0; i<System.node_t[t]; i++) host[i] = list[addr_new[0]].host[t][i];
-	res = CheckIfCombinationIsPossible2(list, addr_new, host, t, 1);
-
-//	for(i=0; i<System.node_t[t]; i++) host[i] = list[addr[0]].host[t][i];
-//	res = CheckIfCombinationIsPossible2(list, addr, host, t, 1);
-
-	delete addr_val;
-	delete addr_new;
-	delete host;
-	return res;
-}
-
-bool InitialRandomSelect(vector<CONF> list, int* addr, int* idlecore_t, int idx) {
-	int i ,j, c = 0;
-	if(idx == System.n_app) {
-//		for(i=0; i<System.n_type; i++) 
-//			if(!CheckIfCombinationIsPossible(list, addr, i)) break;
-//		if(i < System.n_type) return false;
-
-		return AllocateVM(addr);
-//		if(AllocateVM(addr) == false) { cout << "ALLOCATION FAILED!!\n"; return false; }
-//		return true;
-	}
+	for(i=0; i<list.size(); i++) 
+/* For using Static */
+//		if(VCrank[Appidx[idx]][i] == 1 || VCrank[Appidx[idx]][i] == 3)
+		list2.push_back(VCrank[Appidx[idx]][i]);
 
 	while(1) {
-		i = (rand() + c) % list.size();
+		for(j=0; j<System.n_type; j++) {
+			if(idlecore_t[j] < list[list2[0]].idlecore_t[j]) break;
+		}
+		if(j < System.n_type) { list2.erase(list2.begin()); continue; }
+//cout << idx << " " << i << " " << idlecore_t[0] << " " << idlecore_t[1] << endl;
+//PrintMapping();
+		addr[idx] = list2[0];
+		if(list2[0] != prev) res = AllocateVM(addr, idx + 1);
+		if(res) return true;
+		addr[idx] = -1;
+		list2.erase(list2.begin());
+	}
+
+	return false;
+}
+
+bool InitialFullSelect(vector<CONF> list, int* addr, int* idlecore_t, int idx, int choose) {
+	int i ,j;
+	bool res;
+
+	while(1) {
+		i = choose;
 		for(j=0; j<System.n_type; j++) {
 			if(idlecore_t[j] < list[i].idlecore_t[j]) break;
 		}
-		if(j < System.n_type) continue;
-
-//cout << idx << " " << i << " " << c << endl;
-
+		if(j < System.n_type) break; 
 		addr[idx] = i;
-		for(j=0; j<System.n_type; j++) idlecore_t[j] -= list[i].idlecore_t[j];
-		if(InitialRandomSelect(list, addr, idlecore_t, idx + 1)) return true;
+		res = AllocateVM(addr, idx + 1);
+		if(res) return true;
 		addr[idx] = -1;
-		for(j=0; j<System.n_type; j++) idlecore_t[j] += list[i].idlecore_t[j];
-		c++;
-		if(c == list.size()) return false;
+		break;
 	}
 
 	return false;
 }
 
-void GenerateSample(int *addr) {
+bool InitialRandomSelect(vector<CONF> list, int* addr, int* idlecore_t, int idx, int prev) {
+	int i ,j;
+	bool res;
+	vector<int> list2;
+	for(i=0; i<list.size(); i++) list2.push_back(i);
+
+	while(1) {
+		i = rand() % list2.size();
+		for(j=0; j<System.n_type; j++) {
+			if(idlecore_t[j] < list[list2[i]].idlecore_t[j]) break;
+		}
+		if(j < System.n_type) { list2.erase(list2.begin() + i); continue; }
+//cout << idx << " " << i << " " << idlecore_t[0] << " " << idlecore_t[1] << endl;
+//PrintMapping();
+		addr[idx] = list2[i];
+		if(list2[i] != prev) res = AllocateVM(addr, idx + 1);
+		if(res) return true;
+		addr[idx] = -1;
+		list2.erase(list2.begin() + i);
+	}
+
+	return false;
+}
+
+void GenerateSample(int *addr, int n) {
 	int i, j, k, l, m;
 	int value[VC.size()];
 	ofstream out, out2;
 	string filename;
 
 	for(i=0; i<VC.size(); i++) value[i] = 0;
-	for(i=0; i<System.n_app; i++) value[addr[i]]++;
+	for(i=0; i<n; i++) value[addr[i]]++;
 
 	out2.open("Corunners");
 
-	for(i=0; i<System.n_app; i++) {
-//cout << endl << "App" << i << endl;
+	for(i=0; i<n; i++) {
 		stringstream ss;
 		ss << "App" << i << "_";
 		ss >> filename;
@@ -592,7 +472,6 @@ void GenerateSample(int *addr) {
 		int crs[3], vcr[3], ncr = 0;
 		int blk = 0, nvm = 0, weight[2][3], bapp[2][3], changed = false;
 		for(j=0; j<System.n_type; j++) {
-//cout << "Type" << j << endl;
 			for(k=0; k<System.node_t[j]; k++) {
 				bool here = true;
 				for(l=0; l<System.core_t[j]; l++)
@@ -600,18 +479,15 @@ void GenerateSample(int *addr) {
 				if(here) continue;
 
 				for(l=0; l<System.core_t[j]; l++) 
-					if(mapping[j][k][l] != i) {
+					if(mapping[j][k][l] != i && mapping[j][k][l] != -1) {
 						for(m=0; m<ncr; m++) if(crs[m] == mapping[j][k][l]) break;
 						if(m == ncr) {
 							assert(ncr < 3);
 							crs[ncr++] = mapping[j][k][l];
-//cout << crs[ncr-1] << endl;
 						}
 					}
 			}
 		}
-
-		for(j=0; j<ncr; j++) for(k=j+1; k<ncr; k++) if(crs[j] > crs[k]) { l = crs[j]; crs[j] = crs[k]; crs[k] = l; }
 
 		out2 << Appname[Appidx[i]] << " " << addr[i];
 		for(j=0; j<ncr; j++) out2 << " " << Appname[Appidx[crs[j]]] << " " << addr[crs[j]];
@@ -629,7 +505,7 @@ void GenerateSample(int *addr) {
 				node++;
 
 				for(l=0; l<System.core_t[j]; l++) {
-					if(mapping[j][k][l] != i) {
+					if(mapping[j][k][l] != i && mapping[j][k][l] != -1) {
 						for(m=0; m<ncr; m++) if(crs[m] == mapping[j][k][l]) break;
 						if(m == ncr) continue;
 						vcr[m]++;
@@ -693,13 +569,15 @@ void GenerateSample(int *addr) {
 	out2.close();
 }
 
-void GetInput() {
+void GetInput(char* setup, char* app) {
 	int size_vc;
-	int i, j, k;
+	int i, j, k, temp;
 	ifstream in;
 	string filename;
 
-	cin >> System.n_type >> System.n_app >> System.core_vm;
+	in.open(setup);
+
+	in >> System.n_type >> System.n_app >> System.core_vm;
 	System.core_t = new int[System.n_type];
 	System.node_t = new int[System.n_type];
 	System.idlecore_t = new int[System.n_type];
@@ -707,7 +585,7 @@ void GetInput() {
 	System.total_core = 0;
 
 	for(i=0; i<System.n_type; i++) {
-		cin >> System.node_t[i] >> System.core_t[i];
+		in >> System.node_t[i] >> System.core_t[i];
 		System.host[i] = new int[System.node_t[i]];
 		System.core_t[i] /= System.core_vm;
 		System.idlecore_t[i] = System.node_t[i] * System.core_t[i];
@@ -716,24 +594,16 @@ void GetInput() {
 
 	System.n_vm = System.total_core / System.n_app;
 
-	Appidx = new int[System.n_app];
-	for(i=0; i<System.n_app; i++)
-		cin >> Appidx[i];
-
-	cin >> size_vc;
+	in >> size_vc;
         for(i=0; i<size_vc; i++) {
                 CONF vc;
                 vc.init(System);
-                for(j=0; j<vc.n_type; j++) {
-			int temp;
-                        cin >> temp;
+                for(j=0; j<vc.n_type; j++) in >> vc.idlecore_t[j];;
 //			vc.idlecore_t[j] -= temp;
-			vc.idlecore_t[j] = temp;
-		}
 
                 for(j=0; j<vc.n_type; j++) {
                         int temp, temp2;
-                        cin >> temp;
+                        in >> temp;
                         if(temp == 0) continue;
 //                        temp2 = (vc.core_t[j] * vc.node_t[j] - vc.idlecore_t[j]) / temp;
                         temp2 = vc.idlecore_t[j] / temp;
@@ -741,6 +611,15 @@ void GetInput() {
                 }
                 VC.push_back(vc);
         }
+
+	in.close();
+	in.open(app);
+
+	Appidx = new int[System.n_app];
+	for(i=0; i<System.n_app; i++)
+		in >> Appidx[i];
+
+	in.close();
 
 	mapping = new int**[System.n_type];
 	for(i=0; i<System.n_type; i++) {
@@ -760,6 +639,26 @@ void GetInput() {
 			for(k=0; k<NF; k++) in >> factors[i][j][k];
 		}
 		in.close();
+
+		for(j=0; j<VC.size(); j++) VCrank[i][j] = j;
+		for(j=0; j<VC.size(); j++) for(k=j+1; k<VC.size(); k++) 
+			if(srt[i][VCrank[i][j]] > srt[i][VCrank[i][k]])
+				{ temp = VCrank[i][j]; VCrank[i][j] = VCrank[i][k]; VCrank[i][k] = temp; }
+
+		for(j=0; j<System.n_type; j++) Trank[i][j] = 0;
+		for(j=0; j<VC.size(); j++) 
+			for(k=0; k<System.n_type; k++) if(VC[j].idlecore_t[k] == 8)
+				{ Trank[i][k] += srt[i][j]; break; }
+
+		int rank[4] = {0};
+		for(j=0; j<System.n_type; j++) {
+			int min = 1000000000, idx = -1;
+			for(k=0; k<System.n_type; k++) if(min > Trank[i][k])
+				{ min = Trank[i][k]; idx = k; }
+			rank[j] = idx;
+		}
+
+		for(j=0; j<System.n_type; j++) Trank[i][j] = rank[j];
 	}
 }
 
@@ -776,9 +675,9 @@ double GetResult() {
 	assert(pid != -1);
 	switch(pid) {
 case 0:
-		execl("/home/gorae/NewVersion_170206/SAhelper.sh", "/home/gorae/NewVersion_170206/SAhelper.sh", temp.c_str(), NULL);
+		execl("./SAhelper.sh", "./SAhelper.sh", temp.c_str(), NULL);
 //		execl("/home/gorae/NewVersion_170206/HelpST/SAhelper.sh", "/home/gorae/NewVersion_170206/HelpST/SAhelper.sh", temp.c_str(), NULL);
-		exit(0);
+		exit(-1);
 default:
 		sleep(1);
 		wait(pid);
@@ -788,6 +687,7 @@ default:
 //		}
 		in.open("Model_result", ios::in);
 		in >> res;
+
 		in.close();
 //		remove("Model_result");
 	}
