@@ -98,7 +98,6 @@ public class ContainersLauncher extends AbstractService implements EventHandler<
 
 		public void setAllocationMB(int mb) {
 			allocationMb = mb;
-			// FIXME: why it's divided by allocationMb?
 			if (this.max_num_of_container != -1)
 				this.max_num_of_container = this.max_num_of_container / mb;
 		}
