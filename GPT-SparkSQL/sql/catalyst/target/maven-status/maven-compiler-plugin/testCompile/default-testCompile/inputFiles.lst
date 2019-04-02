@@ -1,0 +1,5 @@
+/Users/Ronymin/Documents/Research/spark-2.2.0/sql/catalyst/src/test/java/org/apache/spark/sql/catalyst/expressions/XXH64Suite.java
+/Users/Ronymin/Documents/Research/spark-2.2.0/sql/catalyst/src/test/java/org/apache/spark/sql/catalyst/expressions/RowBasedKeyValueBatchSuite.java
+/Users/Ronymin/Documents/Research/spark-2.2.0/sql/catalyst/src/test/java/org/apache/spark/sql/catalyst/expressions/HiveHasherSuite.java
+/Users/Ronymin/Documents/Research/spark-2.2.0/sql/catalyst/src/test/java/org/apache/spark/sql/streaming/JavaGroupStateTimeoutSuite.java
+/Users/Ronymin/Documents/Research/spark-2.2.0/sql/catalyst/src/test/java/org/apache/spark/sql/streaming/JavaOutputModeSuite.java

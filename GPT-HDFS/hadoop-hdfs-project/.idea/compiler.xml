@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="hadoop-hdfs" />
+        <module name="hadoop-hdfs-bkjournal" />
+        <module name="hadoop-hdfs-httpfs" />
+        <module name="hadoop-hdfs-nfs" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="hadoop-hdfs" target="1.7" />
+      <module name="hadoop-hdfs-bkjournal" target="1.7" />
+      <module name="hadoop-hdfs-httpfs" target="1.7" />
+      <module name="hadoop-hdfs-nfs" target="1.7" />
+      <module name="hadoop-hdfs-project" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

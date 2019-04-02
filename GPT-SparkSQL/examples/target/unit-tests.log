@@ -1,0 +1,2159 @@
+18:38:41.500 ScalaTest-run INFO SparkContext: Running Spark version 2.2.0
+18:38:41.836 ScalaTest-run WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+18:38:42.133 ScalaTest-run WARN Utils: Your hostname, YoonMinNam-MacBook-Pro.local resolves to a loopback address: 127.0.0.1; using 1.251.156.207 instead (on interface en0)
+18:38:42.134 ScalaTest-run WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+18:38:42.149 ScalaTest-run INFO SparkContext: Submitted application: test-sql-context
+18:38:42.197 ScalaTest-run INFO SecurityManager: Changing view acls to: Ronymin
+18:38:42.199 ScalaTest-run INFO SecurityManager: Changing modify acls to: Ronymin
+18:38:42.200 ScalaTest-run INFO SecurityManager: Changing view acls groups to: 
+18:38:42.201 ScalaTest-run INFO SecurityManager: Changing modify acls groups to: 
+18:38:42.202 ScalaTest-run INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(Ronymin); groups with view permissions: Set(); users  with modify permissions: Set(Ronymin); groups with modify permissions: Set()
+18:38:42.756 ScalaTest-run INFO Utils: Successfully started service 'sparkDriver' on port 63104.
+18:38:42.784 ScalaTest-run INFO SparkEnv: Registering MapOutputTracker
+18:38:42.822 ScalaTest-run INFO SparkEnv: Registering BlockManagerMaster
+18:38:42.826 ScalaTest-run INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+18:38:42.827 ScalaTest-run INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+18:38:42.850 ScalaTest-run INFO DiskBlockManager: Created local directory at /private/var/folders/lw/sq2ldryj1gd4gtzcf_xjgrwm0000gn/T/blockmgr-1b631f68-d79e-421a-b29f-80cafe87a5e9
+18:38:42.877 ScalaTest-run INFO MemoryStore: MemoryStore started with capacity 2004.6 MB
+18:38:42.959 ScalaTest-run INFO SparkEnv: Registering OutputCommitCoordinator
+18:38:43.111 ScalaTest-run INFO log: Logging initialized @6202ms
+18:38:43.224 ScalaTest-run INFO Server: jetty-9.3.11.v20160721
+18:38:43.243 ScalaTest-run INFO Server: Started @6336ms
+18:38:43.272 ScalaTest-run INFO AbstractConnector: Started ServerConnector@713f720c{HTTP/1.1,[http/1.1]}{0.0.0.0:4040}
+18:38:43.273 ScalaTest-run INFO Utils: Successfully started service 'SparkUI' on port 4040.
+18:38:43.321 ScalaTest-run INFO ContextHandler: Started o.e.j.s.ServletContextHandler@75a118e6{/jobs,null,AVAILABLE,@Spark}
+18:38:43.322 ScalaTest-run INFO ContextHandler: Started o.e.j.s.ServletContextHandler@3f92a84e{/jobs/json,null,AVAILABLE,@Spark}
+18:38:43.323 ScalaTest-run INFO ContextHandler: Started o.e.j.s.ServletContextHandler@6137cf6e{/jobs/job,null,AVAILABLE,@Spark}
+18:38:43.324 ScalaTest-run INFO ContextHandler: Started o.e.j.s.ServletContextHandler@33a3c44a{/jobs/job/json,null,AVAILABLE,@Spark}
+18:38:43.325 ScalaTest-run INFO ContextHandler: Started o.e.j.s.ServletContextHandler@499ef98e{/stages,null,AVAILABLE,@Spark}
+18:38:43.326 ScalaTest-run INFO ContextHandler: Started o.e.j.s.ServletContextHandler@93f432e{/stages/json,null,AVAILABLE,@Spark}
+18:38:43.327 ScalaTest-run INFO ContextHandler: Started o.e.j.s.ServletContextHandler@16eedaa6{/stages/stage,null,AVAILABLE,@Spark}
+18:38:43.330 ScalaTest-run INFO ContextHandler: Started o.e.j.s.ServletContextHandler@58cf8f94{/stages/stage/json,null,AVAILABLE,@Spark}
+18:38:43.331 ScalaTest-run INFO ContextHandler: Started o.e.j.s.ServletContextHandler@66c38e51{/stages/pool,null,AVAILABLE,@Spark}
+18:38:43.332 ScalaTest-run INFO ContextHandler: Started o.e.j.s.ServletContextHandler@34f392be{/stages/pool/json,null,AVAILABLE,@Spark}
+18:38:43.333 ScalaTest-run INFO ContextHandler: Started o.e.j.s.ServletContextHandler@3f9f71ff{/storage,null,AVAILABLE,@Spark}
+18:38:43.335 ScalaTest-run INFO ContextHandler: Started o.e.j.s.ServletContextHandler@27e5b378{/storage/json,null,AVAILABLE,@Spark}
+18:38:43.335 ScalaTest-run INFO ContextHandler: Started o.e.j.s.ServletContextHandler@764cba{/storage/rdd,null,AVAILABLE,@Spark}
+18:38:43.337 ScalaTest-run INFO ContextHandler: Started o.e.j.s.ServletContextHandler@58496c97{/storage/rdd/json,null,AVAILABLE,@Spark}
+18:38:43.338 ScalaTest-run INFO ContextHandler: Started o.e.j.s.ServletContextHandler@3872bc37{/environment,null,AVAILABLE,@Spark}
+18:38:43.339 ScalaTest-run INFO ContextHandler: Started o.e.j.s.ServletContextHandler@12968227{/environment/json,null,AVAILABLE,@Spark}
+18:38:43.340 ScalaTest-run INFO ContextHandler: Started o.e.j.s.ServletContextHandler@2cfa2c4f{/executors,null,AVAILABLE,@Spark}
+18:38:43.341 ScalaTest-run INFO ContextHandler: Started o.e.j.s.ServletContextHandler@48eb9836{/executors/json,null,AVAILABLE,@Spark}
+18:38:43.342 ScalaTest-run INFO ContextHandler: Started o.e.j.s.ServletContextHandler@11b455e5{/executors/threadDump,null,AVAILABLE,@Spark}
+18:38:43.343 ScalaTest-run INFO ContextHandler: Started o.e.j.s.ServletContextHandler@3e3861d7{/executors/threadDump/json,null,AVAILABLE,@Spark}
+18:38:43.385 ScalaTest-run INFO ContextHandler: Started o.e.j.s.ServletContextHandler@6d025d1d{/static,null,AVAILABLE,@Spark}
+18:38:43.386 ScalaTest-run INFO ContextHandler: Started o.e.j.s.ServletContextHandler@602ae7b6{/,null,AVAILABLE,@Spark}
+18:38:43.391 ScalaTest-run INFO ContextHandler: Started o.e.j.s.ServletContextHandler@71ad3d8a{/api,null,AVAILABLE,@Spark}
+18:38:43.394 ScalaTest-run INFO ContextHandler: Started o.e.j.s.ServletContextHandler@260ff5b7{/jobs/job/kill,null,AVAILABLE,@Spark}
+18:38:43.396 ScalaTest-run INFO ContextHandler: Started o.e.j.s.ServletContextHandler@77eb5790{/stages/stage/kill,null,AVAILABLE,@Spark}
+18:38:43.409 ScalaTest-run INFO SparkUI: Bound SparkUI to 0.0.0.0, and started at http://1.251.156.207:4040
+18:38:43.560 ScalaTest-run INFO Executor: Starting executor ID driver on host localhost
+18:38:43.596 ScalaTest-run INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 63105.
+18:38:43.597 ScalaTest-run INFO NettyBlockTransferService: Server created on 1.251.156.207:63105
+18:38:43.605 ScalaTest-run INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 1.251.156.207, 63105, None)
+18:38:43.609 dispatcher-event-loop-2 INFO BlockManagerMasterEndpoint: Registering block manager 1.251.156.207:63105 with 2004.6 MB RAM, BlockManagerId(driver, 1.251.156.207, 63105, None)
+18:38:43.618 ScalaTest-run INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 1.251.156.207, 63105, None)
+18:38:43.984 ScalaTest-run INFO ContextHandler: Started o.e.j.s.ServletContextHandler@3af7d855{/metrics/json,null,AVAILABLE,@Spark}
+18:38:47.615 ScalaTest-run INFO SharedState: loading hive config file: file:/Users/Ronymin/Documents/Research/spark-2.2.0/sql/core/target/scala-2.11/test-classes/hive-site.xml
+18:38:47.650 ScalaTest-run INFO SharedState: Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir ('file:/Users/Ronymin/Documents/Research/spark-2.2.0/examples/spark-warehouse/').
+18:38:47.651 ScalaTest-run INFO SharedState: Warehouse path is 'file:/Users/Ronymin/Documents/Research/spark-2.2.0/examples/spark-warehouse/'.
+18:38:47.660 ScalaTest-run INFO ContextHandler: Started o.e.j.s.ServletContextHandler@53b7bf01{/SQL,null,AVAILABLE,@Spark}
+18:38:47.661 ScalaTest-run INFO ContextHandler: Started o.e.j.s.ServletContextHandler@6a6e9289{/SQL/json,null,AVAILABLE,@Spark}
+18:38:47.663 ScalaTest-run INFO ContextHandler: Started o.e.j.s.ServletContextHandler@42b4df5a{/SQL/execution,null,AVAILABLE,@Spark}
+18:38:47.664 ScalaTest-run INFO ContextHandler: Started o.e.j.s.ServletContextHandler@67b8d45{/SQL/execution/json,null,AVAILABLE,@Spark}
+18:38:47.668 ScalaTest-run INFO ContextHandler: Started o.e.j.s.ServletContextHandler@4aac81ca{/static/sql,null,AVAILABLE,@Spark}
+18:38:48.742 ScalaTest-run INFO StateStoreCoordinatorRef: Registered StateStoreCoordinator endpoint
+18:38:48.778 ScalaTest-run INFO QueryExecution: 
+
+LogicalPlan: 
+00 SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true])).key AS key#3, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true])).value, true) AS value#4]
+01 +- ExternalRDD [obj#2]
+18:38:49.026 ScalaTest-run INFO QueryExecution: 
+
+AnalyzedPlan: 
+00 SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true])).key AS key#3, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true])).value, true) AS value#4]
+01 +- ExternalRDD [obj#2]
+18:38:49.272 ScalaTest-run INFO QueryExecution: 
+
+OptmizedPlan: 
+00 SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true]).key AS key#3, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true]).value, true) AS value#4]
+01 +- ExternalRDD [obj#2]
+18:38:49.306 ScalaTest-run INFO QueryExecution: 
+
+SparkPlan: 
+00 SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true]).key AS key#3, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true]).value, true) AS value#4]
+01 +- Scan ExternalRDDScan[obj#2]
+18:38:49.372 ScalaTest-run INFO QueryExecution: 
+
+ExecutedPlan: 
+00 *SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true]).key AS key#3, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true]).value, true) AS value#4]
+01 +- Scan ExternalRDDScan[obj#2]
+18:38:49.625 ScalaTest-run INFO QueryExecution: 
+
+LogicalPlan: 
+00 CreateViewCommand `emptyTestData`, false, true, LocalTempView
+01    +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true])).key AS key#3, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true])).value, true) AS value#4]
+02       +- ExternalRDD [obj#2]
+18:38:49.627 ScalaTest-run INFO QueryExecution: 
+
+AnalyzedPlan: 
+00 CreateViewCommand `emptyTestData`, false, true, LocalTempView
+01    +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true])).key AS key#3, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true])).value, true) AS value#4]
+02       +- ExternalRDD [obj#2]
+18:38:49.631 ScalaTest-run INFO QueryExecution: 
+
+OptmizedPlan: 
+00 CreateViewCommand `emptyTestData`, false, true, LocalTempView
+01    +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true])).key AS key#3, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true])).value, true) AS value#4]
+02       +- ExternalRDD [obj#2]
+18:38:49.636 ScalaTest-run INFO QueryExecution: 
+
+SparkPlan: 
+00 ExecutedCommand
+01    +- CreateViewCommand `emptyTestData`, false, true, LocalTempView
+02          +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true])).key AS key#3, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true])).value, true) AS value#4]
+03             +- ExternalRDD [obj#2]
+18:38:49.640 ScalaTest-run INFO QueryExecution: 
+
+ExecutedPlan: 
+00 ExecutedCommand
+01    +- CreateViewCommand `emptyTestData`, false, true, LocalTempView
+02          +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true])).key AS key#3, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true])).value, true) AS value#4]
+03             +- ExternalRDD [obj#2]
+18:38:49.646 ScalaTest-run INFO QueryExecution: 
+
+LogicalPlan: 
+00 SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true])).key AS key#3, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true])).value, true) AS value#4]
+01 +- ExternalRDD [obj#2]
+18:38:49.648 ScalaTest-run INFO QueryExecution: 
+
+AnalyzedPlan: 
+00 SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true])).key AS key#3, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true])).value, true) AS value#4]
+01 +- ExternalRDD [obj#2]
+18:38:49.654 ScalaTest-run INFO QueryExecution: 
+
+OptmizedPlan: 
+00 SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true]).key AS key#3, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true]).value, true) AS value#4]
+01 +- ExternalRDD [obj#2]
+18:38:49.655 ScalaTest-run INFO QueryExecution: 
+
+SparkPlan: 
+00 SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true]).key AS key#3, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true]).value, true) AS value#4]
+01 +- Scan ExternalRDDScan[obj#2]
+18:38:49.657 ScalaTest-run INFO QueryExecution: 
+
+ExecutedPlan: 
+00 *SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true]).key AS key#3, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true]).value, true) AS value#4]
+01 +- Scan ExternalRDDScan[obj#2]
+18:38:49.742 ScalaTest-run INFO QueryExecution: 
+
+LogicalPlan: 
+00 SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true])).key AS key#13, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true])).value, true) AS value#14]
+01 +- ExternalRDD [obj#12]
+18:38:49.748 ScalaTest-run INFO QueryExecution: 
+
+AnalyzedPlan: 
+00 SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true])).key AS key#13, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true])).value, true) AS value#14]
+01 +- ExternalRDD [obj#12]
+18:38:49.755 ScalaTest-run INFO QueryExecution: 
+
+OptmizedPlan: 
+00 SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true]).key AS key#13, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true]).value, true) AS value#14]
+01 +- ExternalRDD [obj#12]
+18:38:49.757 ScalaTest-run INFO QueryExecution: 
+
+SparkPlan: 
+00 SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true]).key AS key#13, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true]).value, true) AS value#14]
+01 +- Scan ExternalRDDScan[obj#12]
+18:38:49.763 ScalaTest-run INFO QueryExecution: 
+
+ExecutedPlan: 
+00 *SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true]).key AS key#13, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true]).value, true) AS value#14]
+01 +- Scan ExternalRDDScan[obj#12]
+18:38:49.790 ScalaTest-run INFO QueryExecution: 
+
+LogicalPlan: 
+00 CreateViewCommand `testData`, false, true, LocalTempView
+01    +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true])).key AS key#13, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true])).value, true) AS value#14]
+02       +- ExternalRDD [obj#12]
+18:38:49.794 ScalaTest-run INFO QueryExecution: 
+
+AnalyzedPlan: 
+00 CreateViewCommand `testData`, false, true, LocalTempView
+01    +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true])).key AS key#13, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true])).value, true) AS value#14]
+02       +- ExternalRDD [obj#12]
+18:38:49.797 ScalaTest-run INFO QueryExecution: 
+
+OptmizedPlan: 
+00 CreateViewCommand `testData`, false, true, LocalTempView
+01    +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true])).key AS key#13, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true])).value, true) AS value#14]
+02       +- ExternalRDD [obj#12]
+18:38:49.799 ScalaTest-run INFO QueryExecution: 
+
+SparkPlan: 
+00 ExecutedCommand
+01    +- CreateViewCommand `testData`, false, true, LocalTempView
+02          +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true])).key AS key#13, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true])).value, true) AS value#14]
+03             +- ExternalRDD [obj#12]
+18:38:49.801 ScalaTest-run INFO QueryExecution: 
+
+ExecutedPlan: 
+00 ExecutedCommand
+01    +- CreateViewCommand `testData`, false, true, LocalTempView
+02          +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true])).key AS key#13, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true])).value, true) AS value#14]
+03             +- ExternalRDD [obj#12]
+18:38:49.804 ScalaTest-run INFO QueryExecution: 
+
+LogicalPlan: 
+00 SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true])).key AS key#13, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true])).value, true) AS value#14]
+01 +- ExternalRDD [obj#12]
+18:38:49.806 ScalaTest-run INFO QueryExecution: 
+
+AnalyzedPlan: 
+00 SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true])).key AS key#13, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true])).value, true) AS value#14]
+01 +- ExternalRDD [obj#12]
+18:38:49.810 ScalaTest-run INFO QueryExecution: 
+
+OptmizedPlan: 
+00 SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true]).key AS key#13, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true]).value, true) AS value#14]
+01 +- ExternalRDD [obj#12]
+18:38:49.812 ScalaTest-run INFO QueryExecution: 
+
+SparkPlan: 
+00 SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true]).key AS key#13, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true]).value, true) AS value#14]
+01 +- Scan ExternalRDDScan[obj#12]
+18:38:49.815 ScalaTest-run INFO QueryExecution: 
+
+ExecutedPlan: 
+00 *SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true]).key AS key#13, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true]).value, true) AS value#14]
+01 +- Scan ExternalRDDScan[obj#12]
+18:38:49.855 ScalaTest-run INFO QueryExecution: 
+
+LogicalPlan: 
+00 SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true])).a AS a#23, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true])).b AS b#24]
+01 +- ExternalRDD [obj#22]
+18:38:49.858 ScalaTest-run INFO QueryExecution: 
+
+AnalyzedPlan: 
+00 SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true])).a AS a#23, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true])).b AS b#24]
+01 +- ExternalRDD [obj#22]
+18:38:49.863 ScalaTest-run INFO QueryExecution: 
+
+OptmizedPlan: 
+00 SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true]).a AS a#23, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true]).b AS b#24]
+01 +- ExternalRDD [obj#22]
+18:38:49.867 ScalaTest-run INFO QueryExecution: 
+
+SparkPlan: 
+00 SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true]).a AS a#23, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true]).b AS b#24]
+01 +- Scan ExternalRDDScan[obj#22]
+18:38:49.870 ScalaTest-run INFO QueryExecution: 
+
+ExecutedPlan: 
+00 *SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true]).a AS a#23, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true]).b AS b#24]
+01 +- Scan ExternalRDDScan[obj#22]
+18:38:49.888 ScalaTest-run INFO QueryExecution: 
+
+LogicalPlan: 
+00 CreateViewCommand `testData2`, false, true, LocalTempView
+01    +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true])).a AS a#23, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true])).b AS b#24]
+02       +- ExternalRDD [obj#22]
+18:38:49.889 ScalaTest-run INFO QueryExecution: 
+
+AnalyzedPlan: 
+00 CreateViewCommand `testData2`, false, true, LocalTempView
+01    +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true])).a AS a#23, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true])).b AS b#24]
+02       +- ExternalRDD [obj#22]
+18:38:49.891 ScalaTest-run INFO QueryExecution: 
+
+OptmizedPlan: 
+00 CreateViewCommand `testData2`, false, true, LocalTempView
+01    +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true])).a AS a#23, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true])).b AS b#24]
+02       +- ExternalRDD [obj#22]
+18:38:49.893 ScalaTest-run INFO QueryExecution: 
+
+SparkPlan: 
+00 ExecutedCommand
+01    +- CreateViewCommand `testData2`, false, true, LocalTempView
+02          +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true])).a AS a#23, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true])).b AS b#24]
+03             +- ExternalRDD [obj#22]
+18:38:49.895 ScalaTest-run INFO QueryExecution: 
+
+ExecutedPlan: 
+00 ExecutedCommand
+01    +- CreateViewCommand `testData2`, false, true, LocalTempView
+02          +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true])).a AS a#23, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true])).b AS b#24]
+03             +- ExternalRDD [obj#22]
+18:38:49.897 ScalaTest-run INFO QueryExecution: 
+
+LogicalPlan: 
+00 SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true])).a AS a#23, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true])).b AS b#24]
+01 +- ExternalRDD [obj#22]
+18:38:49.899 ScalaTest-run INFO QueryExecution: 
+
+AnalyzedPlan: 
+00 SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true])).a AS a#23, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true])).b AS b#24]
+01 +- ExternalRDD [obj#22]
+18:38:49.903 ScalaTest-run INFO QueryExecution: 
+
+OptmizedPlan: 
+00 SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true]).a AS a#23, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true]).b AS b#24]
+01 +- ExternalRDD [obj#22]
+18:38:49.905 ScalaTest-run INFO QueryExecution: 
+
+SparkPlan: 
+00 SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true]).a AS a#23, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true]).b AS b#24]
+01 +- Scan ExternalRDDScan[obj#22]
+18:38:49.906 ScalaTest-run INFO QueryExecution: 
+
+ExecutedPlan: 
+00 *SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true]).a AS a#23, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true]).b AS b#24]
+01 +- Scan ExternalRDDScan[obj#22]
+18:38:49.986 ScalaTest-run INFO QueryExecution: 
+
+LogicalPlan: 
+00 SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData3, true])).a AS a#33, unwrapoption(IntegerType, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData3, true])).b) AS b#34]
+01 +- ExternalRDD [obj#32]
+18:38:49.991 ScalaTest-run INFO QueryExecution: 
+
+AnalyzedPlan: 
+00 SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData3, true])).a AS a#33, unwrapoption(IntegerType, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData3, true])).b) AS b#34]
+01 +- ExternalRDD [obj#32]
+18:38:49.996 ScalaTest-run INFO QueryExecution: 
+
+OptmizedPlan: 
+00 SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData3, true]).a AS a#33, unwrapoption(IntegerType, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData3, true]).b) AS b#34]
+01 +- ExternalRDD [obj#32]
+18:38:49.998 ScalaTest-run INFO QueryExecution: 
+
+SparkPlan: 
+00 SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData3, true]).a AS a#33, unwrapoption(IntegerType, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData3, true]).b) AS b#34]
+01 +- Scan ExternalRDDScan[obj#32]
+18:38:50.000 ScalaTest-run INFO QueryExecution: 
+
+ExecutedPlan: 
+00 *SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData3, true]).a AS a#33, unwrapoption(IntegerType, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData3, true]).b) AS b#34]
+01 +- Scan ExternalRDDScan[obj#32]
+18:38:50.018 ScalaTest-run INFO QueryExecution: 
+
+LogicalPlan: 
+00 CreateViewCommand `testData3`, false, true, LocalTempView
+01    +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData3, true])).a AS a#33, unwrapoption(IntegerType, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData3, true])).b) AS b#34]
+02       +- ExternalRDD [obj#32]
+18:38:50.020 ScalaTest-run INFO QueryExecution: 
+
+AnalyzedPlan: 
+00 CreateViewCommand `testData3`, false, true, LocalTempView
+01    +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData3, true])).a AS a#33, unwrapoption(IntegerType, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData3, true])).b) AS b#34]
+02       +- ExternalRDD [obj#32]
+18:38:50.022 ScalaTest-run INFO QueryExecution: 
+
+OptmizedPlan: 
+00 CreateViewCommand `testData3`, false, true, LocalTempView
+01    +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData3, true])).a AS a#33, unwrapoption(IntegerType, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData3, true])).b) AS b#34]
+02       +- ExternalRDD [obj#32]
+18:38:50.024 ScalaTest-run INFO QueryExecution: 
+
+SparkPlan: 
+00 ExecutedCommand
+01    +- CreateViewCommand `testData3`, false, true, LocalTempView
+02          +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData3, true])).a AS a#33, unwrapoption(IntegerType, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData3, true])).b) AS b#34]
+03             +- ExternalRDD [obj#32]
+18:38:50.025 ScalaTest-run INFO QueryExecution: 
+
+ExecutedPlan: 
+00 ExecutedCommand
+01    +- CreateViewCommand `testData3`, false, true, LocalTempView
+02          +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData3, true])).a AS a#33, unwrapoption(IntegerType, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData3, true])).b) AS b#34]
+03             +- ExternalRDD [obj#32]
+18:38:50.029 ScalaTest-run INFO QueryExecution: 
+
+LogicalPlan: 
+00 SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData3, true])).a AS a#33, unwrapoption(IntegerType, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData3, true])).b) AS b#34]
+01 +- ExternalRDD [obj#32]
+18:38:50.031 ScalaTest-run INFO QueryExecution: 
+
+AnalyzedPlan: 
+00 SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData3, true])).a AS a#33, unwrapoption(IntegerType, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData3, true])).b) AS b#34]
+01 +- ExternalRDD [obj#32]
+18:38:50.035 ScalaTest-run INFO QueryExecution: 
+
+OptmizedPlan: 
+00 SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData3, true]).a AS a#33, unwrapoption(IntegerType, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData3, true]).b) AS b#34]
+01 +- ExternalRDD [obj#32]
+18:38:50.036 ScalaTest-run INFO QueryExecution: 
+
+SparkPlan: 
+00 SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData3, true]).a AS a#33, unwrapoption(IntegerType, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData3, true]).b) AS b#34]
+01 +- Scan ExternalRDDScan[obj#32]
+18:38:50.038 ScalaTest-run INFO QueryExecution: 
+
+ExecutedPlan: 
+00 *SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData3, true]).a AS a#33, unwrapoption(IntegerType, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData3, true]).b) AS b#34]
+01 +- Scan ExternalRDDScan[obj#32]
+18:38:50.073 ScalaTest-run INFO QueryExecution: 
+
+LogicalPlan: 
+00 SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true])).key AS key#43, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true])).value, true) AS value#44]
+01 +- ExternalRDD [obj#42]
+18:38:50.075 ScalaTest-run INFO QueryExecution: 
+
+AnalyzedPlan: 
+00 SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true])).key AS key#43, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true])).value, true) AS value#44]
+01 +- ExternalRDD [obj#42]
+18:38:50.079 ScalaTest-run INFO QueryExecution: 
+
+OptmizedPlan: 
+00 SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true]).key AS key#43, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true]).value, true) AS value#44]
+01 +- ExternalRDD [obj#42]
+18:38:50.080 ScalaTest-run INFO QueryExecution: 
+
+SparkPlan: 
+00 SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true]).key AS key#43, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true]).value, true) AS value#44]
+01 +- Scan ExternalRDDScan[obj#42]
+18:38:50.082 ScalaTest-run INFO QueryExecution: 
+
+ExecutedPlan: 
+00 *SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true]).key AS key#43, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true]).value, true) AS value#44]
+01 +- Scan ExternalRDDScan[obj#42]
+18:38:50.095 ScalaTest-run INFO QueryExecution: 
+
+LogicalPlan: 
+00 CreateViewCommand `negativeData`, false, true, LocalTempView
+01    +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true])).key AS key#43, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true])).value, true) AS value#44]
+02       +- ExternalRDD [obj#42]
+18:38:50.098 ScalaTest-run INFO QueryExecution: 
+
+AnalyzedPlan: 
+00 CreateViewCommand `negativeData`, false, true, LocalTempView
+01    +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true])).key AS key#43, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true])).value, true) AS value#44]
+02       +- ExternalRDD [obj#42]
+18:38:50.099 ScalaTest-run INFO QueryExecution: 
+
+OptmizedPlan: 
+00 CreateViewCommand `negativeData`, false, true, LocalTempView
+01    +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true])).key AS key#43, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true])).value, true) AS value#44]
+02       +- ExternalRDD [obj#42]
+18:38:50.101 ScalaTest-run INFO QueryExecution: 
+
+SparkPlan: 
+00 ExecutedCommand
+01    +- CreateViewCommand `negativeData`, false, true, LocalTempView
+02          +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true])).key AS key#43, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true])).value, true) AS value#44]
+03             +- ExternalRDD [obj#42]
+18:38:50.103 ScalaTest-run INFO QueryExecution: 
+
+ExecutedPlan: 
+00 ExecutedCommand
+01    +- CreateViewCommand `negativeData`, false, true, LocalTempView
+02          +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true])).key AS key#43, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true])).value, true) AS value#44]
+03             +- ExternalRDD [obj#42]
+18:38:50.105 ScalaTest-run INFO QueryExecution: 
+
+LogicalPlan: 
+00 SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true])).key AS key#43, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true])).value, true) AS value#44]
+01 +- ExternalRDD [obj#42]
+18:38:50.107 ScalaTest-run INFO QueryExecution: 
+
+AnalyzedPlan: 
+00 SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true])).key AS key#43, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true])).value, true) AS value#44]
+01 +- ExternalRDD [obj#42]
+18:38:50.110 ScalaTest-run INFO QueryExecution: 
+
+OptmizedPlan: 
+00 SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true]).key AS key#43, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true]).value, true) AS value#44]
+01 +- ExternalRDD [obj#42]
+18:38:50.111 ScalaTest-run INFO QueryExecution: 
+
+SparkPlan: 
+00 SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true]).key AS key#43, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true]).value, true) AS value#44]
+01 +- Scan ExternalRDDScan[obj#42]
+18:38:50.117 ScalaTest-run INFO QueryExecution: 
+
+ExecutedPlan: 
+00 *SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true]).key AS key#43, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData, true]).value, true) AS value#44]
+01 +- Scan ExternalRDDScan[obj#42]
+18:38:50.149 ScalaTest-run INFO QueryExecution: 
+
+LogicalPlan: 
+00 SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$LargeAndSmallInts, true])).a AS a#53, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$LargeAndSmallInts, true])).b AS b#54]
+01 +- ExternalRDD [obj#52]
+18:38:50.151 ScalaTest-run INFO QueryExecution: 
+
+AnalyzedPlan: 
+00 SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$LargeAndSmallInts, true])).a AS a#53, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$LargeAndSmallInts, true])).b AS b#54]
+01 +- ExternalRDD [obj#52]
+18:38:50.154 ScalaTest-run INFO QueryExecution: 
+
+OptmizedPlan: 
+00 SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$LargeAndSmallInts, true]).a AS a#53, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$LargeAndSmallInts, true]).b AS b#54]
+01 +- ExternalRDD [obj#52]
+18:38:50.155 ScalaTest-run INFO QueryExecution: 
+
+SparkPlan: 
+00 SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$LargeAndSmallInts, true]).a AS a#53, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$LargeAndSmallInts, true]).b AS b#54]
+01 +- Scan ExternalRDDScan[obj#52]
+18:38:50.157 ScalaTest-run INFO QueryExecution: 
+
+ExecutedPlan: 
+00 *SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$LargeAndSmallInts, true]).a AS a#53, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$LargeAndSmallInts, true]).b AS b#54]
+01 +- Scan ExternalRDDScan[obj#52]
+18:38:50.170 ScalaTest-run INFO QueryExecution: 
+
+LogicalPlan: 
+00 CreateViewCommand `largeAndSmallInts`, false, true, LocalTempView
+01    +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$LargeAndSmallInts, true])).a AS a#53, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$LargeAndSmallInts, true])).b AS b#54]
+02       +- ExternalRDD [obj#52]
+18:38:50.172 ScalaTest-run INFO QueryExecution: 
+
+AnalyzedPlan: 
+00 CreateViewCommand `largeAndSmallInts`, false, true, LocalTempView
+01    +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$LargeAndSmallInts, true])).a AS a#53, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$LargeAndSmallInts, true])).b AS b#54]
+02       +- ExternalRDD [obj#52]
+18:38:50.174 ScalaTest-run INFO QueryExecution: 
+
+OptmizedPlan: 
+00 CreateViewCommand `largeAndSmallInts`, false, true, LocalTempView
+01    +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$LargeAndSmallInts, true])).a AS a#53, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$LargeAndSmallInts, true])).b AS b#54]
+02       +- ExternalRDD [obj#52]
+18:38:50.177 ScalaTest-run INFO QueryExecution: 
+
+SparkPlan: 
+00 ExecutedCommand
+01    +- CreateViewCommand `largeAndSmallInts`, false, true, LocalTempView
+02          +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$LargeAndSmallInts, true])).a AS a#53, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$LargeAndSmallInts, true])).b AS b#54]
+03             +- ExternalRDD [obj#52]
+18:38:50.179 ScalaTest-run INFO QueryExecution: 
+
+ExecutedPlan: 
+00 ExecutedCommand
+01    +- CreateViewCommand `largeAndSmallInts`, false, true, LocalTempView
+02          +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$LargeAndSmallInts, true])).a AS a#53, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$LargeAndSmallInts, true])).b AS b#54]
+03             +- ExternalRDD [obj#52]
+18:38:50.181 ScalaTest-run INFO QueryExecution: 
+
+LogicalPlan: 
+00 SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$LargeAndSmallInts, true])).a AS a#53, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$LargeAndSmallInts, true])).b AS b#54]
+01 +- ExternalRDD [obj#52]
+18:38:50.183 ScalaTest-run INFO QueryExecution: 
+
+AnalyzedPlan: 
+00 SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$LargeAndSmallInts, true])).a AS a#53, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$LargeAndSmallInts, true])).b AS b#54]
+01 +- ExternalRDD [obj#52]
+18:38:50.187 ScalaTest-run INFO QueryExecution: 
+
+OptmizedPlan: 
+00 SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$LargeAndSmallInts, true]).a AS a#53, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$LargeAndSmallInts, true]).b AS b#54]
+01 +- ExternalRDD [obj#52]
+18:38:50.188 ScalaTest-run INFO QueryExecution: 
+
+SparkPlan: 
+00 SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$LargeAndSmallInts, true]).a AS a#53, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$LargeAndSmallInts, true]).b AS b#54]
+01 +- Scan ExternalRDDScan[obj#52]
+18:38:50.190 ScalaTest-run INFO QueryExecution: 
+
+ExecutedPlan: 
+00 *SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$LargeAndSmallInts, true]).a AS a#53, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$LargeAndSmallInts, true]).b AS b#54]
+01 +- Scan ExternalRDDScan[obj#52]
+18:38:50.241 ScalaTest-run INFO QueryExecution: 
+
+LogicalPlan: 
+00 SerializeFromObject [staticinvoke(class org.apache.spark.sql.types.Decimal$, DecimalType(38,18), apply, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$DecimalData, true])).a, true) AS a#63, staticinvoke(class org.apache.spark.sql.types.Decimal$, DecimalType(38,18), apply, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$DecimalData, true])).b, true) AS b#64]
+01 +- ExternalRDD [obj#62]
+18:38:50.243 ScalaTest-run INFO QueryExecution: 
+
+AnalyzedPlan: 
+00 SerializeFromObject [staticinvoke(class org.apache.spark.sql.types.Decimal$, DecimalType(38,18), apply, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$DecimalData, true])).a, true) AS a#63, staticinvoke(class org.apache.spark.sql.types.Decimal$, DecimalType(38,18), apply, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$DecimalData, true])).b, true) AS b#64]
+01 +- ExternalRDD [obj#62]
+18:38:50.248 ScalaTest-run INFO QueryExecution: 
+
+OptmizedPlan: 
+00 SerializeFromObject [staticinvoke(class org.apache.spark.sql.types.Decimal$, DecimalType(38,18), apply, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$DecimalData, true]).a, true) AS a#63, staticinvoke(class org.apache.spark.sql.types.Decimal$, DecimalType(38,18), apply, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$DecimalData, true]).b, true) AS b#64]
+01 +- ExternalRDD [obj#62]
+18:38:50.251 ScalaTest-run INFO QueryExecution: 
+
+SparkPlan: 
+00 SerializeFromObject [staticinvoke(class org.apache.spark.sql.types.Decimal$, DecimalType(38,18), apply, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$DecimalData, true]).a, true) AS a#63, staticinvoke(class org.apache.spark.sql.types.Decimal$, DecimalType(38,18), apply, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$DecimalData, true]).b, true) AS b#64]
+01 +- Scan ExternalRDDScan[obj#62]
+18:38:50.252 ScalaTest-run INFO QueryExecution: 
+
+ExecutedPlan: 
+00 *SerializeFromObject [staticinvoke(class org.apache.spark.sql.types.Decimal$, DecimalType(38,18), apply, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$DecimalData, true]).a, true) AS a#63, staticinvoke(class org.apache.spark.sql.types.Decimal$, DecimalType(38,18), apply, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$DecimalData, true]).b, true) AS b#64]
+01 +- Scan ExternalRDDScan[obj#62]
+18:38:50.264 ScalaTest-run INFO QueryExecution: 
+
+LogicalPlan: 
+00 CreateViewCommand `decimalData`, false, true, LocalTempView
+01    +- SerializeFromObject [staticinvoke(class org.apache.spark.sql.types.Decimal$, DecimalType(38,18), apply, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$DecimalData, true])).a, true) AS a#63, staticinvoke(class org.apache.spark.sql.types.Decimal$, DecimalType(38,18), apply, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$DecimalData, true])).b, true) AS b#64]
+02       +- ExternalRDD [obj#62]
+18:38:50.269 ScalaTest-run INFO QueryExecution: 
+
+AnalyzedPlan: 
+00 CreateViewCommand `decimalData`, false, true, LocalTempView
+01    +- SerializeFromObject [staticinvoke(class org.apache.spark.sql.types.Decimal$, DecimalType(38,18), apply, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$DecimalData, true])).a, true) AS a#63, staticinvoke(class org.apache.spark.sql.types.Decimal$, DecimalType(38,18), apply, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$DecimalData, true])).b, true) AS b#64]
+02       +- ExternalRDD [obj#62]
+18:38:50.273 ScalaTest-run INFO QueryExecution: 
+
+OptmizedPlan: 
+00 CreateViewCommand `decimalData`, false, true, LocalTempView
+01    +- SerializeFromObject [staticinvoke(class org.apache.spark.sql.types.Decimal$, DecimalType(38,18), apply, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$DecimalData, true])).a, true) AS a#63, staticinvoke(class org.apache.spark.sql.types.Decimal$, DecimalType(38,18), apply, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$DecimalData, true])).b, true) AS b#64]
+02       +- ExternalRDD [obj#62]
+18:38:50.275 ScalaTest-run INFO QueryExecution: 
+
+SparkPlan: 
+00 ExecutedCommand
+01    +- CreateViewCommand `decimalData`, false, true, LocalTempView
+02          +- SerializeFromObject [staticinvoke(class org.apache.spark.sql.types.Decimal$, DecimalType(38,18), apply, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$DecimalData, true])).a, true) AS a#63, staticinvoke(class org.apache.spark.sql.types.Decimal$, DecimalType(38,18), apply, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$DecimalData, true])).b, true) AS b#64]
+03             +- ExternalRDD [obj#62]
+18:38:50.276 ScalaTest-run INFO QueryExecution: 
+
+ExecutedPlan: 
+00 ExecutedCommand
+01    +- CreateViewCommand `decimalData`, false, true, LocalTempView
+02          +- SerializeFromObject [staticinvoke(class org.apache.spark.sql.types.Decimal$, DecimalType(38,18), apply, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$DecimalData, true])).a, true) AS a#63, staticinvoke(class org.apache.spark.sql.types.Decimal$, DecimalType(38,18), apply, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$DecimalData, true])).b, true) AS b#64]
+03             +- ExternalRDD [obj#62]
+18:38:50.279 ScalaTest-run INFO QueryExecution: 
+
+LogicalPlan: 
+00 SerializeFromObject [staticinvoke(class org.apache.spark.sql.types.Decimal$, DecimalType(38,18), apply, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$DecimalData, true])).a, true) AS a#63, staticinvoke(class org.apache.spark.sql.types.Decimal$, DecimalType(38,18), apply, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$DecimalData, true])).b, true) AS b#64]
+01 +- ExternalRDD [obj#62]
+18:38:50.281 ScalaTest-run INFO QueryExecution: 
+
+AnalyzedPlan: 
+00 SerializeFromObject [staticinvoke(class org.apache.spark.sql.types.Decimal$, DecimalType(38,18), apply, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$DecimalData, true])).a, true) AS a#63, staticinvoke(class org.apache.spark.sql.types.Decimal$, DecimalType(38,18), apply, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$DecimalData, true])).b, true) AS b#64]
+01 +- ExternalRDD [obj#62]
+18:38:50.285 ScalaTest-run INFO QueryExecution: 
+
+OptmizedPlan: 
+00 SerializeFromObject [staticinvoke(class org.apache.spark.sql.types.Decimal$, DecimalType(38,18), apply, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$DecimalData, true]).a, true) AS a#63, staticinvoke(class org.apache.spark.sql.types.Decimal$, DecimalType(38,18), apply, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$DecimalData, true]).b, true) AS b#64]
+01 +- ExternalRDD [obj#62]
+18:38:50.286 ScalaTest-run INFO QueryExecution: 
+
+SparkPlan: 
+00 SerializeFromObject [staticinvoke(class org.apache.spark.sql.types.Decimal$, DecimalType(38,18), apply, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$DecimalData, true]).a, true) AS a#63, staticinvoke(class org.apache.spark.sql.types.Decimal$, DecimalType(38,18), apply, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$DecimalData, true]).b, true) AS b#64]
+01 +- Scan ExternalRDDScan[obj#62]
+18:38:50.288 ScalaTest-run INFO QueryExecution: 
+
+ExecutedPlan: 
+00 *SerializeFromObject [staticinvoke(class org.apache.spark.sql.types.Decimal$, DecimalType(38,18), apply, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$DecimalData, true]).a, true) AS a#63, staticinvoke(class org.apache.spark.sql.types.Decimal$, DecimalType(38,18), apply, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$DecimalData, true]).b, true) AS b#64]
+01 +- Scan ExternalRDDScan[obj#62]
+18:38:50.316 ScalaTest-run INFO QueryExecution: 
+
+LogicalPlan: 
+00 SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$BinaryData, true])).a AS a#73, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$BinaryData, true])).b AS b#74]
+01 +- ExternalRDD [obj#72]
+18:38:50.318 ScalaTest-run INFO QueryExecution: 
+
+AnalyzedPlan: 
+00 SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$BinaryData, true])).a AS a#73, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$BinaryData, true])).b AS b#74]
+01 +- ExternalRDD [obj#72]
+18:38:50.322 ScalaTest-run INFO QueryExecution: 
+
+OptmizedPlan: 
+00 SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$BinaryData, true]).a AS a#73, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$BinaryData, true]).b AS b#74]
+01 +- ExternalRDD [obj#72]
+18:38:50.323 ScalaTest-run INFO QueryExecution: 
+
+SparkPlan: 
+00 SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$BinaryData, true]).a AS a#73, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$BinaryData, true]).b AS b#74]
+01 +- Scan ExternalRDDScan[obj#72]
+18:38:50.325 ScalaTest-run INFO QueryExecution: 
+
+ExecutedPlan: 
+00 *SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$BinaryData, true]).a AS a#73, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$BinaryData, true]).b AS b#74]
+01 +- Scan ExternalRDDScan[obj#72]
+18:38:50.337 ScalaTest-run INFO QueryExecution: 
+
+LogicalPlan: 
+00 CreateViewCommand `binaryData`, false, true, LocalTempView
+01    +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$BinaryData, true])).a AS a#73, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$BinaryData, true])).b AS b#74]
+02       +- ExternalRDD [obj#72]
+18:38:50.339 ScalaTest-run INFO QueryExecution: 
+
+AnalyzedPlan: 
+00 CreateViewCommand `binaryData`, false, true, LocalTempView
+01    +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$BinaryData, true])).a AS a#73, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$BinaryData, true])).b AS b#74]
+02       +- ExternalRDD [obj#72]
+18:38:50.340 ScalaTest-run INFO QueryExecution: 
+
+OptmizedPlan: 
+00 CreateViewCommand `binaryData`, false, true, LocalTempView
+01    +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$BinaryData, true])).a AS a#73, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$BinaryData, true])).b AS b#74]
+02       +- ExternalRDD [obj#72]
+18:38:50.347 ScalaTest-run INFO QueryExecution: 
+
+SparkPlan: 
+00 ExecutedCommand
+01    +- CreateViewCommand `binaryData`, false, true, LocalTempView
+02          +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$BinaryData, true])).a AS a#73, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$BinaryData, true])).b AS b#74]
+03             +- ExternalRDD [obj#72]
+18:38:50.348 ScalaTest-run INFO QueryExecution: 
+
+ExecutedPlan: 
+00 ExecutedCommand
+01    +- CreateViewCommand `binaryData`, false, true, LocalTempView
+02          +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$BinaryData, true])).a AS a#73, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$BinaryData, true])).b AS b#74]
+03             +- ExternalRDD [obj#72]
+18:38:50.352 ScalaTest-run INFO QueryExecution: 
+
+LogicalPlan: 
+00 SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$BinaryData, true])).a AS a#73, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$BinaryData, true])).b AS b#74]
+01 +- ExternalRDD [obj#72]
+18:38:50.354 ScalaTest-run INFO QueryExecution: 
+
+AnalyzedPlan: 
+00 SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$BinaryData, true])).a AS a#73, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$BinaryData, true])).b AS b#74]
+01 +- ExternalRDD [obj#72]
+18:38:50.358 ScalaTest-run INFO QueryExecution: 
+
+OptmizedPlan: 
+00 SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$BinaryData, true]).a AS a#73, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$BinaryData, true]).b AS b#74]
+01 +- ExternalRDD [obj#72]
+18:38:50.359 ScalaTest-run INFO QueryExecution: 
+
+SparkPlan: 
+00 SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$BinaryData, true]).a AS a#73, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$BinaryData, true]).b AS b#74]
+01 +- Scan ExternalRDDScan[obj#72]
+18:38:50.361 ScalaTest-run INFO QueryExecution: 
+
+ExecutedPlan: 
+00 *SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$BinaryData, true]).a AS a#73, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$BinaryData, true]).b AS b#74]
+01 +- Scan ExternalRDDScan[obj#72]
+18:38:50.399 ScalaTest-run INFO QueryExecution: 
+
+LogicalPlan: 
+00 SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$UpperCaseData, true])).N AS N#83, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$UpperCaseData, true])).L, true) AS L#84]
+01 +- ExternalRDD [obj#82]
+18:38:50.401 ScalaTest-run INFO QueryExecution: 
+
+AnalyzedPlan: 
+00 SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$UpperCaseData, true])).N AS N#83, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$UpperCaseData, true])).L, true) AS L#84]
+01 +- ExternalRDD [obj#82]
+18:38:50.404 ScalaTest-run INFO QueryExecution: 
+
+OptmizedPlan: 
+00 SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$UpperCaseData, true]).N AS N#83, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$UpperCaseData, true]).L, true) AS L#84]
+01 +- ExternalRDD [obj#82]
+18:38:50.405 ScalaTest-run INFO QueryExecution: 
+
+SparkPlan: 
+00 SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$UpperCaseData, true]).N AS N#83, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$UpperCaseData, true]).L, true) AS L#84]
+01 +- Scan ExternalRDDScan[obj#82]
+18:38:50.406 ScalaTest-run INFO QueryExecution: 
+
+ExecutedPlan: 
+00 *SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$UpperCaseData, true]).N AS N#83, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$UpperCaseData, true]).L, true) AS L#84]
+01 +- Scan ExternalRDDScan[obj#82]
+18:38:50.419 ScalaTest-run INFO QueryExecution: 
+
+LogicalPlan: 
+00 CreateViewCommand `upperCaseData`, false, true, LocalTempView
+01    +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$UpperCaseData, true])).N AS N#83, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$UpperCaseData, true])).L, true) AS L#84]
+02       +- ExternalRDD [obj#82]
+18:38:50.422 ScalaTest-run INFO QueryExecution: 
+
+AnalyzedPlan: 
+00 CreateViewCommand `upperCaseData`, false, true, LocalTempView
+01    +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$UpperCaseData, true])).N AS N#83, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$UpperCaseData, true])).L, true) AS L#84]
+02       +- ExternalRDD [obj#82]
+18:38:50.424 ScalaTest-run INFO QueryExecution: 
+
+OptmizedPlan: 
+00 CreateViewCommand `upperCaseData`, false, true, LocalTempView
+01    +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$UpperCaseData, true])).N AS N#83, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$UpperCaseData, true])).L, true) AS L#84]
+02       +- ExternalRDD [obj#82]
+18:38:50.427 ScalaTest-run INFO QueryExecution: 
+
+SparkPlan: 
+00 ExecutedCommand
+01    +- CreateViewCommand `upperCaseData`, false, true, LocalTempView
+02          +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$UpperCaseData, true])).N AS N#83, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$UpperCaseData, true])).L, true) AS L#84]
+03             +- ExternalRDD [obj#82]
+18:38:50.432 ScalaTest-run INFO QueryExecution: 
+
+ExecutedPlan: 
+00 ExecutedCommand
+01    +- CreateViewCommand `upperCaseData`, false, true, LocalTempView
+02          +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$UpperCaseData, true])).N AS N#83, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$UpperCaseData, true])).L, true) AS L#84]
+03             +- ExternalRDD [obj#82]
+18:38:50.435 ScalaTest-run INFO QueryExecution: 
+
+LogicalPlan: 
+00 SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$UpperCaseData, true])).N AS N#83, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$UpperCaseData, true])).L, true) AS L#84]
+01 +- ExternalRDD [obj#82]
+18:38:50.439 ScalaTest-run INFO QueryExecution: 
+
+AnalyzedPlan: 
+00 SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$UpperCaseData, true])).N AS N#83, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$UpperCaseData, true])).L, true) AS L#84]
+01 +- ExternalRDD [obj#82]
+18:38:50.442 ScalaTest-run INFO QueryExecution: 
+
+OptmizedPlan: 
+00 SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$UpperCaseData, true]).N AS N#83, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$UpperCaseData, true]).L, true) AS L#84]
+01 +- ExternalRDD [obj#82]
+18:38:50.444 ScalaTest-run INFO QueryExecution: 
+
+SparkPlan: 
+00 SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$UpperCaseData, true]).N AS N#83, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$UpperCaseData, true]).L, true) AS L#84]
+01 +- Scan ExternalRDDScan[obj#82]
+18:38:50.446 ScalaTest-run INFO QueryExecution: 
+
+ExecutedPlan: 
+00 *SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$UpperCaseData, true]).N AS N#83, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$UpperCaseData, true]).L, true) AS L#84]
+01 +- Scan ExternalRDDScan[obj#82]
+18:38:50.496 ScalaTest-run INFO QueryExecution: 
+
+LogicalPlan: 
+00 SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$LowerCaseData, true])).n AS n#93, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$LowerCaseData, true])).l, true) AS l#94]
+01 +- ExternalRDD [obj#92]
+18:38:50.498 ScalaTest-run INFO QueryExecution: 
+
+AnalyzedPlan: 
+00 SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$LowerCaseData, true])).n AS n#93, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$LowerCaseData, true])).l, true) AS l#94]
+01 +- ExternalRDD [obj#92]
+18:38:50.500 ScalaTest-run INFO QueryExecution: 
+
+OptmizedPlan: 
+00 SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$LowerCaseData, true]).n AS n#93, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$LowerCaseData, true]).l, true) AS l#94]
+01 +- ExternalRDD [obj#92]
+18:38:50.501 ScalaTest-run INFO QueryExecution: 
+
+SparkPlan: 
+00 SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$LowerCaseData, true]).n AS n#93, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$LowerCaseData, true]).l, true) AS l#94]
+01 +- Scan ExternalRDDScan[obj#92]
+18:38:50.504 ScalaTest-run INFO QueryExecution: 
+
+ExecutedPlan: 
+00 *SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$LowerCaseData, true]).n AS n#93, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$LowerCaseData, true]).l, true) AS l#94]
+01 +- Scan ExternalRDDScan[obj#92]
+18:38:50.514 ScalaTest-run INFO QueryExecution: 
+
+LogicalPlan: 
+00 CreateViewCommand `lowerCaseData`, false, true, LocalTempView
+01    +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$LowerCaseData, true])).n AS n#93, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$LowerCaseData, true])).l, true) AS l#94]
+02       +- ExternalRDD [obj#92]
+18:38:50.516 ScalaTest-run INFO QueryExecution: 
+
+AnalyzedPlan: 
+00 CreateViewCommand `lowerCaseData`, false, true, LocalTempView
+01    +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$LowerCaseData, true])).n AS n#93, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$LowerCaseData, true])).l, true) AS l#94]
+02       +- ExternalRDD [obj#92]
+18:38:50.518 ScalaTest-run INFO QueryExecution: 
+
+OptmizedPlan: 
+00 CreateViewCommand `lowerCaseData`, false, true, LocalTempView
+01    +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$LowerCaseData, true])).n AS n#93, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$LowerCaseData, true])).l, true) AS l#94]
+02       +- ExternalRDD [obj#92]
+18:38:50.520 ScalaTest-run INFO QueryExecution: 
+
+SparkPlan: 
+00 ExecutedCommand
+01    +- CreateViewCommand `lowerCaseData`, false, true, LocalTempView
+02          +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$LowerCaseData, true])).n AS n#93, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$LowerCaseData, true])).l, true) AS l#94]
+03             +- ExternalRDD [obj#92]
+18:38:50.522 ScalaTest-run INFO QueryExecution: 
+
+ExecutedPlan: 
+00 ExecutedCommand
+01    +- CreateViewCommand `lowerCaseData`, false, true, LocalTempView
+02          +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$LowerCaseData, true])).n AS n#93, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$LowerCaseData, true])).l, true) AS l#94]
+03             +- ExternalRDD [obj#92]
+18:38:50.524 ScalaTest-run INFO QueryExecution: 
+
+LogicalPlan: 
+00 SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$LowerCaseData, true])).n AS n#93, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$LowerCaseData, true])).l, true) AS l#94]
+01 +- ExternalRDD [obj#92]
+18:38:50.525 ScalaTest-run INFO QueryExecution: 
+
+AnalyzedPlan: 
+00 SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$LowerCaseData, true])).n AS n#93, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$LowerCaseData, true])).l, true) AS l#94]
+01 +- ExternalRDD [obj#92]
+18:38:50.531 ScalaTest-run INFO QueryExecution: 
+
+OptmizedPlan: 
+00 SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$LowerCaseData, true]).n AS n#93, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$LowerCaseData, true]).l, true) AS l#94]
+01 +- ExternalRDD [obj#92]
+18:38:50.532 ScalaTest-run INFO QueryExecution: 
+
+SparkPlan: 
+00 SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$LowerCaseData, true]).n AS n#93, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$LowerCaseData, true]).l, true) AS l#94]
+01 +- Scan ExternalRDDScan[obj#92]
+18:38:50.534 ScalaTest-run INFO QueryExecution: 
+
+ExecutedPlan: 
+00 *SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$LowerCaseData, true]).n AS n#93, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$LowerCaseData, true]).l, true) AS l#94]
+01 +- Scan ExternalRDDScan[obj#92]
+18:38:50.644 ScalaTest-run INFO QueryExecution: 
+
+LogicalPlan: 
+00 SerializeFromObject [newInstance(class org.apache.spark.sql.catalyst.util.GenericArrayData) AS data#103, mapobjects(MapObjects_loopValue0, MapObjects_loopIsNull0, ObjectType(interface scala.collection.Seq), newInstance(class org.apache.spark.sql.catalyst.util.GenericArrayData), assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ArrayData, true])).nestedData, None) AS nestedData#104]
+01 +- ExternalRDD [obj#102]
+18:38:50.647 ScalaTest-run INFO QueryExecution: 
+
+AnalyzedPlan: 
+00 SerializeFromObject [newInstance(class org.apache.spark.sql.catalyst.util.GenericArrayData) AS data#103, mapobjects(MapObjects_loopValue0, MapObjects_loopIsNull0, ObjectType(interface scala.collection.Seq), newInstance(class org.apache.spark.sql.catalyst.util.GenericArrayData), assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ArrayData, true])).nestedData, None) AS nestedData#104]
+01 +- ExternalRDD [obj#102]
+18:38:50.653 ScalaTest-run INFO QueryExecution: 
+
+OptmizedPlan: 
+00 SerializeFromObject [newInstance(class org.apache.spark.sql.catalyst.util.GenericArrayData) AS data#103, mapobjects(MapObjects_loopValue0, MapObjects_loopIsNull0, ObjectType(interface scala.collection.Seq), newInstance(class org.apache.spark.sql.catalyst.util.GenericArrayData), assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ArrayData, true]).nestedData, None) AS nestedData#104]
+01 +- ExternalRDD [obj#102]
+18:38:50.654 ScalaTest-run INFO QueryExecution: 
+
+SparkPlan: 
+00 SerializeFromObject [newInstance(class org.apache.spark.sql.catalyst.util.GenericArrayData) AS data#103, mapobjects(MapObjects_loopValue0, MapObjects_loopIsNull0, ObjectType(interface scala.collection.Seq), newInstance(class org.apache.spark.sql.catalyst.util.GenericArrayData), assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ArrayData, true]).nestedData, None) AS nestedData#104]
+01 +- Scan ExternalRDDScan[obj#102]
+18:38:50.656 ScalaTest-run INFO QueryExecution: 
+
+ExecutedPlan: 
+00 *SerializeFromObject [newInstance(class org.apache.spark.sql.catalyst.util.GenericArrayData) AS data#103, mapobjects(MapObjects_loopValue0, MapObjects_loopIsNull0, ObjectType(interface scala.collection.Seq), newInstance(class org.apache.spark.sql.catalyst.util.GenericArrayData), assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ArrayData, true]).nestedData, None) AS nestedData#104]
+01 +- Scan ExternalRDDScan[obj#102]
+18:38:50.716 ScalaTest-run INFO QueryExecution: 
+
+LogicalPlan: 
+00 CreateViewCommand `arrayData`, false, true, LocalTempView
+01    +- SerializeFromObject [newInstance(class org.apache.spark.sql.catalyst.util.GenericArrayData) AS data#103, mapobjects(MapObjects_loopValue0, MapObjects_loopIsNull0, ObjectType(interface scala.collection.Seq), newInstance(class org.apache.spark.sql.catalyst.util.GenericArrayData), assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ArrayData, true])).nestedData, None) AS nestedData#104]
+02       +- ExternalRDD [obj#102]
+18:38:50.718 ScalaTest-run INFO QueryExecution: 
+
+AnalyzedPlan: 
+00 CreateViewCommand `arrayData`, false, true, LocalTempView
+01    +- SerializeFromObject [newInstance(class org.apache.spark.sql.catalyst.util.GenericArrayData) AS data#103, mapobjects(MapObjects_loopValue0, MapObjects_loopIsNull0, ObjectType(interface scala.collection.Seq), newInstance(class org.apache.spark.sql.catalyst.util.GenericArrayData), assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ArrayData, true])).nestedData, None) AS nestedData#104]
+02       +- ExternalRDD [obj#102]
+18:38:50.721 ScalaTest-run INFO QueryExecution: 
+
+OptmizedPlan: 
+00 CreateViewCommand `arrayData`, false, true, LocalTempView
+01    +- SerializeFromObject [newInstance(class org.apache.spark.sql.catalyst.util.GenericArrayData) AS data#103, mapobjects(MapObjects_loopValue0, MapObjects_loopIsNull0, ObjectType(interface scala.collection.Seq), newInstance(class org.apache.spark.sql.catalyst.util.GenericArrayData), assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ArrayData, true])).nestedData, None) AS nestedData#104]
+02       +- ExternalRDD [obj#102]
+18:38:50.722 ScalaTest-run INFO QueryExecution: 
+
+SparkPlan: 
+00 ExecutedCommand
+01    +- CreateViewCommand `arrayData`, false, true, LocalTempView
+02          +- SerializeFromObject [newInstance(class org.apache.spark.sql.catalyst.util.GenericArrayData) AS data#103, mapobjects(MapObjects_loopValue0, MapObjects_loopIsNull0, ObjectType(interface scala.collection.Seq), newInstance(class org.apache.spark.sql.catalyst.util.GenericArrayData), assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ArrayData, true])).nestedData, None) AS nestedData#104]
+03             +- ExternalRDD [obj#102]
+18:38:50.723 ScalaTest-run INFO QueryExecution: 
+
+ExecutedPlan: 
+00 ExecutedCommand
+01    +- CreateViewCommand `arrayData`, false, true, LocalTempView
+02          +- SerializeFromObject [newInstance(class org.apache.spark.sql.catalyst.util.GenericArrayData) AS data#103, mapobjects(MapObjects_loopValue0, MapObjects_loopIsNull0, ObjectType(interface scala.collection.Seq), newInstance(class org.apache.spark.sql.catalyst.util.GenericArrayData), assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ArrayData, true])).nestedData, None) AS nestedData#104]
+03             +- ExternalRDD [obj#102]
+18:38:50.725 ScalaTest-run INFO QueryExecution: 
+
+LogicalPlan: 
+00 SerializeFromObject [newInstance(class org.apache.spark.sql.catalyst.util.GenericArrayData) AS data#103, mapobjects(MapObjects_loopValue0, MapObjects_loopIsNull0, ObjectType(interface scala.collection.Seq), newInstance(class org.apache.spark.sql.catalyst.util.GenericArrayData), assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ArrayData, true])).nestedData, None) AS nestedData#104]
+01 +- ExternalRDD [obj#102]
+18:38:50.726 ScalaTest-run INFO QueryExecution: 
+
+AnalyzedPlan: 
+00 SerializeFromObject [newInstance(class org.apache.spark.sql.catalyst.util.GenericArrayData) AS data#103, mapobjects(MapObjects_loopValue0, MapObjects_loopIsNull0, ObjectType(interface scala.collection.Seq), newInstance(class org.apache.spark.sql.catalyst.util.GenericArrayData), assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ArrayData, true])).nestedData, None) AS nestedData#104]
+01 +- ExternalRDD [obj#102]
+18:38:50.731 ScalaTest-run INFO QueryExecution: 
+
+OptmizedPlan: 
+00 SerializeFromObject [newInstance(class org.apache.spark.sql.catalyst.util.GenericArrayData) AS data#103, mapobjects(MapObjects_loopValue0, MapObjects_loopIsNull0, ObjectType(interface scala.collection.Seq), newInstance(class org.apache.spark.sql.catalyst.util.GenericArrayData), assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ArrayData, true]).nestedData, None) AS nestedData#104]
+01 +- ExternalRDD [obj#102]
+18:38:50.734 ScalaTest-run INFO QueryExecution: 
+
+SparkPlan: 
+00 SerializeFromObject [newInstance(class org.apache.spark.sql.catalyst.util.GenericArrayData) AS data#103, mapobjects(MapObjects_loopValue0, MapObjects_loopIsNull0, ObjectType(interface scala.collection.Seq), newInstance(class org.apache.spark.sql.catalyst.util.GenericArrayData), assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ArrayData, true]).nestedData, None) AS nestedData#104]
+01 +- Scan ExternalRDDScan[obj#102]
+18:38:50.743 ScalaTest-run INFO QueryExecution: 
+
+ExecutedPlan: 
+00 *SerializeFromObject [newInstance(class org.apache.spark.sql.catalyst.util.GenericArrayData) AS data#103, mapobjects(MapObjects_loopValue0, MapObjects_loopIsNull0, ObjectType(interface scala.collection.Seq), newInstance(class org.apache.spark.sql.catalyst.util.GenericArrayData), assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ArrayData, true]).nestedData, None) AS nestedData#104]
+01 +- Scan ExternalRDDScan[obj#102]
+18:38:50.844 ScalaTest-run INFO QueryExecution: 
+
+LogicalPlan: 
+00 SerializeFromObject [externalmaptocatalyst(ExternalMapToCatalyst_key0, IntegerType, lambdavariable(ExternalMapToCatalyst_key0, false, IntegerType, false), ExternalMapToCatalyst_value0, ExternalMapToCatalyst_value_isNull0, ObjectType(class java.lang.String), staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, lambdavariable(ExternalMapToCatalyst_value0, ExternalMapToCatalyst_value_isNull0, ObjectType(class java.lang.String), true), true), assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$MapData, true])).data) AS data#112]
+01 +- ExternalRDD [obj#111]
+18:38:50.846 ScalaTest-run INFO QueryExecution: 
+
+AnalyzedPlan: 
+00 SerializeFromObject [externalmaptocatalyst(ExternalMapToCatalyst_key0, IntegerType, lambdavariable(ExternalMapToCatalyst_key0, false, IntegerType, false), ExternalMapToCatalyst_value0, ExternalMapToCatalyst_value_isNull0, ObjectType(class java.lang.String), staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, lambdavariable(ExternalMapToCatalyst_value0, ExternalMapToCatalyst_value_isNull0, ObjectType(class java.lang.String), true), true), assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$MapData, true])).data) AS data#112]
+01 +- ExternalRDD [obj#111]
+18:38:50.853 ScalaTest-run INFO QueryExecution: 
+
+OptmizedPlan: 
+00 SerializeFromObject [externalmaptocatalyst(ExternalMapToCatalyst_key0, IntegerType, lambdavariable(ExternalMapToCatalyst_key0, false, IntegerType, false), ExternalMapToCatalyst_value0, ExternalMapToCatalyst_value_isNull0, ObjectType(class java.lang.String), staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, lambdavariable(ExternalMapToCatalyst_value0, ExternalMapToCatalyst_value_isNull0, ObjectType(class java.lang.String), true), true), assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$MapData, true]).data) AS data#112]
+01 +- ExternalRDD [obj#111]
+18:38:50.855 ScalaTest-run INFO QueryExecution: 
+
+SparkPlan: 
+00 SerializeFromObject [externalmaptocatalyst(ExternalMapToCatalyst_key0, IntegerType, lambdavariable(ExternalMapToCatalyst_key0, false, IntegerType, false), ExternalMapToCatalyst_value0, ExternalMapToCatalyst_value_isNull0, ObjectType(class java.lang.String), staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, lambdavariable(ExternalMapToCatalyst_value0, ExternalMapToCatalyst_value_isNull0, ObjectType(class java.lang.String), true), true), assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$MapData, true]).data) AS data#112]
+01 +- Scan ExternalRDDScan[obj#111]
+18:38:50.857 ScalaTest-run INFO QueryExecution: 
+
+ExecutedPlan: 
+00 *SerializeFromObject [externalmaptocatalyst(ExternalMapToCatalyst_key0, IntegerType, lambdavariable(ExternalMapToCatalyst_key0, false, IntegerType, false), ExternalMapToCatalyst_value0, ExternalMapToCatalyst_value_isNull0, ObjectType(class java.lang.String), staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, lambdavariable(ExternalMapToCatalyst_value0, ExternalMapToCatalyst_value_isNull0, ObjectType(class java.lang.String), true), true), assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$MapData, true]).data) AS data#112]
+01 +- Scan ExternalRDDScan[obj#111]
+18:38:50.886 ScalaTest-run INFO QueryExecution: 
+
+LogicalPlan: 
+00 CreateViewCommand `mapData`, false, true, LocalTempView
+01    +- SerializeFromObject [externalmaptocatalyst(ExternalMapToCatalyst_key0, IntegerType, lambdavariable(ExternalMapToCatalyst_key0, false, IntegerType, false), ExternalMapToCatalyst_value0, ExternalMapToCatalyst_value_isNull0, ObjectType(class java.lang.String), staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, lambdavariable(ExternalMapToCatalyst_value0, ExternalMapToCatalyst_value_isNull0, ObjectType(class java.lang.String), true), true), assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$MapData, true])).data) AS data#112]
+02       +- ExternalRDD [obj#111]
+18:38:50.889 ScalaTest-run INFO QueryExecution: 
+
+AnalyzedPlan: 
+00 CreateViewCommand `mapData`, false, true, LocalTempView
+01    +- SerializeFromObject [externalmaptocatalyst(ExternalMapToCatalyst_key0, IntegerType, lambdavariable(ExternalMapToCatalyst_key0, false, IntegerType, false), ExternalMapToCatalyst_value0, ExternalMapToCatalyst_value_isNull0, ObjectType(class java.lang.String), staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, lambdavariable(ExternalMapToCatalyst_value0, ExternalMapToCatalyst_value_isNull0, ObjectType(class java.lang.String), true), true), assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$MapData, true])).data) AS data#112]
+02       +- ExternalRDD [obj#111]
+18:38:50.890 ScalaTest-run INFO QueryExecution: 
+
+OptmizedPlan: 
+00 CreateViewCommand `mapData`, false, true, LocalTempView
+01    +- SerializeFromObject [externalmaptocatalyst(ExternalMapToCatalyst_key0, IntegerType, lambdavariable(ExternalMapToCatalyst_key0, false, IntegerType, false), ExternalMapToCatalyst_value0, ExternalMapToCatalyst_value_isNull0, ObjectType(class java.lang.String), staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, lambdavariable(ExternalMapToCatalyst_value0, ExternalMapToCatalyst_value_isNull0, ObjectType(class java.lang.String), true), true), assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$MapData, true])).data) AS data#112]
+02       +- ExternalRDD [obj#111]
+18:38:50.892 ScalaTest-run INFO QueryExecution: 
+
+SparkPlan: 
+00 ExecutedCommand
+01    +- CreateViewCommand `mapData`, false, true, LocalTempView
+02          +- SerializeFromObject [externalmaptocatalyst(ExternalMapToCatalyst_key0, IntegerType, lambdavariable(ExternalMapToCatalyst_key0, false, IntegerType, false), ExternalMapToCatalyst_value0, ExternalMapToCatalyst_value_isNull0, ObjectType(class java.lang.String), staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, lambdavariable(ExternalMapToCatalyst_value0, ExternalMapToCatalyst_value_isNull0, ObjectType(class java.lang.String), true), true), assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$MapData, true])).data) AS data#112]
+03             +- ExternalRDD [obj#111]
+18:38:50.893 ScalaTest-run INFO QueryExecution: 
+
+ExecutedPlan: 
+00 ExecutedCommand
+01    +- CreateViewCommand `mapData`, false, true, LocalTempView
+02          +- SerializeFromObject [externalmaptocatalyst(ExternalMapToCatalyst_key0, IntegerType, lambdavariable(ExternalMapToCatalyst_key0, false, IntegerType, false), ExternalMapToCatalyst_value0, ExternalMapToCatalyst_value_isNull0, ObjectType(class java.lang.String), staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, lambdavariable(ExternalMapToCatalyst_value0, ExternalMapToCatalyst_value_isNull0, ObjectType(class java.lang.String), true), true), assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$MapData, true])).data) AS data#112]
+03             +- ExternalRDD [obj#111]
+18:38:50.896 ScalaTest-run INFO QueryExecution: 
+
+LogicalPlan: 
+00 SerializeFromObject [externalmaptocatalyst(ExternalMapToCatalyst_key0, IntegerType, lambdavariable(ExternalMapToCatalyst_key0, false, IntegerType, false), ExternalMapToCatalyst_value0, ExternalMapToCatalyst_value_isNull0, ObjectType(class java.lang.String), staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, lambdavariable(ExternalMapToCatalyst_value0, ExternalMapToCatalyst_value_isNull0, ObjectType(class java.lang.String), true), true), assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$MapData, true])).data) AS data#112]
+01 +- ExternalRDD [obj#111]
+18:38:50.902 ScalaTest-run INFO QueryExecution: 
+
+AnalyzedPlan: 
+00 SerializeFromObject [externalmaptocatalyst(ExternalMapToCatalyst_key0, IntegerType, lambdavariable(ExternalMapToCatalyst_key0, false, IntegerType, false), ExternalMapToCatalyst_value0, ExternalMapToCatalyst_value_isNull0, ObjectType(class java.lang.String), staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, lambdavariable(ExternalMapToCatalyst_value0, ExternalMapToCatalyst_value_isNull0, ObjectType(class java.lang.String), true), true), assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$MapData, true])).data) AS data#112]
+01 +- ExternalRDD [obj#111]
+18:38:50.905 ScalaTest-run INFO QueryExecution: 
+
+OptmizedPlan: 
+00 SerializeFromObject [externalmaptocatalyst(ExternalMapToCatalyst_key0, IntegerType, lambdavariable(ExternalMapToCatalyst_key0, false, IntegerType, false), ExternalMapToCatalyst_value0, ExternalMapToCatalyst_value_isNull0, ObjectType(class java.lang.String), staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, lambdavariable(ExternalMapToCatalyst_value0, ExternalMapToCatalyst_value_isNull0, ObjectType(class java.lang.String), true), true), assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$MapData, true]).data) AS data#112]
+01 +- ExternalRDD [obj#111]
+18:38:50.906 ScalaTest-run INFO QueryExecution: 
+
+SparkPlan: 
+00 SerializeFromObject [externalmaptocatalyst(ExternalMapToCatalyst_key0, IntegerType, lambdavariable(ExternalMapToCatalyst_key0, false, IntegerType, false), ExternalMapToCatalyst_value0, ExternalMapToCatalyst_value_isNull0, ObjectType(class java.lang.String), staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, lambdavariable(ExternalMapToCatalyst_value0, ExternalMapToCatalyst_value_isNull0, ObjectType(class java.lang.String), true), true), assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$MapData, true]).data) AS data#112]
+01 +- Scan ExternalRDDScan[obj#111]
+18:38:50.908 ScalaTest-run INFO QueryExecution: 
+
+ExecutedPlan: 
+00 *SerializeFromObject [externalmaptocatalyst(ExternalMapToCatalyst_key0, IntegerType, lambdavariable(ExternalMapToCatalyst_key0, false, IntegerType, false), ExternalMapToCatalyst_value0, ExternalMapToCatalyst_value_isNull0, ObjectType(class java.lang.String), staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, lambdavariable(ExternalMapToCatalyst_value0, ExternalMapToCatalyst_value_isNull0, ObjectType(class java.lang.String), true), true), assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$MapData, true]).data) AS data#112]
+01 +- Scan ExternalRDDScan[obj#111]
+18:38:50.932 ScalaTest-run INFO QueryExecution: 
+
+LogicalPlan: 
+00 SerializeFromObject [staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$StringData, true])).s, true) AS s#119]
+01 +- ExternalRDD [obj#118]
+18:38:50.936 ScalaTest-run INFO QueryExecution: 
+
+AnalyzedPlan: 
+00 SerializeFromObject [staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$StringData, true])).s, true) AS s#119]
+01 +- ExternalRDD [obj#118]
+18:38:50.939 ScalaTest-run INFO QueryExecution: 
+
+OptmizedPlan: 
+00 SerializeFromObject [staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$StringData, true]).s, true) AS s#119]
+01 +- ExternalRDD [obj#118]
+18:38:50.940 ScalaTest-run INFO QueryExecution: 
+
+SparkPlan: 
+00 SerializeFromObject [staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$StringData, true]).s, true) AS s#119]
+01 +- Scan ExternalRDDScan[obj#118]
+18:38:50.942 ScalaTest-run INFO QueryExecution: 
+
+ExecutedPlan: 
+00 *SerializeFromObject [staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$StringData, true]).s, true) AS s#119]
+01 +- Scan ExternalRDDScan[obj#118]
+18:38:50.957 ScalaTest-run INFO QueryExecution: 
+
+LogicalPlan: 
+00 CreateViewCommand `repeatedData`, false, true, LocalTempView
+01    +- SerializeFromObject [staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$StringData, true])).s, true) AS s#119]
+02       +- ExternalRDD [obj#118]
+18:38:50.960 ScalaTest-run INFO QueryExecution: 
+
+AnalyzedPlan: 
+00 CreateViewCommand `repeatedData`, false, true, LocalTempView
+01    +- SerializeFromObject [staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$StringData, true])).s, true) AS s#119]
+02       +- ExternalRDD [obj#118]
+18:38:50.962 ScalaTest-run INFO QueryExecution: 
+
+OptmizedPlan: 
+00 CreateViewCommand `repeatedData`, false, true, LocalTempView
+01    +- SerializeFromObject [staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$StringData, true])).s, true) AS s#119]
+02       +- ExternalRDD [obj#118]
+18:38:50.964 ScalaTest-run INFO QueryExecution: 
+
+SparkPlan: 
+00 ExecutedCommand
+01    +- CreateViewCommand `repeatedData`, false, true, LocalTempView
+02          +- SerializeFromObject [staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$StringData, true])).s, true) AS s#119]
+03             +- ExternalRDD [obj#118]
+18:38:50.965 ScalaTest-run INFO QueryExecution: 
+
+ExecutedPlan: 
+00 ExecutedCommand
+01    +- CreateViewCommand `repeatedData`, false, true, LocalTempView
+02          +- SerializeFromObject [staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$StringData, true])).s, true) AS s#119]
+03             +- ExternalRDD [obj#118]
+18:38:50.967 ScalaTest-run INFO QueryExecution: 
+
+LogicalPlan: 
+00 SerializeFromObject [staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$StringData, true])).s, true) AS s#119]
+01 +- ExternalRDD [obj#118]
+18:38:50.968 ScalaTest-run INFO QueryExecution: 
+
+AnalyzedPlan: 
+00 SerializeFromObject [staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$StringData, true])).s, true) AS s#119]
+01 +- ExternalRDD [obj#118]
+18:38:50.972 ScalaTest-run INFO QueryExecution: 
+
+OptmizedPlan: 
+00 SerializeFromObject [staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$StringData, true]).s, true) AS s#119]
+01 +- ExternalRDD [obj#118]
+18:38:50.975 ScalaTest-run INFO QueryExecution: 
+
+SparkPlan: 
+00 SerializeFromObject [staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$StringData, true]).s, true) AS s#119]
+01 +- Scan ExternalRDDScan[obj#118]
+18:38:50.977 ScalaTest-run INFO QueryExecution: 
+
+ExecutedPlan: 
+00 *SerializeFromObject [staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$StringData, true]).s, true) AS s#119]
+01 +- Scan ExternalRDDScan[obj#118]
+18:38:51.003 ScalaTest-run INFO QueryExecution: 
+
+LogicalPlan: 
+00 SerializeFromObject [staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$StringData, true])).s, true) AS s#126]
+01 +- ExternalRDD [obj#125]
+18:38:51.005 ScalaTest-run INFO QueryExecution: 
+
+AnalyzedPlan: 
+00 SerializeFromObject [staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$StringData, true])).s, true) AS s#126]
+01 +- ExternalRDD [obj#125]
+18:38:51.009 ScalaTest-run INFO QueryExecution: 
+
+OptmizedPlan: 
+00 SerializeFromObject [staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$StringData, true]).s, true) AS s#126]
+01 +- ExternalRDD [obj#125]
+18:38:51.011 ScalaTest-run INFO QueryExecution: 
+
+SparkPlan: 
+00 SerializeFromObject [staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$StringData, true]).s, true) AS s#126]
+01 +- Scan ExternalRDDScan[obj#125]
+18:38:51.012 ScalaTest-run INFO QueryExecution: 
+
+ExecutedPlan: 
+00 *SerializeFromObject [staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$StringData, true]).s, true) AS s#126]
+01 +- Scan ExternalRDDScan[obj#125]
+18:38:51.022 ScalaTest-run INFO QueryExecution: 
+
+LogicalPlan: 
+00 CreateViewCommand `nullableRepeatedData`, false, true, LocalTempView
+01    +- SerializeFromObject [staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$StringData, true])).s, true) AS s#126]
+02       +- ExternalRDD [obj#125]
+18:38:51.023 ScalaTest-run INFO QueryExecution: 
+
+AnalyzedPlan: 
+00 CreateViewCommand `nullableRepeatedData`, false, true, LocalTempView
+01    +- SerializeFromObject [staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$StringData, true])).s, true) AS s#126]
+02       +- ExternalRDD [obj#125]
+18:38:51.024 ScalaTest-run INFO QueryExecution: 
+
+OptmizedPlan: 
+00 CreateViewCommand `nullableRepeatedData`, false, true, LocalTempView
+01    +- SerializeFromObject [staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$StringData, true])).s, true) AS s#126]
+02       +- ExternalRDD [obj#125]
+18:38:51.025 ScalaTest-run INFO QueryExecution: 
+
+SparkPlan: 
+00 ExecutedCommand
+01    +- CreateViewCommand `nullableRepeatedData`, false, true, LocalTempView
+02          +- SerializeFromObject [staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$StringData, true])).s, true) AS s#126]
+03             +- ExternalRDD [obj#125]
+18:38:51.026 ScalaTest-run INFO QueryExecution: 
+
+ExecutedPlan: 
+00 ExecutedCommand
+01    +- CreateViewCommand `nullableRepeatedData`, false, true, LocalTempView
+02          +- SerializeFromObject [staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$StringData, true])).s, true) AS s#126]
+03             +- ExternalRDD [obj#125]
+18:38:51.028 ScalaTest-run INFO QueryExecution: 
+
+LogicalPlan: 
+00 SerializeFromObject [staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$StringData, true])).s, true) AS s#126]
+01 +- ExternalRDD [obj#125]
+18:38:51.029 ScalaTest-run INFO QueryExecution: 
+
+AnalyzedPlan: 
+00 SerializeFromObject [staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$StringData, true])).s, true) AS s#126]
+01 +- ExternalRDD [obj#125]
+18:38:51.031 ScalaTest-run INFO QueryExecution: 
+
+OptmizedPlan: 
+00 SerializeFromObject [staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$StringData, true]).s, true) AS s#126]
+01 +- ExternalRDD [obj#125]
+18:38:51.032 ScalaTest-run INFO QueryExecution: 
+
+SparkPlan: 
+00 SerializeFromObject [staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$StringData, true]).s, true) AS s#126]
+01 +- Scan ExternalRDDScan[obj#125]
+18:38:51.034 ScalaTest-run INFO QueryExecution: 
+
+ExecutedPlan: 
+00 *SerializeFromObject [staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$StringData, true]).s, true) AS s#126]
+01 +- Scan ExternalRDDScan[obj#125]
+18:38:51.056 ScalaTest-run INFO QueryExecution: 
+
+LogicalPlan: 
+00 SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$NullInts, true])).a.intValue AS a#133]
+01 +- ExternalRDD [obj#132]
+18:38:51.057 ScalaTest-run INFO QueryExecution: 
+
+AnalyzedPlan: 
+00 SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$NullInts, true])).a.intValue AS a#133]
+01 +- ExternalRDD [obj#132]
+18:38:51.083 ScalaTest-run INFO QueryExecution: 
+
+OptmizedPlan: 
+00 SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$NullInts, true]).a.intValue AS a#133]
+01 +- ExternalRDD [obj#132]
+18:38:51.084 ScalaTest-run INFO QueryExecution: 
+
+SparkPlan: 
+00 SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$NullInts, true]).a.intValue AS a#133]
+01 +- Scan ExternalRDDScan[obj#132]
+18:38:51.085 ScalaTest-run INFO QueryExecution: 
+
+ExecutedPlan: 
+00 *SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$NullInts, true]).a.intValue AS a#133]
+01 +- Scan ExternalRDDScan[obj#132]
+18:38:51.094 ScalaTest-run INFO QueryExecution: 
+
+LogicalPlan: 
+00 CreateViewCommand `nullInts`, false, true, LocalTempView
+01    +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$NullInts, true])).a.intValue AS a#133]
+02       +- ExternalRDD [obj#132]
+18:38:51.096 ScalaTest-run INFO QueryExecution: 
+
+AnalyzedPlan: 
+00 CreateViewCommand `nullInts`, false, true, LocalTempView
+01    +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$NullInts, true])).a.intValue AS a#133]
+02       +- ExternalRDD [obj#132]
+18:38:51.098 ScalaTest-run INFO QueryExecution: 
+
+OptmizedPlan: 
+00 CreateViewCommand `nullInts`, false, true, LocalTempView
+01    +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$NullInts, true])).a.intValue AS a#133]
+02       +- ExternalRDD [obj#132]
+18:38:51.099 ScalaTest-run INFO QueryExecution: 
+
+SparkPlan: 
+00 ExecutedCommand
+01    +- CreateViewCommand `nullInts`, false, true, LocalTempView
+02          +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$NullInts, true])).a.intValue AS a#133]
+03             +- ExternalRDD [obj#132]
+18:38:51.100 ScalaTest-run INFO QueryExecution: 
+
+ExecutedPlan: 
+00 ExecutedCommand
+01    +- CreateViewCommand `nullInts`, false, true, LocalTempView
+02          +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$NullInts, true])).a.intValue AS a#133]
+03             +- ExternalRDD [obj#132]
+18:38:51.102 ScalaTest-run INFO QueryExecution: 
+
+LogicalPlan: 
+00 SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$NullInts, true])).a.intValue AS a#133]
+01 +- ExternalRDD [obj#132]
+18:38:51.109 ScalaTest-run INFO QueryExecution: 
+
+AnalyzedPlan: 
+00 SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$NullInts, true])).a.intValue AS a#133]
+01 +- ExternalRDD [obj#132]
+18:38:51.111 ScalaTest-run INFO QueryExecution: 
+
+OptmizedPlan: 
+00 SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$NullInts, true]).a.intValue AS a#133]
+01 +- ExternalRDD [obj#132]
+18:38:51.112 ScalaTest-run INFO QueryExecution: 
+
+SparkPlan: 
+00 SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$NullInts, true]).a.intValue AS a#133]
+01 +- Scan ExternalRDDScan[obj#132]
+18:38:51.115 ScalaTest-run INFO QueryExecution: 
+
+ExecutedPlan: 
+00 *SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$NullInts, true]).a.intValue AS a#133]
+01 +- Scan ExternalRDDScan[obj#132]
+18:38:51.150 ScalaTest-run INFO QueryExecution: 
+
+LogicalPlan: 
+00 SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$NullInts, true])).a.intValue AS a#140]
+01 +- ExternalRDD [obj#139]
+18:38:51.151 ScalaTest-run INFO QueryExecution: 
+
+AnalyzedPlan: 
+00 SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$NullInts, true])).a.intValue AS a#140]
+01 +- ExternalRDD [obj#139]
+18:38:51.154 ScalaTest-run INFO QueryExecution: 
+
+OptmizedPlan: 
+00 SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$NullInts, true]).a.intValue AS a#140]
+01 +- ExternalRDD [obj#139]
+18:38:51.155 ScalaTest-run INFO QueryExecution: 
+
+SparkPlan: 
+00 SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$NullInts, true]).a.intValue AS a#140]
+01 +- Scan ExternalRDDScan[obj#139]
+18:38:51.156 ScalaTest-run INFO QueryExecution: 
+
+ExecutedPlan: 
+00 *SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$NullInts, true]).a.intValue AS a#140]
+01 +- Scan ExternalRDDScan[obj#139]
+18:38:51.162 ScalaTest-run INFO QueryExecution: 
+
+LogicalPlan: 
+00 CreateViewCommand `allNulls`, false, true, LocalTempView
+01    +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$NullInts, true])).a.intValue AS a#140]
+02       +- ExternalRDD [obj#139]
+18:38:51.163 ScalaTest-run INFO QueryExecution: 
+
+AnalyzedPlan: 
+00 CreateViewCommand `allNulls`, false, true, LocalTempView
+01    +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$NullInts, true])).a.intValue AS a#140]
+02       +- ExternalRDD [obj#139]
+18:38:51.164 ScalaTest-run INFO QueryExecution: 
+
+OptmizedPlan: 
+00 CreateViewCommand `allNulls`, false, true, LocalTempView
+01    +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$NullInts, true])).a.intValue AS a#140]
+02       +- ExternalRDD [obj#139]
+18:38:51.165 ScalaTest-run INFO QueryExecution: 
+
+SparkPlan: 
+00 ExecutedCommand
+01    +- CreateViewCommand `allNulls`, false, true, LocalTempView
+02          +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$NullInts, true])).a.intValue AS a#140]
+03             +- ExternalRDD [obj#139]
+18:38:51.166 ScalaTest-run INFO QueryExecution: 
+
+ExecutedPlan: 
+00 ExecutedCommand
+01    +- CreateViewCommand `allNulls`, false, true, LocalTempView
+02          +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$NullInts, true])).a.intValue AS a#140]
+03             +- ExternalRDD [obj#139]
+18:38:51.167 ScalaTest-run INFO QueryExecution: 
+
+LogicalPlan: 
+00 SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$NullInts, true])).a.intValue AS a#140]
+01 +- ExternalRDD [obj#139]
+18:38:51.168 ScalaTest-run INFO QueryExecution: 
+
+AnalyzedPlan: 
+00 SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$NullInts, true])).a.intValue AS a#140]
+01 +- ExternalRDD [obj#139]
+18:38:51.169 ScalaTest-run INFO QueryExecution: 
+
+OptmizedPlan: 
+00 SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$NullInts, true]).a.intValue AS a#140]
+01 +- ExternalRDD [obj#139]
+18:38:51.170 ScalaTest-run INFO QueryExecution: 
+
+SparkPlan: 
+00 SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$NullInts, true]).a.intValue AS a#140]
+01 +- Scan ExternalRDDScan[obj#139]
+18:38:51.171 ScalaTest-run INFO QueryExecution: 
+
+ExecutedPlan: 
+00 *SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$NullInts, true]).a.intValue AS a#140]
+01 +- Scan ExternalRDDScan[obj#139]
+18:38:51.199 ScalaTest-run INFO QueryExecution: 
+
+LogicalPlan: 
+00 SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$NullStrings, true])).n AS n#148, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$NullStrings, true])).s, true) AS s#149]
+01 +- ExternalRDD [obj#147]
+18:38:51.201 ScalaTest-run INFO QueryExecution: 
+
+AnalyzedPlan: 
+00 SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$NullStrings, true])).n AS n#148, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$NullStrings, true])).s, true) AS s#149]
+01 +- ExternalRDD [obj#147]
+18:38:51.204 ScalaTest-run INFO QueryExecution: 
+
+OptmizedPlan: 
+00 SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$NullStrings, true]).n AS n#148, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$NullStrings, true]).s, true) AS s#149]
+01 +- ExternalRDD [obj#147]
+18:38:51.205 ScalaTest-run INFO QueryExecution: 
+
+SparkPlan: 
+00 SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$NullStrings, true]).n AS n#148, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$NullStrings, true]).s, true) AS s#149]
+01 +- Scan ExternalRDDScan[obj#147]
+18:38:51.206 ScalaTest-run INFO QueryExecution: 
+
+ExecutedPlan: 
+00 *SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$NullStrings, true]).n AS n#148, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$NullStrings, true]).s, true) AS s#149]
+01 +- Scan ExternalRDDScan[obj#147]
+18:38:51.217 ScalaTest-run INFO QueryExecution: 
+
+LogicalPlan: 
+00 CreateViewCommand `nullStrings`, false, true, LocalTempView
+01    +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$NullStrings, true])).n AS n#148, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$NullStrings, true])).s, true) AS s#149]
+02       +- ExternalRDD [obj#147]
+18:38:51.219 ScalaTest-run INFO QueryExecution: 
+
+AnalyzedPlan: 
+00 CreateViewCommand `nullStrings`, false, true, LocalTempView
+01    +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$NullStrings, true])).n AS n#148, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$NullStrings, true])).s, true) AS s#149]
+02       +- ExternalRDD [obj#147]
+18:38:51.220 ScalaTest-run INFO QueryExecution: 
+
+OptmizedPlan: 
+00 CreateViewCommand `nullStrings`, false, true, LocalTempView
+01    +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$NullStrings, true])).n AS n#148, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$NullStrings, true])).s, true) AS s#149]
+02       +- ExternalRDD [obj#147]
+18:38:51.221 ScalaTest-run INFO QueryExecution: 
+
+SparkPlan: 
+00 ExecutedCommand
+01    +- CreateViewCommand `nullStrings`, false, true, LocalTempView
+02          +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$NullStrings, true])).n AS n#148, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$NullStrings, true])).s, true) AS s#149]
+03             +- ExternalRDD [obj#147]
+18:38:51.222 ScalaTest-run INFO QueryExecution: 
+
+ExecutedPlan: 
+00 ExecutedCommand
+01    +- CreateViewCommand `nullStrings`, false, true, LocalTempView
+02          +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$NullStrings, true])).n AS n#148, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$NullStrings, true])).s, true) AS s#149]
+03             +- ExternalRDD [obj#147]
+18:38:51.224 ScalaTest-run INFO QueryExecution: 
+
+LogicalPlan: 
+00 SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$NullStrings, true])).n AS n#148, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$NullStrings, true])).s, true) AS s#149]
+01 +- ExternalRDD [obj#147]
+18:38:51.225 ScalaTest-run INFO QueryExecution: 
+
+AnalyzedPlan: 
+00 SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$NullStrings, true])).n AS n#148, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$NullStrings, true])).s, true) AS s#149]
+01 +- ExternalRDD [obj#147]
+18:38:51.227 ScalaTest-run INFO QueryExecution: 
+
+OptmizedPlan: 
+00 SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$NullStrings, true]).n AS n#148, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$NullStrings, true]).s, true) AS s#149]
+01 +- ExternalRDD [obj#147]
+18:38:51.228 ScalaTest-run INFO QueryExecution: 
+
+SparkPlan: 
+00 SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$NullStrings, true]).n AS n#148, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$NullStrings, true]).s, true) AS s#149]
+01 +- Scan ExternalRDDScan[obj#147]
+18:38:51.230 ScalaTest-run INFO QueryExecution: 
+
+ExecutedPlan: 
+00 *SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$NullStrings, true]).n AS n#148, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$NullStrings, true]).s, true) AS s#149]
+01 +- Scan ExternalRDDScan[obj#147]
+18:38:51.251 ScalaTest-run INFO QueryExecution: 
+
+LogicalPlan: 
+00 SerializeFromObject [staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TableName, true])).tableName, true) AS tableName#157]
+01 +- ExternalRDD [obj#156]
+18:38:51.253 ScalaTest-run INFO QueryExecution: 
+
+AnalyzedPlan: 
+00 SerializeFromObject [staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TableName, true])).tableName, true) AS tableName#157]
+01 +- ExternalRDD [obj#156]
+18:38:51.256 ScalaTest-run INFO QueryExecution: 
+
+OptmizedPlan: 
+00 SerializeFromObject [staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TableName, true]).tableName, true) AS tableName#157]
+01 +- ExternalRDD [obj#156]
+18:38:51.257 ScalaTest-run INFO QueryExecution: 
+
+SparkPlan: 
+00 SerializeFromObject [staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TableName, true]).tableName, true) AS tableName#157]
+01 +- Scan ExternalRDDScan[obj#156]
+18:38:51.258 ScalaTest-run INFO QueryExecution: 
+
+ExecutedPlan: 
+00 *SerializeFromObject [staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TableName, true]).tableName, true) AS tableName#157]
+01 +- Scan ExternalRDDScan[obj#156]
+18:38:51.266 ScalaTest-run INFO QueryExecution: 
+
+LogicalPlan: 
+00 CreateViewCommand `tableName`, false, true, LocalTempView
+01    +- SerializeFromObject [staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TableName, true])).tableName, true) AS tableName#157]
+02       +- ExternalRDD [obj#156]
+18:38:51.268 ScalaTest-run INFO QueryExecution: 
+
+AnalyzedPlan: 
+00 CreateViewCommand `tableName`, false, true, LocalTempView
+01    +- SerializeFromObject [staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TableName, true])).tableName, true) AS tableName#157]
+02       +- ExternalRDD [obj#156]
+18:38:51.270 ScalaTest-run INFO QueryExecution: 
+
+OptmizedPlan: 
+00 CreateViewCommand `tableName`, false, true, LocalTempView
+01    +- SerializeFromObject [staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TableName, true])).tableName, true) AS tableName#157]
+02       +- ExternalRDD [obj#156]
+18:38:51.271 ScalaTest-run INFO QueryExecution: 
+
+SparkPlan: 
+00 ExecutedCommand
+01    +- CreateViewCommand `tableName`, false, true, LocalTempView
+02          +- SerializeFromObject [staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TableName, true])).tableName, true) AS tableName#157]
+03             +- ExternalRDD [obj#156]
+18:38:51.272 ScalaTest-run INFO QueryExecution: 
+
+ExecutedPlan: 
+00 ExecutedCommand
+01    +- CreateViewCommand `tableName`, false, true, LocalTempView
+02          +- SerializeFromObject [staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TableName, true])).tableName, true) AS tableName#157]
+03             +- ExternalRDD [obj#156]
+18:38:51.273 ScalaTest-run INFO QueryExecution: 
+
+LogicalPlan: 
+00 SerializeFromObject [staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TableName, true])).tableName, true) AS tableName#157]
+01 +- ExternalRDD [obj#156]
+18:38:51.274 ScalaTest-run INFO QueryExecution: 
+
+AnalyzedPlan: 
+00 SerializeFromObject [staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TableName, true])).tableName, true) AS tableName#157]
+01 +- ExternalRDD [obj#156]
+18:38:51.277 ScalaTest-run INFO QueryExecution: 
+
+OptmizedPlan: 
+00 SerializeFromObject [staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TableName, true]).tableName, true) AS tableName#157]
+01 +- ExternalRDD [obj#156]
+18:38:51.279 ScalaTest-run INFO QueryExecution: 
+
+SparkPlan: 
+00 SerializeFromObject [staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TableName, true]).tableName, true) AS tableName#157]
+01 +- Scan ExternalRDDScan[obj#156]
+18:38:51.282 ScalaTest-run INFO QueryExecution: 
+
+ExecutedPlan: 
+00 *SerializeFromObject [staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TableName, true]).tableName, true) AS tableName#157]
+01 +- Scan ExternalRDDScan[obj#156]
+18:38:51.298 ScalaTest-run INFO QueryExecution: 
+
+LogicalPlan: 
+00 SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$IntField, true])).i AS i#164]
+01 +- ExternalRDD [obj#163]
+18:38:51.299 ScalaTest-run INFO QueryExecution: 
+
+AnalyzedPlan: 
+00 SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$IntField, true])).i AS i#164]
+01 +- ExternalRDD [obj#163]
+18:38:51.302 ScalaTest-run INFO QueryExecution: 
+
+OptmizedPlan: 
+00 SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$IntField, true]).i AS i#164]
+01 +- ExternalRDD [obj#163]
+18:38:51.304 ScalaTest-run INFO QueryExecution: 
+
+SparkPlan: 
+00 SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$IntField, true]).i AS i#164]
+01 +- Scan ExternalRDDScan[obj#163]
+18:38:51.305 ScalaTest-run INFO QueryExecution: 
+
+ExecutedPlan: 
+00 *SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$IntField, true]).i AS i#164]
+01 +- Scan ExternalRDDScan[obj#163]
+18:38:51.310 ScalaTest-run INFO QueryExecution: 
+
+LogicalPlan: 
+00 CreateViewCommand `withEmptyParts`, false, true, LocalTempView
+01    +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$IntField, true])).i AS i#164]
+02       +- ExternalRDD [obj#163]
+18:38:51.312 ScalaTest-run INFO QueryExecution: 
+
+AnalyzedPlan: 
+00 CreateViewCommand `withEmptyParts`, false, true, LocalTempView
+01    +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$IntField, true])).i AS i#164]
+02       +- ExternalRDD [obj#163]
+18:38:51.313 ScalaTest-run INFO QueryExecution: 
+
+OptmizedPlan: 
+00 CreateViewCommand `withEmptyParts`, false, true, LocalTempView
+01    +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$IntField, true])).i AS i#164]
+02       +- ExternalRDD [obj#163]
+18:38:51.314 ScalaTest-run INFO QueryExecution: 
+
+SparkPlan: 
+00 ExecutedCommand
+01    +- CreateViewCommand `withEmptyParts`, false, true, LocalTempView
+02          +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$IntField, true])).i AS i#164]
+03             +- ExternalRDD [obj#163]
+18:38:51.315 ScalaTest-run INFO QueryExecution: 
+
+ExecutedPlan: 
+00 ExecutedCommand
+01    +- CreateViewCommand `withEmptyParts`, false, true, LocalTempView
+02          +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$IntField, true])).i AS i#164]
+03             +- ExternalRDD [obj#163]
+18:38:51.316 ScalaTest-run INFO QueryExecution: 
+
+LogicalPlan: 
+00 SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$IntField, true])).i AS i#164]
+01 +- ExternalRDD [obj#163]
+18:38:51.317 ScalaTest-run INFO QueryExecution: 
+
+AnalyzedPlan: 
+00 SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$IntField, true])).i AS i#164]
+01 +- ExternalRDD [obj#163]
+18:38:51.319 ScalaTest-run INFO QueryExecution: 
+
+OptmizedPlan: 
+00 SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$IntField, true]).i AS i#164]
+01 +- ExternalRDD [obj#163]
+18:38:51.320 ScalaTest-run INFO QueryExecution: 
+
+SparkPlan: 
+00 SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$IntField, true]).i AS i#164]
+01 +- Scan ExternalRDDScan[obj#163]
+18:38:51.321 ScalaTest-run INFO QueryExecution: 
+
+ExecutedPlan: 
+00 *SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$IntField, true]).i AS i#164]
+01 +- Scan ExternalRDDScan[obj#163]
+18:38:51.344 ScalaTest-run INFO QueryExecution: 
+
+LogicalPlan: 
+00 SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$Person, true])).id AS id#173, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$Person, true])).name, true) AS name#174, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$Person, true])).age AS age#175]
+01 +- ExternalRDD [obj#172]
+18:38:51.346 ScalaTest-run INFO QueryExecution: 
+
+AnalyzedPlan: 
+00 SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$Person, true])).id AS id#173, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$Person, true])).name, true) AS name#174, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$Person, true])).age AS age#175]
+01 +- ExternalRDD [obj#172]
+18:38:51.348 ScalaTest-run INFO QueryExecution: 
+
+OptmizedPlan: 
+00 SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$Person, true]).id AS id#173, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$Person, true]).name, true) AS name#174, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$Person, true]).age AS age#175]
+01 +- ExternalRDD [obj#172]
+18:38:51.349 ScalaTest-run INFO QueryExecution: 
+
+SparkPlan: 
+00 SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$Person, true]).id AS id#173, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$Person, true]).name, true) AS name#174, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$Person, true]).age AS age#175]
+01 +- Scan ExternalRDDScan[obj#172]
+18:38:51.350 ScalaTest-run INFO QueryExecution: 
+
+ExecutedPlan: 
+00 *SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$Person, true]).id AS id#173, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$Person, true]).name, true) AS name#174, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$Person, true]).age AS age#175]
+01 +- Scan ExternalRDDScan[obj#172]
+18:38:51.360 ScalaTest-run INFO QueryExecution: 
+
+LogicalPlan: 
+00 CreateViewCommand `person`, false, true, LocalTempView
+01    +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$Person, true])).id AS id#173, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$Person, true])).name, true) AS name#174, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$Person, true])).age AS age#175]
+02       +- ExternalRDD [obj#172]
+18:38:51.361 ScalaTest-run INFO QueryExecution: 
+
+AnalyzedPlan: 
+00 CreateViewCommand `person`, false, true, LocalTempView
+01    +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$Person, true])).id AS id#173, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$Person, true])).name, true) AS name#174, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$Person, true])).age AS age#175]
+02       +- ExternalRDD [obj#172]
+18:38:51.362 ScalaTest-run INFO QueryExecution: 
+
+OptmizedPlan: 
+00 CreateViewCommand `person`, false, true, LocalTempView
+01    +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$Person, true])).id AS id#173, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$Person, true])).name, true) AS name#174, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$Person, true])).age AS age#175]
+02       +- ExternalRDD [obj#172]
+18:38:51.364 ScalaTest-run INFO QueryExecution: 
+
+SparkPlan: 
+00 ExecutedCommand
+01    +- CreateViewCommand `person`, false, true, LocalTempView
+02          +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$Person, true])).id AS id#173, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$Person, true])).name, true) AS name#174, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$Person, true])).age AS age#175]
+03             +- ExternalRDD [obj#172]
+18:38:51.365 ScalaTest-run INFO QueryExecution: 
+
+ExecutedPlan: 
+00 ExecutedCommand
+01    +- CreateViewCommand `person`, false, true, LocalTempView
+02          +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$Person, true])).id AS id#173, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$Person, true])).name, true) AS name#174, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$Person, true])).age AS age#175]
+03             +- ExternalRDD [obj#172]
+18:38:51.367 ScalaTest-run INFO QueryExecution: 
+
+LogicalPlan: 
+00 SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$Person, true])).id AS id#173, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$Person, true])).name, true) AS name#174, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$Person, true])).age AS age#175]
+01 +- ExternalRDD [obj#172]
+18:38:51.368 ScalaTest-run INFO QueryExecution: 
+
+AnalyzedPlan: 
+00 SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$Person, true])).id AS id#173, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$Person, true])).name, true) AS name#174, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$Person, true])).age AS age#175]
+01 +- ExternalRDD [obj#172]
+18:38:51.370 ScalaTest-run INFO QueryExecution: 
+
+OptmizedPlan: 
+00 SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$Person, true]).id AS id#173, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$Person, true]).name, true) AS name#174, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$Person, true]).age AS age#175]
+01 +- ExternalRDD [obj#172]
+18:38:51.371 ScalaTest-run INFO QueryExecution: 
+
+SparkPlan: 
+00 SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$Person, true]).id AS id#173, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$Person, true]).name, true) AS name#174, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$Person, true]).age AS age#175]
+01 +- Scan ExternalRDDScan[obj#172]
+18:38:51.372 ScalaTest-run INFO QueryExecution: 
+
+ExecutedPlan: 
+00 *SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$Person, true]).id AS id#173, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$Person, true]).name, true) AS name#174, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$Person, true]).age AS age#175]
+01 +- Scan ExternalRDDScan[obj#172]
+18:38:51.398 ScalaTest-run INFO QueryExecution: 
+
+LogicalPlan: 
+00 SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$Salary, true])).personId AS personId#185, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$Salary, true])).salary AS salary#186]
+01 +- ExternalRDD [obj#184]
+18:38:51.400 ScalaTest-run INFO QueryExecution: 
+
+AnalyzedPlan: 
+00 SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$Salary, true])).personId AS personId#185, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$Salary, true])).salary AS salary#186]
+01 +- ExternalRDD [obj#184]
+18:38:51.402 ScalaTest-run INFO QueryExecution: 
+
+OptmizedPlan: 
+00 SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$Salary, true]).personId AS personId#185, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$Salary, true]).salary AS salary#186]
+01 +- ExternalRDD [obj#184]
+18:38:51.403 ScalaTest-run INFO QueryExecution: 
+
+SparkPlan: 
+00 SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$Salary, true]).personId AS personId#185, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$Salary, true]).salary AS salary#186]
+01 +- Scan ExternalRDDScan[obj#184]
+18:38:51.404 ScalaTest-run INFO QueryExecution: 
+
+ExecutedPlan: 
+00 *SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$Salary, true]).personId AS personId#185, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$Salary, true]).salary AS salary#186]
+01 +- Scan ExternalRDDScan[obj#184]
+18:38:51.413 ScalaTest-run INFO QueryExecution: 
+
+LogicalPlan: 
+00 CreateViewCommand `salary`, false, true, LocalTempView
+01    +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$Salary, true])).personId AS personId#185, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$Salary, true])).salary AS salary#186]
+02       +- ExternalRDD [obj#184]
+18:38:51.414 ScalaTest-run INFO QueryExecution: 
+
+AnalyzedPlan: 
+00 CreateViewCommand `salary`, false, true, LocalTempView
+01    +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$Salary, true])).personId AS personId#185, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$Salary, true])).salary AS salary#186]
+02       +- ExternalRDD [obj#184]
+18:38:51.416 ScalaTest-run INFO QueryExecution: 
+
+OptmizedPlan: 
+00 CreateViewCommand `salary`, false, true, LocalTempView
+01    +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$Salary, true])).personId AS personId#185, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$Salary, true])).salary AS salary#186]
+02       +- ExternalRDD [obj#184]
+18:38:51.416 ScalaTest-run INFO QueryExecution: 
+
+SparkPlan: 
+00 ExecutedCommand
+01    +- CreateViewCommand `salary`, false, true, LocalTempView
+02          +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$Salary, true])).personId AS personId#185, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$Salary, true])).salary AS salary#186]
+03             +- ExternalRDD [obj#184]
+18:38:51.417 ScalaTest-run INFO QueryExecution: 
+
+ExecutedPlan: 
+00 ExecutedCommand
+01    +- CreateViewCommand `salary`, false, true, LocalTempView
+02          +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$Salary, true])).personId AS personId#185, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$Salary, true])).salary AS salary#186]
+03             +- ExternalRDD [obj#184]
+18:38:51.418 ScalaTest-run INFO QueryExecution: 
+
+LogicalPlan: 
+00 SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$Salary, true])).personId AS personId#185, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$Salary, true])).salary AS salary#186]
+01 +- ExternalRDD [obj#184]
+18:38:51.420 ScalaTest-run INFO QueryExecution: 
+
+AnalyzedPlan: 
+00 SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$Salary, true])).personId AS personId#185, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$Salary, true])).salary AS salary#186]
+01 +- ExternalRDD [obj#184]
+18:38:51.423 ScalaTest-run INFO QueryExecution: 
+
+OptmizedPlan: 
+00 SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$Salary, true]).personId AS personId#185, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$Salary, true]).salary AS salary#186]
+01 +- ExternalRDD [obj#184]
+18:38:51.424 ScalaTest-run INFO QueryExecution: 
+
+SparkPlan: 
+00 SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$Salary, true]).personId AS personId#185, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$Salary, true]).salary AS salary#186]
+01 +- Scan ExternalRDDScan[obj#184]
+18:38:51.425 ScalaTest-run INFO QueryExecution: 
+
+ExecutedPlan: 
+00 *SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$Salary, true]).personId AS personId#185, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$Salary, true]).salary AS salary#186]
+01 +- Scan ExternalRDDScan[obj#184]
+18:38:51.562 ScalaTest-run INFO QueryExecution: 
+
+LogicalPlan: 
+00 SerializeFromObject [externalmaptocatalyst(ExternalMapToCatalyst_key1, ObjectType(class java.lang.String), staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, lambdavariable(ExternalMapToCatalyst_key1, false, ObjectType(class java.lang.String), false), true), ExternalMapToCatalyst_value1, ExternalMapToCatalyst_value_isNull1, IntegerType, lambdavariable(ExternalMapToCatalyst_value1, ExternalMapToCatalyst_value_isNull1, IntegerType, false), assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ComplexData, true])).m) AS m#197, if (isnull(assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ComplexData, true])).s)) null else named_struct(key, assertnotnull(assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ComplexData, true])).s).key, value, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ComplexData, true])).s).value, true)) AS s#198, newInstance(class org.apache.spark.sql.catalyst.util.GenericArrayData) AS a#199, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ComplexData, true])).b AS b#200]
+01 +- ExternalRDD [obj#196]
+18:38:51.566 ScalaTest-run INFO QueryExecution: 
+
+AnalyzedPlan: 
+00 SerializeFromObject [externalmaptocatalyst(ExternalMapToCatalyst_key1, ObjectType(class java.lang.String), staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, lambdavariable(ExternalMapToCatalyst_key1, false, ObjectType(class java.lang.String), false), true), ExternalMapToCatalyst_value1, ExternalMapToCatalyst_value_isNull1, IntegerType, lambdavariable(ExternalMapToCatalyst_value1, ExternalMapToCatalyst_value_isNull1, IntegerType, false), assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ComplexData, true])).m) AS m#197, if (isnull(assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ComplexData, true])).s)) null else named_struct(key, assertnotnull(assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ComplexData, true])).s).key, value, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ComplexData, true])).s).value, true)) AS s#198, newInstance(class org.apache.spark.sql.catalyst.util.GenericArrayData) AS a#199, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ComplexData, true])).b AS b#200]
+01 +- ExternalRDD [obj#196]
+18:38:51.573 ScalaTest-run INFO QueryExecution: 
+
+OptmizedPlan: 
+00 SerializeFromObject [externalmaptocatalyst(ExternalMapToCatalyst_key1, ObjectType(class java.lang.String), staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, lambdavariable(ExternalMapToCatalyst_key1, false, ObjectType(class java.lang.String), false), true), ExternalMapToCatalyst_value1, ExternalMapToCatalyst_value_isNull1, IntegerType, lambdavariable(ExternalMapToCatalyst_value1, ExternalMapToCatalyst_value_isNull1, IntegerType, false), assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ComplexData, true]).m) AS m#197, if (isnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ComplexData, true]).s)) null else named_struct(key, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ComplexData, true]).s).key, value, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ComplexData, true]).s).value, true)) AS s#198, newInstance(class org.apache.spark.sql.catalyst.util.GenericArrayData) AS a#199, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ComplexData, true]).b AS b#200]
+01 +- ExternalRDD [obj#196]
+18:38:51.574 ScalaTest-run INFO QueryExecution: 
+
+SparkPlan: 
+00 SerializeFromObject [externalmaptocatalyst(ExternalMapToCatalyst_key1, ObjectType(class java.lang.String), staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, lambdavariable(ExternalMapToCatalyst_key1, false, ObjectType(class java.lang.String), false), true), ExternalMapToCatalyst_value1, ExternalMapToCatalyst_value_isNull1, IntegerType, lambdavariable(ExternalMapToCatalyst_value1, ExternalMapToCatalyst_value_isNull1, IntegerType, false), assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ComplexData, true]).m) AS m#197, if (isnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ComplexData, true]).s)) null else named_struct(key, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ComplexData, true]).s).key, value, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ComplexData, true]).s).value, true)) AS s#198, newInstance(class org.apache.spark.sql.catalyst.util.GenericArrayData) AS a#199, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ComplexData, true]).b AS b#200]
+01 +- Scan ExternalRDDScan[obj#196]
+18:38:51.582 ScalaTest-run INFO QueryExecution: 
+
+ExecutedPlan: 
+00 *SerializeFromObject [externalmaptocatalyst(ExternalMapToCatalyst_key1, ObjectType(class java.lang.String), staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, lambdavariable(ExternalMapToCatalyst_key1, false, ObjectType(class java.lang.String), false), true), ExternalMapToCatalyst_value1, ExternalMapToCatalyst_value_isNull1, IntegerType, lambdavariable(ExternalMapToCatalyst_value1, ExternalMapToCatalyst_value_isNull1, IntegerType, false), assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ComplexData, true]).m) AS m#197, if (isnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ComplexData, true]).s)) null else named_struct(key, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ComplexData, true]).s).key, value, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ComplexData, true]).s).value, true)) AS s#198, newInstance(class org.apache.spark.sql.catalyst.util.GenericArrayData) AS a#199, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ComplexData, true]).b AS b#200]
+01 +- Scan ExternalRDDScan[obj#196]
+18:38:51.622 ScalaTest-run INFO QueryExecution: 
+
+LogicalPlan: 
+00 CreateViewCommand `complexData`, false, true, LocalTempView
+01    +- SerializeFromObject [externalmaptocatalyst(ExternalMapToCatalyst_key1, ObjectType(class java.lang.String), staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, lambdavariable(ExternalMapToCatalyst_key1, false, ObjectType(class java.lang.String), false), true), ExternalMapToCatalyst_value1, ExternalMapToCatalyst_value_isNull1, IntegerType, lambdavariable(ExternalMapToCatalyst_value1, ExternalMapToCatalyst_value_isNull1, IntegerType, false), assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ComplexData, true])).m) AS m#197, if (isnull(assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ComplexData, true])).s)) null else named_struct(key, assertnotnull(assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ComplexData, true])).s).key, value, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ComplexData, true])).s).value, true)) AS s#198, newInstance(class org.apache.spark.sql.catalyst.util.GenericArrayData) AS a#199, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ComplexData, true])).b AS b#200]
+02       +- ExternalRDD [obj#196]
+18:38:51.623 ScalaTest-run INFO QueryExecution: 
+
+AnalyzedPlan: 
+00 CreateViewCommand `complexData`, false, true, LocalTempView
+01    +- SerializeFromObject [externalmaptocatalyst(ExternalMapToCatalyst_key1, ObjectType(class java.lang.String), staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, lambdavariable(ExternalMapToCatalyst_key1, false, ObjectType(class java.lang.String), false), true), ExternalMapToCatalyst_value1, ExternalMapToCatalyst_value_isNull1, IntegerType, lambdavariable(ExternalMapToCatalyst_value1, ExternalMapToCatalyst_value_isNull1, IntegerType, false), assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ComplexData, true])).m) AS m#197, if (isnull(assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ComplexData, true])).s)) null else named_struct(key, assertnotnull(assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ComplexData, true])).s).key, value, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ComplexData, true])).s).value, true)) AS s#198, newInstance(class org.apache.spark.sql.catalyst.util.GenericArrayData) AS a#199, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ComplexData, true])).b AS b#200]
+02       +- ExternalRDD [obj#196]
+18:38:51.625 ScalaTest-run INFO QueryExecution: 
+
+OptmizedPlan: 
+00 CreateViewCommand `complexData`, false, true, LocalTempView
+01    +- SerializeFromObject [externalmaptocatalyst(ExternalMapToCatalyst_key1, ObjectType(class java.lang.String), staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, lambdavariable(ExternalMapToCatalyst_key1, false, ObjectType(class java.lang.String), false), true), ExternalMapToCatalyst_value1, ExternalMapToCatalyst_value_isNull1, IntegerType, lambdavariable(ExternalMapToCatalyst_value1, ExternalMapToCatalyst_value_isNull1, IntegerType, false), assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ComplexData, true])).m) AS m#197, if (isnull(assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ComplexData, true])).s)) null else named_struct(key, assertnotnull(assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ComplexData, true])).s).key, value, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ComplexData, true])).s).value, true)) AS s#198, newInstance(class org.apache.spark.sql.catalyst.util.GenericArrayData) AS a#199, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ComplexData, true])).b AS b#200]
+02       +- ExternalRDD [obj#196]
+18:38:51.626 ScalaTest-run INFO QueryExecution: 
+
+SparkPlan: 
+00 ExecutedCommand
+01    +- CreateViewCommand `complexData`, false, true, LocalTempView
+02          +- SerializeFromObject [externalmaptocatalyst(ExternalMapToCatalyst_key1, ObjectType(class java.lang.String), staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, lambdavariable(ExternalMapToCatalyst_key1, false, ObjectType(class java.lang.String), false), true), ExternalMapToCatalyst_value1, ExternalMapToCatalyst_value_isNull1, IntegerType, lambdavariable(ExternalMapToCatalyst_value1, ExternalMapToCatalyst_value_isNull1, IntegerType, false), assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ComplexData, true])).m) AS m#197, if (isnull(assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ComplexData, true])).s)) null else named_struct(key, assertnotnull(assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ComplexData, true])).s).key, value, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ComplexData, true])).s).value, true)) AS s#198, newInstance(class org.apache.spark.sql.catalyst.util.GenericArrayData) AS a#199, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ComplexData, true])).b AS b#200]
+03             +- ExternalRDD [obj#196]
+18:38:51.628 ScalaTest-run INFO QueryExecution: 
+
+ExecutedPlan: 
+00 ExecutedCommand
+01    +- CreateViewCommand `complexData`, false, true, LocalTempView
+02          +- SerializeFromObject [externalmaptocatalyst(ExternalMapToCatalyst_key1, ObjectType(class java.lang.String), staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, lambdavariable(ExternalMapToCatalyst_key1, false, ObjectType(class java.lang.String), false), true), ExternalMapToCatalyst_value1, ExternalMapToCatalyst_value_isNull1, IntegerType, lambdavariable(ExternalMapToCatalyst_value1, ExternalMapToCatalyst_value_isNull1, IntegerType, false), assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ComplexData, true])).m) AS m#197, if (isnull(assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ComplexData, true])).s)) null else named_struct(key, assertnotnull(assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ComplexData, true])).s).key, value, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ComplexData, true])).s).value, true)) AS s#198, newInstance(class org.apache.spark.sql.catalyst.util.GenericArrayData) AS a#199, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ComplexData, true])).b AS b#200]
+03             +- ExternalRDD [obj#196]
+18:38:51.629 ScalaTest-run INFO QueryExecution: 
+
+LogicalPlan: 
+00 SerializeFromObject [externalmaptocatalyst(ExternalMapToCatalyst_key1, ObjectType(class java.lang.String), staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, lambdavariable(ExternalMapToCatalyst_key1, false, ObjectType(class java.lang.String), false), true), ExternalMapToCatalyst_value1, ExternalMapToCatalyst_value_isNull1, IntegerType, lambdavariable(ExternalMapToCatalyst_value1, ExternalMapToCatalyst_value_isNull1, IntegerType, false), assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ComplexData, true])).m) AS m#197, if (isnull(assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ComplexData, true])).s)) null else named_struct(key, assertnotnull(assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ComplexData, true])).s).key, value, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ComplexData, true])).s).value, true)) AS s#198, newInstance(class org.apache.spark.sql.catalyst.util.GenericArrayData) AS a#199, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ComplexData, true])).b AS b#200]
+01 +- ExternalRDD [obj#196]
+18:38:51.632 ScalaTest-run INFO QueryExecution: 
+
+AnalyzedPlan: 
+00 SerializeFromObject [externalmaptocatalyst(ExternalMapToCatalyst_key1, ObjectType(class java.lang.String), staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, lambdavariable(ExternalMapToCatalyst_key1, false, ObjectType(class java.lang.String), false), true), ExternalMapToCatalyst_value1, ExternalMapToCatalyst_value_isNull1, IntegerType, lambdavariable(ExternalMapToCatalyst_value1, ExternalMapToCatalyst_value_isNull1, IntegerType, false), assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ComplexData, true])).m) AS m#197, if (isnull(assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ComplexData, true])).s)) null else named_struct(key, assertnotnull(assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ComplexData, true])).s).key, value, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ComplexData, true])).s).value, true)) AS s#198, newInstance(class org.apache.spark.sql.catalyst.util.GenericArrayData) AS a#199, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ComplexData, true])).b AS b#200]
+01 +- ExternalRDD [obj#196]
+18:38:51.637 ScalaTest-run INFO QueryExecution: 
+
+OptmizedPlan: 
+00 SerializeFromObject [externalmaptocatalyst(ExternalMapToCatalyst_key1, ObjectType(class java.lang.String), staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, lambdavariable(ExternalMapToCatalyst_key1, false, ObjectType(class java.lang.String), false), true), ExternalMapToCatalyst_value1, ExternalMapToCatalyst_value_isNull1, IntegerType, lambdavariable(ExternalMapToCatalyst_value1, ExternalMapToCatalyst_value_isNull1, IntegerType, false), assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ComplexData, true]).m) AS m#197, if (isnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ComplexData, true]).s)) null else named_struct(key, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ComplexData, true]).s).key, value, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ComplexData, true]).s).value, true)) AS s#198, newInstance(class org.apache.spark.sql.catalyst.util.GenericArrayData) AS a#199, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ComplexData, true]).b AS b#200]
+01 +- ExternalRDD [obj#196]
+18:38:51.638 ScalaTest-run INFO QueryExecution: 
+
+SparkPlan: 
+00 SerializeFromObject [externalmaptocatalyst(ExternalMapToCatalyst_key1, ObjectType(class java.lang.String), staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, lambdavariable(ExternalMapToCatalyst_key1, false, ObjectType(class java.lang.String), false), true), ExternalMapToCatalyst_value1, ExternalMapToCatalyst_value_isNull1, IntegerType, lambdavariable(ExternalMapToCatalyst_value1, ExternalMapToCatalyst_value_isNull1, IntegerType, false), assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ComplexData, true]).m) AS m#197, if (isnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ComplexData, true]).s)) null else named_struct(key, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ComplexData, true]).s).key, value, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ComplexData, true]).s).value, true)) AS s#198, newInstance(class org.apache.spark.sql.catalyst.util.GenericArrayData) AS a#199, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ComplexData, true]).b AS b#200]
+01 +- Scan ExternalRDDScan[obj#196]
+18:38:51.640 ScalaTest-run INFO QueryExecution: 
+
+ExecutedPlan: 
+00 *SerializeFromObject [externalmaptocatalyst(ExternalMapToCatalyst_key1, ObjectType(class java.lang.String), staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, lambdavariable(ExternalMapToCatalyst_key1, false, ObjectType(class java.lang.String), false), true), ExternalMapToCatalyst_value1, ExternalMapToCatalyst_value_isNull1, IntegerType, lambdavariable(ExternalMapToCatalyst_value1, ExternalMapToCatalyst_value_isNull1, IntegerType, false), assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ComplexData, true]).m) AS m#197, if (isnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ComplexData, true]).s)) null else named_struct(key, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ComplexData, true]).s).key, value, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ComplexData, true]).s).value, true)) AS s#198, newInstance(class org.apache.spark.sql.catalyst.util.GenericArrayData) AS a#199, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$ComplexData, true]).b AS b#200]
+01 +- Scan ExternalRDDScan[obj#196]
+18:38:51.671 ScalaTest-run INFO QueryExecution: 
+
+LogicalPlan: 
+00 SerializeFromObject [staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$CourseSales, true])).course, true) AS course#212, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$CourseSales, true])).year AS year#213, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$CourseSales, true])).earnings AS earnings#214]
+01 +- ExternalRDD [obj#211]
+18:38:51.673 ScalaTest-run INFO QueryExecution: 
+
+AnalyzedPlan: 
+00 SerializeFromObject [staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$CourseSales, true])).course, true) AS course#212, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$CourseSales, true])).year AS year#213, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$CourseSales, true])).earnings AS earnings#214]
+01 +- ExternalRDD [obj#211]
+18:38:51.678 ScalaTest-run INFO QueryExecution: 
+
+OptmizedPlan: 
+00 SerializeFromObject [staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$CourseSales, true]).course, true) AS course#212, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$CourseSales, true]).year AS year#213, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$CourseSales, true]).earnings AS earnings#214]
+01 +- ExternalRDD [obj#211]
+18:38:51.679 ScalaTest-run INFO QueryExecution: 
+
+SparkPlan: 
+00 SerializeFromObject [staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$CourseSales, true]).course, true) AS course#212, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$CourseSales, true]).year AS year#213, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$CourseSales, true]).earnings AS earnings#214]
+01 +- Scan ExternalRDDScan[obj#211]
+18:38:51.683 ScalaTest-run INFO QueryExecution: 
+
+ExecutedPlan: 
+00 *SerializeFromObject [staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$CourseSales, true]).course, true) AS course#212, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$CourseSales, true]).year AS year#213, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$CourseSales, true]).earnings AS earnings#214]
+01 +- Scan ExternalRDDScan[obj#211]
+18:38:51.699 ScalaTest-run INFO QueryExecution: 
+
+LogicalPlan: 
+00 CreateViewCommand `courseSales`, false, true, LocalTempView
+01    +- SerializeFromObject [staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$CourseSales, true])).course, true) AS course#212, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$CourseSales, true])).year AS year#213, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$CourseSales, true])).earnings AS earnings#214]
+02       +- ExternalRDD [obj#211]
+18:38:51.700 ScalaTest-run INFO QueryExecution: 
+
+AnalyzedPlan: 
+00 CreateViewCommand `courseSales`, false, true, LocalTempView
+01    +- SerializeFromObject [staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$CourseSales, true])).course, true) AS course#212, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$CourseSales, true])).year AS year#213, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$CourseSales, true])).earnings AS earnings#214]
+02       +- ExternalRDD [obj#211]
+18:38:51.701 ScalaTest-run INFO QueryExecution: 
+
+OptmizedPlan: 
+00 CreateViewCommand `courseSales`, false, true, LocalTempView
+01    +- SerializeFromObject [staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$CourseSales, true])).course, true) AS course#212, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$CourseSales, true])).year AS year#213, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$CourseSales, true])).earnings AS earnings#214]
+02       +- ExternalRDD [obj#211]
+18:38:51.702 ScalaTest-run INFO QueryExecution: 
+
+SparkPlan: 
+00 ExecutedCommand
+01    +- CreateViewCommand `courseSales`, false, true, LocalTempView
+02          +- SerializeFromObject [staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$CourseSales, true])).course, true) AS course#212, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$CourseSales, true])).year AS year#213, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$CourseSales, true])).earnings AS earnings#214]
+03             +- ExternalRDD [obj#211]
+18:38:51.704 ScalaTest-run INFO QueryExecution: 
+
+ExecutedPlan: 
+00 ExecutedCommand
+01    +- CreateViewCommand `courseSales`, false, true, LocalTempView
+02          +- SerializeFromObject [staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$CourseSales, true])).course, true) AS course#212, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$CourseSales, true])).year AS year#213, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$CourseSales, true])).earnings AS earnings#214]
+03             +- ExternalRDD [obj#211]
+18:38:51.705 ScalaTest-run INFO QueryExecution: 
+
+LogicalPlan: 
+00 SerializeFromObject [staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$CourseSales, true])).course, true) AS course#212, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$CourseSales, true])).year AS year#213, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$CourseSales, true])).earnings AS earnings#214]
+01 +- ExternalRDD [obj#211]
+18:38:51.707 ScalaTest-run INFO QueryExecution: 
+
+AnalyzedPlan: 
+00 SerializeFromObject [staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$CourseSales, true])).course, true) AS course#212, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$CourseSales, true])).year AS year#213, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$CourseSales, true])).earnings AS earnings#214]
+01 +- ExternalRDD [obj#211]
+18:38:51.709 ScalaTest-run INFO QueryExecution: 
+
+OptmizedPlan: 
+00 SerializeFromObject [staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$CourseSales, true]).course, true) AS course#212, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$CourseSales, true]).year AS year#213, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$CourseSales, true]).earnings AS earnings#214]
+01 +- ExternalRDD [obj#211]
+18:38:51.710 ScalaTest-run INFO QueryExecution: 
+
+SparkPlan: 
+00 SerializeFromObject [staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$CourseSales, true]).course, true) AS course#212, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$CourseSales, true]).year AS year#213, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$CourseSales, true]).earnings AS earnings#214]
+01 +- Scan ExternalRDDScan[obj#211]
+18:38:51.712 ScalaTest-run INFO QueryExecution: 
+
+ExecutedPlan: 
+00 *SerializeFromObject [staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$CourseSales, true]).course, true) AS course#212, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$CourseSales, true]).year AS year#213, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$CourseSales, true]).earnings AS earnings#214]
+01 +- Scan ExternalRDDScan[obj#211]
+18:38:51.780 ScalaTest-run-running-JoinSuite INFO JoinSuite: 
+
+===== TEST OUTPUT FOR o.a.s.sql.JoinSuite: 'equi-join is hash-join' =====
+
+18:38:51.791 ScalaTest-run-running-JoinSuite INFO QueryExecution: 
+
+LogicalPlan: 
+00 SubqueryAlias x
+01 +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true])).a AS a#23, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true])).b AS b#24]
+02    +- ExternalRDD [obj#22]
+18:38:51.795 ScalaTest-run-running-JoinSuite INFO QueryExecution: 
+
+AnalyzedPlan: 
+00 SubqueryAlias x
+01 +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true])).a AS a#23, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true])).b AS b#24]
+02    +- ExternalRDD [obj#22]
+18:38:51.797 ScalaTest-run-running-JoinSuite INFO QueryExecution: 
+
+OptmizedPlan: 
+00 SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true]).a AS a#23, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true]).b AS b#24]
+01 +- ExternalRDD [obj#22]
+18:38:51.799 ScalaTest-run-running-JoinSuite INFO QueryExecution: 
+
+SparkPlan: 
+00 SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true]).a AS a#23, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true]).b AS b#24]
+01 +- Scan ExternalRDDScan[obj#22]
+18:38:51.800 ScalaTest-run-running-JoinSuite INFO QueryExecution: 
+
+ExecutedPlan: 
+00 *SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true]).a AS a#23, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true]).b AS b#24]
+01 +- Scan ExternalRDDScan[obj#22]
+18:38:51.804 ScalaTest-run-running-JoinSuite INFO QueryExecution: 
+
+LogicalPlan: 
+00 SubqueryAlias y
+01 +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true])).a AS a#23, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true])).b AS b#24]
+02    +- ExternalRDD [obj#22]
+18:38:51.806 ScalaTest-run-running-JoinSuite INFO QueryExecution: 
+
+AnalyzedPlan: 
+00 SubqueryAlias y
+01 +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true])).a AS a#23, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true])).b AS b#24]
+02    +- ExternalRDD [obj#22]
+18:38:51.808 ScalaTest-run-running-JoinSuite INFO QueryExecution: 
+
+OptmizedPlan: 
+00 SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true]).a AS a#23, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true]).b AS b#24]
+01 +- ExternalRDD [obj#22]
+18:38:51.809 ScalaTest-run-running-JoinSuite INFO QueryExecution: 
+
+SparkPlan: 
+00 SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true]).a AS a#23, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true]).b AS b#24]
+01 +- Scan ExternalRDDScan[obj#22]
+18:38:51.810 ScalaTest-run-running-JoinSuite INFO QueryExecution: 
+
+ExecutedPlan: 
+00 *SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true]).a AS a#23, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true]).b AS b#24]
+01 +- Scan ExternalRDDScan[obj#22]
+18:38:51.846 ScalaTest-run-running-JoinSuite INFO QueryExecution: 
+
+LogicalPlan: 
+00 'Join Inner, ('x.a = 'y.a)
+01 :- SubqueryAlias x
+02 :  +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true])).a AS a#23, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true])).b AS b#24]
+03 :     +- ExternalRDD [obj#22]
+04 +- SubqueryAlias y
+05    +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true])).a AS a#23, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true])).b AS b#24]
+06       +- ExternalRDD [obj#22]
+18:38:51.882 ScalaTest-run-running-JoinSuite INFO QueryExecution: 
+
+AnalyzedPlan: 
+00 Join Inner, (a#23 = a#223)
+01 :- SubqueryAlias x
+02 :  +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true])).a AS a#23, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true])).b AS b#24]
+03 :     +- ExternalRDD [obj#22]
+04 +- SubqueryAlias y
+05    +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true])).a AS a#223, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true])).b AS b#224]
+06       +- ExternalRDD [obj#22]
+18:38:51.973 ScalaTest-run-running-JoinSuite INFO QueryExecution: 
+
+OptmizedPlan: 
+00 Join Inner, (a#23 = a#223)
+01 :- SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true]).a AS a#23, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true]).b AS b#24]
+02 :  +- ExternalRDD [obj#22]
+03 +- SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true]).a AS a#223, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true]).b AS b#224]
+04    +- ExternalRDD [obj#22]
+18:38:52.024 ScalaTest-run-running-JoinSuite INFO SparkStrategies$JoinSelection: SortMergeJoinExec is generated [Inner]
+18:38:52.025 ScalaTest-run-running-JoinSuite INFO SparkStrategies$JoinSelection: 	 conf.preferSortMergeJoin: true
+18:38:52.030 ScalaTest-run-running-JoinSuite INFO QueryExecution: 
+
+SparkPlan: 
+00 SortMergeJoin [a#23], [a#223], Inner
+01 :- SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true]).a AS a#23, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true]).b AS b#24]
+02 :  +- Scan ExternalRDDScan[obj#22]
+03 +- SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true]).a AS a#223, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true]).b AS b#224]
+04    +- Scan ExternalRDDScan[obj#22]
+18:38:52.110 ScalaTest-run-running-JoinSuite INFO QueryExecution: 
+
+ExecutedPlan: 
+00 *SortMergeJoin [a#23], [a#223], Inner
+01 :- *Sort [a#23 ASC NULLS FIRST], false, 0
+02 :  +- Exchange hashpartitioning(a#23, 5)
+03 :     +- *SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true]).a AS a#23, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true]).b AS b#24]
+04 :        +- Scan ExternalRDDScan[obj#22]
+05 +- *Sort [a#223 ASC NULLS FIRST], false, 0
+06    +- ReusedExchange [a#223, b#224], Exchange hashpartitioning(a#23, 5)
+18:38:52.117 ScalaTest-run-running-JoinSuite INFO QueryExecution: 
+
+LogicalPlan: 
+00 SubqueryAlias x
+01 +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true])).a AS a#23, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true])).b AS b#24]
+02    +- ExternalRDD [obj#22]
+18:38:52.118 ScalaTest-run-running-JoinSuite INFO QueryExecution: 
+
+AnalyzedPlan: 
+00 SubqueryAlias x
+01 +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true])).a AS a#23, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true])).b AS b#24]
+02    +- ExternalRDD [obj#22]
+18:38:52.121 ScalaTest-run-running-JoinSuite INFO QueryExecution: 
+
+OptmizedPlan: 
+00 SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true]).a AS a#23, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true]).b AS b#24]
+01 +- ExternalRDD [obj#22]
+18:38:52.121 ScalaTest-run-running-JoinSuite INFO QueryExecution: 
+
+SparkPlan: 
+00 SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true]).a AS a#23, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true]).b AS b#24]
+01 +- Scan ExternalRDDScan[obj#22]
+18:38:52.122 ScalaTest-run-running-JoinSuite INFO QueryExecution: 
+
+ExecutedPlan: 
+00 *SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true]).a AS a#23, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true]).b AS b#24]
+01 +- Scan ExternalRDDScan[obj#22]
+18:38:52.127 ScalaTest-run-running-JoinSuite INFO QueryExecution: 
+
+LogicalPlan: 
+00 SubqueryAlias y
+01 +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true])).a AS a#23, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true])).b AS b#24]
+02    +- ExternalRDD [obj#22]
+18:38:52.128 ScalaTest-run-running-JoinSuite INFO QueryExecution: 
+
+AnalyzedPlan: 
+00 SubqueryAlias y
+01 +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true])).a AS a#23, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true])).b AS b#24]
+02    +- ExternalRDD [obj#22]
+18:38:52.131 ScalaTest-run-running-JoinSuite INFO QueryExecution: 
+
+OptmizedPlan: 
+00 SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true]).a AS a#23, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true]).b AS b#24]
+01 +- ExternalRDD [obj#22]
+18:38:52.132 ScalaTest-run-running-JoinSuite INFO QueryExecution: 
+
+SparkPlan: 
+00 SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true]).a AS a#23, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true]).b AS b#24]
+01 +- Scan ExternalRDDScan[obj#22]
+18:38:52.133 ScalaTest-run-running-JoinSuite INFO QueryExecution: 
+
+ExecutedPlan: 
+00 *SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true]).a AS a#23, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true]).b AS b#24]
+01 +- Scan ExternalRDDScan[obj#22]
+18:38:52.141 ScalaTest-run-running-JoinSuite INFO QueryExecution: 
+
+LogicalPlan: 
+00 Join Inner, (a#23 = a#223)
+01 :- SubqueryAlias x
+02 :  +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true])).a AS a#23, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true])).b AS b#24]
+03 :     +- ExternalRDD [obj#22]
+04 +- SubqueryAlias y
+05    +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true])).a AS a#223, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true])).b AS b#224]
+06       +- ExternalRDD [obj#22]
+18:38:52.143 ScalaTest-run-running-JoinSuite INFO QueryExecution: 
+
+AnalyzedPlan: 
+00 Join Inner, (a#23 = a#223)
+01 :- SubqueryAlias x
+02 :  +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true])).a AS a#23, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true])).b AS b#24]
+03 :     +- ExternalRDD [obj#22]
+04 +- SubqueryAlias y
+05    +- SerializeFromObject [assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true])).a AS a#223, assertnotnull(assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true])).b AS b#224]
+06       +- ExternalRDD [obj#22]
+18:38:52.150 ScalaTest-run-running-JoinSuite INFO QueryExecution: 
+
+OptmizedPlan: 
+00 Join Inner, (a#23 = a#223)
+01 :- SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true]).a AS a#23, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true]).b AS b#24]
+02 :  +- ExternalRDD [obj#22]
+03 +- SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true]).a AS a#223, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true]).b AS b#224]
+04    +- ExternalRDD [obj#22]
+18:38:52.151 ScalaTest-run-running-JoinSuite INFO SparkStrategies$JoinSelection: SortMergeJoinExec is generated [Inner]
+18:38:52.151 ScalaTest-run-running-JoinSuite INFO SparkStrategies$JoinSelection: 	 conf.preferSortMergeJoin: true
+18:38:52.153 ScalaTest-run-running-JoinSuite INFO QueryExecution: 
+
+SparkPlan: 
+00 SortMergeJoin [a#23], [a#223], Inner
+01 :- SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true]).a AS a#23, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true]).b AS b#24]
+02 :  +- Scan ExternalRDDScan[obj#22]
+03 +- SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true]).a AS a#223, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true]).b AS b#224]
+04    +- Scan ExternalRDDScan[obj#22]
+18:38:52.158 ScalaTest-run-running-JoinSuite INFO QueryExecution: 
+
+ExecutedPlan: 
+00 *SortMergeJoin [a#23], [a#223], Inner
+01 :- *Sort [a#23 ASC NULLS FIRST], false, 0
+02 :  +- Exchange hashpartitioning(a#23, 5)
+03 :     +- *SerializeFromObject [assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true]).a AS a#23, assertnotnull(input[0, org.apache.spark.sql.test.SQLTestData$TestData2, true]).b AS b#24]
+04 :        +- Scan ExternalRDDScan[obj#22]
+05 +- *Sort [a#223 ASC NULLS FIRST], false, 0
+06    +- ReusedExchange [a#223, b#224], Exchange hashpartitioning(a#23, 5)

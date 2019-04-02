@@ -1,0 +1,1280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/server/blockmanagement/BlockPlacementPolicyGPT.java" line="123" mnemonic="0" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="59854af5-318c-4bac-9a29-c8d47ffbe66e" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hadoop-hdfs/src/contrib/bkjournal/target/hadoop-hdfs-bkjournal-2.7.4.jar" afterPath="$PROJECT_DIR$/hadoop-hdfs/src/contrib/bkjournal/target/hadoop-hdfs-bkjournal-2.7.4.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hadoop-hdfs/target/classes/org/apache/hadoop/hdfs/server/blockmanagement/BlockPlacementPolicyGPT.class" afterPath="$PROJECT_DIR$/hadoop-hdfs/target/classes/org/apache/hadoop/hdfs/server/blockmanagement/BlockPlacementPolicyGPT.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hadoop-hdfs/target/hadoop-hdfs-2.7.4-sources.jar" afterPath="$PROJECT_DIR$/hadoop-hdfs/target/hadoop-hdfs-2.7.4-sources.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hadoop-hdfs/target/hadoop-hdfs-2.7.4-test-sources.jar" afterPath="$PROJECT_DIR$/hadoop-hdfs/target/hadoop-hdfs-2.7.4-test-sources.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hadoop-hdfs/target/hadoop-hdfs-2.7.4-tests.jar" afterPath="$PROJECT_DIR$/hadoop-hdfs/target/hadoop-hdfs-2.7.4-tests.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hadoop-hdfs/target/hadoop-hdfs-2.7.4.jar" afterPath="$PROJECT_DIR$/hadoop-hdfs/target/hadoop-hdfs-2.7.4.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/server/blockmanagement/BlockPlacementPolicyGPT.java" afterPath="$PROJECT_DIR$/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/server/blockmanagement/BlockPlacementPolicyGPT.java" />
+    </list>
+    <ignored path="$PROJECT_DIR$/hadoop-hdfs-httpfs/target/" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <ignored path="$PROJECT_DIR$/hadoop-hdfs/src/contrib/bkjournal/target/" />
+    <ignored path="$PROJECT_DIR$/hadoop-hdfs-nfs/target/" />
+    <ignored path="$PROJECT_DIR$/hadoop-hdfs/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="BlockPlacementPolicyGPT.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/server/blockmanagement/BlockPlacementPolicyGPT.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="1197" column="12" lean-forward="false" selection-start-line="1197" selection-start-column="12" selection-end-line="1197" selection-end-column="12" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2487#2644#0" expanded="true" />
+                <element signature="e#2643#2644#0" expanded="true" />
+                <element signature="e#10668#10689#0" expanded="true" />
+                <element signature="e#14538#14559#0" expanded="true" />
+                <element signature="e#17798#17836#0" expanded="true" />
+                <element signature="e#20140#20146#0" expanded="true" />
+                <element signature="e#47354#47362#0" expanded="true" />
+                <element signature="e#55166#55186#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BlockManager.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/server/blockmanagement/BlockManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="48840">
+              <caret line="3404" column="31" lean-forward="false" selection-start-line="3404" selection-start-column="27" selection-end-line="3404" selection-end-column="33" />
+              <folding>
+                <element signature="n#!!doc" expanded="false" />
+                <element signature="imports" expanded="false" />
+                <element signature="e#6140#6141#0" expanded="false" />
+                <element signature="e#6186#6187#0" expanded="false" />
+                <element signature="e#6259#6260#0" expanded="false" />
+                <element signature="e#6302#6303#0" expanded="false" />
+                <element signature="e#6374#6375#0" expanded="false" />
+                <element signature="e#6416#6417#0" expanded="false" />
+                <element signature="e#6494#6495#0" expanded="false" />
+                <element signature="e#6542#6543#0" expanded="false" />
+                <element signature="e#6615#6616#0" expanded="false" />
+                <element signature="e#6660#6661#0" expanded="false" />
+                <element signature="e#6736#6737#0" expanded="false" />
+                <element signature="e#6782#6783#0" expanded="false" />
+                <element signature="e#6846#6847#0" expanded="false" />
+                <element signature="e#6886#6887#0" expanded="false" />
+                <element signature="e#6966#6967#0" expanded="false" />
+                <element signature="e#7018#7019#0" expanded="false" />
+                <element signature="e#7091#7092#0" expanded="false" />
+                <element signature="e#7133#7134#0" expanded="false" />
+                <element signature="e#18529#18530#0" expanded="false" />
+                <element signature="e#18584#18585#0" expanded="false" />
+                <element signature="e#18638#18639#0" expanded="false" />
+                <element signature="e#18690#18691#0" expanded="false" />
+                <element signature="e#18904#18905#0" expanded="false" />
+                <element signature="e#18939#18940#0" expanded="false" />
+                <element signature="e#19066#19067#0" expanded="false" />
+                <element signature="e#19106#19107#0" expanded="false" />
+                <element signature="e#19238#19239#0" expanded="false" />
+                <element signature="e#19270#19271#0" expanded="false" />
+                <element signature="e#19313#19314#0" expanded="false" />
+                <element signature="e#19361#19362#0" expanded="false" />
+                <element signature="e#20175#20176#0" expanded="false" />
+                <element signature="e#20207#20208#0" expanded="false" />
+                <element signature="e#20287#20288#0" expanded="false" />
+                <element signature="e#20318#20319#0" expanded="false" />
+                <element signature="e#24163#24164#0" expanded="false" />
+                <element signature="e#24201#24202#0" expanded="false" />
+                <element signature="e#24318#24319#0" expanded="false" />
+                <element signature="e#24387#24388#0" expanded="false" />
+                <element signature="e#52026#52027#0" expanded="false" />
+                <element signature="e#52083#52084#0" expanded="false" />
+                <element signature="e#52127#52128#0" expanded="false" />
+                <element signature="e#52174#52175#0" expanded="false" />
+                <element signature="e#52506#52507#0" expanded="false" />
+                <element signature="e#52572#52573#0" expanded="false" />
+                <element signature="e#112416#112417#0" expanded="false" />
+                <element signature="e#112462#112463#0" expanded="false" />
+                <element signature="e#132740#132741#0" expanded="false" />
+                <element signature="e#132773#132774#0" expanded="false" />
+                <element signature="e#133100#133101#0" expanded="false" />
+                <element signature="e#133133#133134#0" expanded="false" />
+                <element signature="e#133790#133791#0" expanded="false" />
+                <element signature="e#133838#133839#0" expanded="false" />
+                <element signature="e#139223#139224#0" expanded="false" />
+                <element signature="e#139271#139272#0" expanded="false" />
+                <element signature="e#139391#139392#0" expanded="false" />
+                <element signature="e#139436#139437#0" expanded="false" />
+                <element signature="e#139484#139485#0" expanded="false" />
+                <element signature="e#139542#139543#0" expanded="false" />
+                <element signature="e#140454#140455#0" expanded="false" />
+                <element signature="e#140494#140495#0" expanded="false" />
+                <element signature="e#141823#141824#0" expanded="false" />
+                <element signature="e#141871#141872#0" expanded="false" />
+                <element signature="e#142190#142191#0" expanded="false" />
+                <element signature="e#142232#142233#0" expanded="false" />
+                <element signature="e#148321#148322#0" expanded="false" />
+                <element signature="e#148350#148351#0" expanded="false" />
+                <element signature="e#148402#148403#0" expanded="false" />
+                <element signature="e#148449#148450#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UnderReplicatedBlocks.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/server/blockmanagement/UnderReplicatedBlocks.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="375">
+              <caret line="305" column="30" lean-forward="false" selection-start-line="305" selection-start-column="30" selection-end-line="305" selection-end-column="30" />
+              <folding>
+                <element signature="n#!!doc" expanded="false" />
+                <element signature="imports" expanded="false" />
+                <element signature="e#5294#5295#0" expanded="false" />
+                <element signature="e#5363#5364#0" expanded="false" />
+                <element signature="e#5485#5486#0" expanded="false" />
+                <element signature="e#5522#5523#0" expanded="false" />
+                <element signature="e#16342#16343#0" expanded="false" />
+                <element signature="e#16383#16384#0" expanded="false" />
+                <element signature="e#16509#16510#0" expanded="false" />
+                <element signature="e#16545#16546#0" expanded="false" />
+                <element signature="e#18046#18047#0" expanded="false" />
+                <element signature="e#18072#18073#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>numPartitions</find>
+      <find>chooseRandom</find>
+      <find>dn</find>
+      <find>LOG</find>
+      <find>maxPartitions</find>
+      <find>numReplicas</find>
+      <find>partitionMap</find>
+      <find>Increasing</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/hadoop-hdfs" />
+  </component>
+  <component name="GradleLocalSettings">
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/server/blockmanagement/BlockPlacementPolicyGPT.java" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="1280" />
+    <option name="width" value="1920" />
+    <option name="height" value="1080" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hadoop-hdfs-project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hadoop-hdfs-project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="FullScreen" value="true" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file id="idea.log" enabled="true" />
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android App">
+      <module name="" />
+      <option name="DEPLOY" value="true" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="DEBUGGER_TYPE" value="Java" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <Java />
+      <Profilers>
+        <option name="ENABLE_ADVANCED_PROFILING" value="true" />
+        <option name="GAPID_ENABLED" value="false" />
+        <option name="GAPID_DISABLE_PCS" value="false" />
+        <option name="SUPPORT_LIB_ENABLED" value="true" />
+        <option name="INSTRUMENTATION_ENABLED" value="true" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
+      <module name="" />
+      <option name="TESTING_TYPE" value="0" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="EXTRA_OPTIONS" value="" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="DEBUGGER_TYPE" value="Java" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <Java />
+      <Profilers>
+        <option name="ENABLE_ADVANCED_PROFILING" value="true" />
+        <option name="GAPID_ENABLED" value="false" />
+        <option name="GAPID_DISABLE_PCS" value="false" />
+        <option name="SUPPORT_LIB_ENABLED" value="true" />
+        <option name="INSTRUMENTATION_ENABLED" value="true" />
+      </Profilers>
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <module />
+      <method />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="ArquillianTestNG" factoryName="">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Cold Fusion runner description" factoryName="Cold Fusion" custom_browser="" web_path="">
+      <method />
+    </configuration>
+    <configuration default="true" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="myFilePath" />
+      <option name="GLUE" />
+      <option name="myNameFilter" />
+      <option name="myGeneratedName" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="FlashRunConfigurationType" factoryName="Flash App">
+      <option name="BCName" value="" />
+      <option name="IOSSimulatorSdkPath" value="" />
+      <option name="adlOptions" value="" />
+      <option name="airProgramParameters" value="" />
+      <option name="appDescriptorForEmulator" value="Android" />
+      <option name="debugTransport" value="USB" />
+      <option name="debuggerSdkRaw" value="BC SDK" />
+      <option name="emulator" value="NexusOne" />
+      <option name="emulatorAdlOptions" value="" />
+      <option name="fastPackaging" value="true" />
+      <option name="fullScreenHeight" value="0" />
+      <option name="fullScreenWidth" value="0" />
+      <option name="launchUrl" value="false" />
+      <option name="launcherParameters">
+        <LauncherParameters>
+          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
+          <option name="launcherType" value="OSDefault" />
+          <option name="newPlayerInstance" value="false" />
+          <option name="playerPath" value="/Applications/Flash Player Debugger.app" />
+        </LauncherParameters>
+      </option>
+      <option name="mobileRunTarget" value="Emulator" />
+      <option name="moduleName" value="" />
+      <option name="overriddenMainClass" value="" />
+      <option name="overriddenOutputFileName" value="" />
+      <option name="overrideMainClass" value="false" />
+      <option name="runTrusted" value="true" />
+      <option name="screenDpi" value="0" />
+      <option name="screenHeight" value="0" />
+      <option name="screenWidth" value="0" />
+      <option name="url" value="http://" />
+      <option name="usbDebugPort" value="7936" />
+      <method />
+    </configuration>
+    <configuration default="true" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" appDescriptorForEmulator="Android" class_name="" emulatorAdlOptions="" method_name="" package_name="" scope="Class">
+      <option name="BCName" value="" />
+      <option name="launcherParameters">
+        <LauncherParameters>
+          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
+          <option name="launcherType" value="OSDefault" />
+          <option name="newPlayerInstance" value="false" />
+          <option name="playerPath" value="/Applications/Flash Player Debugger.app" />
+        </LauncherParameters>
+      </option>
+      <option name="moduleName" value="" />
+      <option name="trusted" value="true" />
+      <method />
+    </configuration>
+    <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list />
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <method />
+    </configuration>
+    <configuration default="true" type="GrailsRunConfigurationType" factoryName="Grails">
+      <setting name="vmparams" value="" />
+      <setting name="cmdLine" value="run-app" />
+      <setting name="passParentEnv" value="true" />
+      <setting name="launchBrowser" value="true" />
+      <setting name="launchBrowserUrl" value="" />
+      <setting name="depsClasspath" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="JarApplication" factoryName="JAR Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="Java Scratch" factoryName="Java Scratch">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="SCRATCH_FILE_ID" value="0" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerJest" factoryName="Jest">
+      <node-interpreter value="project" />
+      <working-dir value="" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="hadoop-hdfs" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+      <method />
+    </configuration>
+    <configuration default="true" type="ScalaTestRunConfiguration" factoryName="ScalaTest">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <setting name="path" value="" />
+      <setting name="package" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workingDirectory" value="" />
+      <setting name="searchForTest" value="Across module dependencies" />
+      <setting name="testName" value="" />
+      <setting name="testKind" value="Class" />
+      <setting name="showProgressMessages" value="true" />
+      <setting name="useSbt" value="false" />
+      <setting name="useUiWithSbt" value="false" />
+      <classRegexps />
+      <testRegexps />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="Specs2RunConfiguration" factoryName="Specs2">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <setting name="path" value="" />
+      <setting name="package" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workingDirectory" value="" />
+      <setting name="searchForTest" value="Across module dependencies" />
+      <setting name="testName" value="" />
+      <setting name="testKind" value="Class" />
+      <setting name="showProgressMessages" value="true" />
+      <setting name="useSbt" value="false" />
+      <setting name="useUiWithSbt" value="false" />
+      <classRegexps />
+      <testRegexps />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="osgi.bnd.run" factoryName="Run Launcher">
+      <method />
+    </configuration>
+    <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
+      <method />
+    </configuration>
+    <configuration default="true" type="uTestRunConfiguration" factoryName="utest">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <setting name="path" value="" />
+      <setting name="package" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workingDirectory" value="" />
+      <setting name="searchForTest" value="Across module dependencies" />
+      <setting name="testName" value="" />
+      <setting name="testKind" value="Class" />
+      <setting name="showProgressMessages" value="true" />
+      <setting name="useSbt" value="false" />
+      <setting name="useUiWithSbt" value="false" />
+      <classRegexps />
+      <testRegexps />
+      <envs />
+      <method />
+    </configuration>
+  </component>
+  <component name="SbtLocalSettings">
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="59854af5-318c-4bac-9a29-c8d47ffbe66e" name="Default" comment="" />
+      <created>1511968304817</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1511968304817</updated>
+      <workItem from="1511968309789" duration="1561000" />
+      <workItem from="1512114828138" duration="1038000" />
+      <workItem from="1512392225991" duration="8446000" />
+      <workItem from="1512580638701" duration="718000" />
+      <workItem from="1512746044470" duration="2382000" />
+      <workItem from="1512885450924" duration="4000" />
+      <workItem from="1514124986781" duration="130000" />
+      <workItem from="1514168743536" duration="2192000" />
+      <workItem from="1515000053810" duration="52000" />
+      <workItem from="1515000155962" duration="92000" />
+      <workItem from="1515320957929" duration="1335000" />
+      <workItem from="1515515154123" duration="361000" />
+      <workItem from="1528370591539" duration="1247000" />
+      <workItem from="1528562465094" duration="451000" />
+      <workItem from="1528768886453" duration="453000" />
+      <workItem from="1540980702042" duration="551000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="21013000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="1280" y="0" width="1920" height="1080" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Tool Output" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="ANTLR Preview" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27059773" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="SBT Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17092651" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="processedProjectFiles" value="true" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/server/blockmanagement/BlockPlacementPolicyGPT.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8040">
+          <caret line="574" column="9" lean-forward="true" selection-start-line="574" selection-start-column="9" selection-end-line="574" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2487#2644#0" expanded="true" />
+            <element signature="e#2643#2644#0" expanded="true" />
+            <element signature="e#10668#10689#0" expanded="true" />
+            <element signature="e#14538#14559#0" expanded="true" />
+            <element signature="e#17798#17836#0" expanded="true" />
+            <element signature="e#20140#20146#0" expanded="true" />
+            <element signature="e#47354#47362#0" expanded="true" />
+            <element signature="e#55166#55186#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/server/blockmanagement/BlockManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51060">
+          <caret line="3404" column="31" lean-forward="true" selection-start-line="3404" selection-start-column="27" selection-end-line="3404" selection-end-column="33" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#6140#6141#0" expanded="false" />
+            <element signature="e#6186#6187#0" expanded="false" />
+            <element signature="e#6259#6260#0" expanded="false" />
+            <element signature="e#6302#6303#0" expanded="false" />
+            <element signature="e#6374#6375#0" expanded="false" />
+            <element signature="e#6416#6417#0" expanded="false" />
+            <element signature="e#6494#6495#0" expanded="false" />
+            <element signature="e#6542#6543#0" expanded="false" />
+            <element signature="e#6615#6616#0" expanded="false" />
+            <element signature="e#6660#6661#0" expanded="false" />
+            <element signature="e#6736#6737#0" expanded="false" />
+            <element signature="e#6782#6783#0" expanded="false" />
+            <element signature="e#6846#6847#0" expanded="false" />
+            <element signature="e#6886#6887#0" expanded="false" />
+            <element signature="e#6966#6967#0" expanded="false" />
+            <element signature="e#7018#7019#0" expanded="false" />
+            <element signature="e#7091#7092#0" expanded="false" />
+            <element signature="e#7133#7134#0" expanded="false" />
+            <element signature="e#18529#18530#0" expanded="false" />
+            <element signature="e#18584#18585#0" expanded="false" />
+            <element signature="e#18638#18639#0" expanded="false" />
+            <element signature="e#18690#18691#0" expanded="false" />
+            <element signature="e#18904#18905#0" expanded="false" />
+            <element signature="e#18939#18940#0" expanded="false" />
+            <element signature="e#19066#19067#0" expanded="false" />
+            <element signature="e#19106#19107#0" expanded="false" />
+            <element signature="e#19238#19239#0" expanded="false" />
+            <element signature="e#19270#19271#0" expanded="false" />
+            <element signature="e#19313#19314#0" expanded="false" />
+            <element signature="e#19361#19362#0" expanded="false" />
+            <element signature="e#20175#20176#0" expanded="false" />
+            <element signature="e#20207#20208#0" expanded="false" />
+            <element signature="e#20287#20288#0" expanded="false" />
+            <element signature="e#20318#20319#0" expanded="false" />
+            <element signature="e#24163#24164#0" expanded="false" />
+            <element signature="e#24201#24202#0" expanded="false" />
+            <element signature="e#24318#24319#0" expanded="false" />
+            <element signature="e#24387#24388#0" expanded="false" />
+            <element signature="e#52026#52027#0" expanded="false" />
+            <element signature="e#52083#52084#0" expanded="false" />
+            <element signature="e#52127#52128#0" expanded="false" />
+            <element signature="e#52174#52175#0" expanded="false" />
+            <element signature="e#52506#52507#0" expanded="false" />
+            <element signature="e#52572#52573#0" expanded="false" />
+            <element signature="e#112416#112417#0" expanded="false" />
+            <element signature="e#112462#112463#0" expanded="false" />
+            <element signature="e#132740#132741#0" expanded="false" />
+            <element signature="e#132773#132774#0" expanded="false" />
+            <element signature="e#133100#133101#0" expanded="false" />
+            <element signature="e#133133#133134#0" expanded="false" />
+            <element signature="e#133790#133791#0" expanded="false" />
+            <element signature="e#133838#133839#0" expanded="false" />
+            <element signature="e#139223#139224#0" expanded="false" />
+            <element signature="e#139271#139272#0" expanded="false" />
+            <element signature="e#139391#139392#0" expanded="false" />
+            <element signature="e#139436#139437#0" expanded="false" />
+            <element signature="e#139484#139485#0" expanded="false" />
+            <element signature="e#139542#139543#0" expanded="false" />
+            <element signature="e#140454#140455#0" expanded="false" />
+            <element signature="e#140494#140495#0" expanded="false" />
+            <element signature="e#141823#141824#0" expanded="false" />
+            <element signature="e#141871#141872#0" expanded="false" />
+            <element signature="e#142190#142191#0" expanded="false" />
+            <element signature="e#142232#142233#0" expanded="false" />
+            <element signature="e#148321#148322#0" expanded="false" />
+            <element signature="e#148350#148351#0" expanded="false" />
+            <element signature="e#148402#148403#0" expanded="false" />
+            <element signature="e#148449#148450#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/server/blockmanagement/UnderReplicatedBlocks.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4140">
+          <caret line="305" column="30" lean-forward="true" selection-start-line="305" selection-start-column="30" selection-end-line="305" selection-end-column="30" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#5294#5295#0" expanded="false" />
+            <element signature="e#5363#5364#0" expanded="false" />
+            <element signature="e#5485#5486#0" expanded="false" />
+            <element signature="e#5522#5523#0" expanded="false" />
+            <element signature="e#16342#16343#0" expanded="false" />
+            <element signature="e#16383#16384#0" expanded="false" />
+            <element signature="e#16509#16510#0" expanded="false" />
+            <element signature="e#16545#16546#0" expanded="false" />
+            <element signature="e#18046#18047#0" expanded="false" />
+            <element signature="e#18072#18073#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/server/blockmanagement/BlockPlacementPolicyGPT.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2487#2644#0" expanded="true" />
+            <element signature="e#2643#2644#0" expanded="true" />
+            <element signature="e#10668#10689#0" expanded="true" />
+            <element signature="e#14538#14559#0" expanded="true" />
+            <element signature="e#17798#17836#0" expanded="true" />
+            <element signature="e#20140#20146#0" expanded="true" />
+            <element signature="e#47354#47362#0" expanded="true" />
+            <element signature="e#55166#55186#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/server/blockmanagement/BlockPlacementPolicyGPT.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2487#2644#0" expanded="true" />
+            <element signature="e#2643#2644#0" expanded="true" />
+            <element signature="e#10668#10689#0" expanded="true" />
+            <element signature="e#14538#14559#0" expanded="true" />
+            <element signature="e#17798#17836#0" expanded="true" />
+            <element signature="e#20140#20146#0" expanded="true" />
+            <element signature="e#47354#47362#0" expanded="true" />
+            <element signature="e#55166#55186#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/server/blockmanagement/BlockPlacementPolicyGPT.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2487#2644#0" expanded="true" />
+            <element signature="e#2643#2644#0" expanded="true" />
+            <element signature="e#10668#10689#0" expanded="true" />
+            <element signature="e#14538#14559#0" expanded="true" />
+            <element signature="e#17798#17836#0" expanded="true" />
+            <element signature="e#20140#20146#0" expanded="true" />
+            <element signature="e#47354#47362#0" expanded="true" />
+            <element signature="e#55166#55186#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/server/blockmanagement/BlockPlacementPolicyGPT.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2487#2644#0" expanded="true" />
+            <element signature="e#2643#2644#0" expanded="true" />
+            <element signature="e#10668#10689#0" expanded="true" />
+            <element signature="e#14538#14559#0" expanded="true" />
+            <element signature="e#17798#17836#0" expanded="true" />
+            <element signature="e#20140#20146#0" expanded="true" />
+            <element signature="e#47354#47362#0" expanded="true" />
+            <element signature="e#55166#55186#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/server/blockmanagement/BlockPlacementPolicyGPT.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2487#2644#0" expanded="true" />
+            <element signature="e#2643#2644#0" expanded="true" />
+            <element signature="e#10668#10689#0" expanded="true" />
+            <element signature="e#14538#14559#0" expanded="true" />
+            <element signature="e#17798#17836#0" expanded="true" />
+            <element signature="e#20140#20146#0" expanded="true" />
+            <element signature="e#47354#47362#0" expanded="true" />
+            <element signature="e#55166#55186#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/server/blockmanagement/BlockPlacementPolicyGPT.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2487#2644#0" expanded="true" />
+            <element signature="e#2643#2644#0" expanded="true" />
+            <element signature="e#10668#10689#0" expanded="true" />
+            <element signature="e#14538#14559#0" expanded="true" />
+            <element signature="e#17798#17836#0" expanded="true" />
+            <element signature="e#20140#20146#0" expanded="true" />
+            <element signature="e#47354#47362#0" expanded="true" />
+            <element signature="e#55166#55186#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/server/blockmanagement/BlockPlacementPolicyGPT.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2487#2644#0" expanded="true" />
+            <element signature="e#2643#2644#0" expanded="true" />
+            <element signature="e#10668#10689#0" expanded="true" />
+            <element signature="e#14538#14559#0" expanded="true" />
+            <element signature="e#17798#17836#0" expanded="true" />
+            <element signature="e#20140#20146#0" expanded="true" />
+            <element signature="e#47354#47362#0" expanded="true" />
+            <element signature="e#55166#55186#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/server/blockmanagement/BlockPlacementPolicyGPT.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2487#2644#0" expanded="true" />
+            <element signature="e#2643#2644#0" expanded="true" />
+            <element signature="e#10668#10689#0" expanded="true" />
+            <element signature="e#14538#14559#0" expanded="true" />
+            <element signature="e#17798#17836#0" expanded="true" />
+            <element signature="e#20140#20146#0" expanded="true" />
+            <element signature="e#47354#47362#0" expanded="true" />
+            <element signature="e#55166#55186#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/server/blockmanagement/BlockPlacementPolicyGPT.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2487#2644#0" expanded="true" />
+            <element signature="e#2643#2644#0" expanded="true" />
+            <element signature="e#10668#10689#0" expanded="true" />
+            <element signature="e#14538#14559#0" expanded="true" />
+            <element signature="e#17798#17836#0" expanded="true" />
+            <element signature="e#20140#20146#0" expanded="true" />
+            <element signature="e#47354#47362#0" expanded="true" />
+            <element signature="e#55166#55186#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/server/blockmanagement/BlockPlacementPolicyGPT.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2487#2644#0" expanded="true" />
+            <element signature="e#2643#2644#0" expanded="true" />
+            <element signature="e#10668#10689#0" expanded="true" />
+            <element signature="e#14538#14559#0" expanded="true" />
+            <element signature="e#17798#17836#0" expanded="true" />
+            <element signature="e#20140#20146#0" expanded="true" />
+            <element signature="e#47354#47362#0" expanded="true" />
+            <element signature="e#55166#55186#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/server/blockmanagement/BlockPlacementPolicyGPT.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2487#2644#0" expanded="true" />
+            <element signature="e#2643#2644#0" expanded="true" />
+            <element signature="e#10668#10689#0" expanded="true" />
+            <element signature="e#14538#14559#0" expanded="true" />
+            <element signature="e#17798#17836#0" expanded="true" />
+            <element signature="e#20140#20146#0" expanded="true" />
+            <element signature="e#47354#47362#0" expanded="true" />
+            <element signature="e#55166#55186#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/server/blockmanagement/BlockPlacementPolicyGPT.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2487#2644#0" expanded="true" />
+            <element signature="e#2643#2644#0" expanded="true" />
+            <element signature="e#10668#10689#0" expanded="true" />
+            <element signature="e#14538#14559#0" expanded="true" />
+            <element signature="e#17798#17836#0" expanded="true" />
+            <element signature="e#20140#20146#0" expanded="true" />
+            <element signature="e#47354#47362#0" expanded="true" />
+            <element signature="e#55166#55186#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/server/blockmanagement/BlockPlacementPolicyGPT.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2487#2644#0" expanded="true" />
+            <element signature="e#2643#2644#0" expanded="true" />
+            <element signature="e#10668#10689#0" expanded="true" />
+            <element signature="e#14538#14559#0" expanded="true" />
+            <element signature="e#17798#17836#0" expanded="true" />
+            <element signature="e#20140#20146#0" expanded="true" />
+            <element signature="e#47354#47362#0" expanded="true" />
+            <element signature="e#55166#55186#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/server/blockmanagement/BlockPlacementPolicyGPT.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2487#2644#0" expanded="true" />
+            <element signature="e#2643#2644#0" expanded="true" />
+            <element signature="e#10668#10689#0" expanded="true" />
+            <element signature="e#14538#14559#0" expanded="true" />
+            <element signature="e#17798#17836#0" expanded="true" />
+            <element signature="e#20140#20146#0" expanded="true" />
+            <element signature="e#47354#47362#0" expanded="true" />
+            <element signature="e#55166#55186#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/server/blockmanagement/BlockManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48840">
+          <caret line="3404" column="31" lean-forward="false" selection-start-line="3404" selection-start-column="27" selection-end-line="3404" selection-end-column="33" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#6140#6141#0" expanded="false" />
+            <element signature="e#6186#6187#0" expanded="false" />
+            <element signature="e#6259#6260#0" expanded="false" />
+            <element signature="e#6302#6303#0" expanded="false" />
+            <element signature="e#6374#6375#0" expanded="false" />
+            <element signature="e#6416#6417#0" expanded="false" />
+            <element signature="e#6494#6495#0" expanded="false" />
+            <element signature="e#6542#6543#0" expanded="false" />
+            <element signature="e#6615#6616#0" expanded="false" />
+            <element signature="e#6660#6661#0" expanded="false" />
+            <element signature="e#6736#6737#0" expanded="false" />
+            <element signature="e#6782#6783#0" expanded="false" />
+            <element signature="e#6846#6847#0" expanded="false" />
+            <element signature="e#6886#6887#0" expanded="false" />
+            <element signature="e#6966#6967#0" expanded="false" />
+            <element signature="e#7018#7019#0" expanded="false" />
+            <element signature="e#7091#7092#0" expanded="false" />
+            <element signature="e#7133#7134#0" expanded="false" />
+            <element signature="e#18529#18530#0" expanded="false" />
+            <element signature="e#18584#18585#0" expanded="false" />
+            <element signature="e#18638#18639#0" expanded="false" />
+            <element signature="e#18690#18691#0" expanded="false" />
+            <element signature="e#18904#18905#0" expanded="false" />
+            <element signature="e#18939#18940#0" expanded="false" />
+            <element signature="e#19066#19067#0" expanded="false" />
+            <element signature="e#19106#19107#0" expanded="false" />
+            <element signature="e#19238#19239#0" expanded="false" />
+            <element signature="e#19270#19271#0" expanded="false" />
+            <element signature="e#19313#19314#0" expanded="false" />
+            <element signature="e#19361#19362#0" expanded="false" />
+            <element signature="e#20175#20176#0" expanded="false" />
+            <element signature="e#20207#20208#0" expanded="false" />
+            <element signature="e#20287#20288#0" expanded="false" />
+            <element signature="e#20318#20319#0" expanded="false" />
+            <element signature="e#24163#24164#0" expanded="false" />
+            <element signature="e#24201#24202#0" expanded="false" />
+            <element signature="e#24318#24319#0" expanded="false" />
+            <element signature="e#24387#24388#0" expanded="false" />
+            <element signature="e#52026#52027#0" expanded="false" />
+            <element signature="e#52083#52084#0" expanded="false" />
+            <element signature="e#52127#52128#0" expanded="false" />
+            <element signature="e#52174#52175#0" expanded="false" />
+            <element signature="e#52506#52507#0" expanded="false" />
+            <element signature="e#52572#52573#0" expanded="false" />
+            <element signature="e#112416#112417#0" expanded="false" />
+            <element signature="e#112462#112463#0" expanded="false" />
+            <element signature="e#132740#132741#0" expanded="false" />
+            <element signature="e#132773#132774#0" expanded="false" />
+            <element signature="e#133100#133101#0" expanded="false" />
+            <element signature="e#133133#133134#0" expanded="false" />
+            <element signature="e#133790#133791#0" expanded="false" />
+            <element signature="e#133838#133839#0" expanded="false" />
+            <element signature="e#139223#139224#0" expanded="false" />
+            <element signature="e#139271#139272#0" expanded="false" />
+            <element signature="e#139391#139392#0" expanded="false" />
+            <element signature="e#139436#139437#0" expanded="false" />
+            <element signature="e#139484#139485#0" expanded="false" />
+            <element signature="e#139542#139543#0" expanded="false" />
+            <element signature="e#140454#140455#0" expanded="false" />
+            <element signature="e#140494#140495#0" expanded="false" />
+            <element signature="e#141823#141824#0" expanded="false" />
+            <element signature="e#141871#141872#0" expanded="false" />
+            <element signature="e#142190#142191#0" expanded="false" />
+            <element signature="e#142232#142233#0" expanded="false" />
+            <element signature="e#148321#148322#0" expanded="false" />
+            <element signature="e#148350#148351#0" expanded="false" />
+            <element signature="e#148402#148403#0" expanded="false" />
+            <element signature="e#148449#148450#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/server/blockmanagement/UnderReplicatedBlocks.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="305" column="30" lean-forward="false" selection-start-line="305" selection-start-column="30" selection-end-line="305" selection-end-column="30" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#5294#5295#0" expanded="false" />
+            <element signature="e#5363#5364#0" expanded="false" />
+            <element signature="e#5485#5486#0" expanded="false" />
+            <element signature="e#5522#5523#0" expanded="false" />
+            <element signature="e#16342#16343#0" expanded="false" />
+            <element signature="e#16383#16384#0" expanded="false" />
+            <element signature="e#16509#16510#0" expanded="false" />
+            <element signature="e#16545#16546#0" expanded="false" />
+            <element signature="e#18046#18047#0" expanded="false" />
+            <element signature="e#18072#18073#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/server/blockmanagement/BlockPlacementPolicyGPT.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="1197" column="12" lean-forward="false" selection-start-line="1197" selection-start-column="12" selection-end-line="1197" selection-end-column="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2487#2644#0" expanded="true" />
+            <element signature="e#2643#2644#0" expanded="true" />
+            <element signature="e#10668#10689#0" expanded="true" />
+            <element signature="e#14538#14559#0" expanded="true" />
+            <element signature="e#17798#17836#0" expanded="true" />
+            <element signature="e#20140#20146#0" expanded="true" />
+            <element signature="e#47354#47362#0" expanded="true" />
+            <element signature="e#55166#55186#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

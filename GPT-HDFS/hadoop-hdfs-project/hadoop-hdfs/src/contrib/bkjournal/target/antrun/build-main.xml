@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="maven-antrun-" default="main"  >
+<target name="main">
+  <mkdir dir="/Users/Ronymin/Documents/Research/Hadoop-2.7.4/hadoop-hdfs-project/hadoop-hdfs/src/contrib/bkjournal/target/test-dir"/>
+  <mkdir dir="/Users/Ronymin/Documents/Research/Hadoop-2.7.4/hadoop-hdfs-project/hadoop-hdfs/src/contrib/bkjournal/target/test-dir"/>
+</target>
+</project>

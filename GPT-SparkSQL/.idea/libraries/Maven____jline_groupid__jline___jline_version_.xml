@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: ${jline.groupid}:jline:${jline.version}">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/${jline/groupid}/jline/${jline.version}/jline-${jline.version}.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/${jline/groupid}/jline/${jline.version}/jline-${jline.version}-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/${jline/groupid}/jline/${jline.version}/jline-${jline.version}-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

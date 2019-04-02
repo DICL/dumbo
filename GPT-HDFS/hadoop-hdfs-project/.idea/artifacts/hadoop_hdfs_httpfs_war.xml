@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="hadoop-hdfs-httpfs:war">
+    <output-path>$PROJECT_DIR$/hadoop-hdfs-httpfs/target</output-path>
+    <root id="archive" name="hadoop-hdfs-httpfs-2.7.4.war">
+      <element id="artifact" artifact-name="hadoop-hdfs-httpfs:war exploded" />
+    </root>
+  </artifact>
+</component>

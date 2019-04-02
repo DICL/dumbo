@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/hadoop-hdfs/hadoop-hdfs.iml" filepath="$PROJECT_DIR$/hadoop-hdfs/hadoop-hdfs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hadoop-hdfs/src/contrib/bkjournal/hadoop-hdfs-bkjournal.iml" filepath="$PROJECT_DIR$/hadoop-hdfs/src/contrib/bkjournal/hadoop-hdfs-bkjournal.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hadoop-hdfs-httpfs/hadoop-hdfs-httpfs.iml" filepath="$PROJECT_DIR$/hadoop-hdfs-httpfs/hadoop-hdfs-httpfs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hadoop-hdfs-nfs/hadoop-hdfs-nfs.iml" filepath="$PROJECT_DIR$/hadoop-hdfs-nfs/hadoop-hdfs-nfs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hadoop-hdfs-project.iml" filepath="$PROJECT_DIR$/hadoop-hdfs-project.iml" />
+    </modules>
+  </component>
+</project>
