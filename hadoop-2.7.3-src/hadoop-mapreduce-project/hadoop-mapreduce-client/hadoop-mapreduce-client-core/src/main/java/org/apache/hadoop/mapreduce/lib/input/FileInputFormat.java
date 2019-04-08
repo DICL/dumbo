@@ -381,12 +381,6 @@ public abstract class FileInputFormat<K, V> extends InputFormat<K, V> {
     StopWatch sw = new StopWatch().start();
     long minSize = Math.max(getFormatMinSplitSize(), getMinSplitSize(job));
     long maxSize = getMaxSplitSize(job);
-    
-    // hyeonjin modified //
-    boolean hzIsDebugging = job.getConfiguration().getBoolean("HZ_DEBUG", false);
-    int hzMoreSplit = job.getConfiguration().getInt("HZ_MORE_SPLIT", 1);
-    int hzSplitNum = job.getConfiguration().getInt("HZ_SPLIT_NUM", 0);
-    // //
 
     // generate splits
     List<InputSplit> splits = new ArrayList<InputSplit>();
@@ -404,21 +398,7 @@ public abstract class FileInputFormat<K, V> extends InputFormat<K, V> {
         }
         if (isSplitable(job, path)) {
           long blockSize = file.getBlockSize();
-          
           long splitSize = computeSplitSize(blockSize, minSize, maxSize);
-          
-          // hyeonjin modified //
-          if (hzIsDebugging)
-        	  System.out.println("hj ## [before] splitSize: "+splitSize);
-          
-          if (hzSplitNum > 0)
-        	  splitSize = (length / hzSplitNum) + 1;
-          else
-        	  splitSize = computeSplitSize(blockSize/hzMoreSplit, minSize, maxSize);
-
-          if (hzIsDebugging)
-        	  System.out.println("hj ## [ after] splitSize: "+splitSize);
-          // //
 
           long bytesRemaining = length;
           while (((double) bytesRemaining)/splitSize > SPLIT_SLOP) {

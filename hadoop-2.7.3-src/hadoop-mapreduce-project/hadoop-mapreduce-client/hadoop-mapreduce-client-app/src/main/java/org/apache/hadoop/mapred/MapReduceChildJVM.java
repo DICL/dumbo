@@ -137,13 +137,12 @@ public class MapReduceChildJVM {
 
     TaskAttemptID attemptID = task.getTaskID();
     JobConf conf = task.conf;
-    
+
     Vector<String> vargs = new Vector<String>(8);
 
     vargs.add(MRApps.crossPlatformifyMREnv(task.conf, Environment.JAVA_HOME)
         + "/bin/java");
-    
-    
+
     // Add child (task) java-vm options.
     //
     // The following symbols if present in mapred.{map|reduce}.child.java.opts 
@@ -184,10 +183,6 @@ public class MapReduceChildJVM {
     vargs.add("-Djava.io.tmpdir=" + childTmpDir);
     MRApps.addLog4jSystemProperties(task, vargs, conf);
 
-	// yildbs Added 
-    int numMapTasks = conf.getNumMapTasks();
-    vargs.add(" -Dget.num.map.tasks=" + numMapTasks + " ");
-    
     if (conf.getProfileEnabled()) {
       if (conf.getProfileTaskRange(task.isMapTask()
                                    ).isIncluded(task.getPartition())) {

@@ -29,9 +29,3 @@ The following provides more details on the included cryptographic
 software:
   Hadoop Core uses the SSL libraries from the Jetty project written 
 by mortbay.org.
-
-
-# Hadoop CPU-GPU hybrid execution
-by Parallel Software Design Lab., University of Seoul.
-
-
