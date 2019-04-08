@@ -1,0 +1,4 @@
+/home/qyu/Kit/Spark/spark-2.1.0/sql/catalyst/src/test/java/org/apache/spark/sql/catalyst/expressions/RowBasedKeyValueBatchSuite.java
+/home/qyu/Kit/Spark/spark-2.1.0/sql/catalyst/src/test/java/org/apache/spark/sql/streaming/JavaOutputModeSuite.java
+/home/qyu/Kit/Spark/spark-2.1.0/sql/catalyst/src/test/java/org/apache/spark/sql/catalyst/expressions/XXH64Suite.java
+/home/qyu/Kit/Spark/spark-2.1.0/sql/catalyst/src/test/java/org/apache/spark/sql/catalyst/expressions/HiveHasherSuite.java

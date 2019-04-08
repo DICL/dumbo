@@ -1,0 +1,271 @@
+format version: 5
+output mode:
+1 items
+0 -> single
+output directories:
+1 items
+output dir -> /home/qyu/Kit/Spark/spark-2.1.0/tools/target/scala-2.11/classes
+compile options:
+3 items
+0 -> -unchecked
+1 -> -deprecation
+2 -> -feature
+javac options:
+8 items
+0 -> -source
+1 -> 1.7
+2 -> -target
+3 -> 1.7
+4 -> -Xlint:all,-serial,-path
+5 -> -g
+6 -> -encoding
+7 -> UTF-8
+compiler version:
+1 items
+0 -> 2.11.8
+compile order:
+1 items
+0 -> Mixed
+name hashing:
+1 items
+0 -> true
+products:
+18 items
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> /home/qyu/Kit/Spark/spark-2.1.0/tools/target/scala-2.11/classes/org/apache/spark/tools/GenerateMIMAIgnore$$anonfun$2.class
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> /home/qyu/Kit/Spark/spark-2.1.0/tools/target/scala-2.11/classes/org/apache/spark/tools/GenerateMIMAIgnore$$anonfun$3.class
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> /home/qyu/Kit/Spark/spark-2.1.0/tools/target/scala-2.11/classes/org/apache/spark/tools/GenerateMIMAIgnore$$anonfun$4.class
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> /home/qyu/Kit/Spark/spark-2.1.0/tools/target/scala-2.11/classes/org/apache/spark/tools/GenerateMIMAIgnore$$anonfun$5.class
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> /home/qyu/Kit/Spark/spark-2.1.0/tools/target/scala-2.11/classes/org/apache/spark/tools/GenerateMIMAIgnore$$anonfun$getClasses$1.class
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> /home/qyu/Kit/Spark/spark-2.1.0/tools/target/scala-2.11/classes/org/apache/spark/tools/GenerateMIMAIgnore$$anonfun$getClasses$2.class
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> /home/qyu/Kit/Spark/spark-2.1.0/tools/target/scala-2.11/classes/org/apache/spark/tools/GenerateMIMAIgnore$$anonfun$getClasses$3.class
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> /home/qyu/Kit/Spark/spark-2.1.0/tools/target/scala-2.11/classes/org/apache/spark/tools/GenerateMIMAIgnore$$anonfun$getInnerFunctions$1.class
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> /home/qyu/Kit/Spark/spark-2.1.0/tools/target/scala-2.11/classes/org/apache/spark/tools/GenerateMIMAIgnore$$anonfun$getInnerFunctions$2.class
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> /home/qyu/Kit/Spark/spark-2.1.0/tools/target/scala-2.11/classes/org/apache/spark/tools/GenerateMIMAIgnore$$anonfun$getInnerFunctions$3.class
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> /home/qyu/Kit/Spark/spark-2.1.0/tools/target/scala-2.11/classes/org/apache/spark/tools/GenerateMIMAIgnore$$anonfun$org$apache$spark$tools$GenerateMIMAIgnore$$getAnnotatedOrPackagePrivateMembers$1.class
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> /home/qyu/Kit/Spark/spark-2.1.0/tools/target/scala-2.11/classes/org/apache/spark/tools/GenerateMIMAIgnore$$anonfun$org$apache$spark$tools$GenerateMIMAIgnore$$getAnnotatedOrPackagePrivateMembers$2.class
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> /home/qyu/Kit/Spark/spark-2.1.0/tools/target/scala-2.11/classes/org/apache/spark/tools/GenerateMIMAIgnore$$anonfun$org$apache$spark$tools$GenerateMIMAIgnore$$getAnnotatedOrPackagePrivateMembers$3.class
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> /home/qyu/Kit/Spark/spark-2.1.0/tools/target/scala-2.11/classes/org/apache/spark/tools/GenerateMIMAIgnore$$anonfun$privateWithin$1$$anonfun$1.class
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> /home/qyu/Kit/Spark/spark-2.1.0/tools/target/scala-2.11/classes/org/apache/spark/tools/GenerateMIMAIgnore$$anonfun$privateWithin$1.class
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> /home/qyu/Kit/Spark/spark-2.1.0/tools/target/scala-2.11/classes/org/apache/spark/tools/GenerateMIMAIgnore$$anonfun$privateWithin$2.class
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> /home/qyu/Kit/Spark/spark-2.1.0/tools/target/scala-2.11/classes/org/apache/spark/tools/GenerateMIMAIgnore$.class
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> /home/qyu/Kit/Spark/spark-2.1.0/tools/target/scala-2.11/classes/org/apache/spark/tools/GenerateMIMAIgnore.class
+binary dependencies:
+5 items
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> /home/qyu/.m2/repository/org/clapper/classutil_2.11/1.0.6/classutil_2.11-1.0.6.jar
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> /home/qyu/.m2/repository/org/scala-lang/scala-compiler/2.11.8/scala-compiler-2.11.8.jar
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> /home/qyu/.m2/repository/org/scala-lang/scala-library/2.11.8/scala-library-2.11.8.jar
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> /home/qyu/.m2/repository/org/scala-lang/scala-reflect/2.11.8/scala-reflect-2.11.8.jar
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/rt.jar
+direct source dependencies:
+0 items
+direct external dependencies:
+0 items
+public inherited source dependencies:
+0 items
+public inherited external dependencies:
+0 items
+member reference internal dependencies:
+0 items
+member reference external dependencies:
+0 items
+inheritance internal dependencies:
+0 items
+inheritance external dependencies:
+0 items
+class names:
+18 items
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> org.apache.spark.tools.GenerateMIMAIgnore
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> org.apache.spark.tools.GenerateMIMAIgnore$
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> org.apache.spark.tools.GenerateMIMAIgnore$$anonfun$2
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> org.apache.spark.tools.GenerateMIMAIgnore$$anonfun$3
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> org.apache.spark.tools.GenerateMIMAIgnore$$anonfun$4
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> org.apache.spark.tools.GenerateMIMAIgnore$$anonfun$5
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> org.apache.spark.tools.GenerateMIMAIgnore$$anonfun$getClasses$1
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> org.apache.spark.tools.GenerateMIMAIgnore$$anonfun$getClasses$2
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> org.apache.spark.tools.GenerateMIMAIgnore$$anonfun$getClasses$3
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> org.apache.spark.tools.GenerateMIMAIgnore$$anonfun$getInnerFunctions$1
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> org.apache.spark.tools.GenerateMIMAIgnore$$anonfun$getInnerFunctions$2
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> org.apache.spark.tools.GenerateMIMAIgnore$$anonfun$getInnerFunctions$3
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> org.apache.spark.tools.GenerateMIMAIgnore$$anonfun$org$apache$spark$tools$GenerateMIMAIgnore$$getAnnotatedOrPackagePrivateMembers$1
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> org.apache.spark.tools.GenerateMIMAIgnore$$anonfun$org$apache$spark$tools$GenerateMIMAIgnore$$getAnnotatedOrPackagePrivateMembers$2
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> org.apache.spark.tools.GenerateMIMAIgnore$$anonfun$org$apache$spark$tools$GenerateMIMAIgnore$$getAnnotatedOrPackagePrivateMembers$3
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> org.apache.spark.tools.GenerateMIMAIgnore$$anonfun$privateWithin$1
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> org.apache.spark.tools.GenerateMIMAIgnore$$anonfun$privateWithin$1$$anonfun$1
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> org.apache.spark.tools.GenerateMIMAIgnore$$anonfun$privateWithin$2
+used names:
+125 items
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> !=
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> +
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> ++
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> ++=
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> +=
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> <init>
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> AnyRef
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> Array
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> Class
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> ClassFinder
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> ClassSymbol
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> ClassTag
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> Codec
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> DummyImplicit
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> File
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> GenerateMIMAIgnore
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> HashSet
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> Iterable
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> Iterator
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> ModuleSymbol
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> Path
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> Predef
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> Seq
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> Set
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> Stream
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> String
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> Symbol
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> Thread
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> Throwable
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> Try
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> Tuple2
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> Unit
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> _1
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> _2
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> apache
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> apply
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> augmentString
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> c
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> canBuildFrom
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> clapper
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> classLoader
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> className
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> classSymbol
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> classes
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> classutil
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> collection
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> contains
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> currentThread
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> directlyPrivateSpark
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> dummyImplicit
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> empty
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> endsWith
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> fallbackCanBuildFrom
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> fallbackSystemCodec
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> filter
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> filterNot
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> finder
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> flatMap
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> forName
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> foreach
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> fullName
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> getAnnotatedOrPackagePrivateMembers
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> getClasses
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> getContextClassLoader
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> getInnerFunctions
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> getMethods
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> getName
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> getOrElse
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> ignoredClasses
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> ignoredMembers
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> immutable
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> indirectlyPrivateSpark
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> indirectlyPrivateSpark$lzy
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> io
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> isPackagePrivate
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> isPackagePrivateModule
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> isPrivate
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> java
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> lang
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> lines
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> map
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> materializeClassTag
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> maybeOuter
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> members
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> mirror
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> mkString
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> moduleSymbol
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> mutable
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> name
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> ne
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> nsc
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> org
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> package
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> packageName
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> previousContents
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> previousMembersContents
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> println
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> privateClasses
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> privateMembers
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> privateWithin
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> refArrayOps
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> reflect
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> replace
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> runtime
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> runtimeMirror
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> scala
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> shouldExclude
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> spark
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> startsWith
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> staticModule
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> string2path
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> sym
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> takeWhile
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> toSet
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> toString
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> tools
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> typeSignature
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> unary_!
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> unchecked
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> universe
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> unv
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> util
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> writeAll
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> x
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> ||
+product stamps:
+18 items
+/home/qyu/Kit/Spark/spark-2.1.0/tools/target/scala-2.11/classes/org/apache/spark/tools/GenerateMIMAIgnore$$anonfun$2.class -> lastModified(1516595960000)
+/home/qyu/Kit/Spark/spark-2.1.0/tools/target/scala-2.11/classes/org/apache/spark/tools/GenerateMIMAIgnore$$anonfun$3.class -> lastModified(1516595960000)
+/home/qyu/Kit/Spark/spark-2.1.0/tools/target/scala-2.11/classes/org/apache/spark/tools/GenerateMIMAIgnore$$anonfun$4.class -> lastModified(1516595960000)
+/home/qyu/Kit/Spark/spark-2.1.0/tools/target/scala-2.11/classes/org/apache/spark/tools/GenerateMIMAIgnore$$anonfun$5.class -> lastModified(1516595960000)
+/home/qyu/Kit/Spark/spark-2.1.0/tools/target/scala-2.11/classes/org/apache/spark/tools/GenerateMIMAIgnore$$anonfun$getClasses$1.class -> lastModified(1516595960000)
+/home/qyu/Kit/Spark/spark-2.1.0/tools/target/scala-2.11/classes/org/apache/spark/tools/GenerateMIMAIgnore$$anonfun$getClasses$2.class -> lastModified(1516595960000)
+/home/qyu/Kit/Spark/spark-2.1.0/tools/target/scala-2.11/classes/org/apache/spark/tools/GenerateMIMAIgnore$$anonfun$getClasses$3.class -> lastModified(1516595960000)
+/home/qyu/Kit/Spark/spark-2.1.0/tools/target/scala-2.11/classes/org/apache/spark/tools/GenerateMIMAIgnore$$anonfun$getInnerFunctions$1.class -> lastModified(1516595960000)
+/home/qyu/Kit/Spark/spark-2.1.0/tools/target/scala-2.11/classes/org/apache/spark/tools/GenerateMIMAIgnore$$anonfun$getInnerFunctions$2.class -> lastModified(1516595960000)
+/home/qyu/Kit/Spark/spark-2.1.0/tools/target/scala-2.11/classes/org/apache/spark/tools/GenerateMIMAIgnore$$anonfun$getInnerFunctions$3.class -> lastModified(1516595960000)
+/home/qyu/Kit/Spark/spark-2.1.0/tools/target/scala-2.11/classes/org/apache/spark/tools/GenerateMIMAIgnore$$anonfun$org$apache$spark$tools$GenerateMIMAIgnore$$getAnnotatedOrPackagePrivateMembers$1.class -> lastModified(1516595960000)
+/home/qyu/Kit/Spark/spark-2.1.0/tools/target/scala-2.11/classes/org/apache/spark/tools/GenerateMIMAIgnore$$anonfun$org$apache$spark$tools$GenerateMIMAIgnore$$getAnnotatedOrPackagePrivateMembers$2.class -> lastModified(1516595960000)
+/home/qyu/Kit/Spark/spark-2.1.0/tools/target/scala-2.11/classes/org/apache/spark/tools/GenerateMIMAIgnore$$anonfun$org$apache$spark$tools$GenerateMIMAIgnore$$getAnnotatedOrPackagePrivateMembers$3.class -> lastModified(1516595960000)
+/home/qyu/Kit/Spark/spark-2.1.0/tools/target/scala-2.11/classes/org/apache/spark/tools/GenerateMIMAIgnore$$anonfun$privateWithin$1$$anonfun$1.class -> lastModified(1516595960000)
+/home/qyu/Kit/Spark/spark-2.1.0/tools/target/scala-2.11/classes/org/apache/spark/tools/GenerateMIMAIgnore$$anonfun$privateWithin$1.class -> lastModified(1516595960000)
+/home/qyu/Kit/Spark/spark-2.1.0/tools/target/scala-2.11/classes/org/apache/spark/tools/GenerateMIMAIgnore$$anonfun$privateWithin$2.class -> lastModified(1516595960000)
+/home/qyu/Kit/Spark/spark-2.1.0/tools/target/scala-2.11/classes/org/apache/spark/tools/GenerateMIMAIgnore$.class -> lastModified(1516595960000)
+/home/qyu/Kit/Spark/spark-2.1.0/tools/target/scala-2.11/classes/org/apache/spark/tools/GenerateMIMAIgnore.class -> lastModified(1516595960000)
+source stamps:
+1 items
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> hash(e250dd98d15743b12d69f0be276995415e7212ab)
+binary stamps:
+5 items
+/home/qyu/.m2/repository/org/clapper/classutil_2.11/1.0.6/classutil_2.11-1.0.6.jar -> lastModified(1470198373000)
+/home/qyu/.m2/repository/org/scala-lang/scala-compiler/2.11.8/scala-compiler-2.11.8.jar -> lastModified(1470193099000)
+/home/qyu/.m2/repository/org/scala-lang/scala-library/2.11.8/scala-library-2.11.8.jar -> lastModified(1470192875000)
+/home/qyu/.m2/repository/org/scala-lang/scala-reflect/2.11.8/scala-reflect-2.11.8.jar -> lastModified(1470192867000)
+/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/rt.jar -> lastModified(1461531433000)
+class names:
+5 items
+/home/qyu/.m2/repository/org/clapper/classutil_2.11/1.0.6/classutil_2.11-1.0.6.jar -> org.clapper.classutil.ClassInfo
+/home/qyu/.m2/repository/org/scala-lang/scala-compiler/2.11.8/scala-compiler-2.11.8.jar -> scala.tools.nsc.io.package$
+/home/qyu/.m2/repository/org/scala-lang/scala-library/2.11.8/scala-library-2.11.8.jar -> scala.Unit
+/home/qyu/.m2/repository/org/scala-lang/scala-reflect/2.11.8/scala-reflect-2.11.8.jar -> scala.reflect.runtime.package$
+/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/rt.jar -> java.lang.Object
+internal apis:
+1 items
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> 
+rO0ABXNyABB4c2J0aS5hcGkuU291cmNlFlpwRASfbtoCAAZJAAdhcGlIYXNoWgAIaGFzTWFjcm9MABhfaW50ZXJuYWxPbmx5X25hbWVIYXNoZXN0ACRMeHNidGkvYXBpL19pbnRlcm5hbE9ubHlfTmFtZUhhc2hlcztMAANhcGl0ABVMeHNidGkvYXBpL1NvdXJjZUFQSTtMAAtjb21waWxhdGlvbnQAF0x4c2J0aS9hcGkvQ29tcGlsYXRpb247WwAEaGFzaHQAAltCeHAnuAiYAHNyACJ4c2J0aS5hcGkuX2ludGVybmFsT25seV9OYW1lSGFzaGVzVNq+mfrU7EwCAAJbAA9pbXBsaWNpdE1lbWJlcnN0ACNbTHhzYnRpL2FwaS9faW50ZXJuYWxPbmx5X05hbWVIYXNoO1sADnJlZ3VsYXJNZW1iZXJzcQB+AAd4cHVyACNbTHhzYnRpLmFwaS5faW50ZXJuYWxPbmx5X05hbWVIYXNoO0lagLbdlov0AgAAeHAAAAAAdXEAfgAJAAAAHnNyACB4c2J0aS5hcGkuX2ludGVybmFsT25seV9OYW1lSGFzaFsO9SJ2OFfPAgACSQAEaGFzaEwABG5hbWV0ABJMamF2YS9sYW5nL1N0cmluZzt4cER2Lnl0AAZub3RpZnlzcQB+AAz4cynMdAAEd2FpdHNxAH4ADP7wjnV0AA0kYXNJbnN0YW5jZU9mc3EAfgAM6DxWHXQABmVxdWFsc3NxAH4ADISSLG50AA1wcml2YXRlV2l0aGluc3EAfgAMwq9iqXQAFmlzUGFja2FnZVByaXZhdGVNb2R1bGVzcQB+AAyqy223dAAMYXNJbnN0YW5jZU9mc3EAfgAMI/C4wnQADHN5bmNocm9uaXplZHNxAH4ADNiLBMR0AA0kaXNJbnN0YW5jZU9mc3EAfgAMMX+5SHQAI2dldEFubm90YXRlZE9yUGFja2FnZVByaXZhdGVNZW1iZXJzc3EAfgAMn+OLJnQADXNob3VsZEV4Y2x1ZGVzcQB+AAxJiPSGdAASR2VuZXJhdGVNSU1BSWdub3Jlc3EAfgAMSO8DAnQABG1haW5zcQB+AAz9MZWgdAAKZ2V0Q2xhc3Nlc3NxAH4ADJGjsu90AAlub3RpZnlBbGxzcQB+AAwwUMSndAAMaXNJbnN0YW5jZU9mc3EAfgAMVAiI7HQAAj09c3EAfgAMbxQw23QAC2NsYXNzTG9hZGVyc3EAfgAMbLXRtXQABWNsb25lc3EAfgAMgoPgJXQAEGlzUGFja2FnZVByaXZhdGVzcQB+AAxWgyKidAARZ2V0SW5uZXJGdW5jdGlvbnNzcQB+AAwLNChidAAIdG9TdHJpbmdzcQB+AAy0L1FOdAACIT1zcQB+AAy0HGrXdAAIZ2V0Q2xhc3NzcQB+AAwxwHVwdAAGbWlycm9yc3EAfgAMioCqVnQAAm5lc3EAfgAMjk7mIXQAAmVxc3EAfgAMp1AipHQAAiMjc3EAfgAM+hJncnQACGZpbmFsaXplc3EAfgAMpRLeoHQACGhhc2hDb2Rlc3IAE3hzYnRpLmFwaS5Tb3VyY2VBUEm5Xqf5KSM4pAIAAlsAC2RlZmluaXRpb25zdAAXW0x4c2J0aS9hcGkvRGVmaW5pdGlvbjtbAAhwYWNrYWdlc3QAFFtMeHNidGkvYXBpL1BhY2thZ2U7eHB1cgAXW0x4c2J0aS5hcGkuRGVmaW5pdGlvbjuIyVzntONeDgIAAHhwAAAAAXNyABN4c2J0aS5hcGkuQ2xhc3NMaWtlgzQcod+wl2wCAARMAA5kZWZpbml0aW9uVHlwZXQAGkx4c2J0aS9hcGkvRGVmaW5pdGlvblR5cGU7WwAQc2F2ZWRBbm5vdGF0aW9uc3QAE1tMamF2YS9sYW5nL1N0cmluZztMAAhzZWxmVHlwZXQAEEx4c2J0aS9hcGkvTGF6eTtMAAlzdHJ1Y3R1cmVxAH4AU3hyACF4c2J0aS5hcGkuUGFyYW1ldGVyaXplZERlZmluaXRpb275EW6x1VA84gIAAVsADnR5cGVQYXJhbWV0ZXJzdAAaW0x4c2J0aS9hcGkvVHlwZVBhcmFtZXRlcjt4cgAUeHNidGkuYXBpLkRlZmluaXRpb26HKhvocULjRgIABEwABmFjY2Vzc3QAEkx4c2J0aS9hcGkvQWNjZXNzO1sAC2Fubm90YXRpb25zdAAXW0x4c2J0aS9hcGkvQW5ub3RhdGlvbjtMAAltb2RpZmllcnN0ABVMeHNidGkvYXBpL01vZGlmaWVycztMAARuYW1lcQB+AA14cHNyABB4c2J0aS5hcGkuUHVibGljulg9rmwtYEICAAB4cgAQeHNidGkuYXBpLkFjY2Vzc91imvgdYzFIAgAAeHB1cgAXW0x4c2J0aS5hcGkuQW5ub3RhdGlvbjvrl+sZEPaNSAIAAHhwAAAAAHNyABN4c2J0aS5hcGkuTW9kaWZpZXJzxxETIWmc3CQCAAFCAAVmbGFnc3hwAHQAKW9yZy5hcGFjaGUuc3BhcmsudG9vbHMuR2VuZXJhdGVNSU1BSWdub3JldXIAGltMeHNidGkuYXBpLlR5cGVQYXJhbWV0ZXI72W0mDyid8rYCAAB4cAAAAAB+cgAYeHNidGkuYXBpLkRlZmluaXRpb25UeXBlAAAAAAAAAAASAAB4cgAOamF2YS5sYW5nLkVudW0AAAAAAAAAABIAAHhwdAAGTW9kdWxldXIAE1tMamF2YS5sYW5nLlN0cmluZzut0lbn6R17RwIAAHhwAAAAAHNyABN4c2J0aS5TYWZlTGF6eSRJbXBsUAIuk5eXQD8CAANaAAhiaXRtYXAkMEwAAl90dAASTGphdmEvbGFuZy9PYmplY3Q7TAAEZXZhbHQAEUxzY2FsYS9GdW5jdGlvbjA7eHIAFnhzYnRpLmFwaS5BYnN0cmFjdExhennTd7UBX7vnoAIAAHhwAHBzcgAgeHNidGkuU2FmZUxhenkkJGFub25mdW4kc3RyaWN0JDEAAAAAAAAAAAIAAUwAB3ZhbHVlJDFxAH4AbHhwc3IAE3hzYnRpLmFwaS5FbXB0eVR5cGW8/Z5GSTuJJAIAAHhyABR4c2J0aS5hcGkuU2ltcGxlVHlwZXJ4YoghI79AAgAAeHIADnhzYnRpLmFwaS5UeXBlP2rZIRZJqsoCAAB4cHNxAH4AawBwc3EAfgBwc3IAE3hzYnRpLmFwaS5TdHJ1Y3R1cmWpqvmAk2/YAAIAA0wACGRlY2xhcmVkcQB+AFNMAAlpbmhlcml0ZWRxAH4AU0wAB3BhcmVudHNxAH4AU3hxAH4AdHNxAH4AawBwc3EAfgBwdXEAfgBOAAAAAXNyAA14c2J0aS5hcGkuRGVmUr6f4ny0NmkCAAJMAApyZXR1cm5UeXBldAAQTHhzYnRpL2FwaS9UeXBlO1sAD3ZhbHVlUGFyYW1ldGVyc3QAGltMeHNidGkvYXBpL1BhcmFtZXRlckxpc3Q7eHEAfgBUcQB+AF11cQB+AF4AAAAAc3EAfgBgAHEAfgAndXEAfgBjAAAAAHNyABR4c2J0aS5hcGkuUHJvamVjdGlvbvPSjVTpRaQtAgACTAACaWRxAH4ADUwABnByZWZpeHQAFkx4c2J0aS9hcGkvU2ltcGxlVHlwZTt4cQB+AHN0AARVbml0c3IAE3hzYnRpLmFwaS5TaW5nbGV0b278p1/4z1bkRgIAAUwABHBhdGh0ABBMeHNidGkvYXBpL1BhdGg7eHEAfgBzc3IADnhzYnRpLmFwaS5QYXRomz1cCM6lJ4QCAAFbAApjb21wb25lbnRzdAAaW0x4c2J0aS9hcGkvUGF0aENvbXBvbmVudDt4cHVyABpbTHhzYnRpLmFwaS5QYXRoQ29tcG9uZW50O0PaCXQtZxZ0AgAAeHAAAAACc3IADHhzYnRpLmFwaS5JZJgybIs3U8RAAgABTAACaWRxAH4ADXhyABd4c2J0aS5hcGkuUGF0aENvbXBvbmVudF+aIlsuhp+8AgAAeHB0AAVzY2FsYXNyAA54c2J0aS5hcGkuVGhpc9sJ7abMWkBcAgAAeHEAfgCRdXIAGltMeHNidGkuYXBpLlBhcmFtZXRlckxpc3Q79dM6HfKzcO4CAAB4cAAAAAFzcgAXeHNidGkuYXBpLlBhcmFtZXRlckxpc3TWxbwcZEl04wIAAloACmlzSW1wbGljaXRbAApwYXJhbWV0ZXJzdAAcW0x4c2J0aS9hcGkvTWV0aG9kUGFyYW1ldGVyO3hwAHVyABxbTHhzYnRpLmFwaS5NZXRob2RQYXJhbWV0ZXI7z7jFXaXdtW0CAAB4cAAAAAFzcgAZeHNidGkuYXBpLk1ldGhvZFBhcmFtZXRlch9FrhfTSbDqAgAEWgAKaGFzRGVmYXVsdEwACG1vZGlmaWVydAAdTHhzYnRpL2FwaS9QYXJhbWV0ZXJNb2RpZmllcjtMAARuYW1lcQB+AA1MAAN0cGVxAH4AfnhwAH5yABt4c2J0aS5hcGkuUGFyYW1ldGVyTW9kaWZpZXIAAAAAAAAAABIAAHhxAH4AZnQABVBsYWludAAEYXJnc3NyABd4c2J0aS5hcGkuUGFyYW1ldGVyaXplZBZs7mkDybt/AgACTAAIYmFzZVR5cGVxAH4AhVsADXR5cGVBcmd1bWVudHN0ABFbTHhzYnRpL2FwaS9UeXBlO3hxAH4Ac3NxAH4AhHQABUFycmF5cQB+AIp1cgARW0x4c2J0aS5hcGkuVHlwZTt0/6Vae/npQQIAAHhwAAAAAXNxAH4AhHQABlN0cmluZ3NxAH4AiHNxAH4Ai3VxAH4AjgAAAANzcQB+AJB0AARqYXZhc3EAfgCQdAAEbGFuZ3EAfgCVc3EAfgBrAHBzcQB+AHB1cQB+AE4AAAAAc3EAfgBrAHBzcQB+AHB1cQB+AKkAAAACc3EAfgCEdAAGT2JqZWN0cQB+AK1zcQB+AIR0AANBbnlxAH4AinVyABRbTHhzYnRpLmFwaS5QYWNrYWdlO1sTGTdwpyehAgAAeHAAAAAEc3IAEXhzYnRpLmFwaS5QYWNrYWdlflmP9q7OOVgCAAFMAARuYW1lcQB+AA14cHQAFm9yZy5hcGFjaGUuc3BhcmsudG9vbHNzcQB+AMB0ABBvcmcuYXBhY2hlLnNwYXJrc3EAfgDAdAAKb3JnLmFwYWNoZXNxAH4AwHQAA29yZ3NyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABYRwp1uV1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5cQB+AA1MAA9zb3VyY2VEaXJlY3RvcnlxAH4ADXhwdAA/L2hvbWUvcXl1L0tpdC9TcGFyay9zcGFyay0yLjEuMC90b29scy90YXJnZXQvc2NhbGEtMi4xMS9jbGFzc2VzdAABL3VyAAJbQqzzF/gGCFTgAgAAeHAAAAAU4lDdmNFXQ7EtafC+J2mVQV5yEqs=
+external apis:
+0 items
+source infos:
+1 items
+/home/qyu/Kit/Spark/spark-2.1.0/tools/src/main/scala/org/apache/spark/tools/GenerateMIMAIgnore.scala -> 
+AAAAAAAAAAA=
+compilations:
+1 items
+0 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABYRwp1uV1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQAPy9ob21lL3F5dS9LaXQvU3Bhcmsvc3BhcmstMi4xLjAvdG9vbHMvdGFyZ2V0L3NjYWxhLTIuMTEvY2xhc3Nlc3QAAS8=

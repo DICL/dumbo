@@ -1,0 +1,3 @@
+18/02/09 09:20:57 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+18/02/09 09:21:22 ERROR CoarseGrainedExecutorBackend: RECEIVED SIGNAL TERM
+ry for your platform... using builtin-java classes where applicable

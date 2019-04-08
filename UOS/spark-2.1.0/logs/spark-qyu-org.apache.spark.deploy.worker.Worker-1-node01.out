@@ -1,0 +1,17 @@
+Spark Command: /usr/lib/jvm/java-7-openjdk-amd64/bin/java -cp /home/qyu/Kit/Spark/spark-2.1.0/conf/:/home/qyu/Kit/Spark/spark-2.1.0/assembly/target/scala-2.11/jars/* -Xmx1g -XX:MaxPermSize=256m org.apache.spark.deploy.worker.Worker --webui-port 8081 node02
+========================================
+18/08/09 16:57:51 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Exception in thread "main" org.apache.spark.SparkException: Invalid master URL: spark://node02
+	at org.apache.spark.util.Utils$.extractHostPortFromSparkUrl(Utils.scala:2358)
+	at org.apache.spark.rpc.RpcAddress$.fromSparkURL(RpcAddress.scala:47)
+	at org.apache.spark.deploy.worker.Worker$$anonfun$13.apply(Worker.scala:716)
+	at org.apache.spark.deploy.worker.Worker$$anonfun$13.apply(Worker.scala:716)
+	at scala.collection.TraversableLike$$anonfun$map$1.apply(TraversableLike.scala:234)
+	at scala.collection.TraversableLike$$anonfun$map$1.apply(TraversableLike.scala:234)
+	at scala.collection.IndexedSeqOptimized$class.foreach(IndexedSeqOptimized.scala:33)
+	at scala.collection.mutable.ArrayOps$ofRef.foreach(ArrayOps.scala:186)
+	at scala.collection.TraversableLike$class.map(TraversableLike.scala:234)
+	at scala.collection.mutable.ArrayOps$ofRef.map(ArrayOps.scala:186)
+	at org.apache.spark.deploy.worker.Worker$.startRpcEnvAndEndpoint(Worker.scala:716)
+	at org.apache.spark.deploy.worker.Worker$.main(Worker.scala:696)
+	at org.apache.spark.deploy.worker.Worker.main(Worker.scala)

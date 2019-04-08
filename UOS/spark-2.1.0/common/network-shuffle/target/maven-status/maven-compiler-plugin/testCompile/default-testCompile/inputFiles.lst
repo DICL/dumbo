@@ -1,0 +1,10 @@
+/home/qyu/Kit/Spark/spark-2.1.0/common/network-shuffle/src/test/java/org/apache/spark/network/sasl/SaslIntegrationSuite.java
+/home/qyu/Kit/Spark/spark-2.1.0/common/network-shuffle/src/test/java/org/apache/spark/network/shuffle/ExternalShuffleSecuritySuite.java
+/home/qyu/Kit/Spark/spark-2.1.0/common/network-shuffle/src/test/java/org/apache/spark/network/shuffle/OneForOneBlockFetcherSuite.java
+/home/qyu/Kit/Spark/spark-2.1.0/common/network-shuffle/src/test/java/org/apache/spark/network/shuffle/RetryingBlockFetcherSuite.java
+/home/qyu/Kit/Spark/spark-2.1.0/common/network-shuffle/src/test/java/org/apache/spark/network/shuffle/ExternalShuffleBlockHandlerSuite.java
+/home/qyu/Kit/Spark/spark-2.1.0/common/network-shuffle/src/test/java/org/apache/spark/network/shuffle/ExternalShuffleBlockResolverSuite.java
+/home/qyu/Kit/Spark/spark-2.1.0/common/network-shuffle/src/test/java/org/apache/spark/network/shuffle/ExternalShuffleIntegrationSuite.java
+/home/qyu/Kit/Spark/spark-2.1.0/common/network-shuffle/src/test/java/org/apache/spark/network/shuffle/BlockTransferMessagesSuite.java
+/home/qyu/Kit/Spark/spark-2.1.0/common/network-shuffle/src/test/java/org/apache/spark/network/shuffle/ExternalShuffleCleanupSuite.java
+/home/qyu/Kit/Spark/spark-2.1.0/common/network-shuffle/src/test/java/org/apache/spark/network/shuffle/TestShuffleDataContext.java

@@ -1,0 +1,8 @@
+18/02/08 21:45:18 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+18/02/08 21:45:40 ERROR MapOutputTracker: Missing an output location for shuffle 1
+18/02/08 21:45:40 WARN BlockManager: Putting block rdd_13_8 failed due to an exception
+18/02/08 21:45:40 WARN BlockManager: Block rdd_13_8 could not be removed as it was not found on disk or in memory
+18/02/08 21:45:40 WARN BlockManager: Putting block rdd_14_8 failed due to an exception
+18/02/08 21:45:40 WARN BlockManager: Block rdd_14_8 could not be removed as it was not found on disk or in memory
+18/02/08 21:48:11 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeSystemBLAS
+18/02/08 21:48:11 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeRefBLAS

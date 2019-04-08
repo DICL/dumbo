@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ScalaSbtSettings">
+    <option name="customLauncherEnabled" value="true" />
+    <option name="customLauncherPath" value="$PROJECT_DIR$/../../sbt/bin/sbt-launch.jar" />
+    <option name="linkedExternalProjectsSettings">
+      <SbtProjectSettings>
+        <option name="externalProjectPath" value="$USER_HOME$/Workspace/spark/linear_regression" />
+        <option name="jdk" value="1.7" />
+        <option name="modules">
+          <set>
+            <option value="$USER_HOME$/Workspace/spark/linear_regression" />
+            <option value="$USER_HOME$/Workspace/spark/linear_regression/project" />
+          </set>
+        </option>
+        <option name="sbtVersion" value="0.13.12" />
+      </SbtProjectSettings>
+      <SbtProjectSettings>
+        <option name="externalProjectPath" value="$USER_HOME$/Workspace/word2vec" />
+        <option name="jdk" value="1.7" />
+        <option name="modules">
+          <set>
+            <option value="$USER_HOME$/Workspace/word2vec" />
+            <option value="$USER_HOME$/Workspace/word2vec/project" />
+          </set>
+        </option>
+        <option name="sbtVersion" value="0.13.12" />
+      </SbtProjectSettings>
+    </option>
+  </component>
+</project>

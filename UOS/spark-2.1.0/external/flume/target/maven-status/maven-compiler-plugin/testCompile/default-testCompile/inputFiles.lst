@@ -1,0 +1,3 @@
+/home/qyu/Kit/Spark/spark-2.1.0/external/flume/src/test/java/org/apache/spark/streaming/flume/JavaFlumePollingStreamSuite.java
+/home/qyu/Kit/Spark/spark-2.1.0/external/flume/src/test/java/org/apache/spark/streaming/LocalJavaStreamingContext.java
+/home/qyu/Kit/Spark/spark-2.1.0/external/flume/src/test/java/org/apache/spark/streaming/flume/JavaFlumeStreamSuite.java

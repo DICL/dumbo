@@ -1,0 +1,67 @@
+new sentences start
+new sentences end
+compute cuda function start time 5719473762003662
+input free variable memcpy time: 655
+const and output size memcpy time: 0
+devPtr freed from gpu
+devPtr freed from gpu
+compute end time 5719497423718498
+deserialize start time : 5719497423830657
+deserialize end time : 5719497425210382
+diff start time 5719497425415495
+diff end time 5719497426381067
+compute cuda function start time 5719681621995808
+input free variable memcpy time: 681
+const and output size memcpy time: 0
+devPtr freed from gpu
+devPtr freed from gpu
+compute end time 5719705124968402
+deserialize start time : 5719705125050462
+deserialize end time : 5719705125165469
+diff start time 5719705125222223
+diff end time 5719705125265305
+compute cuda function start time 5719933395473685
+input free variable memcpy time: 687
+const and output size memcpy time: 0
+devPtr freed from gpu
+devPtr freed from gpu
+compute end time 5719968010973881
+deserialize start time : 5719968011059506
+deserialize end time : 5719968011170647
+diff start time 5719968011230508
+diff end time 5719968011286672
+compute cuda function start time 5720186567482448
+input free variable memcpy time: 677
+const and output size memcpy time: 0
+devPtr freed from gpu
+devPtr freed from gpu
+compute end time 5720212244200042
+deserialize start time : 5720212244249101
+deserialize end time : 5720212244411899
+diff start time 5720212244451012
+diff end time 5720212244502207
+compute cuda function start time 5720439141163148
+input free variable memcpy time: 629
+const and output size memcpy time: 0
+devPtr freed from gpu
+devPtr freed from gpu
+compute end time 5720462619452079
+deserialize start time : 5720462619519260
+deserialize end time : 5720462619618666
+diff start time 5720462619671289
+diff end time 5720462619708807
+compute cuda function start time 5720694532741839
+input free variable memcpy time: 596
+const and output size memcpy time: 0
+devPtr freed from gpu
+devPtr freed from gpu
+compute end time 5720717989157702
+deserialize start time : 5720717989240433
+deserialize end time : 5720717989342037
+diff start time 5720717989394374
+diff end time 5720717989449898
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 4249878528 bytes for committing reserved memory.
+# An error report file with more information is saved as:
+# /home/qyu/Kit/Spark/spark-2.1.0/work/app-20180208202827-0000/13/hs_err_pid739.log

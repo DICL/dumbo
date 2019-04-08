@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: jcuda:jcuda:0.7.0a">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/jcuda/jcuda/0.7.0a/jcuda-0.7.0a.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/jcuda/jcuda/0.7.0a/jcuda-0.7.0a-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/jcuda/jcuda/0.7.0a/jcuda-0.7.0a-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

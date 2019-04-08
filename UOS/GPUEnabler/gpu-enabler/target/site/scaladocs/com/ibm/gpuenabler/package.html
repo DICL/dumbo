@@ -1,0 +1,499 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>gpuenabler - gpu-enabler_2.11 2.0.0 API - com.ibm.gpuenabler</title>
+          <meta name="description" content="gpuenabler - gpu - enabler 2.11 2.0.0 API - com.ibm.gpuenabler" />
+          <meta name="keywords" content="gpuenabler gpu enabler 2.11 2.0.0 API com.ibm.gpuenabler" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../index.html';
+            var hash = 'com.ibm.gpuenabler.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img alt="Package" src="../../../lib/package_big.png" />
+        <p id="owner"><a href="../../package.html" class="extype" name="com">com</a>.<a href="../package.html" class="extype" name="com.ibm">ibm</a></p>
+        <h1>gpuenabler</h1><span class="permalink">
+      <a href="../../../index.html#com.ibm.gpuenabler.package" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">gpuenabler</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        
+        
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="com.ibm.gpuenabler.CUDAFunction" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="CUDAFunctionextendsExternalFunction"></a>
+      <a id="CUDAFunction:CUDAFunction"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="CUDAFunction.html"><span class="name">CUDAFunction</span></a><span class="result"> extends <a href="ExternalFunction.html" class="extype" name="com.ibm.gpuenabler.ExternalFunction">ExternalFunction</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#com.ibm.gpuenabler.package@CUDAFunctionextendsExternalFunction" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A class to represent a <i>User Defined function</i> from a Native GPU program.</p><div class="fullcomment"><div class="comment cmt"><p>A class to represent a <i>User Defined function</i> from a Native GPU program.</p><p>Specify the <code>funcName</code>, <code>_inputColumnsOrder</code>, <code>_outputColumnsOrder</code>,
+and <code>resourceURL</code> when creating a new <code>CUDAFunction</code>,
+then pass this object as an input argument to <code>mapExtFunc</code> or
+ <code>reduceExtFunc</code> as follows,</p><pre>  <span class="kw">val</span> mapFunction = <span class="kw">new</span> CUDAFunction(
+        <span class="lit">"multiplyBy2"</span>,
+        <span class="std">Array</span>(<span class="lit">"this"</span>),
+        <span class="std">Array</span>(<span class="lit">"this"</span>),
+        ptxURL)
+
+<span class="kw">val</span> output = sc.parallelize(<span class="num">1</span> to n, <span class="num">1</span>)
+    .mapExtFunc((x: <span class="std">Int</span>) <span class="kw">=&gt;</span> <span class="num">2</span> * x, mapFunction)</pre></div></div>
+    </li><li name="com.ibm.gpuenabler.CUDAFunction2" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="CUDAFunction2extendsCUDAFunction"></a>
+      <a id="CUDAFunction2:CUDAFunction2"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="CUDAFunction2.html"><span class="name">CUDAFunction2</span></a><span class="result"> extends <a href="CUDAFunction.html" class="extype" name="com.ibm.gpuenabler.CUDAFunction">CUDAFunction</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#com.ibm.gpuenabler.package@CUDAFunction2extendsCUDAFunction" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="com.ibm.gpuenabler.CachedGPUMeta" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="CachedGPUMetaextendsProductwithSerializable"></a>
+      <a id="CachedGPUMeta:CachedGPUMeta"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="CachedGPUMeta.html"><span class="name">CachedGPUMeta</span></a><span class="params">(<span name="ptr">ptr: <span class="extype" name="jcuda.driver.CUdeviceptr">CUdeviceptr</span></span>, <span name="own">own: <span class="extype" name="scala.Boolean">Boolean</span></span>, <span name="colWidth">colWidth: <span class="extype" name="java.lang.Integer">Integer</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#com.ibm.gpuenabler.package@CachedGPUMetaextendsProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="com.ibm.gpuenabler.DSCUDAFunction" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="DSCUDAFunctionextendsProductwithSerializable"></a>
+      <a id="DSCUDAFunction:DSCUDAFunction"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="DSCUDAFunction.html"><span class="name">DSCUDAFunction</span></a><span class="params">(<span name="funcName">funcName: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="_inputColumnsOrder">_inputColumnsOrder: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">null</span></span>, <span name="_outputColumnsOrder">_outputColumnsOrder: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">null</span></span>, <span name="resource">resource: <span class="extype" name="scala.Any">Any</span></span>, <span name="stagesCount">stagesCount: <span class="extype" name="scala.Option">Option</span>[(<span class="extype" name="scala.Long">Long</span>) ⇒ <span class="extype" name="scala.Int">Int</span>] = <span class="symbol">None</span></span>, <span name="gpuParams">gpuParams: <span class="extype" name="scala.Option">Option</span>[<a href="gpuParameters.html" class="extype" name="com.ibm.gpuenabler.gpuParameters">gpuParameters</a>] = <span class="symbol">None</span></span>, <span name="outputSize">outputSize: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Long">Long</span>] = <span class="symbol">None</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#com.ibm.gpuenabler.package@DSCUDAFunctionextendsProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">DSCUDAFunction: This case class is used to describe the CUDA kernel and
+  maps the i/o parameters to the DataSet's column name on which this
+  function is applied.</p><div class="fullcomment"><div class="comment cmt"><p>DSCUDAFunction: This case class is used to describe the CUDA kernel and
+  maps the i/o parameters to the DataSet's column name on which this
+  function is applied. Stages &amp; Dimensions can be specified. If the
+  kernel is going to perform a reduce kind of operation, the output size
+  will be different from the input size, so it must be provided by the user
+</p></div></div>
+    </li><li name="com.ibm.gpuenabler.ExternalFunction" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ExternalFunctionextendsSerializable"></a>
+      <a id="ExternalFunction:ExternalFunction"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ExternalFunction.html"><span class="name">ExternalFunction</span></a><span class="result"> extends <span class="extype" name="java.io.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#com.ibm.gpuenabler.package@ExternalFunctionextendsSerializable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">An abstract class to represent a <i>User Defined function</i> from a Native GPU program.</p>
+    </li><li name="com.ibm.gpuenabler.JCUDACodegenIterator" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="JCUDACodegenIteratorextendsIterator[org.apache.spark.sql.catalyst.InternalRow]"></a>
+      <a id="JCUDACodegenIterator:JCUDACodegenIterator"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="JCUDACodegenIterator.html"><span class="name">JCUDACodegenIterator</span></a><span class="result"> extends <span class="extype" name="scala.Iterator">Iterator</span>[<span class="extype" name="org.apache.spark.sql.catalyst.InternalRow">InternalRow</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#com.ibm.gpuenabler.package@JCUDACodegenIteratorextendsIterator[org.apache.spark.sql.catalyst.InternalRow]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Interface for generated predicate
+</p>
+    </li><li name="com.ibm.gpuenabler.JavaCUDAFunction" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="JavaCUDAFunctionextendsSerializable"></a>
+      <a id="JavaCUDAFunction:JavaCUDAFunction"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="JavaCUDAFunction.html"><span class="name">JavaCUDAFunction</span></a><span class="result"> extends <span class="extype" name="java.io.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#com.ibm.gpuenabler.package@JavaCUDAFunctionextendsSerializable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">  * A class to represent a <i>User Defined function</i> from a Native GPU program.</p><div class="fullcomment"><div class="comment cmt"><p>  * A class to represent a <i>User Defined function</i> from a Native GPU program.
+  * Wrapper Java function for CUDAFunction scala function</p><p>Specify the <code>funcName</code>, <code>_inputColumnsOrder</code>, <code>_outputColumnsOrder</code>,
+and <code>resourceURL</code> when creating a new <code>CUDAFunction</code>,
+then pass this object as an input argument to <code>mapExtFunc</code> or
+ <code>reduceExtFunc</code> as follows,</p><pre>JavaCUDAFunction mapFunction = <span class="kw">new</span> JavaCUDAFunction(
+             <span class="lit">"multiplyBy2"</span>,
+             Arrays.asList(<span class="lit">"this"</span>),
+             Arrays.asList(<span class="lit">"this"</span>),
+             ptxURL);
+
+  JavaRDD&lt;Integer&gt; inputData = sc.parallelize(range).cache();
+  ClassTag&lt;Integer&gt; tag = scala.reflect.ClassTag$.MODULE$.apply(Integer.TYPE);
+  JavaCUDARDD&lt;Integer&gt; ci = <span class="kw">new</span> JavaCUDARDD(inputData.rdd(), tag);
+
+  JavaCUDARDD&lt;Integer&gt; output = ci.mapExtFunc((<span class="kw">new</span> <span class="std">Function</span>&lt;Integer, Integer&gt;() {
+         public Integer call(Integer x) {
+             <span class="kw">return</span> (<span class="num">2</span> * x);
+         }
+   }), mapFunction, tag)</pre></div></div>
+    </li><li name="com.ibm.gpuenabler.JavaCUDARDD" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="JavaCUDARDD[T]extendsJavaRDD[T]"></a>
+      <a id="JavaCUDARDD[T]:JavaCUDARDD[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="JavaCUDARDD.html"><span class="name">JavaCUDARDD</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <span class="extype" name="org.apache.spark.api.java.JavaRDD">JavaRDD</span>[<span class="extype" name="com.ibm.gpuenabler.JavaCUDARDD.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#com.ibm.gpuenabler.package@JavaCUDARDD[T]extendsJavaRDD[T]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Wrapper Function for Java APIs.</p><div class="fullcomment"><div class="comment cmt"><p>Wrapper Function for Java APIs. It exposes 4 APIs
+mapExtFunc, reduceExtFunc, cacheGpu, unCacheGpu
+</p></div></div>
+    </li><li name="com.ibm.gpuenabler.LOADGPU" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="LOADGPU[T]extendsUnaryNodewithObjectConsumerwithObjectProducerwithProductwithSerializable"></a>
+      <a id="LOADGPU[T]:LOADGPU[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="LOADGPU.html"><span class="name">LOADGPU</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="partSizes">partSizes: <span class="extype" name="org.apache.spark.broadcast.Broadcast">Broadcast</span>[<span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="scala.Int">Int</span>, <span class="extype" name="scala.Int">Int</span>]]</span>, <span name="child">child: <span class="extype" name="org.apache.spark.sql.catalyst.plans.logical.LogicalPlan">LogicalPlan</span></span>, <span name="inputEncoder">inputEncoder: <span class="extype" name="org.apache.spark.sql.Encoder">Encoder</span>[<span class="extype" name="com.ibm.gpuenabler.LOADGPU.T">T</span>]</span>, <span name="outputObjAttr">outputObjAttr: <span class="extype" name="org.apache.spark.sql.catalyst.expressions.Attribute">Attribute</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="evidence$4">evidence$4: <span class="extype" name="org.apache.spark.sql.Encoder">Encoder</span>[<span class="extype" name="com.ibm.gpuenabler.LOADGPU.T">T</span>]</span>)</span><span class="result"> extends <span class="extype" name="org.apache.spark.sql.catalyst.plans.logical.UnaryNode">UnaryNode</span> with <span class="extype" name="org.apache.spark.sql.catalyst.plans.logical.ObjectConsumer">ObjectConsumer</span> with <span class="extype" name="org.apache.spark.sql.catalyst.plans.logical.ObjectProducer">ObjectProducer</span> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#com.ibm.gpuenabler.package@LOADGPU[T]extendsUnaryNodewithObjectConsumerwithObjectProducerwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="com.ibm.gpuenabler.MAPGPU" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MAPGPU[T,U]extendsUnaryNodewithObjectConsumerwithObjectProducerwithProductwithSerializable"></a>
+      <a id="MAPGPU[T,U]:MAPGPU[T,U]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="MAPGPU.html"><span class="name">MAPGPU</span></a><span class="tparams">[<span name="T">T</span>, <span name="U">U</span>]</span><span class="params">(<span name="cpfunc">cpfunc: <span class="extype" name="scala.AnyRef">AnyRef</span></span>, <span name="func">func: <a href="DSCUDAFunction.html" class="extype" name="com.ibm.gpuenabler.DSCUDAFunction">DSCUDAFunction</a></span>, <span name="args">args: <span class="extype" name="scala.Array">Array</span>[<span class="extype" name="scala.Any">Any</span>]</span>, <span name="outputArraySizes">outputArraySizes: <span class="extype" name="scala.Array">Array</span>[<span class="extype" name="scala.Int">Int</span>]</span>, <span name="partSizes">partSizes: <span class="extype" name="org.apache.spark.broadcast.Broadcast">Broadcast</span>[<span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="scala.Int">Int</span>, <span class="extype" name="scala.Int">Int</span>]]</span>, <span name="child">child: <span class="extype" name="org.apache.spark.sql.catalyst.plans.logical.LogicalPlan">LogicalPlan</span></span>, <span name="inputEncoder">inputEncoder: <span class="extype" name="org.apache.spark.sql.Encoder">Encoder</span>[<span class="extype" name="com.ibm.gpuenabler.MAPGPU.T">T</span>]</span>, <span name="outputEncoder">outputEncoder: <span class="extype" name="org.apache.spark.sql.Encoder">Encoder</span>[<span class="extype" name="com.ibm.gpuenabler.MAPGPU.U">U</span>]</span>, <span name="outputObjAttr">outputObjAttr: <span class="extype" name="org.apache.spark.sql.catalyst.expressions.Attribute">Attribute</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="evidence$5">evidence$5: <span class="extype" name="org.apache.spark.sql.Encoder">Encoder</span>[<span class="extype" name="com.ibm.gpuenabler.MAPGPU.T">T</span>]</span>, <span name="evidence$6">evidence$6: <span class="extype" name="org.apache.spark.sql.Encoder">Encoder</span>[<span class="extype" name="com.ibm.gpuenabler.MAPGPU.U">U</span>]</span>)</span><span class="result"> extends <span class="extype" name="org.apache.spark.sql.catalyst.plans.logical.UnaryNode">UnaryNode</span> with <span class="extype" name="org.apache.spark.sql.catalyst.plans.logical.ObjectConsumer">ObjectConsumer</span> with <span class="extype" name="org.apache.spark.sql.catalyst.plans.logical.ObjectProducer">ObjectProducer</span> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#com.ibm.gpuenabler.package@MAPGPU[T,U]extendsUnaryNodewithObjectConsumerwithObjectProducerwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="com.ibm.gpuenabler.MAPGPUExec" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MAPGPUExec[T,U]extendsSparkPlanwithObjectConsumerExecwithObjectProducerExecwithProductwithSerializable"></a>
+      <a id="MAPGPUExec[T,U]:MAPGPUExec[T,U]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="MAPGPUExec.html"><span class="name">MAPGPUExec</span></a><span class="tparams">[<span name="T">T</span>, <span name="U">U</span>]</span><span class="params">(<span name="cpf">cpf: <span class="extype" name="scala.AnyRef">AnyRef</span></span>, <span name="cf">cf: <a href="DSCUDAFunction.html" class="extype" name="com.ibm.gpuenabler.DSCUDAFunction">DSCUDAFunction</a></span>, <span name="constArgs">constArgs: <span class="extype" name="scala.Array">Array</span>[<span class="extype" name="scala.Any">Any</span>]</span>, <span name="outputArraySizes">outputArraySizes: <span class="extype" name="scala.Array">Array</span>[<span class="extype" name="scala.Int">Int</span>]</span>, <span name="partSizes">partSizes: <span class="extype" name="org.apache.spark.broadcast.Broadcast">Broadcast</span>[<span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="scala.Int">Int</span>, <span class="extype" name="scala.Int">Int</span>]]</span>, <span name="child">child: <span class="extype" name="org.apache.spark.sql.execution.SparkPlan">SparkPlan</span></span>, <span name="inputEncoder">inputEncoder: <span class="extype" name="org.apache.spark.sql.Encoder">Encoder</span>[<span class="extype" name="com.ibm.gpuenabler.MAPGPUExec.T">T</span>]</span>, <span name="outputEncoder">outputEncoder: <span class="extype" name="org.apache.spark.sql.Encoder">Encoder</span>[<span class="extype" name="com.ibm.gpuenabler.MAPGPUExec.U">U</span>]</span>, <span name="outputObjAttr">outputObjAttr: <span class="extype" name="org.apache.spark.sql.catalyst.expressions.Attribute">Attribute</span></span>, <span name="logPlans">logPlans: <span class="extype" name="scala.Array">Array</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>)</span><span class="result"> extends <span class="extype" name="org.apache.spark.sql.execution.SparkPlan">SparkPlan</span> with <span class="extype" name="org.apache.spark.sql.execution.ObjectConsumerExec">ObjectConsumerExec</span> with <span class="extype" name="org.apache.spark.sql.execution.ObjectProducerExec">ObjectProducerExec</span> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#com.ibm.gpuenabler.package@MAPGPUExec[T,U]extendsSparkPlanwithObjectConsumerExecwithObjectProducerExecwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="com.ibm.gpuenabler.gpuParameters" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="gpuParametersextendsProductwithSerializable"></a>
+      <a id="gpuParameters:gpuParameters"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="gpuParameters.html"><span class="name">gpuParameters</span></a><span class="params">(<span name="dimensions">dimensions: (<span class="extype" name="scala.Long">Long</span>, <span class="extype" name="scala.Int">Int</span>) ⇒ (<span class="extype" name="scala.Int">Int</span>, <span class="extype" name="scala.Int">Int</span>, <span class="extype" name="scala.Int">Int</span>, <span class="extype" name="scala.Int">Int</span>, <span class="extype" name="scala.Int">Int</span>, <span class="extype" name="scala.Int">Int</span>)</span>, <span name="sharedMemorySize">sharedMemorySize: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Int">Int</span>] = <span class="symbol">None</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#com.ibm.gpuenabler.package@gpuParametersextendsProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">gpuParameters: This case class is used to describe the GPU Parameters
+such as dimensions and shared Memory size which is optional.</p><div class="fullcomment"><div class="comment cmt"><p>gpuParameters: This case class is used to describe the GPU Parameters
+such as dimensions and shared Memory size which is optional.</p></div><dl class="paramcmts block"><dt class="param">dimensions</dt><dd class="cmt"><p>: Dimensions should be Given in the following format
+                    GridSizeX, BlockSizeX, GridSizeY, BlockSizeY, GridSizeZ, BlockSizeZ.</p></dd><dt class="param">sharedMemorySize</dt><dd class="cmt"><p>: SharedMemorySize to be used in Bytes.
+                          It will be validated with the sharedMemorySize of the GPU.</p></dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="com.ibm.gpuenabler.CUDACodeGenerator" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="CUDACodeGenerator"></a>
+      <a id="CUDACodeGenerator:CUDACodeGenerator"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="CUDACodeGenerator$.html"><span class="name">CUDACodeGenerator</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#com.ibm.gpuenabler.package@CUDACodeGenerator" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="com.ibm.gpuenabler.CUDADSImplicits" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="CUDADSImplicits"></a>
+      <a id="CUDADSImplicits:CUDADSImplicits"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="CUDADSImplicits$.html"><span class="name">CUDADSImplicits</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#com.ibm.gpuenabler.package@CUDADSImplicits" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Adds additional functionality to existing Dataset/DataFrame's which are
+specific to performing computation on Nvidia GPU's attached
+to executors.</p><div class="fullcomment"><div class="comment cmt"><p>Adds additional functionality to existing Dataset/DataFrame's which are
+specific to performing computation on Nvidia GPU's attached
+to executors. To use these additional functionality import
+the following packages,</p><pre><span class="kw">import</span> com.ibm.gpuenabler.cuda._
+<span class="kw">import</span> com.ibm.gpuenabler.CUDADSImplicits._</pre></div></div>
+    </li><li name="com.ibm.gpuenabler.CUDARDDImplicits" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="CUDARDDImplicits"></a>
+      <a id="CUDARDDImplicits:CUDARDDImplicits"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="CUDARDDImplicits$.html"><span class="name">CUDARDDImplicits</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#com.ibm.gpuenabler.package@CUDARDDImplicits" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Adds additional functionality to existing RDD's which are
+specific to performing computation on Nvidia GPU's attached
+to executors.</p><div class="fullcomment"><div class="comment cmt"><p>Adds additional functionality to existing RDD's which are
+specific to performing computation on Nvidia GPU's attached
+to executors. To use these additional functionality import
+the following packages,</p><pre><span class="kw">import</span> com.ibm.gpuenabler.cuda._
+<span class="kw">import</span> com.ibm.gpuenabler.CUDARDDImplicits._</pre></div></div>
+    </li><li name="com.ibm.gpuenabler.GPUOperators" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="GPUOperators"></a>
+      <a id="GPUOperators:GPUOperators"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="GPUOperators$.html"><span class="name">GPUOperators</span></a><span class="result"> extends <a href="../../../org/apache/spark/sql/package.html#Strategy=org.apache.spark.sql.execution.SparkStrategy" class="extmbr" name="org.apache.spark.sql.Strategy">Strategy</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#com.ibm.gpuenabler.package@GPUOperators" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="com.ibm.gpuenabler.JCUDACodeGen" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="JCUDACodeGen"></a>
+      <a id="JCUDACodeGen:JCUDACodeGen"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="JCUDACodeGen$.html"><span class="name">JCUDACodeGen</span></a><span class="result"> extends <a href="../../../org/apache/spark/sql/gpuenabler/CUDAUtils$.html#_Logging=org.apache.spark.internal.Logging" class="extmbr" name="org.apache.spark.sql.gpuenabler.CUDAUtils._Logging">_Logging</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#com.ibm.gpuenabler.package@JCUDACodeGen" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Generates bytecode that can load/unload data &amp; modules into GPU and
+launch kernel in GPU using native CUDA libraries.</p>
+    </li><li name="com.ibm.gpuenabler.JavaCUDARDD" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="JavaCUDARDD"></a>
+      <a id="JavaCUDARDD:JavaCUDARDD"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="JavaCUDARDD$.html"><span class="name">JavaCUDARDD</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#com.ibm.gpuenabler.package@JavaCUDARDD" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="com.ibm.gpuenabler.LOADGPU" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="LOADGPU"></a>
+      <a id="LOADGPU:LOADGPU"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="LOADGPU$.html"><span class="name">LOADGPU</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#com.ibm.gpuenabler.package@LOADGPU" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="com.ibm.gpuenabler.MAPGPU" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MAPGPU"></a>
+      <a id="MAPGPU:MAPGPU"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="MAPGPU$.html"><span class="name">MAPGPU</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#com.ibm.gpuenabler.package@MAPGPU" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>

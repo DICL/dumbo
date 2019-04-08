@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="maven-antrun-" default="main"  >
+<target name="main">
+  <mkdir dir="/home/qyu/Kit/Spark/spark-2.1.0/tools/target/tmp"/>
+</target>
+</project>

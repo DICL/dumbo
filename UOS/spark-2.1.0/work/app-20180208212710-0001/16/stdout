@@ -1,0 +1,12 @@
+new sentences start
+new sentences end
+compute cuda function start time 5724067977691239
+input free variable memcpy time: 685
+const and output size memcpy time: 0
+devPtr freed from gpu
+devPtr freed from gpu
+compute end time 5724092101795402
+deserialize start time : 5724092101917990
+deserialize end time : 5724092103285680
+diff start time 5724092103441714
+diff end time 5724092104392647
