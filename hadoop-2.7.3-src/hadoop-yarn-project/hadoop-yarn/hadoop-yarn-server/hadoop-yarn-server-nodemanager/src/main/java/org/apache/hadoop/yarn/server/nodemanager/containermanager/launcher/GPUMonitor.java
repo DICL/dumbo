@@ -46,9 +46,11 @@ public class GPUMonitor implements Runnable {
 
   // Maximum number of GPU tasks(yarnchild)
   int max_num_of_gpu_yarnchild = 8;
-  // True if the number of GPU yarnchild is over the max value
+
+	// True if the number of GPU yarnchild is over the max value
   boolean bNumOverMaxGpu = false;
-  // Socket for debugging
+  
+	// Socket for debugging
   String debug_listener_address; 
   int debug_listener_port;
   boolean bUse_debug_listener;
@@ -65,6 +67,7 @@ public class GPUMonitor implements Runnable {
   Socket s = null;
   PrintWriter out = null;
 
+	// Constructor
   public GPUMonitor(String debug_listener_address, int debug_listener_port,
       boolean bUse_debug_listener, float upper_threshold, int matmul_length, float matmul_threshold, int matmul_full_count_threshold, Semaphore sem, Semaphore sem2) {
     this.debug_listener_address = debug_listener_address;
@@ -88,7 +91,7 @@ public class GPUMonitor implements Runnable {
     this.max_start_mode = max_start_mode;
   }
 
-
+	// Send message for debug
   void sendMsgSafe(String mes) {
     try {
       sem2.acquire(1);
