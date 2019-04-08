@@ -1,0 +1,2 @@
+Spark 1 built for Hadoop 2.4.0
+Build flags: -Dscala.binary.version=2.11 -Dhadoop.version=2.4.0

@@ -1,0 +1,4 @@
+/home/qyu/Kit/Spark/spark-2.1.0/external/kafka-0-10/src/test/java/org/apache/spark/streaming/kafka010/JavaConsumerStrategySuite.java
+/home/qyu/Kit/Spark/spark-2.1.0/external/kafka-0-10/src/test/java/org/apache/spark/streaming/kafka010/JavaDirectKafkaStreamSuite.java
+/home/qyu/Kit/Spark/spark-2.1.0/external/kafka-0-10/src/test/java/org/apache/spark/streaming/kafka010/JavaLocationStrategySuite.java
+/home/qyu/Kit/Spark/spark-2.1.0/external/kafka-0-10/src/test/java/org/apache/spark/streaming/kafka010/JavaKafkaRDDSuite.java

@@ -1,0 +1,146 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.ibm</groupId>
+  <artifactId>gpu-enabler-parent</artifactId>
+  <version>2.0.0</version>
+  <inceptionYear>2016</inceptionYear>
+  <packaging>pom</packaging>
+  <properties>
+    <scala.version>2.11.8</scala.version>
+    <scala.binary.version>2.11</scala.binary.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <PermGen>64m</PermGen>
+    <MaxPermGen>1024m</MaxPermGen>
+    <HeapSize>1024m</HeapSize>
+    <MaxHeapSize>2048m</MaxHeapSize>
+    <CodeCacheSize>512m</CodeCacheSize>
+  </properties>
+
+  <profiles>
+      <profile>
+          <id>jcuda70a</id>
+          <activation>
+              <activeByDefault>true</activeByDefault>
+          </activation>
+          <properties>
+              <jcuda.version>0.7.0a</jcuda.version>
+              <skip.jcuda.natives>true</skip.jcuda.natives>
+              <skip.jcuda.libs>false</skip.jcuda.libs>
+              <mavenized.jcuda>mavenized-jcuda-old</mavenized.jcuda>
+              <mavenized.jcuda.version>0.1.2</mavenized.jcuda.version>
+              <exclude.files>**/*perfDebugMod.scala</exclude.files>
+          </properties>
+      </profile>
+      <profile>
+          <id>jcuda75</id>
+          <properties>
+              <jcuda.version>0.7.5</jcuda.version>
+              <skip.jcuda.natives>true</skip.jcuda.natives>
+              <skip.jcuda.libs>false</skip.jcuda.libs>
+              <mavenized.jcuda>mavenized-jcuda-old</mavenized.jcuda>
+              <mavenized.jcuda.version>0.1.2</mavenized.jcuda.version>
+              <exclude.files>**/*perfDebugMod.scala</exclude.files>
+          </properties>
+      </profile>
+      <profile>
+          <id>jcuda80</id>
+          <properties>
+              <jcuda.version>0.8.0</jcuda.version>
+              <jcudnn.version>0.8.0</jcudnn.version>
+              <skip.jcuda.natives>false</skip.jcuda.natives>
+              <skip.jcuda.libs>true</skip.jcuda.libs>
+              <mavenized.jcuda>mavenized-jcuda</mavenized.jcuda>
+              <mavenized.jcuda.version>0.8.0</mavenized.jcuda.version>
+              <exclude.files>DontExcludeAnything</exclude.files>
+          </properties>
+      </profile>
+  </profiles>
+
+  <repositories>
+    <repository>
+      <id>scala-tools.org</id>
+      <name>Scala-Tools Maven2 Repository</name>
+      <url>http://scala-tools.org/repo-releases</url>
+    </repository>
+  </repositories>
+
+  <pluginRepositories>
+    <pluginRepository>
+      <id>scala-tools.org</id>
+      <name>Scala-Tools Maven2 Repository</name>
+      <url>http://scala-tools.org/repo-releases</url>
+    </pluginRepository>
+  </pluginRepositories>
+
+  <modules>
+    <module>${mavenized.jcuda}</module>
+    <module>gpu-enabler</module>
+    <module>examples</module>
+  </modules>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.apache.spark</groupId>
+      <artifactId>spark-core_${scala.binary.version}</artifactId>
+      <version>2.1.0</version>
+        <exclusions>
+            <exclusion>
+                <!-- make sure wrong scala version is not pulled in -->
+                <groupId>org.scala-lang</groupId>
+                <artifactId>scala-library</artifactId>
+            </exclusion>
+            <exclusion>
+                <!-- make sure wrong scala version is not pulled in -->
+                <groupId>org.scala-lang</groupId>
+                <artifactId>scala-compiler</artifactId>
+            </exclusion>
+            <exclusion>
+                <!-- make sure wrong scala version is not pulled in -->
+                <groupId>org.scala-lang</groupId>
+                <artifactId>scalap</artifactId>
+            </exclusion>
+        </exclusions>
+    </dependency>
+      <dependency>
+          <groupId>org.apache.spark</groupId>
+          <artifactId>spark-sql_2.11</artifactId>
+          <version>2.1.0</version>
+      </dependency>
+      <dependency>
+          <groupId>org.apache.spark</groupId>
+          <artifactId>spark-catalyst_2.11</artifactId>
+          <version>2.1.0</version>
+      </dependency>
+    <dependency>
+      <groupId>org.scala-lang</groupId>
+      <artifactId>scala-library</artifactId>
+      <version>${scala.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>org.scala-tools.testing</groupId>
+        <artifactId>specs</artifactId>
+        <version>1.6.2.2_1.5.0</version>
+        <scope>test</scope>
+    </dependency>
+    <dependency>
+        <groupId>org.scala-lang</groupId>
+        <artifactId>scala-xml</artifactId>
+        <version>2.11.0-M4</version>
+    </dependency>
+    <dependency>
+      <groupId>org.scalatest</groupId>
+      <artifactId>scalatest_${scala.binary.version}</artifactId>
+      <version>2.2.6</version>
+      <scope>test</scope>
+        <exclusions>
+            <exclusion>
+                <!-- make sure wrong scala version is not pulled in -->
+                <groupId>org.scala-lang.modules</groupId>
+                <artifactId>scala-xml_${scala.binary.version}</artifactId>
+            </exclusion>
+        </exclusions>
+
+    </dependency>
+  </dependencies>
+</project>

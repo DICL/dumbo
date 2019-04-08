@@ -1,0 +1,3 @@
+18/02/08 20:50:58 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+18/02/08 20:53:44 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeSystemBLAS
+18/02/08 20:53:44 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeRefBLAS

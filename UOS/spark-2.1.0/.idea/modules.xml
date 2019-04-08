@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../GPUEnabler/examples/gpu-enabler-examples_2.11.iml" filepath="$PROJECT_DIR$/../GPUEnabler/examples/gpu-enabler-examples_2.11.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../GPUEnabler/gpu-enabler-parent.iml" filepath="$PROJECT_DIR$/../GPUEnabler/gpu-enabler-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../GPUEnabler/gpu-enabler/gpu-enabler_2.11.iml" filepath="$PROJECT_DIR$/../GPUEnabler/gpu-enabler/gpu-enabler_2.11.iml" />
+      <module fileurl="file://$USER_HOME$/Workspace/spark/knn/knn.iml" filepath="$USER_HOME$/Workspace/spark/knn/knn.iml" />
+      <module fileurl="file://$USER_HOME$/Workspace/spark/linear_regression/.idea/modules/linear_regression.iml" filepath="$USER_HOME$/Workspace/spark/linear_regression/.idea/modules/linear_regression.iml" />
+      <module fileurl="file://$USER_HOME$/Workspace/spark/linear_regression/.idea/modules/linear_regression-build.iml" filepath="$USER_HOME$/Workspace/spark/linear_regression/.idea/modules/linear_regression-build.iml" />
+      <module fileurl="file://$USER_HOME$/Workspace/spark/logistic_regression/logistic_regression.iml" filepath="$USER_HOME$/Workspace/spark/logistic_regression/logistic_regression.iml" />
+      <module fileurl="file://$USER_HOME$/Workspace/spark/lr/lr.iml" filepath="$USER_HOME$/Workspace/spark/lr/lr.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../GPUEnabler/mavenized-jcuda-old/mavenized-jcuda.iml" filepath="$PROJECT_DIR$/../GPUEnabler/mavenized-jcuda-old/mavenized-jcuda.iml" />
+      <module fileurl="file://$USER_HOME$/Workspace/spark/pagerank/pagerank.iml" filepath="$USER_HOME$/Workspace/spark/pagerank/pagerank.iml" />
+      <module fileurl="file://$USER_HOME$/Workspace/spark/pi/pi.iml" filepath="$USER_HOME$/Workspace/spark/pi/pi.iml" />
+      <module fileurl="file://$USER_HOME$/Workspace/spark/saxpy/saxpy.iml" filepath="$USER_HOME$/Workspace/spark/saxpy/saxpy.iml" />
+      <module fileurl="file://$USER_HOME$/Workspace/spark/spark.iml" filepath="$USER_HOME$/Workspace/spark/spark.iml" />
+      <module fileurl="file://$PROJECT_DIR$/assembly/spark-assembly_2.11.iml" filepath="$PROJECT_DIR$/assembly/spark-assembly_2.11.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sql/catalyst/spark-catalyst_2.11.iml" filepath="$PROJECT_DIR$/sql/catalyst/spark-catalyst_2.11.iml" />
+      <module fileurl="file://$PROJECT_DIR$/core/spark-core_2.11.iml" filepath="$PROJECT_DIR$/core/spark-core_2.11.iml" />
+      <module fileurl="file://$PROJECT_DIR$/examples/spark-examples_2.11.iml" filepath="$PROJECT_DIR$/examples/spark-examples_2.11.iml" />
+      <module fileurl="file://$PROJECT_DIR$/graphx/spark-graphx_2.11.iml" filepath="$PROJECT_DIR$/graphx/spark-graphx_2.11.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sql/hive/spark-hive_2.11.iml" filepath="$PROJECT_DIR$/sql/hive/spark-hive_2.11.iml" />
+      <module fileurl="file://$PROJECT_DIR$/launcher/spark-launcher_2.11.iml" filepath="$PROJECT_DIR$/launcher/spark-launcher_2.11.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mllib-local/spark-mllib-local_2.11.iml" filepath="$PROJECT_DIR$/mllib-local/spark-mllib-local_2.11.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mllib/spark-mllib_2.11.iml" filepath="$PROJECT_DIR$/mllib/spark-mllib_2.11.iml" />
+      <module fileurl="file://$PROJECT_DIR$/common/network-common/spark-network-common_2.11.iml" filepath="$PROJECT_DIR$/common/network-common/spark-network-common_2.11.iml" />
+      <module fileurl="file://$PROJECT_DIR$/common/network-shuffle/spark-network-shuffle_2.11.iml" filepath="$PROJECT_DIR$/common/network-shuffle/spark-network-shuffle_2.11.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spark-parent_2.11.iml" filepath="$PROJECT_DIR$/spark-parent_2.11.iml" />
+      <module fileurl="file://$PROJECT_DIR$/repl/spark-repl_2.11.iml" filepath="$PROJECT_DIR$/repl/spark-repl_2.11.iml" />
+      <module fileurl="file://$PROJECT_DIR$/common/sketch/spark-sketch_2.11.iml" filepath="$PROJECT_DIR$/common/sketch/spark-sketch_2.11.iml" />
+      <module fileurl="file://$PROJECT_DIR$/external/kafka-0-10-sql/spark-sql-kafka-0-10_2.11.iml" filepath="$PROJECT_DIR$/external/kafka-0-10-sql/spark-sql-kafka-0-10_2.11.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sql/core/spark-sql_2.11.iml" filepath="$PROJECT_DIR$/sql/core/spark-sql_2.11.iml" />
+      <module fileurl="file://$PROJECT_DIR$/external/flume-assembly/spark-streaming-flume-assembly_2.11.iml" filepath="$PROJECT_DIR$/external/flume-assembly/spark-streaming-flume-assembly_2.11.iml" />
+      <module fileurl="file://$PROJECT_DIR$/external/flume-sink/spark-streaming-flume-sink_2.11.iml" filepath="$PROJECT_DIR$/external/flume-sink/spark-streaming-flume-sink_2.11.iml" />
+      <module fileurl="file://$PROJECT_DIR$/external/flume/spark-streaming-flume_2.11.iml" filepath="$PROJECT_DIR$/external/flume/spark-streaming-flume_2.11.iml" />
+      <module fileurl="file://$PROJECT_DIR$/external/kafka-0-10-assembly/spark-streaming-kafka-0-10-assembly_2.11.iml" filepath="$PROJECT_DIR$/external/kafka-0-10-assembly/spark-streaming-kafka-0-10-assembly_2.11.iml" />
+      <module fileurl="file://$PROJECT_DIR$/external/kafka-0-10/spark-streaming-kafka-0-10_2.11.iml" filepath="$PROJECT_DIR$/external/kafka-0-10/spark-streaming-kafka-0-10_2.11.iml" />
+      <module fileurl="file://$PROJECT_DIR$/external/kafka-0-8-assembly/spark-streaming-kafka-0-8-assembly_2.11.iml" filepath="$PROJECT_DIR$/external/kafka-0-8-assembly/spark-streaming-kafka-0-8-assembly_2.11.iml" />
+      <module fileurl="file://$PROJECT_DIR$/external/kafka-0-8/spark-streaming-kafka-0-8_2.11.iml" filepath="$PROJECT_DIR$/external/kafka-0-8/spark-streaming-kafka-0-8_2.11.iml" />
+      <module fileurl="file://$PROJECT_DIR$/streaming/spark-streaming_2.11.iml" filepath="$PROJECT_DIR$/streaming/spark-streaming_2.11.iml" />
+      <module fileurl="file://$PROJECT_DIR$/common/tags/spark-tags_2.11.iml" filepath="$PROJECT_DIR$/common/tags/spark-tags_2.11.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tools/spark-tools_2.11.iml" filepath="$PROJECT_DIR$/tools/spark-tools_2.11.iml" />
+      <module fileurl="file://$PROJECT_DIR$/common/unsafe/spark-unsafe_2.11.iml" filepath="$PROJECT_DIR$/common/unsafe/spark-unsafe_2.11.iml" />
+      <module fileurl="file://$USER_HOME$/Workspace/spark/vecadd/vectorAddGPU/vectorAddGPU.iml" filepath="$USER_HOME$/Workspace/spark/vecadd/vectorAddGPU/vectorAddGPU.iml" />
+      <module fileurl="file://$USER_HOME$/Workspace/word2vec/.idea/modules/word2vec.iml" filepath="$USER_HOME$/Workspace/word2vec/.idea/modules/word2vec.iml" />
+      <module fileurl="file://$USER_HOME$/Workspace/word2vec/.idea/modules/word2vec-build.iml" filepath="$USER_HOME$/Workspace/word2vec/.idea/modules/word2vec-build.iml" />
+    </modules>
+  </component>
+</project>

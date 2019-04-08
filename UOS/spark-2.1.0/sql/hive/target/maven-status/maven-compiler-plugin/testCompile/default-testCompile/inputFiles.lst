@@ -1,0 +1,14 @@
+/home/qyu/Kit/Spark/spark-2.1.0/sql/hive/src/test/java/org/apache/spark/sql/hive/execution/UDFToListString.java
+/home/qyu/Kit/Spark/spark-2.1.0/sql/hive/src/test/java/org/apache/spark/sql/hive/execution/UDFListString.java
+/home/qyu/Kit/Spark/spark-2.1.0/sql/hive/src/test/java/org/apache/spark/sql/hive/execution/UDFListListInt.java
+/home/qyu/Kit/Spark/spark-2.1.0/sql/hive/src/test/java/org/apache/spark/sql/hive/aggregate/MyDoubleAvg.java
+/home/qyu/Kit/Spark/spark-2.1.0/sql/hive/src/test/java/org/apache/spark/sql/hive/aggregate/MyDoubleSum.java
+/home/qyu/Kit/Spark/spark-2.1.0/sql/hive/src/test/java/org/apache/spark/sql/hive/execution/UDFTwoListList.java
+/home/qyu/Kit/Spark/spark-2.1.0/sql/hive/src/test/java/org/apache/spark/sql/hive/test/Complex.java
+/home/qyu/Kit/Spark/spark-2.1.0/sql/hive/src/test/java/org/apache/spark/sql/hive/execution/UDFToStringIntMap.java
+/home/qyu/Kit/Spark/spark-2.1.0/sql/hive/src/test/java/org/apache/spark/sql/hive/execution/UDFIntegerToString.java
+/home/qyu/Kit/Spark/spark-2.1.0/sql/hive/src/test/java/org/apache/spark/sql/hive/JavaDataFrameSuite.java
+/home/qyu/Kit/Spark/spark-2.1.0/sql/hive/src/test/java/org/apache/spark/sql/hive/JavaMetastoreDataSourcesSuite.java
+/home/qyu/Kit/Spark/spark-2.1.0/sql/hive/src/test/java/org/apache/spark/sql/hive/execution/UDFStringString.java
+/home/qyu/Kit/Spark/spark-2.1.0/sql/hive/src/test/java/org/apache/spark/sql/hive/execution/UDFToIntIntMap.java
+/home/qyu/Kit/Spark/spark-2.1.0/sql/hive/src/test/java/org/apache/spark/sql/hive/execution/UDFToListInt.java

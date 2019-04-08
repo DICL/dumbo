@@ -1,0 +1,17 @@
+Spark Command: /usr/lib/jvm/java-7-openjdk-amd64/bin/java -cp /home/qyu/Kit/Spark/spark-2.1.0/conf/:/home/qyu/Kit/Spark/spark-2.1.0/assembly/target/scala-2.11/jars/* -Xmx1g -XX:MaxPermSize=256m org.apache.spark.deploy.master.Master --host 10.0.0.1 --port 7077 --webui-port 8080
+========================================
+19/04/04 15:29:13 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+19/04/04 15:30:12 WARN Master: Got status update for unknown executor app-20190404152931-0000/0
+19/04/04 15:35:06 WARN Master: Got status update for unknown executor app-20190404153419-0001/0
+19/04/04 15:36:21 WARN Master: Got status update for unknown executor app-20190404153602-0002/0
+19/04/04 15:42:42 WARN Master: Got status update for unknown executor app-20190404154157-0003/0
+19/04/04 15:59:05 WARN Master: Got status update for unknown executor app-20190404155726-0004/0
+19/04/04 16:10:55 WARN Master: Got status update for unknown executor app-20190404161007-0005/0
+19/04/04 16:17:02 WARN Master: Got status update for unknown executor app-20190404161241-0006/0
+19/04/04 16:23:09 WARN Master: Got status update for unknown executor app-20190404161750-0007/0
+19/04/04 16:49:56 WARN Master: Got status update for unknown executor app-20190404164914-0008/0
+19/04/04 16:58:40 WARN Master: Got status update for unknown executor app-20190404165748-0009/0
+19/04/05 16:10:50 WARN Master: Got status update for unknown executor app-20190405160946-0010/0
+19/04/07 20:50:39 WARN Master: Got status update for unknown executor app-20190407204943-0011/0
+19/04/07 22:58:41 WARN Master: Got status update for unknown executor app-20190407225748-0012/0
+19/04/07 23:00:23 WARN Master: Got status update for unknown executor app-20190407225939-0013/0

@@ -1,0 +1,1768 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="fcd3c39e-2b6c-44c0-bffa-59bb40df272f" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$APPLICATION_CONFIG_DIR$/colors/newScheme.icls" />
+      <change type="NEW" beforePath="" afterPath="$APPLICATION_CONFIG_DIR$/options/colors.scheme.xml" />
+      <change type="NEW" beforePath="" afterPath="$APPLICATION_CONFIG_DIR$/options/security.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/Workspace/copy_global_address/.idea/modules/copy_global_address-build.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/Workspace/copy_global_address/.idea/modules/copy_global_address.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/Workspace/proto/.idea/modules/proto-build.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/Workspace/proto/.idea/modules/proto.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/Workspace/proto4/.idea/modules/proto4-build.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/Workspace/proto4/.idea/modules/proto4.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/Workspace/proto5/.idea/modules/proto5-build.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/Workspace/proto5/.idea/modules/proto5.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/Workspace/spark/knn/knn.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/Workspace/spark/knn/src/main/resources/Makefile" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/Workspace/spark/knn/src/main/resources/knn.cu" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/Workspace/spark/knn/src/main/scala/KNN.scala" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/Workspace/spark/linear_regression/.idea/modules/linear_regression-build.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/Workspace/spark/linear_regression/.idea/modules/linear_regression.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/Workspace/spark/linear_regression/submit.sh" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/Workspace/spark/logistic/logGPU/.idea/modules/loggpu-build.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/Workspace/spark/logistic/logGPU/.idea/modules/loggpu.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/Workspace/spark/logistic/logGPU/src/main/scala/.v2" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/Workspace/spark/logistic/logGPU/src/main/scala/SparkGPULR.scala" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/Workspace/spark/logistic_regression/logistic_regression.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/Workspace/spark/lr/lr.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/Workspace/spark/pagerank/pagerank.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/Workspace/spark/pagerank/src/main/scala/PageRank.scala" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/Workspace/spark/pi/pi.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/Workspace/spark/saxpy/saxpy.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/Workspace/spark/spark.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/Workspace/spark/vecadd/spark/.idea/modules/spark-build.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/Workspace/spark/vecadd/spark/.idea/modules/spark.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/Workspace/spark/word2vec/gpu/.idea/modules/gpu-build.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/Workspace/word2vec/.idea/modules/word2vec-build.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/Workspace/word2vec/.idea/modules/word2vec.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__aopalliance_aopalliance_1_0_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__com_clearspring_analytics_stream_2_7_0_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__com_esotericsoftware_kryo_shaded_3_0_3_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__com_esotericsoftware_minlog_1_3_0_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__com_fasterxml_jackson_core_jackson_annotations_2_6_5_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__com_fasterxml_jackson_core_jackson_core_2_6_5_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__com_fasterxml_jackson_core_jackson_databind_2_6_5_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__com_fasterxml_jackson_module_jackson_module_paranamer_2_6_5_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__com_fasterxml_jackson_module_jackson_module_scala_2_11_2_6_5_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__com_google_code_findbugs_jsr305_1_3_9_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__com_google_guava_guava_14_0_1_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__com_google_inject_guice_3_0_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__com_google_protobuf_protobuf_java_2_5_0_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__com_ning_compress_lzf_1_0_3_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__com_thoughtworks_paranamer_paranamer_2_6_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__com_twitter_chill_2_11_0_8_0_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__com_twitter_chill_java_0_8_0_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__commons_beanutils_commons_beanutils_1_7_0_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__commons_beanutils_commons_beanutils_core_1_8_0_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__commons_cli_commons_cli_1_2_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__commons_codec_commons_codec_1_4_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__commons_collections_commons_collections_3_2_1_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__commons_configuration_commons_configuration_1_6_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__commons_digester_commons_digester_1_8_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__commons_httpclient_commons_httpclient_3_1_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__commons_io_commons_io_2_1_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__commons_lang_commons_lang_2_5_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__commons_net_commons_net_2_2_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__io_dropwizard_metrics_metrics_core_3_1_2_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__io_dropwizard_metrics_metrics_graphite_3_1_2_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__io_dropwizard_metrics_metrics_json_3_1_2_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__io_dropwizard_metrics_metrics_jvm_3_1_2_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__io_netty_netty_3_8_0_Final_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__io_netty_netty_all_4_0_42_Final_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__javax_annotation_javax_annotation_api_1_2_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__javax_inject_javax_inject_1_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__javax_servlet_javax_servlet_api_3_1_0_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__javax_validation_validation_api_1_1_0_Final_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__javax_ws_rs_javax_ws_rs_api_2_0_1_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__log4j_log4j_1_2_17_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__net_java_dev_jets3t_jets3t_0_7_1_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__net_jpountz_lz4_lz4_1_3_0_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__net_razorvine_pyrolite_4_13_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__net_sf_py4j_py4j_0_10_4_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__org_apache_avro_avro_1_7_7_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__org_apache_avro_avro_ipc_1_7_7_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__org_apache_avro_avro_ipc_1_7_7_tests_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__org_apache_avro_avro_mapred_1_7_7_hadoop2_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__org_apache_commons_commons_compress_1_4_1_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__org_apache_commons_commons_crypto_1_0_0_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__org_apache_commons_commons_lang3_3_5_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__org_apache_commons_commons_math3_3_4_1_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__org_apache_commons_commons_math_2_1_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__org_apache_curator_curator_client_2_4_0_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__org_apache_curator_curator_framework_2_4_0_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__org_apache_curator_curator_recipes_2_4_0_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__org_apache_hadoop_hadoop_annotations_2_2_0_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__org_apache_hadoop_hadoop_auth_2_2_0_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__org_apache_hadoop_hadoop_client_2_2_0_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__org_apache_hadoop_hadoop_common_2_2_0_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__org_apache_hadoop_hadoop_hdfs_2_2_0_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__org_apache_hadoop_hadoop_mapreduce_client_app_2_2_0_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__org_apache_hadoop_hadoop_mapreduce_client_common_2_2_0_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__org_apache_hadoop_hadoop_mapreduce_client_core_2_2_0_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__org_apache_hadoop_hadoop_mapreduce_client_jobclient_2_2_0_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__org_apache_hadoop_hadoop_mapreduce_client_shuffle_2_2_0_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__org_apache_hadoop_hadoop_yarn_api_2_2_0_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__org_apache_hadoop_hadoop_yarn_client_2_2_0_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__org_apache_hadoop_hadoop_yarn_common_2_2_0_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__org_apache_hadoop_hadoop_yarn_server_common_2_2_0_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__org_apache_ivy_ivy_2_4_0_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__org_apache_spark_spark_core_2_11_2_1_0_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__org_apache_spark_spark_launcher_2_11_2_1_0_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__org_apache_spark_spark_network_common_2_11_2_1_0_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__org_apache_spark_spark_network_shuffle_2_11_2_1_0_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__org_apache_spark_spark_tags_2_11_2_1_0_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__org_apache_spark_spark_unsafe_2_11_2_1_0_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__org_apache_xbean_xbean_asm5_shaded_4_4_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__org_apache_zookeeper_zookeeper_3_4_5_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__org_codehaus_jackson_jackson_core_asl_1_9_13_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__org_codehaus_jackson_jackson_mapper_asl_1_9_13_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__org_fusesource_leveldbjni_leveldbjni_all_1_8_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__org_glassfish_hk2_external_aopalliance_repackaged_2_4_0_b34_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__org_glassfish_hk2_external_javax_inject_2_4_0_b34_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__org_glassfish_hk2_hk2_api_2_4_0_b34_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__org_glassfish_hk2_hk2_locator_2_4_0_b34_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__org_glassfish_hk2_hk2_utils_2_4_0_b34_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__org_glassfish_hk2_osgi_resource_locator_1_0_1_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__org_glassfish_jersey_bundles_repackaged_jersey_guava_2_22_2_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__org_glassfish_jersey_containers_jersey_container_servlet_2_22_2_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__org_glassfish_jersey_containers_jersey_container_servlet_core_2_22_2_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__org_glassfish_jersey_core_jersey_client_2_22_2_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__org_glassfish_jersey_core_jersey_common_2_22_2_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__org_glassfish_jersey_core_jersey_server_2_22_2_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__org_glassfish_jersey_media_jersey_media_jaxb_2_22_2_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__org_javassist_javassist_3_18_1_GA_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__org_json4s_json4s_ast_2_11_3_2_11_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__org_json4s_json4s_core_2_11_3_2_11_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__org_json4s_json4s_jackson_2_11_3_2_11_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__org_mortbay_jetty_jetty_util_6_1_26_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__org_objenesis_objenesis_2_1_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__org_roaringbitmap_RoaringBitmap_0_5_11_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__org_scala_lang_modules_scala_parser_combinators_2_11_1_0_4_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__org_scala_lang_modules_scala_xml_2_11_1_0_4_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__org_scala_lang_scala_compiler_2_11_8_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__org_scala_lang_scala_reflect_2_11_8_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__org_scala_lang_scalap_2_11_8_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__org_scalatest_scalatest_2_11_2_2_6_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__org_slf4j_jcl_over_slf4j_1_7_16_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__org_slf4j_jul_to_slf4j_1_7_16_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__org_slf4j_slf4j_api_1_7_16_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__org_slf4j_slf4j_log4j12_1_7_16_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__org_sonatype_sisu_inject_cglib_2_2_1_v20090111_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__org_spark_project_spark_unused_1_0_0_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__org_tukaani_xz_1_0_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__org_xerial_snappy_snappy_java_1_1_2_6_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__oro_oro_2_0_8_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/libraries/SBT__xmlenc_xmlenc_0_52_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/jcuda-sample/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/acronym/.idea/modules/acronym-build.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/acronym/.idea/modules/acronym.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/all-your-base/.idea/modules/all-your-base-build.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/all-your-base/.idea/modules/all-your-base.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/all-your-base/src/main/scala/AllYourBase.scala" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/allergies/.idea/modules/allergies-build.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/allergies/.idea/modules/allergies.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/atbash-cipher/.idea/modules/atbash-cipher-build.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/atbash-cipher/.idea/modules/atbash-cipher.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/bank-account/.idea/modules/bank-account-build.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/bank-account/.idea/modules/bank-account.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/beer-song/.idea/modules/beer-song-build.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/beer-song/.idea/modules/beer-song.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/beer-song/src/main/scala/BeerSong.scala" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/binary-search-tree/src/main/scala/Bst.scala" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/binary-search/.idea/modules/binary-search-build.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/binary-search/.idea/modules/binary-search.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/book-store/.idea/modules/book-store-build.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/book-store/.idea/modules/book-store.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/book-store/src/main/scala/BookStore.scala" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/bowling/.idea/modules/bowling-build.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/bowling/.idea/modules/bowling.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/bracket-push/.idea/modules/bracket-push-build.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/bracket-push/.idea/modules/bracket-push.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/bracket-push/src/main/scala/Brackets.scala" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/change/.idea/modules/change-build.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/change/.idea/modules/change.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/change/src/main/scala/Change.scala" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/clock/.idea/modules/clock-build.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/clock/.idea/modules/clock.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/clock/src/main/scala/Clock.scala" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/crypto-square/.idea/modules/crypto-square-build.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/crypto-square/.idea/modules/crypto-square.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/custom-set/.idea/modules/custom-set-build.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/custom-set/.idea/modules/custom-set.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/custom-set/src/main/scala/CustomSet.scala" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/dominoes/.idea/modules/dominoes-build.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/dominoes/.idea/modules/dominoes.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/food-chain/.idea/modules/food-chain-build.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/food-chain/.idea/modules/food-chain.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/food-chain/src/main/scala/FoodChain.scala" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/house/.idea/modules/house-build.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/house/.idea/modules/house.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/house/src/main/scala/House.scala" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/isogram/.idea/modules/isogram-build.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/isogram/.idea/modules/isogram.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/isogram/src/main/scala/Isogram.scala" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/kindergarten-garden/.idea/modules/kindergarten-garden-build.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/kindergarten-garden/.idea/modules/kindergarten-garden.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/kindergarten-garden/src/main/scala/Garden.scala" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/largest-series-product/.idea/modules/largest-series-product-build.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/largest-series-product/.idea/modules/largest-series-product.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/largest-series-product/src/main/scala/Series.scala" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/linked-list/.idea/modules/linked-list-build.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/linked-list/.idea/modules/linked-list.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/linked-list/src/main/scala/Deque.scala" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/luhn/.idea/modules/luhn-build.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/luhn/.idea/modules/luhn.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/luhn/src/main/scala/Luhn.scala" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/matrix/.idea/modules/matrix-build.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/matrix/.idea/modules/matrix.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/matrix/src/main/scala/Matrix.scala" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/meetup/src/main/scala/Meetup.scala" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/minesweeper/.idea/modules/minesweeper-build.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/minesweeper/.idea/modules/minesweeper.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/minesweeper/src/main/scala/Minesweeper.scala" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/nth-prime/.idea/modules/nth-prime-build.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/nth-prime/.idea/modules/nth-prime.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/nth-prime/src/main/scala/Prime.scala" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/ocr-numbers/.idea/modules/ocr-numbers-build.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/ocr-numbers/.idea/modules/ocr-numbers.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/ocr-numbers/src/main/scala/Ocr.scala" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/palindrome-products/.idea/modules/palindrome-products-build.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/palindrome-products/.idea/modules/palindrome-products.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/palindrome-products/src/main/scala/PalindromeProduct.scala" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/pascals-triangle/.idea/modules/pascals-triangle.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/pascals-triangle/src/main/scala/PascalsTriangle.scala" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/perfect-numbers/.idea/modules/perfect-numbers-build.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/perfect-numbers/.idea/modules/perfect-numbers.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/pig-latin/.idea/modules/pig-latin-build.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/pig-latin/.idea/modules/pig-latin.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/pig-latin/src/main/scala/PigLatin.scala" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/prime-factors/.idea/modules/prime-factors-build.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/prime-factors/.idea/modules/prime-factors.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/prime-factors/src/main/scala/PrimeFactors.scala" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/prime-factors/src/main/scala/test.sc" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/protein-translation/.idea/modules/protein-translation-build.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/protein-translation/.idea/modules/protein-translation.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/protein-translation/src/main/scala/ProteinTranslation.scala" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/pythagorean-triplet/.idea/modules/pythagorean-triplet-build.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/pythagorean-triplet/.idea/modules/pythagorean-triplet.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/pythagorean-triplet/src/main/scala/PythagoreanTriplet.scala" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/queen-attack/.idea/modules/queen-attack-build.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/queen-attack/.idea/modules/queen-attack.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/rail-fence-cipher/.idea/modules/rail-fence-cipher-build.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/rail-fence-cipher/.idea/modules/rail-fence-cipher.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/raindrops/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/rna-transcription/.idea/modules/rna-transcription-build.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/rna-transcription/.idea/modules/rna-transcription.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/rna-transcription/src/main/scala/Dna.scala" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/rna-transcription/src/main/scala/test.sc" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/robot-simulator/.idea/modules/robot-simulator-build.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/robot-simulator/.idea/modules/robot-simulator.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/robot-simulator/src/main/scala/Robot.scala" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/roman-numerals/.idea/modules/roman-numerals-build.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/roman-numerals/.idea/modules/roman-numerals.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/roman-numerals/src/main/scala/test.sc" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/run-length-encoding/.idea/modules/run-length-encoding-build.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/run-length-encoding/.idea/modules/run-length-encoding.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/saddle-points/.idea/modules/saddle-points-build.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/saddle-points/.idea/modules/saddle-points.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/saddle-points/src/main/scala/Matrix.scala" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/secret-handshake/.idea/modules/secret-handshake-build.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/secret-handshake/.idea/modules/secret-handshake.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/secret-handshake/src/main/scala/SecretHandshake.scala" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/series/.idea/modules/series-build.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/series/.idea/modules/series.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/series/src/main/scala/Series.scala" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/sieve/.idea/modules/sieve-build.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/sieve/.idea/modules/sieve.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/sieve/src/main/scala/Sieve.scala" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/simple-cipher/.idea/modules/simple-cipher-build.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/simple-cipher/.idea/modules/simple-cipher.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/simple-cipher/src/main/scala/Cipher.scala" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/simple-linked-list/.idea/modules/simple-linked-list-build.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/simple-linked-list/.idea/modules/simple-linked-list.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/spiral-matrix/.idea/modules/spiral-matrix-build.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/spiral-matrix/.idea/modules/spiral-matrix.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/spiral-matrix/src/main/scala/SpiralMatrix.scala" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/strain/.idea/modules/strain-build.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/strain/.idea/modules/strain.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/sublist/.idea/libraries/SBT__org_scala_lang_modules_scala_parser_combinators_2_12_1_0_4_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/sublist/.idea/libraries/SBT__org_scala_lang_modules_scala_parser_combinators_2_12_1_0_5_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/sublist/.idea/libraries/SBT__org_scala_lang_modules_scala_xml_2_12_1_0_5_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/sublist/.idea/libraries/SBT__org_scala_lang_scala_library_2_11_7_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/sublist/.idea/libraries/SBT__org_scala_lang_scala_library_2_12_1_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/sublist/.idea/libraries/SBT__org_scala_lang_scala_library_2_12_2_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/sublist/.idea/libraries/SBT__org_scala_lang_scala_reflect_2_12_1_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/sublist/.idea/libraries/SBT__org_scala_lang_scala_reflect_2_12_2_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/sublist/.idea/libraries/SBT__org_scala_sbt_test_interface_1_0_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/sublist/.idea/libraries/SBT__org_scalacheck_scalacheck_2_12_1_13_4_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/sublist/.idea/libraries/SBT__org_scalactic_scalactic_2_12_3_0_1_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/sublist/.idea/libraries/SBT__org_scalatest_scalatest_2_12_3_0_1_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/sublist/.idea/uiDesigner.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/sublist/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/triangle/.idea/modules/triangle-build.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/triangle/.idea/modules/triangle.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/triangle/src/main/scala/Triangle.scala" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/wordy/.idea/modules/wordy-build.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/wordy/.idea/modules/wordy.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/wordy/src/main/scala/WordProblem.scala" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/zebra-puzzle/.idea/modules/zebra-puzzle-build.iml" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/private/scala/exercism/project/scala/zebra-puzzle/.idea/modules/zebra-puzzle.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../GPUEnabler/examples/target/gpu-enabler-examples_2.11-2.0.0.jar" afterPath="$PROJECT_DIR$/../GPUEnabler/examples/target/gpu-enabler-examples_2.11-2.0.0.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../GPUEnabler/examples/target/original-gpu-enabler-examples_2.11-2.0.0.jar" afterPath="$PROJECT_DIR$/../GPUEnabler/examples/target/original-gpu-enabler-examples_2.11-2.0.0.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../GPUEnabler/gpu-enabler/target/gpu-enabler_2.11-2.0.0-javadoc.jar" afterPath="$PROJECT_DIR$/../GPUEnabler/gpu-enabler/target/gpu-enabler_2.11-2.0.0-javadoc.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../GPUEnabler/gpu-enabler/target/gpu-enabler_2.11-2.0.0.jar" afterPath="$PROJECT_DIR$/../GPUEnabler/gpu-enabler/target/gpu-enabler_2.11-2.0.0.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../GPUEnabler/gpu-enabler/target/original-gpu-enabler_2.11-2.0.0.jar" afterPath="$PROJECT_DIR$/../GPUEnabler/gpu-enabler/target/original-gpu-enabler_2.11-2.0.0.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../GPUEnabler/gpu-enabler/target/scala-2.11/classes/com/ibm/gpuenabler/HybridIterator$$anonfun$lazyInputListKernParmDesc$1$$anonfun$27$$anonfun$apply$6.class" afterPath="$PROJECT_DIR$/../GPUEnabler/gpu-enabler/target/scala-2.11/classes/com/ibm/gpuenabler/HybridIterator$$anonfun$lazyInputListKernParmDesc$1$$anonfun$27$$anonfun$apply$6.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../GPUEnabler/gpu-enabler/target/scala-2.11/classes/com/ibm/gpuenabler/HybridIterator$$anonfun$lazyInputListKernParmDescTest$1$$anonfun$apply$10.class" afterPath="$PROJECT_DIR$/../GPUEnabler/gpu-enabler/target/scala-2.11/classes/com/ibm/gpuenabler/HybridIterator$$anonfun$lazyInputListKernParmDescTest$1$$anonfun$apply$10.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../GPUEnabler/gpu-enabler/target/scala-2.11/classes/com/ibm/gpuenabler/HybridIterator$$anonfun$lazyInputListKernParmDescTest$1.class" afterPath="$PROJECT_DIR$/../GPUEnabler/gpu-enabler/target/scala-2.11/classes/com/ibm/gpuenabler/HybridIterator$$anonfun$lazyInputListKernParmDescTest$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../GPUEnabler/examples/target/analysis/compile" afterPath="$PROJECT_DIR$/../GPUEnabler/examples/target/analysis/compile" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../GPUEnabler/examples/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/../GPUEnabler/examples/target/maven-archiver/pom.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../GPUEnabler/gpu-enabler/src/main/scala/com/ibm/gpuenabler/HybridIterator.scala" afterPath="$PROJECT_DIR$/../GPUEnabler/gpu-enabler/src/main/scala/com/ibm/gpuenabler/HybridIterator.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../GPUEnabler/gpu-enabler/target/analysis/compile" afterPath="$PROJECT_DIR$/../GPUEnabler/gpu-enabler/target/analysis/compile" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../GPUEnabler/gpu-enabler/target/analysis/test-compile" afterPath="$PROJECT_DIR$/../GPUEnabler/gpu-enabler/target/analysis/test-compile" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../GPUEnabler/gpu-enabler/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/../GPUEnabler/gpu-enabler/target/maven-archiver/pom.properties" />
+    </list>
+    <ignored path="spark-parent_2.11.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path="$PROJECT_DIR$/common/sketch/target/" />
+    <ignored path="$PROJECT_DIR$/tools/target/" />
+    <ignored path="$PROJECT_DIR$/common/tags/target/" />
+    <ignored path="$PROJECT_DIR$/external/flume/target/" />
+    <ignored path="$PROJECT_DIR$/external/kafka-0-10-sql/target/" />
+    <ignored path="$PROJECT_DIR$/external/kafka-0-8-assembly/target/" />
+    <ignored path="$PROJECT_DIR$/external/kafka-0-8/target/" />
+    <ignored path="$PROJECT_DIR$/common/network-shuffle/target/" />
+    <ignored path="$PROJECT_DIR$/sql/catalyst/target/scala-2.11/" />
+    <ignored path="$PROJECT_DIR$/sql/catalyst/target/analysis/" />
+    <ignored path="$PROJECT_DIR$/sql/catalyst/target/maven-shared-archive-resources/" />
+    <ignored path="$PROJECT_DIR$/sql/catalyst/target/maven-status/" />
+    <ignored path="$PROJECT_DIR$/sql/catalyst/target/tmp/" />
+    <ignored path="$PROJECT_DIR$/sql/catalyst/target/antrun/" />
+    <ignored path="$PROJECT_DIR$/sql/catalyst/target/maven-archiver/" />
+    <ignored path="$PROJECT_DIR$/external/kafka-0-10/target/" />
+    <ignored path="$PROJECT_DIR$/external/flume-sink/target/" />
+    <ignored path="$PROJECT_DIR$/mllib-local/target/" />
+    <ignored path="$PROJECT_DIR$/sql/core/target/" />
+    <ignored path="$PROJECT_DIR$/repl/target/" />
+    <ignored path="$PROJECT_DIR$/external/flume-assembly/target/" />
+    <ignored path="$PROJECT_DIR$/external/kafka-0-10-assembly/target/" />
+    <ignored path="$PROJECT_DIR$/streaming/target/" />
+    <ignored path="$PROJECT_DIR$/assembly/target/" />
+    <ignored path="$PROJECT_DIR$/mllib/target/" />
+    <ignored path="$PROJECT_DIR$/graphx/target/" />
+    <ignored path="$PROJECT_DIR$/core/target/scala-2.11/" />
+    <ignored path="$PROJECT_DIR$/core/target/analysis/" />
+    <ignored path="$PROJECT_DIR$/core/target/maven-shared-archive-resources/" />
+    <ignored path="$PROJECT_DIR$/core/target/maven-status/" />
+    <ignored path="$PROJECT_DIR$/core/target/tmp/" />
+    <ignored path="$PROJECT_DIR$/core/target/antrun/" />
+    <ignored path="$PROJECT_DIR$/core/target/maven-archiver/" />
+    <ignored path="$PROJECT_DIR$/core/target/jars/" />
+    <ignored path="$PROJECT_DIR$/common/unsafe/target/" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <ignored path="$PROJECT_DIR$/sql/hive/target/" />
+    <ignored path="$PROJECT_DIR$/examples/target/" />
+    <ignored path="$PROJECT_DIR$/launcher/target/" />
+    <ignored path="$PROJECT_DIR$/common/network-common/target/" />
+    <ignored path="$PROJECT_DIR$/../GPUEnabler/target/" />
+    <ignored path="$PROJECT_DIR$/../GPUEnabler/mavenized-jcuda-old/target/" />
+    <ignored path="$PROJECT_DIR$/../GPUEnabler/examples/target/" />
+    <ignored path="$PROJECT_DIR$/../GPUEnabler/gpu-enabler/target/" />
+    <ignored path="$USER_HOME$/Workspace/word2vec/target/" />
+    <ignored path="$USER_HOME$/Workspace/word2vec/project/project/target/" />
+    <ignored path="$USER_HOME$/Workspace/word2vec/project/target/" />
+    <ignored path="$USER_HOME$/Workspace/spark/linear_regression/target/" />
+    <ignored path="$USER_HOME$/Workspace/spark/linear_regression/project/project/target/" />
+    <ignored path="$USER_HOME$/Workspace/spark/linear_regression/project/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DockManager">
+    <window id="1">
+      <content type="file-editors">
+        <state>
+          <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+            <file leaf-file-name="CUDAFunction.scala" pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/../GPUEnabler/gpu-enabler/src/main/scala/com/ibm/gpuenabler/CUDAFunction.scala">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="126">
+                    <caret line="646" column="43" selection-start-line="646" selection-start-column="43" selection-end-line="646" selection-end-column="43" />
+                    <folding>
+                      <element signature="n#!!doc" expanded="true" />
+                      <element signature="e#830#846#0" expanded="true" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="LinearRegression.scala" pinned="false" current-in-tab="true">
+              <entry file="file://$USER_HOME$/Workspace/spark/linear_regression/src/main/scala/LinearRegression.scala">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="598">
+                    <caret line="132" column="0" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
+                    <folding>
+                      <element signature="e#0#27#0" expanded="true" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="KNN.scala" pinned="false" current-in-tab="false">
+              <entry file="file://$USER_HOME$/Workspace/spark/knn/src/main/scala/KNN.scala">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="15">
+                    <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="44" />
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="CUDAManager.scala" pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/../GPUEnabler/gpu-enabler/src/main/scala/com/ibm/gpuenabler/CUDAManager.scala">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="321">
+                    <caret line="49" column="46" selection-start-line="49" selection-start-column="45" selection-end-line="49" selection-end-column="46" />
+                    <folding>
+                      <element signature="e#831#850#0" expanded="true" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="HybridIterator.scala" pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/../GPUEnabler/gpu-enabler/src/main/scala/com/ibm/gpuenabler/HybridIterator.scala">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="465">
+                    <caret line="925" column="37" selection-start-line="925" selection-start-column="37" selection-end-line="925" selection-end-column="37" />
+                    <folding>
+                      <element signature="n#!!doc" expanded="true" />
+                      <element signature="e#830#869#0" expanded="true" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="GPUMemoryManager.scala" pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/../GPUEnabler/gpu-enabler/src/main/scala/com/ibm/gpuenabler/GPUMemoryManager.scala">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="658">
+                    <caret line="311" column="9" selection-start-line="311" selection-start-column="9" selection-end-line="311" selection-end-column="9" />
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="ExternalProjectsData">
+    <projectState path="$USER_HOME$/Workspace/spark/linear_regression">
+      <ProjectState />
+    </projectState>
+    <projectState path="$USER_HOME$/Workspace/word2vec">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="SBT">
+      <state>
+        <projects_view />
+      </state>
+    </system>
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="spark-parent_2.11" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="knn.cu" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Workspace/spark/knn/src/main/resources/knn.cu">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="27" column="44" selection-start-line="27" selection-start-column="44" selection-end-line="27" selection-end-column="44" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="saxpy.scala" pinned="false" current-in-tab="true">
+        <entry file="file://$USER_HOME$/Workspace/spark/saxpy/src/main/scala/saxpy.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-117">
+              <caret line="44" column="20" selection-start-line="44" selection-start-column="20" selection-end-line="44" selection-end-column="20" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="saxpy.cu" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Workspace/spark/saxpy/src/main/resources/saxpy.cu">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="26" column="9" selection-start-line="26" selection-start-column="9" selection-end-line="26" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="linearRegression.cu" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Workspace/spark/linear_regression/src/main/resources/linearRegression.cu">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="540">
+              <caret line="36" column="31" selection-start-line="36" selection-start-column="31" selection-end-line="36" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pagerank.cu" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Workspace/spark/pagerank/src/main/resources/pagerank.cu">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="555">
+              <caret line="37" column="34" selection-start-line="37" selection-start-column="34" selection-end-line="37" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CUDARDDUtils.scala" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../GPUEnabler/gpu-enabler/src/main/scala/com/ibm/gpuenabler/CUDARDDUtils.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="288">
+              <caret line="93" column="82" selection-start-line="93" selection-start-column="82" selection-end-line="93" selection-end-column="82" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+                <element signature="e#830#870#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ColumnPartitionSchema.scala" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../GPUEnabler/gpu-enabler/src/main/scala/com/ibm/gpuenabler/ColumnPartitionSchema.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="558">
+              <caret line="101" column="33" selection-start-line="101" selection-start-column="33" selection-end-line="101" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PageRank.scala" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Workspace/spark/pagerank/src/main/scala/PageRank.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="356">
+              <caret line="126" column="60" selection-start-line="107" selection-start-column="22" selection-end-line="126" selection-end-column="60" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+                <marker date="1535721748423" expanded="true" signature="3241:4118" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LogisticRegression.scala" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Workspace/spark/logistic_regression/src/main/scala/LogisticRegression.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="600">
+              <caret line="115" column="7" selection-start-line="98" selection-start-column="14" selection-end-line="115" selection-end-column="7" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="logisticRegression.cu" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Workspace/spark/logistic_regression/src/main/resources/logisticRegression.cu">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="405">
+              <caret line="27" column="46" selection-start-line="27" selection-start-column="46" selection-end-line="27" selection-end-column="46" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$USER_HOME$" />
+  </component>
+  <component name="GradleLocalSettings">
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$USER_HOME$/Workspace/word2vec/build.sbt" />
+        <option value="$PROJECT_DIR$/core/src/main/scala/org/apache/spark/executor/Executor.scala" />
+        <option value="$PROJECT_DIR$/core/src/main/scala/org/apache/spark/shuffle/sort/SortShuffleWriter.scala" />
+        <option value="$PROJECT_DIR$/core/src/main/scala/org/apache/spark/rdd/MapPartitionsRDD.scala" />
+        <option value="$PROJECT_DIR$/core/src/main/scala/org/apache/spark/scheduler/ShuffleMapTask.scala" />
+        <option value="$PROJECT_DIR$/../GPUEnabler/gpu-enabler/src/test/scala/com/ibm/gpuenabler/CUDADSFunctionSuite.scala" />
+        <option value="$USER_HOME$/Workspace/spark/vecadd/vectorAddGPU/src/main/resources/Makefile" />
+        <option value="$USER_HOME$/Workspace/spark/vecadd/vectorAddGPU/src/main/resources/vectorAddGPU.cu" />
+        <option value="$USER_HOME$/Workspace/spark/vecadd/vectorAddGPU/src/main/scala/VectorAdd.scala" />
+        <option value="$USER_HOME$/Workspace/spark/vecadd/saxpyGPU/src/main/scala/saxpy.scala" />
+        <option value="$PROJECT_DIR$/../GPUEnabler/gpu-enabler/src/main/scala/com/ibm/gpuenabler/GPUSparkEnv.scala" />
+        <option value="$USER_HOME$/Workspace/spark/pi/src/main/resources/pi.cu" />
+        <option value="$USER_HOME$/Workspace/spark/pi/src/main/scala/Pi.scala" />
+        <option value="$USER_HOME$/Workspace/spark/knn/src/resources/Makefile" />
+        <option value="$USER_HOME$/Workspace/spark/knn/src/resources/knn.cu" />
+        <option value="$USER_HOME$/Workspace/spark/knn/build.sbt" />
+        <option value="$PROJECT_DIR$/../GPUEnabler/gpu-enabler/src/main/scala/com/ibm/gpuenabler/CUDACodeGenerator.scala" />
+        <option value="$USER_HOME$/Workspace/spark/lr/src/main/scala/SparkGPULR.scala" />
+        <option value="$PROJECT_DIR$/../GPUEnabler/examples/src/main/scala/com/ibm/gpuenabler/GpuEnablerExample.scala" />
+        <option value="$PROJECT_DIR$/../GPUEnabler/examples/src/main/scala/com/ibm/gpuenabler/SparkGPULR.scala" />
+        <option value="$PROJECT_DIR$/../GPUEnabler/examples/src/main/scala/com/ibm/gpuenabler/perfDebug.scala" />
+        <option value="$USER_HOME$/Workspace/spark/knn/submit.sh" />
+        <option value="$USER_HOME$/Workspace/spark/saxpy/src/main/resources/saxpy.cu" />
+        <option value="$USER_HOME$/Workspace/spark/linear_regression/src/main/resources/Makefile" />
+        <option value="$USER_HOME$/Workspace/spark/linear_regression/build.sbt" />
+        <option value="$USER_HOME$/Workspace/spark/linear_regression/submit.sh" />
+        <option value="$USER_HOME$/Workspace/word2vec/src/main/scala/org/apache/spark/word2vecparlab/Word2VecApp.scala" />
+        <option value="$USER_HOME$/Workspace/word2vec/src/main/scala/org/apache/spark/word2vecparlab/Word2VecParlab.scala" />
+        <option value="$USER_HOME$/Workspace/spark/knn/src/main/resources/knn.cu" />
+        <option value="$USER_HOME$/Workspace/spark/linear_regression/src/main/resources/linearRegression.cu" />
+        <option value="$USER_HOME$/Workspace/word2vec/src/main/resources/Word2VecKernel.cu" />
+        <option value="$USER_HOME$/Workspace/spark/pagerank/build.sbt" />
+        <option value="$USER_HOME$/Workspace/spark/pagerank/src/main/resources/pagerank.cu" />
+        <option value="$PROJECT_DIR$/../GPUEnabler/gpu-enabler/src/main/scala/com/ibm/gpuenabler/CUDARDDUtils.scala" />
+        <option value="$PROJECT_DIR$/../GPUEnabler/gpu-enabler/src/main/scala/com/ibm/gpuenabler/GPUMemoryManager.scala" />
+        <option value="$USER_HOME$/Workspace/spark/knn/src/main/scala/KNN.scala" />
+        <option value="$PROJECT_DIR$/../GPUEnabler/gpu-enabler/pom.xml" />
+        <option value="$PROJECT_DIR$/../GPUEnabler/gpu-enabler/src/main/scala/com/ibm/gpuenabler/CUDAManager.scala" />
+        <option value="$USER_HOME$/Workspace/spark/logistic_regression/src/main/resources/Makefile" />
+        <option value="$PROJECT_DIR$/../GPUEnabler/gpu-enabler/src/main/scala/com/ibm/gpuenabler/ColumnPartitionSchema.scala" />
+        <option value="$USER_HOME$/Workspace/spark/logistic_regression/src/main/resources/logisticRegression.cu" />
+        <option value="$USER_HOME$/Workspace/spark/saxpy/src/main/scala/saxpy.scala" />
+        <option value="$PROJECT_DIR$/../GPUEnabler/gpu-enabler/src/main/scala/com/ibm/gpuenabler/CUDAFunction.scala" />
+        <option value="$PROJECT_DIR$/../GPUEnabler/gpu-enabler/src/main/scala/com/ibm/gpuenabler/HybridIterator.scala" />
+        <option value="$USER_HOME$/Workspace/spark/pagerank/src/main/scala/PageRank.scala" />
+        <option value="$USER_HOME$/Workspace/spark/logistic_regression/src/main/scala/LogisticRegression.scala" />
+        <option value="$USER_HOME$/Workspace/spark/linear_regression/src/main/scala/LinearRegression.scala" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Bundled (Maven 3)" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="enabledProfiles">
+      <list>
+        <option value="jcuda75" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="1921" />
+    <option name="y" value="31" />
+    <option name="width" value="958" />
+    <option name="height" value="1008" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>Ant inspections</id>
+          </State>
+          <State>
+            <id>Code StyleScala</id>
+          </State>
+          <State>
+            <id>Dependency issuesJava</id>
+          </State>
+          <State>
+            <id>Java</id>
+          </State>
+          <State>
+            <id>Logging issuesJava</id>
+          </State>
+          <State>
+            <id>Properties FilesJava</id>
+          </State>
+          <State>
+            <id>RELAX NG</id>
+          </State>
+          <State>
+            <id>Scala</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>Properties FilesJava</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane />
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="Errors" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Workspace/spark/logistic_regression" />
+    <property name="project.structure.last.edited" value="Problems" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.36184707" />
+    <property name="SearchEverywhereHistoryKey" value="sax&#9;FILE&#9;file:///home/qyu/Workspace/spark/saxpy/src/main/resources/saxpy.cu&#10;SparkGPULR&#9;FILE&#9;file:///home/qyu/Kit/Spark/GPUEnabler/examples/src/main/scala/com/ibm/gpuenabler/SparkGPULR.scala&#10;CUDAFunction&#9;FILE&#9;file:///home/qyu/Kit/Spark/GPUEnabler/gpu-enabler/src/main/scala/com/ibm/gpuenabler/CUDAFunction.scala&#10;MapPartitionsRDD&#9;null&#9;null&#10;CUDARDDU&#9;FILE&#9;file:///home/qyu/Kit/Spark/GPUEnabler/gpu-enabler/src/main/scala/com/ibm/gpuenabler/CUDARDDUtils.scala&#10;SparkContext&#9;null&#9;null&#10;word2vec&#9;FILE&#9;file:///home/qyu/Workspace/word2vec/src/main/scala/org/apache/spark/word2vecparlab/Word2VecParlab.scala&#10;GPUSparkEn&#9;FILE&#9;file:///home/qyu/Kit/Spark/GPUEnabler/gpu-enabler/src/main/scala/com/ibm/gpuenabler/GPUSparkEnv.scala&#10;CUDAM&#9;FILE&#9;file:///home/qyu/Kit/Spark/GPUEnabler/gpu-enabler/src/main/scala/com/ibm/gpuenabler/CUDAManager.scala&#10;GPUMemory&#9;FILE&#9;file:///home/qyu/Kit/Spark/GPUEnabler/gpu-enabler/src/main/scala/com/ibm/gpuenabler/GPUMemoryManager.scala&#10;Linear&#9;FILE&#9;file:///home/qyu/Workspace/spark/linear_regression/src/main/scala/LinearRegression.scala&#10;pi.cu&#9;FILE&#9;file:///home/qyu/Workspace/spark/pi/src/main/resources/pi.cu&#10;pi&#9;FILE&#9;file:///home/qyu/Workspace/spark/pi/src/main/resources/pi.cu&#10;ShuffleMapTask&#9;null&#9;null&#10;Exam&#9;FILE&#9;file:///home/qyu/Kit/Spark/GPUEnabler/examples/src/main/resources/SparkGPUExamples.cu&#10;perf&#9;FILE&#9;file:///home/qyu/Kit/Spark/GPUEnabler/examples/src/main/scala/com/ibm/gpuenabler/perfDebug.scala&#10;GpuEna&#9;FILE&#9;file:///home/qyu/Kit/Spark/GPUEnabler/examples/src/main/scala/com/ibm/gpuenabler/GpuEnablerExample.scala&#10;GpuEnablerExample&#9;null&#9;null&#10;CUDACode&#9;null&#9;null&#10;sa&#9;FILE&#9;file:///home/qyu/Workspace/spark/saxpy/src/main/resources/saxpy.cu&#10;GpuKm&#9;null&#9;null&#10;GpuK&#9;null&#9;null&#10;Kmean&#9;FILE&#9;file:///home/qyu/Kit/Spark/GPUEnabler/examples/src/main/scala/com/ibm/gpuenabler/GpuKMeans.scala&#10;CUDA&#9;FILE&#9;file:///home/qyu/Kit/Spark/GPUEnabler/gpu-enabler/src/main/scala/com/ibm/gpuenabler/CUDARDDUtils.scala&#10;Kmeans&#9;null&#9;null&#10;Utils&#9;null&#9;null&#10;Spark&#9;FILE&#9;file:///home/qyu/Kit/Spark/GPUEnabler/examples/src/main/resources/SparkGPUExamples.cu&#10;RDD.scala&#9;FILE&#9;file:///home/qyu/Kit/Spark/spark-2.1.0/core/src/main/scala/org/apache/spark/rdd/RDD.scala&#10;MapPartitions&#9;null&#9;null&#10;Pointer&#9;FILE&#9;jar:///home/qyu/.m2/repository/jcuda/jcuda/0.7.0a/jcuda-0.7.0a.jar!/jcuda/Pointer.class&#10;DAG&#9;FILE&#9;file:///home/qyu/Kit/Spark/spark-2.1.0/core/src/main/scala/org/apache/spark/scheduler/DAGScheduler.scala&#10;Scheduler&#9;FILE&#9;file:///home/qyu/Kit/Spark/spark-2.1.0/core/src/main/scala/org/apache/spark/scheduler/TaskSchedulerImpl.scala&#10;saxpy.cu&#9;FILE&#9;file:///home/qyu/Workspace/spark/saxpy/src/main/resources/saxpy.cu&#10;Pi.cu&#9;FILE&#9;file:///home/qyu/Workspace/spark/pi/src/main/resources/pi.cu&#10;SparkGPU&#9;FILE&#9;file:///home/qyu/Workspace/spark/lr/src/main/resources/SparkGPUExamples.cu&#10;CUDAf&#9;null&#9;null&#10;CUDAFunc&#9;null&#9;null&#10;SizeEst&#9;null&#9;null&#10;pointer&#9;FILE&#9;jar:///home/qyu/.m2/repository/jcuda/jcuda/0.7.0a/jcuda-0.7.0a.jar!/jcuda/Pointer.class&#10;CUDARDDUtils&#9;FILE&#9;file:///home/qyu/Kit/Spark/GPUEnabler/gpu-enabler/src/main/scala/com/ibm/gpuenabler/CUDARDDUtils.scala&#10;pi.&#9;FILE&#9;file:///home/qyu/Workspace/spark/pi/src/main/scala/Pi.scala&#10;Iterator&#9;null&#9;null&#10;saxpy&#9;FILE&#9;file:///home/qyu/Workspace/spark/saxpy/src/main/scala/saxpy.scala&#10;Hybrid&#9;FILE&#9;file:///home/qyu/Kit/Spark/GPUEnabler/gpu-enabler/src/main/scala/com/ibm/gpuenabler/HybridIterator.scala&#10;Master&#9;null&#9;null&#10;CUDAManager&#9;FILE&#9;file:///home/qyu/Kit/Spark/GPUEnabler/gpu-enabler/src/main/scala/com/ibm/gpuenabler/CUDAManager.scala&#10;Executor&#9;null&#9;null&#10;Worker&#9;null&#9;null&#10;TaskScheduler&#9;null&#9;null&#10;SparkContext.scala&#9;FILE&#9;file:///home/qyu/Kit/Spark/spark-2.1.0/core/src/main/scala/org/apache/spark/SparkContext.scala" />
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$USER_HOME$/Workspace/spark/linear_regression" />
+      <recent name="$USER_HOME$/Workspace/spark/knn/src/resources" />
+      <recent name="$PROJECT_DIR$/../GPUEnabler/.idea" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$USER_HOME$/Workspace/spark/knn/src/main/resources" />
+      <recent name="$PROJECT_DIR$/../GPUEnabler" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Word2VecApp">
+    <configuration default="false" name="Word2VecApp" type="Application" factoryName="Application" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="org.apache.spark.word2vecparlab.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="org.apache.spark.word2vecparlab.Word2VecApp" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="word2vec" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="" />
+      <option name="DEPLOY" value="true" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="DEBUGGER_TYPE" value="Java" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <Java />
+      <Profilers>
+        <option name="GAPID_DISABLE_PCS" value="false" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
+      <module name="" />
+      <option name="TESTING_TYPE" value="0" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="EXTRA_OPTIONS" value="" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="DEBUGGER_TYPE" value="Java" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <Java />
+      <Profilers>
+        <option name="GAPID_DISABLE_PCS" value="false" />
+      </Profilers>
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <module />
+      <method />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list />
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <method />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="JUnitTestDiscovery" factoryName="JUnit Test Discovery" changeList="All">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="JarApplication" factoryName="JAR Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="Java Scratch" factoryName="Java Scratch">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="SCRATCH_FILE_ID" value="0" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="spark-sketch_2.11" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+      <method />
+    </configuration>
+    <configuration default="true" type="ScalaTestRunConfiguration" factoryName="ScalaTest">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <setting name="path" value="" />
+      <setting name="package" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workingDirectory" value="" />
+      <setting name="searchForTest" value="Across module dependencies" />
+      <setting name="testName" value="" />
+      <setting name="testKind" value="Class" />
+      <setting name="showProgressMessages" value="true" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="Specs2RunConfiguration" factoryName="Specs2">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <setting name="path" value="" />
+      <setting name="package" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workingDirectory" value="" />
+      <setting name="searchForTest" value="Across module dependencies" />
+      <setting name="testName" value="" />
+      <setting name="testKind" value="Class" />
+      <setting name="showProgressMessages" value="true" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="TestNGTestDiscovery" factoryName="TestNG Test Discovery" changeList="All">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="uTestRunConfiguration" factoryName="utest">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <setting name="path" value="" />
+      <setting name="package" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workingDirectory" value="" />
+      <setting name="searchForTest" value="Across module dependencies" />
+      <setting name="testName" value="" />
+      <setting name="testKind" value="Class" />
+      <setting name="showProgressMessages" value="true" />
+      <envs />
+      <method />
+    </configuration>
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="Application.Word2VecApp" />
+    </list>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="Application.Word2VecApp" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SbtLocalSettings">
+    <option name="lastUpdateTimestamp" value="1525067867733" />
+    <option name="availableProjects">
+      <map>
+        <entry>
+          <key>
+            <ExternalProjectPojo>
+              <option name="name" value="KNN" />
+              <option name="path" value="$USER_HOME$/Workspace/spark/linear_regression" />
+            </ExternalProjectPojo>
+          </key>
+          <value>
+            <list>
+              <ExternalProjectPojo>
+                <option name="name" value="linear_regression" />
+                <option name="path" value="$USER_HOME$/Workspace/spark/linear_regression" />
+              </ExternalProjectPojo>
+              <ExternalProjectPojo>
+                <option name="name" value="linear_regression-build" />
+                <option name="path" value="$USER_HOME$/Workspace/spark/linear_regression/project" />
+              </ExternalProjectPojo>
+            </list>
+          </value>
+        </entry>
+        <entry>
+          <key>
+            <ExternalProjectPojo>
+              <option name="name" value="Word2VecApp" />
+              <option name="path" value="$USER_HOME$/Workspace/word2vec" />
+            </ExternalProjectPojo>
+          </key>
+          <value>
+            <list>
+              <ExternalProjectPojo>
+                <option name="name" value="word2vec" />
+                <option name="path" value="$USER_HOME$/Workspace/word2vec" />
+              </ExternalProjectPojo>
+              <ExternalProjectPojo>
+                <option name="name" value="word2vec-build" />
+                <option name="path" value="$USER_HOME$/Workspace/word2vec/project" />
+              </ExternalProjectPojo>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="modificationStamps">
+      <map>
+        <entry key="$USER_HOME$/Workspace/proto2" value="1476175147457" />
+        <entry key="$USER_HOME$/Workspace/proto5" value="1476426181620" />
+        <entry key="$USER_HOME$/Workspace/spark/linear_regression" value="1525067829223" />
+        <entry key="$USER_HOME$/Workspace/spark/matmul/cpu" value="1479268410924" />
+        <entry key="$USER_HOME$/Workspace/word2vec" value="1516075385457" />
+        <entry key="$USER_HOME$/private/scala/exercism/project/scala/accumulate" value="1484038056730" />
+        <entry key="$USER_HOME$/private/scala/exercism/project/scala/difference-of-squares" value="1483877498300" />
+        <entry key="$USER_HOME$/private/scala/exercism/project/scala/etl" value="1481352881113" />
+        <entry key="$USER_HOME$/private/scala/exercism/project/scala/gigasecond" value="1483861975252" />
+        <entry key="$USER_HOME$/private/scala/exercism/project/scala/grade-school" value="1481187813759" />
+        <entry key="$USER_HOME$/private/scala/exercism/project/scala/grains" value="1483854165632" />
+        <entry key="$USER_HOME$/private/scala/exercism/project/scala/leap" value="1481350704225" />
+        <entry key="$USER_HOME$/private/scala/exercism/project/scala/meetup" value="1481448877050" />
+        <entry key="$USER_HOME$/private/scala/exercism/project/scala/nucleotide-count" value="1480057790666" />
+        <entry key="$USER_HOME$/private/scala/exercism/project/scala/phone-number" value="1481170882623" />
+        <entry key="$USER_HOME$/private/scala/exercism/project/scala/raindrops" value="1486886688629" />
+        <entry key="$USER_HOME$/private/scala/exercism/project/scala/robot-name" value="1481348957673" />
+        <entry key="$USER_HOME$/private/scala/exercism/project/scala/scrabble-score" value="1483870661424" />
+        <entry key="$USER_HOME$/private/scala/exercism/project/scala/space-age" value="1482733631114" />
+        <entry key="$USER_HOME$/private/scala/exercism/project/scala/sublist" value="1484105669711" />
+        <entry key="$USER_HOME$/private/spark/titanic" value="1511767245745" />
+      </map>
+    </option>
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fcd3c39e-2b6c-44c0-bffa-59bb40df272f" name="Default" comment="" />
+      <created>1515566289540</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1515566289540</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="1921" y="31" width="958" height="1008" extended-state="0" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="SBT" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32792208" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34237996" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Code Iris" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Dynamic Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Code Iris" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="SBT" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
+    </layout-to-restore>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="scala-line">
+          <url>file://$PROJECT_DIR$/../GPUEnabler/gpu-enabler/src/main/scala/com/ibm/gpuenabler/CUDARDDUtils.scala</url>
+          <line>111</line>
+          <properties />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="8" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/scala-lang/scala-library/2.11.8/scala-library-2.11.8.jar!/scala/reflect/ClassTag.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Workspace/word2vec/src/main/scala/org/apache/spark/word2vecparlab/Word2VecApp.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="74" column="61" selection-start-line="74" selection-start-column="61" selection-end-line="74" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/scala/org/apache/spark/rpc/RpcEnv.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="62" column="10" selection-start-line="62" selection-start-column="3" selection-end-line="62" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/scala/org/apache/spark/rpc/RpcEndpoint.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="45" column="21" selection-start-line="45" selection-start-column="21" selection-end-line="45" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Workspace/word2vec/src/main/resources/Word2VecKernel.cu">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1503">
+          <caret line="130" column="74" selection-start-line="130" selection-start-column="60" selection-end-line="130" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/scala/org/apache/spark/rdd/RDD.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="91" column="47" selection-start-line="91" selection-start-column="44" selection-end-line="91" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../GPUEnabler/gpu-enabler/src/main/scala/com/ibm/gpuenabler/CUDACodeGenerator.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3045">
+          <caret line="223" column="5" selection-start-line="223" selection-start-column="5" selection-end-line="223" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/scala/org/apache/spark/rdd/ParallelCollectionRDD.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="89" column="14" selection-start-line="89" selection-start-column="14" selection-end-line="89" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Workspace/spark/VectorAddLocal.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Workspace/spark/saxpy/build.sbt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="69" selection-start-line="8" selection-start-column="69" selection-end-line="8" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Workspace/spark/lr/src/main/scala/SparkGPULR.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="36" column="7" selection-start-line="36" selection-start-column="7" selection-end-line="36" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Workspace/spark/.vimrc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Workspace/word2vec/src/main/scala/org/apache/spark/word2vecparlab/Word2VecParlab.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="740" column="75" selection-start-line="740" selection-start-column="10" selection-end-line="740" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/scala/org/apache/spark/rdd/OrderedRDDFunctions.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="58" column="6" selection-start-line="58" selection-start-column="6" selection-end-line="58" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/scala-lang/scala-library/2.11.8/scala-library-2.11.8.jar!/scala/collection/Iterator.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/scala/org/apache/spark/rdd/MapPartitionsRDD.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="26" column="21" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Workspace/spark/pagerank/build.sbt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/scala-lang/scala-reflect/2.11.8/scala-reflect-2.11.8.jar!/scala/reflect/api/Symbols.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="32" column="8" selection-start-line="32" selection-start-column="8" selection-end-line="32" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/scala-lang/scala-library/2.11.8/scala-library-2.11.8.jar!/scala/Function1.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-1.7.0-openjdk-amd64/jre/lib/rt.jar!/java/nio/ByteBuffer.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="272" column="31" selection-start-line="272" selection-start-column="31" selection-end-line="272" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/jcuda/jcuda/0.7.0a/jcuda-0.7.0a.jar!/jcuda/driver/JCudaDriver.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="26">
+          <caret line="72" column="27" selection-start-line="72" selection-start-column="27" selection-end-line="72" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../GPUEnabler/gpu-enabler/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-300">
+          <caret line="103" column="22" selection-start-line="103" selection-start-column="17" selection-end-line="103" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../GPUEnabler/gpu-enabler/src/main/scala/com/ibm/gpuenabler/GPUSparkEnv.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="43" column="28" selection-start-line="43" selection-start-column="28" selection-end-line="43" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Workspace/spark/logistic_regression/src/main/resources/Makefile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="32" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../GPUEnabler/examples/src/main/resources/LogisticRegression.ptx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../GPUEnabler/examples/src/main/resources/LogisticRegression.cu">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/scala-lang/scala-library/2.11.8/scala-library-2.11.8.jar!/scala/math/package.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="6" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Workspace/spark/logistic_regression/build.sbt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Workspace/spark/logistic_regression/src/main/resources/logisticRegression.cu">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="46" selection-start-line="27" selection-start-column="46" selection-end-line="27" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../GPUEnabler/examples/src/main/resources/SparkGPUExamples.cu">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="337" column="6" selection-start-line="337" selection-start-column="0" selection-end-line="337" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../GPUEnabler/examples/src/main/scala/com/ibm/gpuenabler/SparkGPULR.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="337">
+          <caret line="128" column="50" selection-start-line="128" selection-start-column="50" selection-end-line="128" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../GPUEnabler/gpu-enabler/src/main/scala/org/apache/spark/gpuenabler/CUDAUtils.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="42" column="7" selection-start-line="42" selection-start-column="7" selection-end-line="42" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Workspace/spark/linear_regression/src/main/resources/linearRegression.cu">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="36" column="31" selection-start-line="36" selection-start-column="31" selection-end-line="36" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/scala-lang/scala-reflect/2.11.8/scala-reflect-2.11.8.jar!/scala/reflect/api/Mirrors.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../GPUEnabler/gpu-enabler/src/main/scala/com/ibm/gpuenabler/CUDAManager.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="49" column="46" selection-start-line="49" selection-start-column="45" selection-end-line="49" selection-end-column="46" />
+          <folding>
+            <element signature="e#831#850#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/jcuda/jcuda/0.7.0a/jcuda-0.7.0a.jar!/jcuda/runtime/JCuda.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3345">
+          <caret line="272" column="22" selection-start-line="272" selection-start-column="22" selection-end-line="272" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/scala/org/apache/spark/SparkContext.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="716" column="22" selection-start-line="716" selection-start-column="22" selection-end-line="716" selection-end-column="22" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+            <element signature="e#828#844#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Workspace/spark/knn/src/main/resources/knn.cu">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="27" column="44" selection-start-line="27" selection-start-column="44" selection-end-line="27" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Workspace/spark/saxpy/src/main/resources/saxpy.cu">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="9" selection-start-line="26" selection-start-column="9" selection-end-line="26" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../GPUEnabler/gpu-enabler/src/main/scala/com/ibm/gpuenabler/CUDADSUtils.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="306" column="18" selection-start-line="306" selection-start-column="17" selection-end-line="306" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../GPUEnabler/gpu-enabler/src/main/scala/com/ibm/gpuenabler/GPUMemoryManager.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="658">
+          <caret line="311" column="9" selection-start-line="311" selection-start-column="9" selection-end-line="311" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../GPUEnabler/gpu-enabler/src/main/scala/com/ibm/gpuenabler/CUDARDDUtils.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="93" column="82" selection-start-line="93" selection-start-column="82" selection-end-line="93" selection-end-column="82" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#830#870#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../GPUEnabler/gpu-enabler/src/main/scala/com/ibm/gpuenabler/ColumnPartitionSchema.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="558">
+          <caret line="101" column="33" selection-start-line="101" selection-start-column="33" selection-end-line="101" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Workspace/spark/pagerank/src/main/resources/pagerank.cu">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="37" column="34" selection-start-line="37" selection-start-column="34" selection-end-line="37" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../GPUEnabler/gpu-enabler/src/main/scala/com/ibm/gpuenabler/HybridIterator.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="925" column="37" selection-start-line="925" selection-start-column="37" selection-end-line="925" selection-end-column="37" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#830#869#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Workspace/spark/pagerank/src/main/scala/PageRank.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="356">
+          <caret line="126" column="60" selection-start-line="107" selection-start-column="22" selection-end-line="126" selection-end-column="60" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+            <marker date="1535721748423" expanded="true" signature="3241:4118" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Workspace/spark/logistic_regression/src/main/scala/LogisticRegression.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="115" column="7" selection-start-line="98" selection-start-column="14" selection-end-line="115" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Workspace/spark/saxpy/src/main/scala/saxpy.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-117">
+          <caret line="44" column="20" selection-start-line="44" selection-start-column="20" selection-end-line="44" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Workspace/spark/knn/src/main/scala/KNN.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../GPUEnabler/gpu-enabler/src/main/scala/com/ibm/gpuenabler/CUDAFunction.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="646" column="43" selection-start-line="646" selection-start-column="43" selection-end-line="646" selection-end-column="43" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#830#846#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Workspace/spark/linear_regression/src/main/scala/LinearRegression.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="598">
+          <caret line="132" column="0" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#27#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.36184707" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>scala-sdk-2.11.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.36184707" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.36184707" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>logistic_regression</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.36184707" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.7</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: org.apache.hadoop:hadoop-common:2.2.0</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.36184707" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

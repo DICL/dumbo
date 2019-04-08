@@ -1,0 +1,152 @@
+new sentences start
+new sentences end
+compute cuda function start time 5765865347886727
+input free variable memcpy time: 777
+const and output size memcpy time: 0
+devPtr freed from gpu
+devPtr freed from gpu
+compute end time 5765889188198547
+deserialize start time : 5765889188349024
+deserialize end time : 5765889189974260
+diff start time 5765889190154389
+diff end time 5765889191151917
+compute cuda function start time 5766068854698847
+input free variable memcpy time: 641
+const and output size memcpy time: 0
+devPtr freed from gpu
+devPtr freed from gpu
+compute end time 5766092323758447
+deserialize start time : 5766092323831228
+deserialize end time : 5766092323948323
+diff start time 5766092324007795
+diff end time 5766092324077655
+compute cuda function start time 5766317738131635
+input free variable memcpy time: 583
+const and output size memcpy time: 0
+devPtr freed from gpu
+devPtr freed from gpu
+compute end time 5766343757316524
+deserialize start time : 5766343757371973
+deserialize end time : 5766343757450367
+diff start time 5766343757490017
+diff end time 5766343757534308
+compute cuda function start time 5766561076386214
+input free variable memcpy time: 582
+const and output size memcpy time: 0
+devPtr freed from gpu
+devPtr freed from gpu
+compute end time 5766584425351229
+deserialize start time : 5766584425418947
+deserialize end time : 5766584425562884
+diff start time 5766584425613878
+diff end time 5766584425651149
+compute cuda function start time 5766809092197002
+input free variable memcpy time: 618
+const and output size memcpy time: 0
+devPtr freed from gpu
+devPtr freed from gpu
+compute end time 5766832685200836
+deserialize start time : 5766832685295857
+deserialize end time : 5766832685466036
+diff start time 5766832685523066
+diff end time 5766832685562657
+compute cuda function start time 5767047998449317
+input free variable memcpy time: 659
+const and output size memcpy time: 0
+devPtr freed from gpu
+devPtr freed from gpu
+compute end time 5767074407315598
+deserialize start time : 5767074407384492
+deserialize end time : 5767074407486194
+diff start time 5767074407530442
+diff end time 5767074407568376
+compute cuda function start time 5767289712493232
+input free variable memcpy time: 614
+const and output size memcpy time: 0
+devPtr freed from gpu
+devPtr freed from gpu
+compute end time 5767315207327737
+deserialize start time : 5767315207376114
+deserialize end time : 5767315207446937
+diff start time 5767315207481527
+diff end time 5767315207507759
+compute cuda function start time 5767528284387691
+input free variable memcpy time: 625
+const and output size memcpy time: 0
+devPtr freed from gpu
+devPtr freed from gpu
+compute end time 5767552425497512
+deserialize start time : 5767552425572499
+deserialize end time : 5767552425661870
+diff start time 5767552425712872
+diff end time 5767552425742548
+compute cuda function start time 5767779699689213
+input free variable memcpy time: 619
+const and output size memcpy time: 0
+devPtr freed from gpu
+devPtr freed from gpu
+compute end time 5767803799466272
+deserialize start time : 5767803799536975
+deserialize end time : 5767803799688375
+diff start time 5767803799729195
+diff end time 5767803799757400
+compute cuda function start time 5768013225794612
+input free variable memcpy time: 604
+const and output size memcpy time: 0
+devPtr freed from gpu
+devPtr freed from gpu
+compute end time 5768036636206686
+deserialize start time : 5768036636273904
+deserialize end time : 5768036636366439
+diff start time 5768036636409145
+diff end time 5768036636437826
+compute cuda function start time 5768252437407527
+input free variable memcpy time: 653
+const and output size memcpy time: 0
+devPtr freed from gpu
+devPtr freed from gpu
+compute end time 5768278711380424
+deserialize start time : 5768278711428369
+deserialize end time : 5768278711520752
+diff start time 5768278711565152
+diff end time 5768278711591983
+compute cuda function start time 5768494509405642
+input free variable memcpy time: 636
+const and output size memcpy time: 0
+devPtr freed from gpu
+devPtr freed from gpu
+compute end time 5768517948402952
+deserialize start time : 5768517948470086
+deserialize end time : 5768517948558526
+diff start time 5768517948660241
+diff end time 5768517948692225
+compute cuda function start time 5768732458499450
+input free variable memcpy time: 608
+const and output size memcpy time: 0
+devPtr freed from gpu
+devPtr freed from gpu
+compute end time 5768755877212009
+deserialize start time : 5768755877304237
+deserialize end time : 5768755877393049
+diff start time 5768755877435938
+diff end time 5768755877464438
+compute cuda function start time 5768966053918151
+input free variable memcpy time: 647
+const and output size memcpy time: 0
+devPtr freed from gpu
+devPtr freed from gpu
+compute end time 5768992126807619
+deserialize start time : 5768992126876827
+deserialize end time : 5768992126959506
+diff start time 5768992126988227
+diff end time 5768992127031330
+compute cuda function start time 5769210971573108
+input free variable memcpy time: 678
+const and output size memcpy time: 0
+devPtr freed from gpu
+devPtr freed from gpu
+compute end time 5769234526561082
+deserialize start time : 5769234526624515
+deserialize end time : 5769234526735457
+diff start time 5769234526782412
+diff end time 5769234526811955

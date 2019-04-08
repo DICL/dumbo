@@ -1,0 +1,8 @@
+18/02/08 22:35:30 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+18/02/08 22:35:51 ERROR MapOutputTracker: Missing an output location for shuffle 1
+18/02/08 22:35:51 WARN BlockManager: Putting block rdd_13_2 failed due to an exception
+18/02/08 22:35:51 WARN BlockManager: Block rdd_13_2 could not be removed as it was not found on disk or in memory
+18/02/08 22:35:51 WARN BlockManager: Putting block rdd_14_2 failed due to an exception
+18/02/08 22:35:51 WARN BlockManager: Block rdd_14_2 could not be removed as it was not found on disk or in memory
+18/02/08 22:39:36 ERROR CoarseGrainedExecutorBackend: RECEIVED SIGNAL TERM
+ it was not found on disk or in memory

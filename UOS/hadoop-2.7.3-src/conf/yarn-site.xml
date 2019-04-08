@@ -1,0 +1,173 @@
+<?xml version="1.0"?>
+<!--
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License. See accompanying LICENSE file.
+-->
+<configuration>
+    <property>
+	<description>The hostname of the RM.</description>
+	<name>yarn.resourcemanager.hostname</name>
+	<value>node10</value>
+    </property>    
+
+    <property>
+	<description>Amount of physical memory, in MB, that can be allocated 
+	    for containers.</description>
+	<name>yarn.nodemanager.resource.memory-mb</name>
+	<value>40960</value>
+    </property>
+
+    <property>
+	<description>The minimum allocation for every container request at the RM,
+	    in MBs. Memory requests lower than this will throw a
+	    InvalidResourceRequestException.</description>
+	<name>yarn.scheduler.minimum-allocation-mb</name>
+	<value>4096</value>
+    </property>
+
+    <property>
+	<description>A comma separated list of services where service name should only
+	    contain a-zA-Z0-9_ and can not start with numbers</description>
+	<name>yarn.nodemanager.aux-services</name>
+	<value>mapreduce_shuffle</value>
+	<!--<value>mapreduce_shuffle</value>-->
+    </property>
+
+    <property>
+	<name>yarn.nodemanager.aux-services.mapreduce_shuffle.class</name>
+	<value>org.apache.hadoop.mapred.ShuffleHandler</value>
+    </property>
+
+    <property>
+	<description>Whether to enable log aggregation. Log aggregation collects
+	    each container's logs and moves these logs onto a file-system, for e.g.
+	    HDFS, after the application completes. Users can configure the
+	    "yarn.nodemanager.remote-app-log-dir" and
+	    "yarn.nodemanager.remote-app-log-dir-suffix" properties to determine
+	    where these logs are moved to. Users can access the logs via the
+	    Application Timeline Server.
+	</description>
+	<name>yarn.log-aggregation-enable</name>
+	<value>true</value>
+    </property>
+    <property>
+	<description>If true, ResourceManager will have proxy-user privileges.
+	    Use case: In a secure cluster, YARN requires the user hdfs delegation-tokens to
+	    do localization and log-aggregation on behalf of the user. If this is set to true,
+	    ResourceManager is able to request new hdfs delegation tokens on behalf of
+	    the user. This is needed by long-running-service, because the hdfs tokens
+	    will eventually expire and YARN requires new valid tokens to do localization
+	    and log-aggregation. Note that to enable this use case, the corresponding
+	    HDFS NameNode has to configure ResourceManager as the proxy-user so that
+	    ResourceManager can itself ask for new tokens on behalf of the user when
+	    tokens are past their max-life-time.</description>
+	<name>yarn.resourcemanager.proxy-user-privileges.enabled</name>
+	<value>true</value>
+    </property>
+    
+    <property>
+      <description>The number of gpu yarnchild for concurrent execution
+	  </description>
+        <name>myconf.num.gpu.yarnchild</name>
+        <value>10</value>
+    </property>
+
+    <property>
+      <description>The number of min gpu yarnchild
+	  </description>
+        <name>myconf.num.min.gpu.yarnchild</name>
+        <value>0</value>
+    </property>
+
+    <property>
+      <description>Flag if use dynamic scheduler when allocate GPU MapTask
+	  </description>
+        <name>myconf.use.dynamic.scheduler</name>
+        <value>true</value>
+    </property>
+
+    <property>
+      <description>Dynamic scheduler mode, use maxstart?
+	  </description>
+        <name>myconf.use.maxstart.scheduler</name>
+        <value>true</value>
+    </property>
+
+    <property>
+      <description>Flag if use debug listener or not
+	  </description>
+        <name>myconf.debug.listener.use</name>
+        <value>true</value>
+    </property>
+
+    <property>
+      <description>Address of Debug listener
+	  </description>
+        <name>myconf.debug.listener.address</name>
+        <value>node10</value>
+    </property>
+
+    <property>
+      <description>Port of Debug listener
+	  </description>
+        <name>myconf.debug.listener.port</name>
+        <value>51231</value>
+    </property>
+
+    <property>
+      <description>upper threshold
+	  </description>
+        <name>myconf.upper.threshold</name>
+        <value>96</value>
+    </property>
+
+    <property>
+      <description>gpu threshold
+	  </description>
+        <name>myconf.gpu.threshold</name>
+        <value>0.9</value>
+    </property>
+
+    <property>
+      <description>Set load balancing policy
+	  </description>
+        <name>myconf.load.balancing.policy</name>
+        <value>auto</value>
+    </property>
+
+    <property>
+      <description>gpu proportion
+	  </description>
+        <name>myconf.cpugpu.proportion</name>
+        <value>8</value>
+    </property>
+
+    <property>
+      <description>gpu threshold
+	  </description>
+        <name>myconf.num.nodes</name>
+        <value>1</value>
+    </property>
+
+    <property>
+      <description>Are you using MPS of Nvidia?
+	  </description>
+        <name>myconf.use.mps</name>
+        <value>true</value>
+    </property>
+
+    <property>
+      <name>myconf.num.containers</name>
+        <value>10</value>
+    </property>
+
+</configuration>
