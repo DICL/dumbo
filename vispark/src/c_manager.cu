@@ -31,7 +31,7 @@
 #include "builtin_types.h"
 #include "device_launch_parameters.h"
 
-#define EGL 0
+#define EGL 1
 
 #if EGL
 #include <EGL/egl.h>
