@@ -1,0 +1,580 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xiilab.lustre.api">
+	<!-- mybatis & postgresql connect test -->
+    <select id="test" resultType="java.lang.String">
+        SELECT 'hello world'
+    </select>
+    
+    <!-- find 'lustre_manager' table -->
+    <select id="check_lustre_nodes_table" resultType="java.lang.String">
+    	SELECT 
+    		tablename 
+    		FROM pg_tables 
+    		WHERE 
+    			--tableowner = 'ambari' AND 
+    			
+    			tablename = 'lustre_nodes' 
+    			OR tablename = 'disk_info'
+    			OR tablename = 'lustre_log'
+    			OR tablename = 'lustre_file_system_list'
+    </select>
+    
+    
+    <!-- create lustre_manager table -->
+    <!-- 190411 je.kim not_used 로 변경 -->
+    <update id="create_lustre_nodes_table">
+    	CREATE TABLE lustre_nodes
+    	(
+    		num SERIAL PRIMARY KEY
+    		,node_type varchar(255)
+    		,index integer DEFAULT 0
+    		,host_name varchar(255)
+    		,ssh_port integer DEFAULT 22
+    		,user_id varchar(255) DEFAULT 'root'
+    		,password varchar(255) 
+    		,private_key varchar(255) DEFAULT '.ssh/id_rsa'
+    		,network_device varchar(255)
+    		,network_option varchar(255)
+    		,lustre_client_folder varchar(255) DEFAULT '/not_used'
+    		,file_system_num integer
+    	)
+    </update>
+
+	<!-- create disk_info table  -->
+	<!-- je.kim 19.02.15 add column 'is_remove' -->
+	<update id="create_disk_info_table">
+		CREATE TABLE disk_info
+		(
+			num SERIAL PRIMARY KEY
+			,disk_type varchar(255)
+			,index integer DEFAULT 0
+			,disk_name varchar(255)
+			,lustre_nodes_key integer
+			,is_activate boolean
+			,is_remove boolean NOT NULL DEFAULT true
+			,disk_size varchar(255)
+			,constraint lustre_nodes_disk_info_fk foreign key (lustre_nodes_key) references lustre_nodes (num)
+		)
+	</update>
+	
+	<!-- create lustre_log table -->
+	<update id="create_lustre_log_table">
+		CREATE TABLE lustre_log
+		(
+			num SERIAL PRIMARY KEY
+			,log_label varchar(255)
+			,log_type varchar(255)
+			,host_name varchar(255)
+			,row_key varchar(255) 
+			,create_date timestamp with time zone
+			,data text
+		)
+	</update>
+    
+    <!-- create lustre_file_system_list table-->
+    <!-- 18.12.27 je.kim 파일시스템네임 중복방지용으로 유니크 키값처리 -->
+    <update id="create_lustre_file_system_list_table">
+    	CREATE TABLE lustre_file_system_list
+		(
+			num SERIAL PRIMARY KEY
+			,fs_name varchar(255)
+			,fs_step integer
+			,is_remove boolean NOT NULL DEFAULT true
+			,UNIQUE(fs_name)
+		)
+    </update>
+    
+    <update id="removeLustreFilesystem">
+    	UPDATE lustre_file_system_list
+    	<set>
+    		is_remove = false,
+    	</set>
+		WHERE 1=1
+	   		AND num = #{num}
+    </update>
+	
+	<insert id="insert_lustre_list">
+		INSERT INTO 
+			lustre_nodes 
+			(
+				node_type
+				,index
+				,host_name
+				,file_system_num
+			) VALUES 
+		<foreach collection="list" item="item" index="index" separator=",">
+			( 
+				#{item.node_type}
+				,#{item.index}
+				,#{item.host_name} 
+				<choose>
+					<when test="item.file_system_num != null">
+					,#{item.file_system_num}
+					</when>
+					<otherwise>
+					,null
+					</otherwise>
+				</choose>
+			)			
+		</foreach>
+	</insert>
+	
+	
+	<select id="getLustreNodes" resultType="com.xiilab.lustre.model.LustreNodesVO">
+		SELECT 
+			*
+			FROM lustre_nodes
+			<where>
+				<if test="num != null">
+				AND num = #{num}
+				</if>
+				<if test="node_type != null">
+				AND node_type = #{node_type}
+				</if>
+				<if test="index != null">
+				AND index = #{index}
+				</if>
+				<if test="host_name != null">
+				AND host_name = #{host_name}
+				</if>
+				<if test="file_system_num != null">
+				AND file_system_num = #{file_system_num}
+				</if>
+			</where>
+			ORDER BY
+				CASE 
+					WHEN(node_type = 'MDS') THEN 0
+					WHEN(node_type = 'OSS') THEN 1
+					WHEN(node_type = 'CLIENT') THEN 2
+					ELSE 3
+					END
+				,index ASC
+				,host_name ASC
+	</select>
+
+	<select id="getLustreNodesForFileSystem" resultType="com.xiilab.lustre.model.LustreNodesVO">
+		SELECT 
+			lustre_nodes.* ,
+			lustre_file_system_list.fs_step
+			FROM 
+				lustre_nodes 
+				left join lustre_file_system_list 
+				on lustre_nodes.file_system_num = lustre_file_system_list.num
+			<where>
+				<choose>
+					<when test="fs_step != null">
+					AND lustre_file_system_list.fs_step = #{fs_step}
+					</when>
+					<otherwise>
+					AND lustre_file_system_list.fs_step = 5
+					</otherwise>
+				</choose>
+				<if test="num != null">
+				AND lustre_nodes.num = #{num}
+				</if>
+				<if test="node_type != null">
+				AND lustre_nodes.node_type = #{node_type}
+				</if>
+				<if test="index != null">
+				AND lustre_nodes.index = #{index}
+				</if>
+				<if test="host_name != null">
+				AND lustre_nodes.host_name = #{host_name}
+				</if>
+				<if test="file_system_num != null">
+				AND lustre_nodes.file_system_num = #{file_system_num}
+				</if>
+			</where>
+			ORDER BY
+				CASE 
+					WHEN(lustre_nodes.node_type = 'MDS') THEN 0
+					WHEN(lustre_nodes.node_type = 'OSS') THEN 1
+					WHEN(lustre_nodes.node_type = 'CLIENT') THEN 2
+					ELSE 3
+					END
+				,lustre_nodes.index ASC
+				,lustre_nodes.host_name ASC
+	</select>
+
+	<select id="getDiskInfo" resultType="com.xiilab.lustre.model.DiskInforVO">
+		SELECT
+			*
+			FROM disk_info
+			<where>
+				<if test="num != null">
+				AND num = #{num}
+				</if>
+				<if test="lustre_nodes_key != null">
+				AND lustre_nodes_key = #{lustre_nodes_key}
+				</if>
+				<if test="disk_name != null">
+				AND disk_name = #{disk_name}
+				</if>
+				<if test="disk_type != null">
+				AND disk_type = #{disk_type}
+				</if>
+				<choose>
+					<when test="is_remove == null or is_remove == true">
+					AND is_remove = true
+					</when>
+					<otherwise>
+					AND is_remove = false
+					</otherwise>
+				</choose>
+			</where>
+			ORDER BY
+				CASE 
+					WHEN(disk_type = 'MDT') THEN 0
+					WHEN(disk_type = 'OST') THEN 1
+					ELSE 2
+					END
+				,index ASC
+	</select>
+	
+	<update id="setLustreNodes">
+		UPDATE lustre_nodes
+			<set>
+				<if test="network_device != null">
+				network_device = #{network_device},
+				</if>
+				<if test="lustre_client_folder != null">
+				lustre_client_folder = #{lustre_client_folder},
+				</if>
+				<if test="network_option != null">
+				network_option = #{network_option},
+				</if>
+				<if test="user_id != null">
+				user_id = #{user_id},
+				</if>
+				<if test="password != null">
+				password = #{password},
+				</if>
+			</set>
+		WHERE 1=1
+	   		AND num = #{num}
+	</update>
+	
+	<select id="getOstLastIndex" resultType="java.lang.Integer">
+		SELECT 
+			MAX(index)
+			FROM disk_info
+			WHERE
+				1=1
+				<if test="value != null">
+				AND disk_type = #{value}
+				</if>
+	</select>
+	
+	<select id="getNodeLastIndex" resultType="java.lang.Integer">
+		SELECT 
+			MAX(index)
+			FROM lustre_nodes
+			WHERE
+				1=1
+				<if test="node_type != null">
+				AND node_type = #{node_type}
+				</if>
+				<if test="file_system_num != null">
+				AND file_system_num = #{file_system_num}
+				</if>
+	</select>
+	
+	<insert id="save_disk_info">
+		INSERT INTO disk_info (disk_type,index,disk_name,is_activate,lustre_nodes_key,disk_size) VALUES 
+		( #{disk_type},#{index},#{disk_name},'true',#{lustre_nodes_key},#{disk_size})	
+	</insert>
+	 
+	<insert id="saveCommandLog">
+		INSERT INTO lustre_log 
+			(
+				log_type
+				,log_label
+				,row_key
+				,data
+				,host_name
+				,create_date
+			) 
+		VALUES 
+		( 
+			#{log_type}
+			,#{log_label}
+			,#{row_key}
+			,#{data}
+			,#{host_name}
+			,now()
+		)
+	</insert>
+	
+	<select id="getLogList" resultType="com.xiilab.lustre.model.LustreLogVO">
+		SELECT * FROM (
+			SELECT 
+				DISTINCT ON (row_key) row_key
+				, num
+				, log_label
+				, create_date 
+				, host_name
+			FROM lustre_log
+			WHERE
+				1=1
+		) t
+		ORDER BY num DESC, create_date DESC
+	</select>
+	
+	<select id="viewLog" resultType="com.xiilab.lustre.model.LustreLogVO">
+			SELECT
+				*
+				FROM lustre_log
+			WHERE
+				1=1
+				<if test="row_key != null">
+				AND row_key = #{row_key}
+				</if>
+				<if test="log_label != null">
+				AND log_label = #{log_label}
+				</if>
+			ORDER BY num ASC
+	</select>
+	
+	<select id="viewLastLogLine" resultType="com.xiilab.lustre.model.LustreLogVO">
+		SELECT
+			*
+			FROM lustre_log
+		WHERE
+			1=1
+			<if test="row_key != null">
+			AND row_key = #{row_key}
+			</if>
+			<if test="num != 0">
+				<![CDATA[ 
+				AND num > #{num}
+				]]> 
+			</if>
+		ORDER BY num DESC
+	</select>
+	
+	<update id="updateDisk">
+		UPDATE disk_info
+			<set>
+				<if test="lustre_nodes_key != null">
+				lustre_nodes_key = #{lustre_nodes_key},
+				</if>
+				<if test="is_activate != null">
+				is_activate = #{is_activate},
+				</if>
+				<if test="disk_name != null">
+				disk_name = #{disk_name},
+				</if>
+				<if test="index != null">
+				index = #{index},
+				</if>
+				<if test="is_remove != null">
+				is_remove = #{is_remove},
+				</if>
+				<if test="disk_size != null">
+				disk_size = #{disk_size},
+				</if>
+			</set>
+		WHERE 1=1
+	   		AND num = #{num}
+	</update>
+	
+	<select id="getClientFolder" resultType="java.lang.String">
+		SELECT DISTINCT ON (lustre_client_folder) lustre_client_folder 
+		FROM lustre_nodes
+		WHERE 1=1
+			AND node_type = 'CLIENT'
+			AND file_system_num = #{value}
+		LIMIT 1
+	</select>
+	
+	<delete id="deleteDisk">
+		<if test="num != null">
+			delete from disk_info
+			where num = #{num}
+		</if>
+	</delete>
+	
+	<select id="getFsList" resultType="com.xiilab.lustre.model.LustreFileSystemListVO">
+		SELECT 
+			num,
+			fs_name,
+			fs_step
+			FROM lustre_file_system_list
+			<where>
+				<choose>
+					<when test="is_remove == null or is_remove == true">
+					AND is_remove = true
+					</when>
+					<otherwise>
+					AND is_remove = false
+					</otherwise>
+				</choose>
+			</where>
+	</select>
+	
+	<insert id="addFileSystem" useGeneratedKeys="true"  parameterType="com.xiilab.lustre.model.LustreFileSystemListVO" >
+		<selectKey keyProperty="num" resultType="long" order="AFTER">
+			select currval('lustre_file_system_list_num_seq');
+		</selectKey>
+		INSERT INTO lustre_file_system_list 
+			(
+				fs_name
+				,fs_step
+			) 
+		VALUES 
+		( 
+			#{fs_name}
+			,#{fs_step}
+		)
+		<!-- <selectKey keyProperty="num" resultType="long" order="AFTER">
+        SELECT currval('lustre_file_system_list_num_seq');
+    	</selectKey> -->
+	</insert>
+	
+	<select id="checkFileSystem" resultType="int">
+		SELECT 
+			count(*)
+			FROM lustre_file_system_list
+			WHERE 
+			<!-- 18.12.27 je.kim num or fs_name -->
+				<choose>
+					<when test="fs_name != null">
+					fs_name = #{fs_name} 
+					</when>
+					<otherwise>
+					num = #{num}
+					</otherwise>
+				</choose>
+	</select>
+	
+	<select id="viewFileSystem" resultType="com.xiilab.lustre.model.LustreFileSystemListVO">
+		SELECT
+			*
+			FROM lustre_file_system_list
+			WHERE
+				<choose>
+					<when test="fs_name != null">
+					fs_name = #{fs_name}
+					</when>
+					<otherwise>
+					num = #{num}
+					</otherwise>
+				</choose>
+				LIMIT 1
+	</select>
+	
+	<update id="setFileSystem">
+		UPDATE lustre_file_system_list
+		SET
+			<choose>
+				<when test="fs_name != null and fs_step == null">
+				fs_name = #{fs_name}
+				</when>
+				<when test="fs_name == null and fs_step != null">
+				fs_step = #{fs_step}
+				</when>
+				<otherwise>
+				fs_step = #{fs_step}
+				,fs_name = #{fs_name}
+				</otherwise>
+			</choose>
+			WHERE
+				<choose>
+					<when test="origin_fs_name != null">
+					fs_name = #{origin_fs_name}
+					</when>
+					<otherwise>
+					num = #{num}
+					</otherwise>
+				</choose>
+	</update>
+	
+	<select id="isSetLustreConf" resultType="com.xiilab.lustre.model.LustreFileSystemListVO">
+		SELECT
+			num
+			from lustre_file_system_list
+			WHERE
+				fs_step >= 2
+	</select>
+	
+	<select id="getLustreTypeNum" resultType="java.lang.String">
+		SELECT num 
+		FROM lustre_nodes
+		WHERE node_type = #{disk_type} 
+		AND file_system_num = #{file_system_num} 
+		LIMIT 1
+	</select>
+	
+	<select id="getMGTDisk_Name" resultType="java.lang.String">
+		SELECT disk_name  
+		FROM disk_info 
+		WHERE disk_type = #{disk_type} 
+		AND lustre_nodes_key = #{lustre_nodes_key} 
+		LIMIT 1
+	</select>
+	
+		
+	<select id="checkMGT" resultType="int">
+		SELECT 
+			count(*)
+			FROM disk_info
+			WHERE disk_type = 'MGT'
+	</select>
+	
+	
+	<select id="isOstRemove" resultType="com.xiilab.lustre.model.DiskInforVO">
+		SELECT 
+			disk_info.* ,
+			lustre_nodes.file_system_num
+			FROM 
+				disk_info 
+				left join lustre_nodes 
+				on disk_info.lustre_nodes_key = lustre_nodes.num
+			<where>
+				<if test="index != null">
+				AND disk_info.index = #{index}
+				</if>
+				<if test="disk_type != null">
+				AND disk_info.disk_type = #{disk_type}
+				</if>
+				<if test="file_system_num != null">
+				AND lustre_nodes.file_system_num = #{file_system_num}
+				</if>
+				<choose>
+					<when test="is_remove == null or is_remove == true">
+					AND disk_info.is_remove = true
+					</when>
+					<otherwise>
+					AND disk_info.is_remove = false
+					</otherwise>
+				</choose>
+			</where>
+			ORDER BY
+				CASE 
+					WHEN(disk_info.disk_type = 'MDT') THEN 0
+					WHEN(disk_info.disk_type = 'OST') THEN 1
+					ELSE 2
+					END
+				,disk_info.index ASC
+	</select>
+	
+	
+	<select id="searchLustreFileSystemList" resultType="com.xiilab.lustre.model.LustreFileSystemListVO">
+		SELECT 
+			*
+			FROM lustre_file_system_list
+			<where>
+				<if test="num != null">
+				AND num = #{num}
+				</if>
+				<if test="fs_name != null">
+				AND fs_name = #{fs_name}
+				</if>
+				<if test="fs_step != null">
+				AND fs_step = #{fs_step}
+				</if>
+			</where>
+	</select>
+	
+</mapper>
