@@ -1,0 +1,70 @@
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+{{#each this}}
+	<li class="nav-item">
+		<a class="nav-link {{#ifCond index '==' 0}} active {{/ifCond }}" id="{{node_type}}{{index}}-tab" data-toggle="tab" href="#{{node_type}}{{index}}" role="tab" aria-controls="{{node_type}}{{index}}" aria-selected="{{if_text index '==' '0'}}">
+			{{node_type}}{{math index "+" 1}} Setting
+		</a>
+	</li>
+{{/each}}
+</ul>
+
+<div class="tab-content" id="myTabContent">
+	{{#each this}}
+	<div class="tab-pane fade {{#ifCond index '==' 0}}show  active {{/ifCond }}" id="{{node_type}}{{index}}" role="tabpanel" aria-labelledby="{{node_type}}{{index}}-tab">
+		<div class="col-12 border-left border-right  px-3 py-3">
+			<h5>{{host_name}} OST device and size</h5>
+				{{#each disk_info_list}}
+				<div class="form-inline mb-3">
+					<div class="form-group col-3 px-0">
+						<select id="OSS-{{../host_name}}-{{@index}}-ost" index="{{@index}}" host-name="{{../host_name}}" class="form-control ost-name col-6">
+							<option value="none">None</option>
+					  		{{#for 0 ../disk_total_count 1}}
+						        <option value="{{this}}" ost="OST{{this}}"><!-- OST{{math this '+' 1}} --> OST{{this}}</option>
+						    {{/for}}
+					  	</select>
+					</div>
+					
+					<div class="form-group col-3 px-0">
+						<select id="OSS-{{../host_name}}-{{@index}}-diskname" index="{{@index}}" host-name="{{../host_name}}" class="form-control disk-name" disabled="disabled">
+							{{#each ../disk_info_list}}
+							<option value="{{name}}" size="{{size}}">{{name}}</option>
+							{{/each}}
+						</select>
+					</div>
+					
+					<div class="form-group col-1 px-0">
+						<small id="OSS-{{../host_name}}-{{@index}}-size">
+							{{../disk_info_list.0.size}}
+						</small>
+					</div> 
+					
+					<div class="col-2 text-right">
+						<button id="OSS-{{../host_name}}-{{@index}}-remove" type="button"  index="{{@index}}" host-name="{{../host_name}}" class="btn btn-danger remove-ost" disabled="disabled">Remove</button>
+					</div> 
+					
+					<div class="col-3 text-right">
+						<input id="OSS-{{../host_name}}-{{@index}}-is-activate" index="{{@index}}" host-name="{{../host_name}}" type="checkbox" data-toggle="toggle" class="set-activate-toggle" disabled="disabled">
+						<!-- <button id="OSS-{{../host_name}}-{{@index}}-activate" type="button" index="{{@index}}" host-name="{{../host_name}}" class="btn btn-primary activate-ost" disabled="disabled">activate</button>
+						<button id="OSS-{{../host_name}}-{{@index}}-deactivate" type="button"  index="{{@index}}" host-name="{{../host_name}}" class="btn btn-primary deactivate-ost" disabled="disabled">deactivate</button> -->
+					</div>
+				</div>
+				{{/each}}
+			<h5>{{host_name}} OST IO network</h5>
+			<div class="form-inline mt-3">
+				<div class="form-group col-4 px-0">
+					<select id="{{host_name}}-network" class="form-control col-12">
+						{{#each network_list}}
+						<option value="{{this}}">{{this}}</option>
+						{{/each}}
+					</select>
+				</div>
+			</div>
+		</div>
+	</div>
+	{{/each}}
+	<div class="border border-top-0 col-12 px-3 py-3 text-right">
+		<button id="oss-submit" type="button" class="btn btn-primary">Apply</button>
+		<button id="oss-reset" type="button" class="btn btn-primary">Reset</button>
+	</div>
+</div>
+
