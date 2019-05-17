@@ -1,32 +1,65 @@
 # Chameleon
 
-  본 연구에서는 빅데이터 고속 처리를 위한 고성능 빅데이터 시스템에서 전반적인 운영관리를 효율적으로 하기 위한 기술(Chameleon)을 연구개발한다.
+## Introduction
 
-  빅데이터 에코 시스템은 하둡 파일 시스템(HDFS)을 기반으로 각 기능을 담당하는 소프트웨어로 구성되어 있다. 분산 데이터 처리를 위한 MapReduce, 분산 데이터베이스 Hbase, 데이터 분석을 위한 Pig와 Hive, 데이터 수집을 위한 Sqoop와 Flum, 분산 코디네이션을 위한 Zookeeper 등과 같이 다양한 소프트웨어 들로 구성되며 처리하고자 하는 데이터의 종류와 목적에 따라 다양한 조합으로 설치하여 사용된다. 이들 소프트웨어는 아파치 오픈소스 프로젝트의 결과물로서 업데이트와 패치가 빠르게 이루어 지고 있다. 다양한 종류와 버전의 소프트웨어를 다수의 클러스터에 설치하고 운영하는 것 또한 적지 않은 노력이 필요하다.
+  Chameleon is a project to develop a HPC based big-data platform operation management system. 
 
-  본 연구에서는 기존의 빅데이터 운영관리를 위한 오픈소스 프로젝트를 기반으로 하여, HPC 기술이 적용된 고성능 빅데이터 클러스터 관리를 위해 확장 또는 최적화하는 것을 목표로 한다. 오픈소스 프로젝트인 Apache Ambari는 하둡 클러스터를 위한 설치, 관리, 모니터링 도구로써 1차년도 목표인 고성능 컴퓨터 하둡 클러스터 운영관리 시스템에 대한 프레임워크 개발을 위한 기반 기술로 활용되었으며, 고성능 파일 시스템으로 사용되는 Lustre 파일시스템을 이용하여 기본적인 운영관리 기능을 연구 및 개발 하였다.
+  High performance computing (HPC) community is increasingly demanding big data processing beyond traditional simulation-based computation. Hadoop ecosystem has a roadmap that includes HPC support including GPU, FPGA. With HPC and Big-data converging into one huge ecosystem, we launched the Chameleon project to develop a HPC based big-data platform operation management system. 
 
-## 연구 내용
+  Chameleon aims to integrate operations management of the [Hadoop](https://hadoop.apache.org/) platform for Big-data and [Lustre](http://lustre.org/) file system for HPC, helping HPC and big-data two communities to move into one huge ecosystem. Specifically, it contributes to expanding open-source [Ambari](https://ambari.apache.org/) to HPC communities which needs Big-data processing on top of traditional HPC infrastructure.
 
-### Apache Ambari 구조 분석
-  - 오픈소스 하둡 클러스터 운영 관리 프로젝트인 Apache Ambari 구조 분석
-  - Amabari에서 지원된는 하둡 컴포넌트 별 관리 방법과 모니티링 시스템 구조 분석
-  - Amabari 서비스 추가를 위한 방법 분석 및 연구
-  - 새로운 모니터링 매트릭 정보를 추가 하는 방법 분석
-  - REST API 프로토톨 분석
+## Main Functionalities
 
-### Lustre 파일 시스템 모니터링 방안 연구
-  - 가상 환경에서 lustre 파일 시스템 테스트배드 설치
-  - Lustre MDS, OSS 및 클라이언트 모니티링 툴 조사
+  Chameleon was developed based on Apache [Ambari](https://ambari.apache.org/), which is well-known [Hadoop](https://hadoop.apache.org/) management system and extended to support [Lustre](http://lustre.org/) filesystem management, which is widely used in HPC community for massive storage and HPC resource monitoring including GPU and Infiniband. It has the following functional features:
 
-### Amabari 기반 운영관리 시스템에서 Lustre 파일 시스템 관리 방안 연구
-  - Lustre 파일시스템 상태 모니터링을 위한 metric provider 개발
-  - Ambari 기반으로 Lustre 서비스 추가 및 모니터링 매트릭 추가
-  - 커스텀 뷰로 확장을 위한, Chameleon 웹 뷰 프로토타입 개발
+### Integration of the the Ambari stack and Lustre stack
+* Define Lustre stack with components like Hadoop stack in Ambari
 
-#### 2차년도 진도점검 데모동영상
-[![2차년도 진도점검 데모동영상](https://img.youtube.com/vi/8lAgf0xM-oU/0.jpg)](https://youtu.be/8lAgf0xM-oU) 
+| Stack  | Component |
+| ------ | ----------|
+| HDFS | Master(NameNode), Slave(DataNode), Client(HDFS Client) |
+| LustreKernelUpdater | Master(LustreFSKernelMaster), Client(LustreFSKernelClient) |
+| LustreManager | Master(HadoopLustreAdapterMgmtService, LustreMDSMgmtService) Slave(LustreOSSMgmtService), Client(LustreClient) |
+| AccountManager | Master(AccountManagerMaster), Client(AccountManagerClient) |
 
 
+### LustreKernelUpdater Service
+* Support LustreFS Kernel installation on MDS and OSS server nodes
+
+### LustreManager Service
+* Enable provisioning of LustreFS with failover using Ambari stack
+
+### AccountManager Service
+* Integrate account management between Big Data Platform and LustreFS via [LDAP](https://en.wikipedia.org/wiki/Lightweight_Directory_Access_Protocol)
+
+<img src="https://github.com/DICL/dumbo/blob/master/chameleon/images/AccountManagerView_img.png" width="70%" height="70%"></img>
 
 
+### Hadoop on LustreFS
+* Create working directory
+* Switch between HDFS and LustreFS for Hadoop applications
+
+
+### Advanced LustreFS management
+* Provide configurations and mounting for Lustre file systems
+* Manage OST, MDT, and Lnet
+* Backup and restore of OST
+
+
+### Advanced YARN application monitoring 
+* Create user-defined metrics using linux performance tools for [YARN](https://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/YARN.html) app monitoring
+
+<img src="https://github.com/DICL/dumbo/blob/master/chameleon/images/MetricRegistryView_img.PNG" width="70%" height="70%"></img>
+
+* Support time-series data analysis per applications, metrics, or nodes 
+
+
+<img src="https://github.com/DICL/dumbo/blob/master/chameleon/images/TimeSereisAnalysis_img.png" width="70%" height="70%"></img>
+
+
+### Dashboard for dynamic user interface
+* Build dynamic dashboard for Hadoop and HPC which streamlines HPC based Big-data platform operation and management
+
+
+## Demo Video
+[![201905 demo](https://img.youtube.com/vi/MQtMwB8k_cE/0.jpg)](https://youtu.be/MQtMwB8k_cE)
