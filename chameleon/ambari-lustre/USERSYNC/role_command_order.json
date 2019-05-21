@@ -1,7 +1,0 @@
-{
-    "_comment": "USERSYNCSERVICE OPTIONS",
-    "general_deps": {
-        "_comment": "USERSYNCSERVICE INSTALL UNINSTALL CONFIGUE",
-        "UserSyncClient-INSTALL": ["UserSyncMaster-INSTALL"]
-    }
-}
