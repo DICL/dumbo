@@ -1,0 +1,18 @@
+/* Logo.css */
+#header {
+    width: 100%;
+    margin: 0 auto;
+    border-bottom: 0px solid orange;
+    /*background-color:#303d50;*/
+    background-color:#3B3B3B;
+    height:50px;
+    display: block;
+}
+#header .logo { line-height: 50px; font-size: 1.4em; font-weight: bold; }
+#header .logo a { color: #fff;  }
+.logo img {
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+    vertical-align: middle;
+}

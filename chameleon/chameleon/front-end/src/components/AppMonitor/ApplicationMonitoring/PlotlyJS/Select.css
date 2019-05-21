@@ -1,0 +1,10 @@
+/* Select.css */
+.SelectMeun{
+    margin-top: 0px !important;
+    width: 35rem !important;
+    position: absolute;
+    z-index: 1;
+}
+.SelectMeun .checkbox label{
+  overflow: hidden;
+}

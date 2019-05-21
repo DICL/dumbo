@@ -1,0 +1,43 @@
+/* YarnJobHistoryPerNode.css */
+.YarnJobHistoryPerNode{
+  position: absolute !important;
+  width: 843px !important;
+}
+.YarnJobHistoryPerNode .popup-remove{
+  border: none;
+  background: none;
+  float: right;
+  cursor: pointer;
+  font-weight: bold;
+  width: 15px;
+  height: 15px;
+  padding: 3px;
+}
+
+.YarnJobHistoryPerNode .description div{
+  background-color: #FFF;
+}
+
+.YarnJobHistoryPerNode .content.body{
+  background-color: #FFFFFF;
+}
+
+.YarnJobHistoryPerNode .content.body .description div:first-child{
+  margin-bottom: 10px;
+}
+
+.YarnJobHistoryPerNode .cursor {
+  cursor: move;
+}
+
+.YarnJobHistoryPerNode .graph_area{
+  border: 1px #e4ebf1 solid;
+  padding: 1rem;
+}
+.YarnJobHistoryPerNode .graph_area:not(:first-child) {
+  margin-top: 1em;
+}
+.YarnJobHistoryPerNode .content.body{
+  max-height: 965px;
+  overflow-y: scroll;
+}

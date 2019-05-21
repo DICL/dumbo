@@ -1,0 +1,35 @@
+.ApplicationHistory{
+  position: absolute !important;
+  width: 843px !important;
+}
+
+.ApplicationHistory .content.console{
+  max-height: 965px;
+  overflow-y: scroll;
+}
+
+.ApplicationHistory .popup-remove{
+  border: none;
+  background: none;
+  float: right;
+  cursor: pointer;
+  font-weight: bold;
+  width: 15px;
+  height: 15px;
+  padding: 3px;
+}
+
+.ApplicationHistory .cursor {
+  cursor: move;
+}
+.ApplicationHistory .graph_area{
+  border: 1px #e4ebf1 solid;
+  padding: 1rem;
+}
+.ApplicationHistory .graph_area:not(:first-child){
+  margin-top: 1em;
+}
+
+.ApplicationHistory #containerid-for-pid-list table.container-table{
+  width: 100%;
+}

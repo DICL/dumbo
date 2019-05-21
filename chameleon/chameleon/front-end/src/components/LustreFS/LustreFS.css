@@ -1,0 +1,24 @@
+/* LustreFS.css */
+.LustreFS .right_wrap .graph_wp{
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+}
+
+.LustreFS .right_wrap[index="1"] .graph_wp{
+  /* height: 230px; */
+  padding: 20px 20px 20px 20px;
+}
+
+.LustreFS .right_wrap[index="2"] .graph_wp{
+  /* height: 230px; */
+  padding: 20px 20px 20px 20px;
+}
+
+.LustreFS .right_wrap[index="3"] .graph_wp{
+  min-height: 690px;
+  padding: 20px 20px 20px 20px;
+}
+
+.LustreFS .right_wrap[index="3"] .OSSGrape{
+  width: 100%;
+}

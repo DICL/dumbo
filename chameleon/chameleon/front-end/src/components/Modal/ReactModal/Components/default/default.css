@@ -1,0 +1,38 @@
+.DefaultModalItem{
+  position: absolute !important;
+  width: 843px !important;
+}
+.DefaultModalItem .popup-remove{
+  border: none;
+  background: none;
+  float: right;
+  cursor: pointer;
+  font-weight: bold;
+  width: 15px;
+  height: 15px;
+  padding: 3px;
+}
+
+.DefaultModalItem .description div{
+  background-color: #FFF;
+}
+
+.DefaultModalItem .content.body{
+  background-color: #F3F3F3;
+}
+
+.DefaultModalItem .content.body .description div:first-child{
+  margin-bottom: 10px;
+}
+
+.vconsole{
+  margin-left: 50px;
+}
+
+.DefaultModalItem .cursor {
+  cursor: move;
+}
+.DefaultModalItem .default-graph-area{
+  width: auto;
+  overflow: hidden;
+}

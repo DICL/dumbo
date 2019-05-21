@@ -1,0 +1,133 @@
+/* Status.css */
+.left_wrap {
+    position: relative;
+    height: 2200px;
+    width: 21%;
+    overflow: hidden;
+    /* background-color: #303d50; */
+    background-color: #F3F3F3;
+}
+.left_wrap .left_wrap_title {
+    border-bottom: 1px #596473 solid;
+    color: #fff;
+    font-size: 18px;
+    padding: 20px 30px;
+    font-weight: bold;
+    background-color: #5B5B5B;
+}
+.left_wrap .graph_wrap {
+    margin: 0px 30px;
+    padding: 30px 0px;
+    border-bottom: 1px #596473 solid;
+}
+.left_wrap .graph_wrap .bullet {
+    /* color: #fff; */
+    color: #50AB0F;
+    font-size: .5em;
+    vertical-align: middle;
+    float: left;
+    width: 10%;
+    line-height: 20px;
+}
+.left_wrap .graph_wrap .graph_title {
+    margin: 0px 0px 15px 20px;
+    color: #000;
+    float: left;
+    width: 90%;
+}
+.clearfix::before{
+  display: table;
+  content: " ";
+}
+.clearfix::after{
+  clear: both;
+}
+.left_wrap .graph_wrap .graph_label {
+    width: 100%;
+    text-align: center;
+    margin: 15px 0;
+    color: #000;
+}
+.left_wrap .graph_wrap .text_graph{
+  width: 100%;
+  text-align: left;
+  margin: 15px 0;
+  color: #000;
+  padding: 15px 15px 0px 15px;
+}
+.left_wrap .graph_wrap .graph_label .value {
+    font-size: 25px;
+}
+.left_wrap .graph_wrap .text_graph .value  {
+    font-size: 25px;
+    margin-right: 5px;
+}
+.left_wrap .graph_wrap .bar_graph {
+    width: 100%;
+    height: 20px;
+    background: #fff;
+}
+.left_wrap .graph_wrap #liveStatusBar .value1 {
+    background: #95cc74;
+}
+.left_wrap .graph_wrap #liveStatusBar .value2 {
+    background: #ee5952;
+}
+.left_wrap .graph_wrap #storageUsageBar .value1 {
+    background: #009dcd;
+}
+.left_wrap .graph_wrap #storageUsageBar .value2 {
+    background: #fff;
+}
+.left_wrap .graph_wrap #resourceHeapBar .value1 {
+    background: #009dcd;
+}
+.left_wrap .graph_wrap #resourceHeapBar .value2 {
+    background: #95cc74;
+}
+.left_wrap .graph_wrap #yarnMemoryBar .value1 {
+    background: #ffc12e;
+}
+.left_wrap .graph_wrap #yarnMemoryBar .value2 {
+    background: #fff;
+}
+.left_wrap .graph_wrap #namenodeHeapBar .value1 {
+    background: #009dcd;
+}
+.left_wrap .graph_wrap #namenodeHeapBar .value2 {
+    background: #fff;
+}
+.left_wrap .graph_wrap #yarnVcoreStatus .value1 {
+    background: #ffc12e;
+}
+.left_wrap .graph_wrap #yarnVcoreStatus .value2 {
+    background: #fff;
+}
+.left_wrap .graph_wrap .bar_graph .value1 {
+    height: 100%;
+    float: left;
+}
+.left_wrap .graph_wrap .bar_graph .value2 {
+    height: 100%;
+    float: left;
+}
+.left_wrap .graph_wrap .bar_legend_wrap {
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+}
+.left_wrap .graph_wrap .bar_legend_wrap .rect {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+}
+.left_wrap .graph_wrap .bar_legend_wrap .text {
+    color: #000;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 13px;
+    line-height: 13px;
+}
+.left_wrap .graph_wrap .bar_legend_wrap .text:last-child {
+    margin-right: 0px;
+}

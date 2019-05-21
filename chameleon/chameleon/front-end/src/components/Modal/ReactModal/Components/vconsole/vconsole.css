@@ -1,0 +1,29 @@
+.Vconsole{
+  position: absolute !important;
+  width: 758px !important;
+}
+
+.Vconsole .content.console {
+  padding: 0px !important;
+}
+
+.Vconsole .content .terminal{
+  padding: 3px;
+  background-color: #000;
+}
+
+.Vconsole .content .login{
+  padding: 20px;
+}
+
+
+.Vconsole .popup-remove{
+  border: none;
+  background: none;
+  float: right;
+  cursor: pointer;
+  font-weight: bold;
+  width: 15px;
+  height: 15px;
+  padding: 3px;
+}

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xiilab.mapper1.ApplicationMonitorMapper">
+    
+    <!-- application_id 을 통하여 container_id 찾기 -->
+    <select 
+    	id="getContainerIdForApplicationMonitor" 
+    	resultType="java.lang.String" 
+    	parameterType="java.lang.String"
+    	>
+        SELECT 
+        	container_id 
+	    FROM chameleon_data 
+	    WHERE 1=1
+		    AND	application_id = #{application_id} 
+		GROUP BY container_id;
+    </select>
+    
+    
+    <!-- container_id 을 이용하여 최근 rowkey 을 찾기 -->
+    <select 
+    	id="getRowKeyForApplicationMonitor" 
+    	resultType="java.lang.String" 
+    	parameterType="java.lang.String"
+    	>
+    	SELECT 
+    		DISTINCT rowkey 
+    	FROM 
+    		( 
+    			SELECT 
+    				* 
+    			FROM chameleon_data 
+    			ORDER BY create_date DESC 
+    		) AS a 
+    	where 1=1
+    		AND container_id = #{container_id} 
+    	limit 1;
+    </select>
+    
+    <!-- chameleon_data 리스트 구하기 -->
+    <select 
+    	id="getYarnAppMonitorListBak" 
+    	resultType="com.xiilab.models.YarnAppMonitorVO" 
+    	parameterType="com.xiilab.models.YarnAppMonitorVO"
+    	>
+    	SELECT
+    		<!-- num, -->
+			val
+			<!-- datetime -> unixtimestamp -> 소수점 버림 -> string cast -->
+			<!-- ,cast( trunc(extract(epoch from create_date at time zone 'utc')) as varchar)  as create_date -->
+			,create_date at time zone 'KST' as create_date
+			,rowkey
+			,metric
+			,pid
+			,node
+			,application_id
+			,container_id
+    	FROM chameleon_data
+    	WHERE 1=1
+    	<!-- <if test="num != null">
+			AND num = #{num}
+		</if> -->
+    	<if test="container_id != null">
+			AND container_id = #{container_id}
+		</if>
+		<if test="rowkey != null">
+			AND rowkey = #{rowkey}
+		</if>
+    	<if test="application_id != null">
+			AND application_id = #{application_id}
+		</if>
+    </select>
+    
+    
+    <select 
+    	id="getYarnAppMonitorList" 
+    	resultType="hashmap" 
+    	parameterType="hashmap"
+    	>
+    	SELECT
+    		*
+    	FROM ${table_name}
+    	WHERE 1=1
+    </select>
+    
+    <select id="findHyperTable" resultType="java.lang.String" parameterType="com.xiilab.models.YarnAppMonitorVO">
+    	select 
+    		table_name  
+    	from 
+    		_timescaledb_catalog.hypertable 
+    	where 
+    		table_name like '%apptable%' 
+    		<![CDATA[   		
+    		and split_part(table_name,'_',3)::bigint <= #{start_time} 
+    		]]>
+
+    	order by 
+    		split_part(table_name,'_',2)::bigint desc  
+    	limit 1
+    </select>
+    
+    <select 
+    	id="getYarnAppMonitorListPerNode" 
+    	resultType="hashmap" 
+    	parameterType="hashmap"
+    	>
+    	SELECT
+    		*
+    	FROM ${table_name}
+    	WHERE node=#{node} and 1=1
+    </select>
+    
+    <select id="findHyperTablePerNode" resultType="hashmap" parameterType="com.xiilab.models.YarnAppMonitorPerNodeVO">
+    	select 
+    		table_name  
+    	from 
+    		_timescaledb_catalog.hypertable 
+    	where 
+    		table_name like '%apptable%' 
+    		<![CDATA[   		
+    		and split_part(table_name,'_',3)::bigint <= #{end_time} 
+    		]]>
+    		<![CDATA[   		
+    		and split_part(table_name,'_',3)::bigint >= #{start_time} 
+    		]]>
+    </select>
+    
+</mapper>

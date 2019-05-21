@@ -1,0 +1,76 @@
+/* ComputeNodes.css */
+.ComputeNodes{
+  width: 100%;
+}
+.ComputeNodes .vis{
+  width: 100%;
+  height: 500px;
+  background: #fff;
+  border-left: 1px #dde2e9 solid;
+  border-right: 1px #dde2e9 solid;
+  border-bottom: 1px #dde2e9 solid;
+  padding: 5px;
+}
+
+.ComputeNodes .field{
+  display: inline-flex;
+  align-items: center;
+  padding-left: 0;
+  margin-right: 0.75rem !important;
+}
+.ComputeNodes .field:first-child{
+  margin: 0 1em 1em 0px !important;
+}
+
+.ComputeNodes .modify-node{
+  margin-left: 30px;
+}
+
+.ComputeNodes .view-node {
+  float: right;
+}
+.ComputeNodes .server-information{
+  width: 100%;
+  padding: 1px;
+  border-top: 1px #dde2e9 solid;
+  border-left: 1px #dde2e9 solid;
+  border-right: 1px #dde2e9 solid;
+  display: inline-flex;
+}
+.ComputeNodes .legend-used{
+  /* width: 70px; */
+}
+
+.ComputeNodes .gpu-unit-sample{
+  width: 14px;
+  height: 14px;
+  margin-top: 2.5px;
+  margin-left: 10px;
+  margin-right: 8px;
+  border: 1px solid;
+}
+
+
+  .ComputeNodes .gpu-unit-sample.status-0{
+  	 background-color: #a7c4ff;
+  	 border-color: #758fc5;
+  }
+  .ComputeNodes .gpu-unit-sample.status-1{
+  	background-color: #b0e3d3;
+    	border-color: #62a48f;
+  }
+  .ComputeNodes .gpu-unit-sample.status-2{
+  	background-color: #f4dfa1;
+    	border-color: #e3ab33;
+  }
+  .ComputeNodes .gpu-unit-sample.status-3{
+  	background-color: #ffcaa7;
+    	border-color: #dd8a39;
+  }
+  .ComputeNodes .gpu-unit-sample.status-4{
+  	background-color: #f5baba;
+    	border-color: #d36767;
+  }
+  .ComputeNodes .gpu-unit-sample.status-5{
+  	background-color: #606060;
+  }

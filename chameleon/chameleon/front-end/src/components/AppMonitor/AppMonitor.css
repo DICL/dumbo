@@ -1,0 +1,17 @@
+/* AppMonitor.css */
+#YarnTimeHistoryView{
+  padding-bottom: 10px;
+}
+#ReactTable{
+  padding-top: 10px;
+}
+#YarnMonitoring {
+  padding: 1em;
+}
+#YarnMonitoring .graph_area{
+  border: 1px #e4ebf1 solid;
+  padding: 1em;
+}
+#YarnMonitoring .graph_area:not(:first-child) {
+  margin-top: 1em;
+}
