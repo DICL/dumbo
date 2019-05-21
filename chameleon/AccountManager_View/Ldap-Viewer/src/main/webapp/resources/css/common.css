@@ -1,0 +1,10 @@
+.layer-popup{
+    z-index: 9999;
+    min-width: 300px;
+    min-height: 400px;
+}
+
+
+.hide{
+    display: none;
+}

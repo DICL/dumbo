@@ -1,0 +1,37 @@
+<view>
+  <name>Lustre_View</name>
+  <label>Lustre View</label>
+  <version>1.0.0</version>
+  <min-ambari-version>2.0.*</min-ambari-version>
+  
+  
+  
+  <parameter>
+    <name>ambari.server.url</name>
+    <description>Enter Ambari Server URL</description>
+    <placeholder>http://ambari.server:8080</placeholder>
+    <default-value>http://localhost:8080</default-value>
+  </parameter>
+  <parameter>
+    <name>ambari.server.containername</name>
+    <description>Enter Ambari Container Name</description>
+  </parameter>
+  <parameter>
+    <name>ambari.server.username</name>
+    <description>Enter Ambari Server username</description>
+    <default-value>admin</default-value>
+  </parameter>
+  <parameter>
+    <name>ambari.server.password</name>
+    <description>Enter Ambari Server password</description>
+    <default-value>admin</default-value>
+  </parameter>
+  
+
+
+  <!-- ambari view Properties -->
+  <resource>
+    <name>configurations</name>
+    <service-class>com.xiilab.lustre.utilities.AmbariProperty</service-class>
+  </resource>
+</view>

@@ -1,0 +1,23 @@
+{
+  "name": "lustre-view",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "bootstrap": "^4.1.3",
+    "font-awesome": "^4.7.0",
+    "handlebars": "^4.0.12",
+    "ionicons": "^4.4.4",
+    "jquery": "^3.3.1",
+    "select2": "^4.0.6-rc.1",
+    "spin": "0.0.1",
+    "underscore": "^1.9.1",
+    "vis": "^4.21.0"
+  }
+}

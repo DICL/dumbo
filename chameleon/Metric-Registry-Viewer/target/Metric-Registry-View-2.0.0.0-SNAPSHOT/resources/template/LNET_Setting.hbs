@@ -1,0 +1,22 @@
+{{#each this}}
+	{{#if status}}
+	<div class="col-12 px-3 py-3">
+		<div class="form-group col-12">
+			<div class="form-inline mb-1">
+				<div class="col-4">{{host_name}} {{node_type}} device and size</div>
+				<div class="col-8">
+					<button type="button" id="{{host_name}}-network-start" data-host-name="{{host_name}}" data-node-type="{{node_type}}" class="btn btn-primary network-start">Start</button>
+					<button type="button" id="{{host_name}}-network-stop" data-host-name="{{host_name}}" data-node-type="{{node_type}}" class="btn btn-primary network-stop">Stop</button>
+				</div>
+			</div>
+			<div class="form-inline">
+				<textarea id="{{host_name}}-conf" rows="" data-host-name="{{host_name}}" cols="" class="form-control col-12">{{data}}</textarea>
+			</div>
+		</div>
+	</div>
+	{{/if}}
+{{/each}}
+<div class="col-12 px-3 py-3 text-right">
+	<button id="start-all" type="button" id="mds-apply" class="btn btn-primary">start all</button>
+	<button id="stop-all" type="button" id="mds-reset" class="btn btn-primary">stop all</button>
+</div>

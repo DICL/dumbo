@@ -1,0 +1,38 @@
+{{#if this}}
+	<style>
+	/* 
+	 * Animation Speed
+	 * Transition speed can be easily controlled with css transition property on .toggle-group. You can also turn animation off completely.
+	 */
+	  .slow .toggle-group { transition: left 0.7s; -webkit-transition: left 0.7s; }
+	  .fast .toggle-group { transition: left 0.1s; -webkit-transition: left 0.1s; }
+	  .quick .toggle-group { transition: none; -webkit-transition: none; }
+	</style>
+	{{#each this}}
+	<a href="#" class="list-group-item" data-num="{{num}}" data-step="{{fs_step}}">
+		<span class="fs-menu-list-name mr-3">{{fs_name}}</span>
+		{{#ifCond fs_step '==' 5}}
+		<input id="test" 
+			type="checkbox" 
+			
+			data-num="{{num}}" 
+			data-fstoggle="toggle" 
+			data-onstyle="info" 
+			data-size="mini" 
+			data-style="quick"
+			
+			data-file-system-name="{{fs_name}}"
+			data-is_client_mount="{{is_client_mount}}"
+			data-lustre_client_folder="{{lustre_client_folder}}"
+			{{#if is_client_mount}}
+			checked="checked"
+			{{/if}}
+			
+			class="set-mount-toggle"
+		/>
+		{{/ifCond}}
+	</a>
+	{{/each}}
+{{else}}
+	<a href="#" class="list-group-item list-group-item-action disabled">(no filesystem)</a>
+{{/if}}

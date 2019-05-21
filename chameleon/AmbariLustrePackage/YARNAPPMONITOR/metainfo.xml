@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<metainfo>
+    <schemaVersion>2.0</schemaVersion>
+    <services>
+        <service>
+            <name>YARNAPPMONITOR</name>
+            <displayName>YarnAppMonitor</displayName>
+            <comment>YarnAppMonitor is a service for monitoring YARN application performance based on external Linux performance tools.</comment>
+            <version>0.1</version>
+            <components>
+                <component>
+                    <name>YARNAppMonitorMaster</name>
+                    <displayName>YARNAppMonitorMaster</displayName>
+                    <category>MASTER</category>
+                    <cardinality>1</cardinality>
+                    <commandScript>
+                        <script>scripts/yarnappmonitormaster.py</script>
+                        <scriptType>PYTHON</scriptType>
+                        <timeout>600</timeout>
+                    </commandScript>
+                </component>
+                <component>
+                    <name>YARNAppMonitorClient</name>
+                    <displayName>YARNAppMonitorClient</displayName>
+                    <category>CLIENT</category>
+                    <cardinality>1+</cardinality>
+                    <commandScript>
+                        <script>scripts/yarnappmonitorclient.py</script>
+                        <scriptType>PYTHON</scriptType>
+                        <timeout>600</timeout>
+                    </commandScript>
+                </component>
+            </components>
+            <commandScript>
+                <script>scripts/service_check.py</script>
+                <scriptType>PYTHON</scriptType>
+                <timeout>300</timeout>
+            </commandScript>
+            <configuration-dependencies>
+                <config-type>yarnjobmonitor-config-env</config-type>
+            </configuration-dependencies>
+        </service>
+    </services>
+</metainfo>

@@ -1,0 +1,9 @@
+{{#each this}}
+<div class="form-check mb-1">
+	<input class="disk-info form-check-input" data-disk_index={{index}} data-disk_type="{{disk_type}}" data-disk_num="{{num}}" type="checkbox" value="{{disk_name}}" id="{{disk_type}}{{index}}" data-host_name="{{host_name}}">
+	<label class="form-check-label" for="{{disk_type}}{{index}}">
+	   	{{disk_type}}{{index}} {{node_type}}{{node_index}}:{{disk_name}}
+	</label>
+	<div data-target="{{disk_type}}{{index}}" class="backup-result ml-3" style="width: 30%;display: inline-block;"></div>
+</div>
+{{/each}}

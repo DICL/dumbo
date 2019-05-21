@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<metainfo>
+    <schemaVersion>2.0</schemaVersion>
+    <services>
+        <service>
+            <name>ACCOUNTMANAGER</name>
+            <displayName>AccountManager</displayName>
+            <comment>AccountManager is a service for LDAP-based account management of both Hadoop cluster and Lustre filesystem</comment>
+            <version>0.1</version>
+            <components>
+                <component>
+                    <name>ACCOUNTMANAGERMASTER</name>
+                    <displayName>AccountManagerMaster</displayName>
+                    <category>MASTER</category>
+                    <cardinality>1</cardinality>
+                    <commandScript>
+                        <script>scripts/accountmanagermaster.py</script>
+                        <scriptType>PYTHON</scriptType>
+                        <timeout>600</timeout>
+                    </commandScript>
+                    <!-- <customCommands>
+                        <customCommand>
+                          <name>CLIENTSYNC</name>
+                          <commandScript>
+                            <script>scripts/usersyncmaster.py</script>
+                            <scriptType>PYTHON</scriptType>
+                            <timeout>600</timeout>
+                          </commandScript>
+                        </customCommand>
+                        <customCommand>
+                          <name>SWITCHTOHDFS</name>
+                          <background>true</background>
+                          <commandScript>
+                            <script>scripts/usersyncmaster.py</script>
+                            <scriptType>PYTHON</scriptType>
+                          </commandScript>
+                        </customCommand>                        
+                      </customCommands> -->
+                </component>
+                <component>
+                    <name>ACCOUNTMANAGERCLIENT</name>
+                    <displayName>AccountManagerClient</displayName>
+                    <category>CLIENT</category>
+                    <cardinality>1+</cardinality>
+                    <commandScript>
+                        <script>scripts/accountmanagerclient.py</script>
+                        <scriptType>PYTHON</scriptType>
+                        <timeout>600</timeout>
+                    </commandScript>
+                </component>
+            </components>
+            <themes>
+                <theme>
+                    <fileName>theme.json</fileName>
+                    <default>true</default>
+                </theme>
+            </themes>
+            <configuration-dependencies>
+                <config-type>usersync-config-env</config-type>
+            </configuration-dependencies>
+        </service>
+    </services>
+</metainfo>

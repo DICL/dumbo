@@ -1,0 +1,12 @@
+#lustre-info{
+	border: 1px solid red;
+	min-height: 500px;
+}
+
+.loding-container{
+	width:100%;height:500px; padding-top: 250px;
+}
+
+.loading-text{
+	margin-top: 25px;
+}

@@ -1,0 +1,17 @@
+{{#if list}}
+	{{#each list}}
+	<div class="row mb-3">
+		<div class="col-6">
+			{{name}}
+		</div>
+		<div class="col-6 text-right">
+			<button type="button" data-num="{{num}}" data-name="{{name}}"  class="btn btn-primary delete-metric">Del</button>
+			<a href="{{../contextPath}}/metric/{{num}}" class="btn btn-primary">
+				View
+			</a>
+		</div>
+	</div>
+	{{/each}}
+{{else}}
+	<h5>Empty Metrics</h5>
+{{/if}}

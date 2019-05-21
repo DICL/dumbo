@@ -1,0 +1,38 @@
+<div>
+	<h5>Lustre Manager View</h5>
+	<div>
+	<ul>
+		<li><a>MDS Setting</a></li>
+		<li><a>OSS Setting</a></li>
+		<li><a>Client Setting</a></li>
+		<li><a>LNET Setting</a></li>
+		<li><a>Backup</a></li>
+		<li><a>Restore</a></li>
+	</ul>
+	</div>
+	{{#each this}}
+		<div>
+			<h5>{{type}} {{index}} Setting</h5>
+			<div>
+				{{host}} {{type}} device and size
+				<div>
+					<select>
+						<option>
+							/dev/sdb
+						</option>
+					</select>
+					100 GB
+				</div>
+				{{host}} {{type}} IO network
+				<div>
+					<select>
+						<option>
+							/dev/sdb
+						</option>
+					</select>
+					100 GB
+				</div>
+			</div>
+		</div>
+	{{/each}}
+</div>

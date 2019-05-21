@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+ 
+<configuration>
+  
+  <property>
+    <name>TimescaleDB_ip</name>
+    <value>192.168.1.190</value>
+  </property>
+  <property>
+    <name>TimescaleDB_port</name>
+    <value>5432</value>
+  </property>
+  <property>
+    <name>TimescaleDB_database</name>
+    <value>ambari</value>
+  </property>
+  <property>
+    <name>TimescaleDB_username</name>
+    <value>postgres</value>
+  </property>
+  <property>
+    <name>TimescaleDB_password</name>
+    <value>postgres</value>
+  </property>
+  <property>
+    <name>location</name>
+    <value>/root/</value>
+  </property>
+<!--   <property>
+    <name>hadooplustreadaptermgmtservice_user</name>
+    <value>HadoopLustreAdapterMgmtService</value>
+    <description>HadoopLustreAdapterMgmtService User Name.</description>
+  </property>
+  <property>
+    <name>lustremdsmgmtservice_user</name>
+    <value>LustreMDSMgmtService</value>
+    <description>LustreMDSMgmtService User Name.</description>
+  </property>
+  <property>
+    <name>usersyncservice_user</name>
+    <value>UserSyncService</value>
+    <description>UserSyncService User Name.</description>
+  </property>
+  <property>
+    <name>lustreossmgmtservice_user</name>
+    <value>LustreOSSMgmtService</value>
+    <description>LustreOSSMgmtService User Name.</description>
+  </property>
+  <property>
+    <name>modprobe_networks</name>
+    <value>o2ib1(ib0)</value>
+    <description>/etc/modprobe.d/lustre.conf networks</description>
+  </property>
+  <property>
+    <name>modprobe_routes</name>
+    <value>o2ib2 10.0.0.254@o2ib1</value>
+    <description>/etc/modprobe.d/lustre.conf routes</description>
+  </property>
+  <property>
+    <name>mdt_index</name>
+    <value>0</value>
+    <description>MDT Index</description>
+  </property>
+  <property>
+    <name>mdt_fsname</name>
+    <value>0</value>
+    <description>MDT fsname</description>
+  </property>
+  <property>
+    <name>mdt_mkfsoptions</name>
+    <value>-Odir_index,extents,uninit_groups,flex_bg,uninit_bg</value>
+    <description>MDT mkfsoptions</description>
+  </property>
+  <property>
+    <name>mdt_verbos</name>
+    <value>/dev/sde</value>
+    <description>MDT verbos</description>
+  </property> -->
+
+
+</configuration>
